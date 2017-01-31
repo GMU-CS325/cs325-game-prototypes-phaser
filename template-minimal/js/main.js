@@ -1,6 +1,6 @@
 window.onload = function() {
     // You might want to start with a template that uses GameStates:
-    //     https://github.com/photonstorm/phaser/tree/master/resources/Project%20Templates/Basic
+    //     https://github.com/photonstorm/phaser/tree/v2.6.2/resources/Project%20Templates/Basic
     
     // You can copy-and-paste the code from any of the examples at http://examples.phaser.io here.
     // You will need to change the fourth parameter to "new Phaser.Game()" from
@@ -37,7 +37,7 @@ window.onload = function() {
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Build something awesome.", style );
+        var text = game.add.text( game.world.centerX, 15, "Build something amazing.", style );
         text.anchor.setTo( 0.5, 0.0 );
     }
     
