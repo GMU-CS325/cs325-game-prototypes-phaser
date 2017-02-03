@@ -25,7 +25,7 @@ window.onload = function() {
     
     function create() {
         // Create a sprite at the center of the screen using the 'logo' image.
-		ted = game.add.sprite(game.world.centerX, game.world.centerY, 'sky');
+		//game.add.sprite(game.world.centerX, game.world.centerY, 'sky');
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
@@ -39,7 +39,7 @@ window.onload = function() {
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "I'm Trying?", style );
+        var text = game.add.text( game.world.centerX, 15, "I'm Trying", style );
         text.anchor.setTo( 0.5, 0.0 );
     }
     
