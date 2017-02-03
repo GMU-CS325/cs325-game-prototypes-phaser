@@ -18,12 +18,14 @@ window.onload = function() {
     function preload() {
         // Load an image and call it 'logo'.
         game.load.image( 'logo', 'assets/DigitalGame_Cowboy.png' );
+		game.load.image( 'logo', 'assests/sky.png');
     }
     
     var bouncy;
     
     function create() {
         // Create a sprite at the center of the screen using the 'logo' image.
+		game.add.sprite(0,0, 'sky');
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
