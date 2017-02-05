@@ -13,6 +13,10 @@ window.onload = function() {
 
     "use strict";
 
+    function asteroidHit(player, asteroid){
+        asteroid.kill();
+    }
+
     var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', {
         preload: preload,
         create: create,
@@ -24,6 +28,8 @@ window.onload = function() {
     var cursors;
     var weapon;
     var fireButton;
+    var asteroids;
+    var ground;
 
     function preload() {
         // game.load.physics();
@@ -31,27 +37,38 @@ window.onload = function() {
         game.load.image('ground', 'assets/platform.png');
         game.load.image('star', 'assets/star.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48)
+        game.load.image('asteroid', 'assets/diamond.png');
         // game.load.spritesheet();
     }
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.add.sprite(0, 0, 'sky');
+
+        asteroids = game.add.group();
+        asteroids.enableBody = true;
+        var asteroid = asteroids.create(game.world.width, game.world.height*.75, 'asteroid');
+        // asteroid.body.gravity.y = 20;
+        asteroid.body.velocity.x = -50;
+        // asteroid.body.bounce.y = 0;
+
+
+
         platforms = game.add.group();
         platforms.enableBody = true;
-        var ground = platforms.create(0, game.world.height - 64, 'ground');
+        ground = platforms.create(0, game.world.height - 64, 'ground');
         ground.scale.setTo(2, 2);
         ground.body.immovable = true;
-        var ledge = platforms.create(400, 400, 'ground');
-        ledge.body.immovable = true;
-        ledge = platforms.create(-150, 200, 'ground');
-        ledge.body.immovable = true;
+        // var ledge = platforms.create(400, 400, 'ground');
+        // ledge.body.immovable = true;
+        // ledge = platforms.create(-150, 200, 'ground');
+        // ledge.body.immovable = true;
 
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.arcade.enable(player);
 
         player.body.bounce.y = 0.2;
-        player.body.gravity.y = 300;
+        player.body.gravity.y = 800;
         player.body.collideWorldBounds = true;
 
         player.animations.add('left', [0, 1, 2, 3], 10, true);
@@ -64,9 +81,15 @@ window.onload = function() {
         weapon.trackSprite(player, 25,25, true);
 
         fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+
+
     }
 
     function update() {
+        game.physics.arcade.collide(asteroids, ground);
+        game.physics.arcade.collide(weapon.bullets, asteroids, asteroidKill, null, this);
+        // game.physics.arcade.collide(weapon, asteroids, function(bullet, asteroid){bullet.kill(); asteroid.kill();});
+
         var hitPlatform = game.physics.arcade.collide(player, platforms);
         cursors = game.input.keyboard.createCursorKeys();
         player.body.velocity.x = 0;
@@ -83,7 +106,7 @@ window.onload = function() {
         }
 
         if (cursors.up.isDown && player.body.touching.down && hitPlatform) {
-            player.body.velocity.y = -350;
+            player.body.velocity.y = -500;
         }
 
         if (fireButton.isDown){
