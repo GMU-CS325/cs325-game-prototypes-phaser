@@ -13,8 +13,24 @@ window.onload = function() {
 
     "use strict";
 
-    function asteroidHit(player, asteroid){
+    function asteroidHit(bullet, asteroid) {
+        points += 10;
+        scoreText.text = "Score " + points;
+        bullet.kill();
         asteroid.kill();
+
+    }
+
+    function createAsteroid() {
+        var asteroid = asteroids.create(game.world.width, (game.world.height - (game.world.height * 1 / 2 * Math.random())), 'asteroid');
+        asteroid.body.velocity.x = -200;
+        return asteroid;
+    }
+
+    function decrementScore(player, asteroid) {
+        asteroid.kill();
+        points -= 10;
+        scoreText.text = "Score " + points;
     }
 
     var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', {
@@ -30,6 +46,9 @@ window.onload = function() {
     var fireButton;
     var asteroids;
     var ground;
+    var points;
+    var scoreText;
+
 
     function preload() {
         // game.load.physics();
@@ -38,6 +57,7 @@ window.onload = function() {
         game.load.image('star', 'assets/star.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48)
         game.load.image('asteroid', 'assets/diamond.png');
+        points = 0;
         // game.load.spritesheet();
     }
 
@@ -47,12 +67,18 @@ window.onload = function() {
 
         asteroids = game.add.group();
         asteroids.enableBody = true;
-        var asteroid = asteroids.create(game.world.width, game.world.height*.75, 'asteroid');
+
+        // var asteroid = asteroids.create(game.world.width, game.world.height*.75, 'asteroid');
         // asteroid.body.gravity.y = 20;
-        asteroid.body.velocity.x = -50;
+        // asteroid.body.velocity.x = -50;
         // asteroid.body.bounce.y = 0;
 
+        game.time.events.repeat(Phaser.Timer.SECOND * 2, 100, createAsteroid, this);
 
+        scoreText = game.add.text(16, 16, 'score: 0', {
+            fontSize: '32px',
+            fill: '#000'
+        });
 
         platforms = game.add.group();
         platforms.enableBody = true;
@@ -78,7 +104,7 @@ window.onload = function() {
         weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
         weapon.bulletSpeed = 350;
         weapon.fireRate = 400;
-        weapon.trackSprite(player, 25,25, true);
+        weapon.trackSprite(player, 25, 25, true);
 
         fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
@@ -87,7 +113,10 @@ window.onload = function() {
 
     function update() {
         game.physics.arcade.collide(asteroids, ground);
-        game.physics.arcade.collide(weapon.bullets, asteroids, asteroidKill, null, this);
+        // getting asteroid collision with world bounds and decrementing player score
+        // asteroids.forEach(decrementScore);
+        game.physics.arcade.collide(player, asteroids, decrementScore);
+        game.physics.arcade.collide(weapon.bullets, asteroids, asteroidHit, null, this);
         // game.physics.arcade.collide(weapon, asteroids, function(bullet, asteroid){bullet.kill(); asteroid.kill();});
 
         var hitPlatform = game.physics.arcade.collide(player, platforms);
@@ -109,7 +138,7 @@ window.onload = function() {
             player.body.velocity.y = -500;
         }
 
-        if (fireButton.isDown){
+        if (fireButton.isDown) {
             weapon.fire()
         }
 
