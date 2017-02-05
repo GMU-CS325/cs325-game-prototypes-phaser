@@ -22,8 +22,11 @@ window.onload = function() {
     }
 
     function createAsteroid() {
-        var asteroid = asteroids.create(game.world.width, (game.world.height - (game.world.height * 1 / 2 * Math.random())), 'asteroid');
-        asteroid.body.velocity.x = -200;
+        var asteroid = asteroids.create(game.world.width, ((game.world.height - 64) - (game.world.height * 1 / 2 * Math.random())), 'asteroid');
+        asteroid.body.height = .5;
+        asteroid.body.width = .5;
+        asteroid.scale.setTo(.5,.5);
+        asteroid.body.velocity.x = -300;
         return asteroid;
     }
 
@@ -33,7 +36,7 @@ window.onload = function() {
         scoreText.text = "Score " + points;
     }
 
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', {
+    var game = new Phaser.Game(1000, 600, Phaser.AUTO, 'game', {
         preload: preload,
         create: create,
         update: update
@@ -48,22 +51,29 @@ window.onload = function() {
     var ground;
     var points;
     var scoreText;
+    var sky;
 
 
     function preload() {
         // game.load.physics();
-        game.load.image('sky', 'assets/sky.png');
-        game.load.image('ground', 'assets/platform.png');
+        // game.load.image('sky', 'assets/sky.png');
+        // game.load.image('ground', 'assets/platform.png');
+        game.load.image('sky', 'assets/moon_sky.jpg');
+        game.load.image('ground', 'assets/moon_ground.jpg');
         game.load.image('star', 'assets/star.png');
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48)
-        game.load.image('asteroid', 'assets/diamond.png');
+        game.load.image('asteroid', 'assets/asteroid1.png');
+        game.load.spritesheet('astronaut', 'assets/orange.png', 128,128);
         points = 0;
         // game.load.spritesheet();
     }
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        game.add.sprite(0, 0, 'sky');
+        sky = game.add.sprite(0, 0, 'sky');
+        sky.scale.setTo(2,1.2);
+
+        // game.add.sprite(0,0, 'asteroid')
 
         asteroids = game.add.group();
         asteroids.enableBody = true;
@@ -90,21 +100,22 @@ window.onload = function() {
         // ledge = platforms.create(-150, 200, 'ground');
         // ledge.body.immovable = true;
 
-        player = game.add.sprite(32, game.world.height - 150, 'dude');
+        player = game.add.sprite(32, game.world.height/2, 'astronaut');
         game.physics.arcade.enable(player);
 
         player.body.bounce.y = 0.2;
         player.body.gravity.y = 800;
         player.body.collideWorldBounds = true;
+        player.scale.setTo(.5,.5);
 
-        player.animations.add('left', [0, 1, 2, 3], 10, true);
-        player.animations.add('right', [5, 6, 7, 8], 10, true);
+        player.animations.add('left', [8, 9, 10, 11], 10, true);
+        player.animations.add('right', [4, 5, 6, 7], 10, true);
 
         weapon = game.add.weapon(30, 'star');
         weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
         weapon.bulletSpeed = 350;
         weapon.fireRate = 400;
-        weapon.trackSprite(player, 25, 25, true);
+        weapon.trackSprite(player,50, 25, true);
 
         fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
@@ -112,7 +123,7 @@ window.onload = function() {
     }
 
     function update() {
-        game.physics.arcade.collide(asteroids, ground);
+        // game.physics.arcade.collide(asteroids, ground);
         // getting asteroid collision with world bounds and decrementing player score
         // asteroids.forEach(decrementScore);
         game.physics.arcade.collide(player, asteroids, decrementScore);
@@ -124,10 +135,10 @@ window.onload = function() {
         player.body.velocity.x = 0;
 
         if (cursors.left.isDown) {
-            player.body.velocity.x = -150;
+            player.body.velocity.x = -200;
             player.animations.play('left');
         } else if (cursors.right.isDown) {
-            player.body.velocity.x = 150;
+            player.body.velocity.x = 200;
             player.animations.play('right');
         } else {
             player.animations.stop();
