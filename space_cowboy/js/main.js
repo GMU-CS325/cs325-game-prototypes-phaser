@@ -23,10 +23,10 @@ window.onload = function() {
 
     function createAsteroid() {
         var asteroid = asteroids.create(game.world.width, ((game.world.height - 64) - (game.world.height * 1 / 2 * Math.random())), 'asteroid');
-        asteroid.body.height = .5;
-        asteroid.body.width = .5;
-        asteroid.scale.setTo(.5,.5);
-        asteroid.body.velocity.x = -300;
+        // asteroid.body.height = .5;
+        // asteroid.body.width = .5;
+        asteroid.scale.setTo(2,2);
+        asteroid.body.velocity.x = cowSpeed;
         return asteroid;
     }
 
@@ -52,26 +52,31 @@ window.onload = function() {
     var points;
     var scoreText;
     var sky;
+    var cowRate;
+    var cowSpeed;
+    var lastPoints;
 
 
     function preload() {
         // game.load.physics();
         // game.load.image('sky', 'assets/sky.png');
         // game.load.image('ground', 'assets/platform.png');
-        game.load.image('sky', 'assets/moon_sky.jpg');
-        game.load.image('ground', 'assets/moon_ground.jpg');
-        game.load.image('star', 'assets/star.png');
-        game.load.spritesheet('dude', 'assets/dude.png', 32, 48)
-        game.load.image('asteroid', 'assets/asteroid1.png');
+        game.load.image('sky', 'assets/earth_sky.png');
+        game.load.image('ground', 'assets/moon_surface.png');
+        game.load.image('asteroid', 'assets/spr_cow_0.png');
         game.load.spritesheet('astronaut', 'assets/orange.png', 128,128);
+        game.load.image('laserblue', 'assets/laserBlue01.png')
         points = 0;
         // game.load.spritesheet();
     }
 
     function create() {
+        cowRate = 2;
+        cowSpeed = -300;
+        lastPoints = 0;
         game.physics.startSystem(Phaser.Physics.ARCADE);
         sky = game.add.sprite(0, 0, 'sky');
-        sky.scale.setTo(2,1.2);
+        sky.scale.setTo(1,1);
 
         // game.add.sprite(0,0, 'asteroid')
 
@@ -83,17 +88,17 @@ window.onload = function() {
         // asteroid.body.velocity.x = -50;
         // asteroid.body.bounce.y = 0;
 
-        game.time.events.repeat(Phaser.Timer.SECOND * 2, 100, createAsteroid, this);
+        game.time.events.repeat(Phaser.Timer.SECOND * cowRate, 1000, createAsteroid, this);
 
         scoreText = game.add.text(16, 16, 'score: 0', {
             fontSize: '32px',
-            fill: '#000'
+            fill: 'white'
         });
 
         platforms = game.add.group();
         platforms.enableBody = true;
         ground = platforms.create(0, game.world.height - 64, 'ground');
-        ground.scale.setTo(2, 2);
+        ground.scale.setTo(.5, 1);
         ground.body.immovable = true;
         // var ledge = platforms.create(400, 400, 'ground');
         // ledge.body.immovable = true;
@@ -111,10 +116,10 @@ window.onload = function() {
         player.animations.add('left', [8, 9, 10, 11], 10, true);
         player.animations.add('right', [4, 5, 6, 7], 10, true);
 
-        weapon = game.add.weapon(30, 'star');
+        weapon = game.add.weapon(30, 'laserblue');
         weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
         weapon.bulletSpeed = 350;
-        weapon.fireRate = 400;
+        weapon.fireRate = 1000;
         weapon.trackSprite(player,50, 25, true);
 
         fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
@@ -123,6 +128,11 @@ window.onload = function() {
     }
 
     function update() {
+        if(points % 100 === 0 && points > lastPoints){
+            cowRate += 1;
+            cowSpeed -= 50;
+            lastPoints = points;
+        }
         // game.physics.arcade.collide(asteroids, ground);
         // getting asteroid collision with world bounds and decrementing player score
         // asteroids.forEach(decrementScore);
