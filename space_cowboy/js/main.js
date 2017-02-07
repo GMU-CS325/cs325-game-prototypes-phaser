@@ -23,9 +23,7 @@ window.onload = function() {
     }
 
     function createAsteroid() {
-        var asteroid = asteroids.create(game.world.width, ((game.world.height - 64) - (game.world.height * 1 / 2 * Math.random())), 'asteroid');
-        // asteroid.body.height = .5;
-        // asteroid.body.width = .5;
+        var asteroid = asteroids.create(game.world.width, ((game.world.height - 128) - (game.world.height * 1 / 2 * Math.random())), 'asteroid');
         asteroid.scale.setTo(2,2);
         asteroid.body.velocity.x = cowSpeed;
         return asteroid;
@@ -33,17 +31,10 @@ window.onload = function() {
 
     function decrementScore(player, asteroid) {
         asteroid.kill();
-        // player.alpha = 0;
-        // var tween = game.add.tween(player).to( { alpha: 1 }, 2000, "Linear", true);
         for(let i = 0; i < 10; i++){
             player.alpha = 0;
             var tween = game.add.tween(player).to( { alpha: 1 }, 2000, "Linear", true);
-
-
         }
-        // player.tint = 0xff0000;
-        // points -= 10;
-        // scoreText.text = "Score " + points;
     }
 
     var game = new Phaser.Game(1000, 600, Phaser.AUTO, 'game', {
