@@ -9,7 +9,7 @@ window.onload = function() {
         game.load.image('enemyBullet', 'assets/taolu.png');
         game.load.spritesheet('invader', 'assets/cowboy.png', 32, 32);
         game.load.image('ship', 'assets/xiaoxingxing.png');
-        game.load.spritesheet('kaboom', 'assets/games/invaders/explode.png', 128, 128);
+        game.load.spritesheet('kaboom', 'assets/explode.png', 128, 128);
         game.load.image('starfield', 'assets/earth.jpg');
         game.load.audio('enter', 'assets/enter.mp3');
         game.load.audio('death', 'assets/death.mp3');
