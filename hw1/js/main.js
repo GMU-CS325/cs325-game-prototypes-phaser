@@ -48,8 +48,8 @@ window.onload = function() {
         enter = game.add.audio('enter');
         death = game.add.audio('death');
         laser = game.add.audio('laser');
-        gameover=game.add.audio("gameover");
-        bomp=game.add.audio("bomb");
+        gameover=game.add.audio('gameover');
+        bomp=game.add.audio('bomb');
         enter.play();
       
         //  The scrolling starfield background
