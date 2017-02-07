@@ -16,6 +16,7 @@ window.onload = function() {
     function asteroidHit(bullet, asteroid) {
         points += 10;
         scoreText.text = "Score " + points;
+        moo.play();
         bullet.kill();
         asteroid.kill();
 
@@ -32,8 +33,17 @@ window.onload = function() {
 
     function decrementScore(player, asteroid) {
         asteroid.kill();
-        points -= 10;
-        scoreText.text = "Score " + points;
+        // player.alpha = 0;
+        // var tween = game.add.tween(player).to( { alpha: 1 }, 2000, "Linear", true);
+        for(let i = 0; i < 10; i++){
+            player.alpha = 0;
+            var tween = game.add.tween(player).to( { alpha: 1 }, 2000, "Linear", true);
+
+
+        }
+        // player.tint = 0xff0000;
+        // points -= 10;
+        // scoreText.text = "Score " + points;
     }
 
     var game = new Phaser.Game(1000, 600, Phaser.AUTO, 'game', {
@@ -55,19 +65,23 @@ window.onload = function() {
     var cowRate;
     var cowSpeed;
     var lastPoints;
+    var laser;
+    var moo;
+    var jumpfx;
+    var powerupfx;
 
 
     function preload() {
-        // game.load.physics();
-        // game.load.image('sky', 'assets/sky.png');
-        // game.load.image('ground', 'assets/platform.png');
         game.load.image('sky', 'assets/earth_sky.png');
         game.load.image('ground', 'assets/moon_surface.png');
         game.load.image('asteroid', 'assets/spr_cow_0.png');
         game.load.spritesheet('astronaut', 'assets/orange.png', 128,128);
-        game.load.image('laserblue', 'assets/laserBlue01.png')
+        game.load.image('laserblue', 'assets/laserBlue01.png');
+        game.load.audio('sfx', 'assets/laser.wav');
+        game.load.audio('moofx', 'assets/cow_moo.wav');
+        game.load.audio('jumpfx', 'assets/jump.wav');
+        game.load.audio('powerupfx', 'assets/powerup.wav');
         points = 0;
-        // game.load.spritesheet();
     }
 
     function create() {
@@ -77,6 +91,11 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         sky = game.add.sprite(0, 0, 'sky');
         sky.scale.setTo(1,1);
+
+        laser = game.add.audio('sfx');
+        moo = game.add.audio('moofx');
+        jumpfx = game.add.audio('jumpfx');
+        powerupfx = game.add.audio('powerupfx');
 
         // game.add.sprite(0,0, 'asteroid')
 
@@ -119,6 +138,7 @@ window.onload = function() {
         weapon = game.add.weapon(30, 'laserblue');
         weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
         weapon.bulletSpeed = 350;
+        weapon.autofire = false;
         weapon.fireRate = 1000;
         weapon.trackSprite(player,50, 25, true);
 
@@ -157,10 +177,14 @@ window.onload = function() {
 
         if (cursors.up.isDown && player.body.touching.down && hitPlatform) {
             player.body.velocity.y = -500;
+            jumpfx.play();
         }
 
         if (fireButton.isDown) {
-            weapon.fire()
+            if(weapon.fire()){
+                laser.play();
+            }
+
         }
 
     }

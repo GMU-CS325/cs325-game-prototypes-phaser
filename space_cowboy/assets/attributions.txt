@@ -1,3 +1,11 @@
 sky background: http://www.solarsystemscope.com/nexus/textures/texture_pack_earth/
 cow sprite: unknown
 moon surface: google earth
+astronaut sprite: 
+
+audio:
+moo: http://freesound.org/people/JarredGibb/sounds/233129/
+jump sound: http://www.freesound.org/people/n_audioman/sounds/273564/
+shoot sound: http://freesound.org/people/jobro/sounds/35679/
+power up sound: http://www.freesound.org/people/StudioCopsey/sounds/77245/
+hit sound: http://www.freesound.org/people/DewAholic/sounds/318969/
