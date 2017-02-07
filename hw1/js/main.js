@@ -143,9 +143,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
         //  When the tween loops it calls descend
         tween.onLoop.add(descend, this);
     }
-    function render()
-        {
-        }
+    
 
     function setupInvader (invader) {
 
