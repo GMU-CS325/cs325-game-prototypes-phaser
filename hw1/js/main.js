@@ -171,7 +171,8 @@ window.onload = function() {
             if (cursors.left.isDown)
             {
                 player.body.velocity.x = -200;
-                death.play();
+                enter.stop();
+                  
             }
             else if (cursors.up.isDown)
             {
