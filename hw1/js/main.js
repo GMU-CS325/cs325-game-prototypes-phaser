@@ -48,7 +48,7 @@ window.onload = function() {
         laser = game.add.audio('laser');
         gameover=game.add.audio("gameover")
         enter.play();
-        laser.play();
+      
         //  The scrolling starfield background
         starfield = game.add.sprite(0, 0, 'starfield');
         starfield.scale.setTo(0.32,0.32);
@@ -171,6 +171,7 @@ window.onload = function() {
             if (cursors.left.isDown)
             {
                 player.body.velocity.x = -200;
+                death.play();
             }
             else if (cursors.up.isDown)
             {
