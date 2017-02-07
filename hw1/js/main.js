@@ -15,6 +15,7 @@ window.onload = function() {
         game.load.audio('death', 'assets/death.mp3');
         game.load.audio('gameover', 'assets/gameover.mp3');
         game.load.audio('laser', 'assets/laser.mp3');
+        game.load.audio('laser', 'assets/bomp.mp3');
 
 
 
@@ -40,13 +41,15 @@ window.onload = function() {
     var death;
     var gameover;
     var laser;
+    var bomp;
     function create() {
 
         game.physics.startSystem(Phaser.Physics.ARCADE);
         enter = game.add.audio('enter');
         death = game.add.audio('death');
         laser = game.add.audio('laser');
-        gameover=game.add.audio("gameover")
+        gameover=game.add.audio("gameover");
+        bomp=game.add.audio("bomp");
         enter.play();
       
         //  The scrolling starfield background
