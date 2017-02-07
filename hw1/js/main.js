@@ -15,7 +15,7 @@ window.onload = function() {
         game.load.audio('death', 'assets/death.mp3');
         game.load.audio('gameover', 'assets/gameover.mp3');
         game.load.audio('laser', 'assets/laser.mp3');
-        game.load.audio('laser', 'assets/bomb.mp3');
+        game.load.audio('bomb', 'assets/bomb.mp3');
 
 
 
