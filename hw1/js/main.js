@@ -16,8 +16,6 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, cr
         game.load.audio('enter', 'assets/enter.mp3');
         game.load.audio('death', 'assets/death.mp3');
         game.load.audio('gameover', 'assets/gameover.mp3');
-     
-
 
 
 
@@ -42,7 +40,6 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, cr
     var enter;
     var death;
     var gameover;
-  
 
     function create() {
 
@@ -193,7 +190,6 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, cr
             if (fireButton.isDown)
             {
                 fireBullet();
-             
             }
 
             if (game.time.now > firingTimer)
@@ -325,7 +321,6 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, cr
                 bullet.reset(player.x, player.y + 8);
                 bullet.body.velocity.y = -400;
                 bulletTime = game.time.now + 200;
-          
             }
         }
 
