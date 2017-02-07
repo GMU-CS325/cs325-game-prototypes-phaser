@@ -171,7 +171,7 @@ window.onload = function() {
             if (cursors.left.isDown)
             {
                 player.body.velocity.x = -200;
-                enter.stop();
+            
                   
             }
             else if (cursors.up.isDown)
@@ -320,10 +320,12 @@ window.onload = function() {
             if (bullet)
             {
                 //  And fire it
+                death.play();
                 bullet.reset(player.x, player.y + 8);
                 bullet.body.velocity.y = -400;
                 bulletTime = game.time.now + 200;
-                laser.play();
+                
+  
             }
         }
 
