@@ -1,7 +1,7 @@
 window.onload = function() {
 
 
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
+    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update});
 
     function preload() {
 
@@ -200,14 +200,7 @@ window.onload = function() {
 
     }
 
-    function render() {
-
-        // for (var i = 0; i < aliens.length; i++)
-        // {
-        //     game.debug.body(aliens.children[i]);
-        // }
-
-    }
+  
 
     function collisionHandler (bullet, alien) {
 
