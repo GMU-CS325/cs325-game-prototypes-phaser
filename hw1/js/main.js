@@ -15,7 +15,7 @@ window.onload = function() {
         game.load.audio('death', 'assets/death.mp3');
         game.load.audio('gameover', 'assets/gameover.mp3');
         game.load.audio('laser', 'assets/laser.mp3');
-        game.load.audio('laser', 'assets/bomp.mp3');
+        game.load.audio('laser', 'assets/bomb.mp3');
 
 
 
@@ -41,7 +41,7 @@ window.onload = function() {
     var death;
     var gameover;
     var laser;
-    var bomp;
+    var bomb;
     function create() {
 
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -49,7 +49,7 @@ window.onload = function() {
         death = game.add.audio('death');
         laser = game.add.audio('laser');
         gameover=game.add.audio("gameover");
-        bomp=game.add.audio("bomp");
+        bomp=game.add.audio("bomb");
         enter.play();
       
         //  The scrolling starfield background
@@ -227,6 +227,7 @@ window.onload = function() {
         //  Increase the score
         score += 20;
         scoreText.text = scoreString + score;
+        bomb.play();
 
         //  And create an explosion :)
         var explosion = explosions.getFirstExists(false);
