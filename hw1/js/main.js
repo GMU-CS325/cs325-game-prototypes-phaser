@@ -1,7 +1,7 @@
 window.onload = function() {
 
 
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update});
+    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render});
 
     function preload() {
 
@@ -129,6 +129,9 @@ window.onload = function() {
                 alien.play('fly');
                 alien.body.moves = false;
             }
+        }
+        function render()
+        {
         }
 
         aliens.x = 100;
