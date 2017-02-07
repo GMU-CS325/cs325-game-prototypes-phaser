@@ -200,6 +200,7 @@ window.onload = function() {
             if (game.time.now > firingTimer)
             {
                 enemyFires();
+                bomb.play();
             }
 
             //  Run collision
