@@ -193,7 +193,7 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, cr
             if (fireButton.isDown)
             {
                 fireBullet();
-                bulletsound.play();
+             
             }
 
             if (game.time.now > firingTimer)
