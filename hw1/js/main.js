@@ -130,9 +130,7 @@ window.onload = function() {
                 alien.body.moves = false;
             }
         }
-        function render()
-        {
-        }
+        
 
         aliens.x = 100;
         aliens.y = 50;
@@ -143,6 +141,9 @@ window.onload = function() {
         //  When the tween loops it calls descend
         tween.onLoop.add(descend, this);
     }
+    function render()
+        {
+        }
 
     function setupInvader (invader) {
 
