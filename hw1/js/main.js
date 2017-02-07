@@ -1,9 +1,7 @@
 window.onload = function() {
 
 
-   
-
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render});
+    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, render: render });
 
     function preload() {
 
@@ -132,7 +130,6 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, cr
                 alien.body.moves = false;
             }
         }
-        
 
         aliens.x = 100;
         aliens.y = 50;
@@ -143,7 +140,6 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, cr
         //  When the tween loops it calls descend
         tween.onLoop.add(descend, this);
     }
-    
 
     function setupInvader (invader) {
 
@@ -204,14 +200,14 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', { preload: preload, cr
 
     }
 
-  function render() {
+    function render() {
 
-    // for (var i = 0; i < aliens.length; i++)
-    // {
-    //     game.debug.body(aliens.children[i]);
-    // }
+        // for (var i = 0; i < aliens.length; i++)
+        // {
+        //     game.debug.body(aliens.children[i]);
+        // }
 
-}
+    }
 
     function collisionHandler (bullet, alien) {
 
