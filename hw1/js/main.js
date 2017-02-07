@@ -45,6 +45,7 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         enter = game.add.audio('enter');
         death = game.add.audio('death');
+        laser = game.add.audio('laser');
         gameover=game.add.audio("gameover")
         enter.play();
         //  The scrolling starfield background
