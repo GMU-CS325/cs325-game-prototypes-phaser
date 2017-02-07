@@ -14,6 +14,7 @@ window.onload = function() {
         game.load.audio('enter', 'assets/enter.mp3');
         game.load.audio('death', 'assets/death.mp3');
         game.load.audio('gameover', 'assets/gameover.mp3');
+          game.load.audio('gameover', 'assets/laser.mp3');
 
 
 
@@ -38,7 +39,7 @@ window.onload = function() {
     var enter;
     var death;
     var gameover;
-
+    var laser;
     function create() {
 
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -317,6 +318,7 @@ window.onload = function() {
                 bullet.reset(player.x, player.y + 8);
                 bullet.body.velocity.y = -400;
                 bulletTime = game.time.now + 200;
+                laser.play();
             }
         }
 
