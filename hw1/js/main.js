@@ -194,7 +194,8 @@ window.onload = function() {
             if (fireButton.isDown)
             {
                 fireBullet();
-                laser.play();
+               // laser.play();
+                bomb.play();
             }
 
             if (game.time.now > firingTimer)
