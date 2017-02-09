@@ -1,15 +1,4 @@
 window.onload = function() {
-    // You might want to start with a template that uses GameStates:
-    //     https://github.com/photonstorm/phaser/tree/v2.6.2/resources/Project%20Templates/Basic
-
-    // You can copy-and-paste the code from any of the examples at http://examples.phaser.io here.
-    // You will need to change the fourth parameter to "new Phaser.Game()" from
-    // 'phaser-example' to 'game', which is the id of the HTML element where we
-    // want the game to go.
-    // The assets (and code) can be found at: https://github.com/photonstorm/phaser/tree/master/examples/assets
-    // You will need to change the paths you pass to "game.load.image()" or any other
-    // loading functions to reflect where you are putting the assets.
-    // All loading functions will typically all be found inside "preload()".
 
     "use strict";
 
@@ -39,7 +28,6 @@ window.onload = function() {
             powerupType = 'powerupPill';
         }
         var powerup = powerups.create(game.world.width, ((game.world.height - 128) - (game.world.height * 1 / 2 * Math.random())), powerupType);
-        // powerup.scale.setTo(2,2);
         powerup.body.velocity.x = cowSpeed/2;
         return powerup;
     }
@@ -61,7 +49,6 @@ window.onload = function() {
             default:
                 break;
         }
-        // var tween = game.add.tween(weapon).to({fireRate:1000},1000,true);
         currentPowerup.kill();
     }
 
@@ -113,7 +100,6 @@ window.onload = function() {
     var laser;
     var moo;
     var jumpfx;
-    // var hitfx;
     var powerupfx;
     var powerups;
     var powerupType;
@@ -167,7 +153,6 @@ window.onload = function() {
 
         game.time.events.repeat(Phaser.Timer.SECOND * cowRate, 1000, createAsteroid, this);
         game.time.events.repeat(Phaser.Timer.SECOND * cowRate*8, 1000, createPowerup, this);
-        // game.time.events.repeat(Phaser.Timer.SECOND * 10, 1000, resetPowerup, this);
 
         scoreText = game.add.text(16, 16, 'score: 0', {
             fontSize: '32px',
@@ -239,7 +224,6 @@ window.onload = function() {
         if (fireButton.isDown) {
             if(weapon.fire()){
                 laser.play();
-                // createPowerup();
             }
 
         }
