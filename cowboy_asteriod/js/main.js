@@ -1,9 +1,10 @@
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, render: render });
 
 function preload() {
 
     game.load.image('arrow', 'assets/asteroid_shooter.png');
     game.load.image('bullet', 'assets/cowboy_bullet.png');
+//    game.load.image('star', 'assets/star.png');
     
 }
 
@@ -65,7 +66,7 @@ function fire() {
 function render() {
 
     game.debug.text('Active Bullets: ' + bullets.countLiving() + ' / ' + bullets.total, 32, 32);
-    game.debug.spriteInfo(sprite, 32, 450);
+//    game.debug.spriteInfo(sprite, 32, 450);
 
 }
 
