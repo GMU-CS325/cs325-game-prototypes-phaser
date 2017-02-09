@@ -46,6 +46,7 @@ window.onload = function() {
 
     function collectPowerup(player, currentPowerup){
         powerupfx.play();
+        powerupType = 'powerupBolt';
         switch(powerupType){
             case 'powerupStar':
                 player.body.gravity.y = 0;
@@ -116,6 +117,7 @@ window.onload = function() {
     var powerupfx;
     var powerups;
     var powerupType;
+    var bgm;
 
 
     function preload() {
@@ -134,6 +136,7 @@ window.onload = function() {
         game.load.audio('moofx', 'assets/cow_moo.wav');
         game.load.audio('jumpfx', 'assets/jump.wav');
         game.load.audio('powerupfx', 'assets/powerup.wav');
+        game.load.audio('bgm', 'assets/01 A Night Of Dizzy Spells.mp3');
 
 
         points = 0;
@@ -152,6 +155,8 @@ window.onload = function() {
         moo = game.add.audio('moofx');
         jumpfx = game.add.audio('jumpfx');
         powerupfx = game.add.audio('powerupfx');
+        bgm = game.add.audio('bgm');
+        bgm.play();
 
         // create groups
         powerups = game.add.group();
