@@ -5,6 +5,7 @@ function preload() {
     game.load.image('arrow', 'assets/asteroid_shooter.png');
     game.load.image('bullet', 'assets/cowboy_bullet.png');
 //    game.load.image('star', 'assets/star.png');
+    game.load.audio('boden', ['assets/F-Zero - Death Wind.mp3']);
     
 }
 
@@ -13,6 +14,8 @@ var bullets;
 
 var fireRate = 100;
 var nextFire = 0;
+
+var music;
 
 function create() {
 
@@ -34,6 +37,29 @@ function create() {
     game.physics.enable(sprite, Phaser.Physics.ARCADE);
 
     sprite.body.allowRotation = false;
+    
+    music = game.add.audio('boden');
+
+    music.play();
+
+    game.input.onDown.add(changeVolume, this);
+
+}
+
+function changeVolume(pointer) {
+
+    if (pointer.y < 100)
+    {
+        music.mute = false;
+    }
+    else if (pointer.y < 300)
+    {
+        music.volume += 0.1;
+    }
+    else
+    {
+        music.volume -= 0.1;
+    }
 
 }
 
@@ -66,6 +92,7 @@ function fire() {
 function render() {
 
     game.debug.text('Active Bullets: ' + bullets.countLiving() + ' / ' + bullets.total, 32, 32);
+//    game.debug.soundInfo(music, 20, 450);
 //    game.debug.spriteInfo(sprite, 32, 450);
 
 }
