@@ -2,7 +2,7 @@
 
 function make_main_game_state( game )
 {
-	function preload() {
+    function preload() {
         // Load an image and call it 'logo'.
         game.load.image( 'logo', 'assets/phaser.png' );
     }
@@ -36,8 +36,8 @@ function make_main_game_state( game )
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, game.input.activePointer, 500, 500, 500 );
     }
-	
-	return { "preload": preload, "create": create, "update": update };
+    
+    return { "preload": preload, "create": create, "update": update };
 }
 
 
