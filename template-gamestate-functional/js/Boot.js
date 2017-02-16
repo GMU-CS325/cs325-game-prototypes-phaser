@@ -1,3 +1,5 @@
+"use strict";
+
 var GameStates = {};
 
 GameStates.makeBoot = function( game ) {

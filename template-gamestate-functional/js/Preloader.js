@@ -1,3 +1,5 @@
+"use strict";
+
 GameStates.makePreloader = function( game ) {
 
 	var background = null;
