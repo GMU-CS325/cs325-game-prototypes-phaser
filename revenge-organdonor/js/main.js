@@ -77,8 +77,8 @@ window.onload = function() {
 		fx.addMarker('over', 0.37, 0.69);
 		
 		scoreText = game.add.text(32, 10, 'score: 1', { font: "20px Arial", fill: "#ff0000", align: "left" });
-		latinNumber = game.add.text(200, 30, 'collect roman number \n'+lNumber, { font: "30px Arial Black", fill: "#ff0000", align: "center" });
-		introText = game.add.text(game.world.centerX, 300, '- instructions to play game - \n the game is simple \n collect the correct convertion\n of the number and get a point \n collect the wrong and loose a point  \n if you get to 5 points you win the game \n if you get to 0 you loose the game \n ......\n click to start and good luck!!',
+		latinNumber = game.add.text(200, 30, 'Collect Organs \n'+lNumber, { font: "30px Arial Black", fill: "#ff0000", align: "center" });
+		introText = game.add.text(game.world.centerX, 300, '- instructions to play game - \n the game is simple \n collect the correct organs\n of the number and get a point \n collect the wrong and loose a point  \n if you get to 5 points you win the game \n if you get to 0 you loose the game \n ......\n click to start and good luck!!',
 		 
 		 { font: "25px Arial Black", fill: "#0000FF", align: "center" });
 		introText.anchor.setTo(0.5, 0.5);
@@ -177,13 +177,13 @@ window.onload = function() {
 	function collisionHandler(_player, _effect) {
 
 		_effect.kill(); //destroy effect
-		if (rNumber == lNumber){
+		if (rNumber == rNumber){
 			score ++; //increment score
 			if(score >4){
 				gameOver();
 			}
 			lNumber = Math.floor((Math.random() * 5) + 1);			
-			latinNumber.text = 'collect roman number \n'+lNumber; //display new score
+			latinNumber.text = 'Collect Organ \n'+lNumber; //display new score
 		}
 		else {
 			score --;
@@ -227,16 +227,7 @@ window.onload = function() {
 	}
 
 	function render() {
-
-	    // game.debug.text(game.time.suggestedFps, 32, 32);
-	    // game.debug.text(game.time.physicsElapsed, 32, 32);
-	    // game.debug.body(player);
-	    // game.debug.bodyInfo(player, 16, 24);
-	    // game.debug.text("rNumber: "+rNumber, 50, 50);
-
-	    // game.debug.text("lNumber: "+lNumber, 500, 50);
-
-	    // game.debug.text("arr[number]: "+arr[lNumber], 300, 150);
+        //Add 
 
 	}
 
