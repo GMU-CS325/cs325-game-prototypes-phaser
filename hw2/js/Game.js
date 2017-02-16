@@ -283,7 +283,8 @@
        if(this.q1==true&&this.q2==true&&this.q3==true&&this.q4==true)
        {
         this.unblock.kill();
-         this.bredgetext.text="Go!!!!!!";
+         this.bridgetext.text="Go!!!!!!";
+         this.bridgetext.scale.setTo(0.5,0.5);
        }
       },
 
