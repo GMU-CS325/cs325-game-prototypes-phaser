@@ -23,7 +23,7 @@ BasicGame.shoot = function (game) {
     this.gameover;
     this.laser;
     this.bomb;
-    this.heath=10;
+    this.heath=300;
     this.tween;
     this.dead=false;
     this.queen;
