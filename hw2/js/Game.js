@@ -69,7 +69,8 @@
       this.q2=false;
       this.q3=false;
       this.q4=false;
-      this.queen
+      this.queen;
+    this.bridgetext;
 
 
      
@@ -156,6 +157,10 @@
 
       this.brige=this.add.tileSprite(1900,880,1000,80,'brige');
        this.unblock=this.add.tileSprite(2000,880,80,80,'block');
+           this.bridgetext = this.add.text(2010,800,'You must answer 4 questions to pass here', { font: '84px Arial', fill: '#fff' });
+      this.bridgetext.anchor.setTo(0.5, 0.5);
+      this.bridgetext.scale.setTo(0.25, 0.25);
+      this.bridgetext.visible = true;
             
 
 
@@ -278,6 +283,7 @@
        if(this.q1==true&&this.q2==true&&this.q3==true&&this.q4==true)
        {
         this.unblock.kill();
+         this.bredgetext.text="Go!!!!!!";
        }
       },
 
