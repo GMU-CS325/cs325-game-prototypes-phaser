@@ -52,7 +52,7 @@ BasicGame.Game.prototype = {
         
         // When you click on the sprite, you go back to the MainMenu.
         this.bouncy.inputEnabled = true;
-        this.bouncy.events.onInputDown.add( function() { this.state.start('MainMenu'); }, this );
+        this.bouncy.events.onInputDown.add( function() { this.quitGame(); }, this );
     },
 
     update: function () {
@@ -67,7 +67,7 @@ BasicGame.Game.prototype = {
         this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
     },
 
-    quitGame: function (pointer) {
+    quitGame: function () {
 
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
