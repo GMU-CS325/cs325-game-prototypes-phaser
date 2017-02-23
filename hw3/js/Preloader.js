@@ -14,6 +14,7 @@ GameStates.makePreloader = function( game ) {
             //	These are the assets we loaded in Boot.js
             //	A nice sparkly background and a loading progress bar
             background = game.add.sprite(0, 0, 'preloaderBackground');
+            background.scale.setTo(1.3,1.4);
             preloadBar = game.add.sprite(300, 400, 'preloaderBar');
         game.load.setPreloadSprite(preloadBar);
 
@@ -26,6 +27,7 @@ GameStates.makePreloader = function( game ) {
          game.load.audio('backgroundmusic', 'assets/backgroundmusic.m4a');
            game.load.audio('laser', 'assets/laser.mp3');
            game.load.audio('disapper', 'assets/disapper.mp3');
+           game.load.audio('loading', 'assets/loading.png');
         //  + lots of other required assets here
         //  + lots of other required assets here
         game.load.image( 'logo', 'assets/phaser.png' );

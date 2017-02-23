@@ -257,8 +257,8 @@ function checkLine() {
             }
         }
         score += 100;
-        scoreText.text = ""+score+"";
-        levelText.text = times;
+        scoreText.text = score+'/500';
+        levelText.text = times+'/10';
       
         
     }
@@ -485,7 +485,7 @@ function checkCollide() {
     sound.scale.setTo(0.6,0.6);
       sound.inputEnabled = true;
     sound.events.onInputDown.add(stopmusic, this);
-    scoreText = game.add.text(290, 60, '0', {
+    scoreText = game.add.text(290, 60, '0/500', {
         fill : '#ff00f6',
         align : 'center'
     });
@@ -532,7 +532,7 @@ function checkCollide() {
             //the "click to restart" handler
             game.input.onTap.addOnce(restart,this);
             }
-                levelText.text = times;
+                levelText.text = times+'/10';
             
             game.world.bringToTop(block);
             game.world.bringToTop(stateText);

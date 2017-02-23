@@ -44,7 +44,7 @@ function beginGame() {
     }
    return {
       preload: function () {
-    game.load.spritesheet('fangkuai', 'assets/fangkuai.png',20,20);
+    game.load.spritesheet('fangkuai', '../images/fangkuai.png',20,20);
     game.load.image('logo', 'assets/logo.png');
     game.load.image('begin', 'assets/begin.jpg');
     
