@@ -25,6 +25,8 @@ GameStates.makePreloader = function( game ) {
          game.load.audio('welcome', 'assets/welcome.mp3');
          game.load.audio('backgroundmusic', 'assets/backgroundmusic.m4a');
            game.load.audio('laser', 'assets/laser.mp3');
+           game.load.audio('disapper', 'assets/disapper.mp3');
+        //  + lots of other required assets here
         //  + lots of other required assets here
         game.load.image( 'logo', 'assets/phaser.png' );
     

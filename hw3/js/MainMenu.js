@@ -43,6 +43,7 @@ var block;
   var helptime;
   var laser;
   var click1;
+  var disapper;
 
 function pauseGame() {
     
@@ -243,6 +244,7 @@ function checkLine() {
                     j--;
                 }
             }
+            disapper.play();
         }
         
 
@@ -443,6 +445,7 @@ function checkCollide() {
         },
     
         create: function () {
+            disapper=game.add.audio('disapper');
             backgroundmusic=game.add.audio('backgroundmusic');
             backgroundmusic.play();
             laser=game.add.audio('laser');
@@ -477,6 +480,7 @@ function checkCollide() {
     helpbutton.events.onInputDown.add(help, this);
 
     var sound = game.add.sprite(285, 420, 'sound');
+  
     pause.scale.setTo(0.7,0.7);
     sound.scale.setTo(0.6,0.6);
       sound.inputEnabled = true;
