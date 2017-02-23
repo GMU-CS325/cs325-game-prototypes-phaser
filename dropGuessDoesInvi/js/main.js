@@ -25,6 +25,8 @@ window.onload = function() {
     var platforms;
     var count = 1;
     var size = .25;
+    var originalSize = .25;
+    var introText;
     
     function create() {
 
@@ -46,7 +48,7 @@ window.onload = function() {
         ledge.body.immovable = true;
 
         //Player Settings
-        player = game.add.sprite(32, game.world.height - 150, 'duck');
+        player = game.add.sprite(740, game.world.height - 80, 'duck');
         player.anchor.setTo(0.5, 0);
         player.scale.setTo(size);
         game.physics.arcade.enable(player);
@@ -74,10 +76,21 @@ window.onload = function() {
 
         //Input
         cursors = game.input.keyboard.createCursorKeys();
+        
+        introText = game.add.text(300, 300, 'SO MUCH POOP!!! MUST EAT!!!', { fontSize: '32px', fill: '#000' });
 
 }
     
     function update() {
+        
+        if(score === 4)
+            {
+                game.add.text(300, 300, 'SO MUCH WIN!!!', { fontSize: '32px', fill: '#000' });
+            }
+        if(score > 0)
+            {
+                introText.text = '';
+            }
 
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(poops, platforms);
@@ -121,7 +134,7 @@ window.onload = function() {
     pop.kill();
         player.body.velocity.y = 50;
         count++;
-        size = size * count;
+        size = size + originalSize;
         player.scale.setTo(size);
 
     //  Add and update the score
