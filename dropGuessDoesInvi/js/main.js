@@ -6,7 +6,7 @@ window.onload = function() {
     
     function preload() {
 //        game.load.spritesheet('duck','assets/fullduck.png', 240, 287, 20);
-        game.load.spritesheet('duck','assets/dogesheet.png', 75, 80, 8);
+        game.load.spritesheet('duck','assets/DogeSheet2.png', 75, 80);
 //        game.load.spritesheet('duck', 'assets/dude.png', 32, 48);
 //        game.load.image('background', 'assets/background.jpg');
         game.load.image('ground', 'assets/ground.png');
@@ -118,7 +118,7 @@ window.onload = function() {
         {
             player.animations.stop();
 
-            player.frame = 4;
+            player.frame = 9;
         }
 
         if (cursors.up.isDown && player.body.touching.down)
