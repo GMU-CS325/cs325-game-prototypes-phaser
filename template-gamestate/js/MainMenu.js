@@ -1,3 +1,4 @@
+"use strict";
 
 BasicGame.MainMenu = function (game) {
 

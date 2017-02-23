@@ -1,3 +1,5 @@
+"use strict";
+
 GameStates.makeGame = function( game, shared ) {
     // Create your own variables.
     var bouncy = null;
