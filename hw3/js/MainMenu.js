@@ -523,7 +523,7 @@ function checkCollide() {
     helped=false;
     click=false;
    }
-            if(score>=5000)
+            if(score>=500)
             {
          stateText.visible = true;
            stateText.text=" You Win! \n Click to restart";
