@@ -19,13 +19,20 @@ window.onload = function() {
         update: update
     });
 
+    function geCollide(player, groundEnemies){
+        player.loadTexture('playerDead');
+    }
+
     function preload() {
         // Load an image and call it 'logo'.
         // game.load.image('logo', 'assets/phaser.png');
         game.load.image('bg1', 'assets/set2_background.png');
         game.load.image('bg2', 'assets/set2_hills.png');
         game.load.image('player', 'assets/playerBlue_stand.png');
+        game.load.image('playerDead', 'assets/playerBlue_dead.png');
         game.load.image('plaform', 'assets/blockBrown.png');
+        game.load.image('genemy', 'assets/enemySpikey_1.png');
+        game.load.image('flenemy', 'assets/enemyFloating_1.png');
 
     }
 
@@ -35,7 +42,7 @@ window.onload = function() {
     var bg2;
     var player;
     var platforms;
-    var ground;
+    // var ground;
     var invisibleButton;
     var groundEnemies;
     var floatEnemies;
@@ -51,14 +58,14 @@ window.onload = function() {
         player.body.bounce.y = 0.2;
         player.body.gravity.y = 800;
         player.body.collideWorldBounds = true;
+        invisibleButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
         platforms = game.add.group();
         platforms.enableBody = true;
 
         var grndhelper = 0;
         for(let i = 0; i < 13; i ++){
-            ground = platforms.create(grndhelper, game.world.height - 64, 'plaform');
-            // ground = platforms.create(64, game.world.height - 64, 'plaform');
+            var ground = platforms.create(grndhelper, game.world.height - 64, 'plaform');
             ground.scale.setTo(1, 1);
             ground.body.immovable = true;
             ground.body.collideWorldBounds = true;
@@ -67,12 +74,38 @@ window.onload = function() {
         }
 
 
-        invisibleButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+        groundEnemies = game.add.group();
+        groundEnemies.enableBody = true;
+        floatEnemies = game.add.group();
+        floatEnemies.enableBody = true;
+        var genemyHelper = 80;
+        for(let i = 0; i < 13; i ++){
+            var genemy = groundEnemies.create(genemyHelper,game.world.height - 100, 'genemy');
+            // ground.scale.setTo(1, 1);
+            genemy.body.immovable = true;
+            // ground.body.collideWorldBounds = true;
+            game.physics.arcade.enable(genemy);
+            // grndhelper += 64;
+            genemyHelper+=320;
+        }
+        var flenemyHelper = 200;
+        for(let i = 0; i < 13; i ++){
+            var flenemy = floatEnemies.create(flenemyHelper,game.world.height - 250, 'flenemy');
+            // ground.scale.setTo(1, 1);
+            flenemy.body.immovable = true;
+            // ground.body.collideWorldBounds = true;
+            game.physics.arcade.enable(flenemy);
+            // grndhelper += 64;
+            flenemyHelper+=320;
+        }
+        // var genemy = groundEnemies.create(80,game.world.height - 100, 'genemy');
 
     }
 
     function update() {
         game.physics.arcade.collide(platforms, player);
+        game.physics.arcade.collide(groundEnemies, player, geCollide);
+        game.physics.arcade.collide(floatEnemies, player, geCollide);
 
         cursors = game.input.keyboard.createCursorKeys();
         if (invisibleButton.isDown) {
@@ -92,7 +125,7 @@ window.onload = function() {
             // player.frame = 4;
         }
 
-        if (cursors.up.isDown && player.body.touching.down) {
+        if (cursors.up.isDown && player.body.touching.down && !invisibleButton.isDown) {
             player.body.velocity.y = -400;
             // jumpfx.play();
         }
