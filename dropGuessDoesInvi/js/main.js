@@ -1,49 +1,132 @@
 "use strict";
 
 window.onload = function() {
-    // You can copy-and-paste the code from any of the examples at http://examples.phaser.io here.
-    // You will need to change the fourth parameter to "new Phaser.Game()" from
-    // 'phaser-example' to 'game', which is the id of the HTML element where we
-    // want the game to go.
-    // The assets (and code) can be found at: https://github.com/photonstorm/phaser/tree/master/examples/assets
-    // You will need to change the paths you pass to "game.load.image()" or any other
-    // loading functions to reflect where you are putting the assets.
-    // All loading functions will typically all be found inside "preload()".
     
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
-        // Load an image and call it 'logo'.
-        game.load.image( 'logo', 'assets/phaser.png' );
+//        game.load.spritesheet('duck','assets/fullduck.png', 240, 287, 20);
+        game.load.spritesheet('duck','assets/dogesheet.png', 75, 80, 8);
+//        game.load.spritesheet('duck', 'assets/dude.png', 32, 48);
+//        game.load.image('background', 'assets/background.jpg');
+        game.load.image('ground', 'assets/ground.png');
+        game.load.image('poopIMG', 'assets/poopIMG.png');
     }
     
-    var bouncy;
+    var player;
+    var background;
+    var music;
+    var cursors;
+    
+    var poops;
+    var outText;
+    var score = 0;
+    
+    var platforms;
+    var count = 1;
+    var size = .25;
     
     function create() {
-        // Create a sprite at the center of the screen using the 'logo' image.
-        bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
+
+        game.stage.backgroundColor = "#4488AA";
+        game.physics.startSystem(Phaser.Physics.ARCADE);
         
-        // Turn on the arcade physics engine for this sprite.
-        game.physics.enable( bouncy, Phaser.Physics.ARCADE );
-        // Make it bounce off of the world bounds.
-        bouncy.body.collideWorldBounds = true;
+//        game.add.sprite(0, 0, 'sky');
         
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Build something amazing.", style );
-        text.anchor.setTo( 0.5, 0.0 );
-    }
+        
+        //Platform Initiation
+        platforms = game.add.group();
+        platforms.enableBody = true;
+        var ground = platforms.create(0, game.world.height - 30, 'ground');
+//        ground.scale.setTo(2, 2);
+        ground.body.immovable = true;
+        var ledge = platforms.create(400, 450, 'ground');
+        ledge.body.immovable = true;
+        ledge = platforms.create(-150, 250, 'ground');
+        ledge.body.immovable = true;
+
+        //Player Settings
+        player = game.add.sprite(32, game.world.height - 150, 'duck');
+        player.anchor.setTo(0.5, 0);
+        player.scale.setTo(size);
+        game.physics.arcade.enable(player);
+        player.body.bounce.y = 0.2;
+        player.body.gravity.y = 300;
+        player.body.collideWorldBounds = true;
+        player.animations.add('left', [9, 8, 7, 6, 5, 4, 3, 2, 1], 10, true);
+        player.animations.add('right', [9, 8, 7, 6, 5, 4, 3, 2, 1], 10, true);
+
+        //PowerUps
+        poops = game.add.group();
+        poops.enableBody = true;
+        for (var i = 0; i < 4; i++)
+        {
+            var pop = poops.create(i * 180, 0, 'poopIMG');
+            pop.scale.setTo(.08);
+
+            pop.body.gravity.y = 300;
+
+//            pop.body.bounce.y = 0.7 + Math.random() * 0.2;
+        }
+        
+        //Score
+        outText = game.add.text(16, 16, 'Poop Eaten: 0', { fontSize: '32px', fill: '#000' });
+
+        //Input
+        cursors = game.input.keyboard.createCursorKeys();
+
+}
     
     function update() {
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, game.input.activePointer, 500, 500, 500 );
-    }
+
+        game.physics.arcade.collide(player, platforms);
+        game.physics.arcade.collide(poops, platforms);
+
+        game.physics.arcade.overlap(player, poops, growUp, null, this);
+
+        player.body.velocity.x = 0;
+
+        if (cursors.left.isDown)
+        {
+            player.body.velocity.x = -150;
+            player.scale.setTo(size, size);
+
+            player.animations.play('left');
+        }
+        else if (cursors.right.isDown)
+        {
+            player.body.velocity.x = 150;
+            player.scale.setTo(-size, size);
+            
+
+            player.animations.play('right');
+        }
+        else
+        {
+            player.animations.stop();
+
+            player.frame = 4;
+        }
+
+        if (cursors.up.isDown && player.body.touching.down)
+        {
+            player.body.velocity.y = -350;
+            player.frame = 19;
+        }
+
+}    
+    function growUp (player, pop) {
+    
+    // Removes the star from the screen
+    pop.kill();
+        player.body.velocity.y = 50;
+        count++;
+        size = size * count;
+        player.scale.setTo(size);
+
+    //  Add and update the score
+    score += 1;
+    outText.text = 'Poop Eaten: ' + score;
+
+}
 };
