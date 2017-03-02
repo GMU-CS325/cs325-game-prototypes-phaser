@@ -393,7 +393,7 @@ function keyPress(char) {
       player.body.moves=true;
       if(round==2)
       {
-        test.text="Oh, my dear hero, you kill all monster in round1???? Ok,\nyou.... you are so good, now I prove you the first skill. \nI would call it Nimbus! So this skill have two effects 1:\nyou can knocks back the monster 2: cause damage. \nNow monsters are becoming stronger. Go, hero!";
+        test.text="Oh, my dear hero, you kill all monster in round1???? Ok,\nyou.... you are so good, now I give you the first skill. \nI would call it Nimbus! So this skill have two effects 1:\nyou can knocks back the monster 2: cause damage. \nNow monsters are becoming stronger. Go, hero!";
       }
       if(round==3)
       {
