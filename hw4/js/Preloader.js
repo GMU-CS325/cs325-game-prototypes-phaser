@@ -28,7 +28,7 @@ GameStates.makePreloader = function( game ) {
                   game.load.image('skill3','assets/skill3.png');
                     game.load.image('skill4','assets/skill4.png');
                          game.load.spritesheet('leidian','assets/leidian.jpg',346,99,4,0,1.5);
-                          game.load.spritesheet('secretskill','assets/secretskill.png',250,425,8,0,1.5);
+            game.load.spritesheet('secretskill','assets/secretskill.png',250,425,8,0,1.5);
             game.load.image('loadingphoto','assets/loadingphoto.jpg');
              game.load.image('tree','assets/tree.png');
              game.load.image('wordframe','assets/wordframe.png');
@@ -38,11 +38,11 @@ GameStates.makePreloader = function( game ) {
        game.load.spritesheet('player','assets/hero.png',20,24,20,0,1.5);
        game.load.spritesheet('playerattack','assets/hero-attack.png',27,29,6,0,0);
         game.load.spritesheet('playerattackright','assets/hero-attackright.png',27,29,6,0,0);
-       game.load.spritesheet('monster1','assets/monster1.png',31,31,6,0.5,0.5);
-        game.load.spritesheet('monster2','assets/monster2.png',27,30,6,0,0.9);
-         game.load.spritesheet('monster3','assets/monster3.png',33,35,6,0.5,0.5);
-          game.load.spritesheet('monster4','assets/monster4.png',31 ,29,6,0.6,0.6);
-           game.load.spritesheet('monster5','assets/monster5.png',31,31,6,0.5,0.5);
+       game.load.spritesheet('monster1','assets/monster1.png',32.5,33,12,0,0);
+        game.load.spritesheet('monster2','assets/monster2.png',29,32,12,0,0);
+         game.load.spritesheet('monster3','assets/monster3.png',33,32,12,0.5,0.5);
+          game.load.spritesheet('monster4','assets/monster4.png',32.5 ,31.5,12,0,0);
+           game.load.spritesheet('monster5','assets/monster5.png',31,31,12,0.5,0.5);
             //	These are the assets we loaded in Boot.js
             //	A nice sparkly background and a loading progress bar
             background = game.add.sprite(0, 0, 'preloaderBackground');

@@ -220,13 +220,31 @@ function keyPress(char) {
 
 
          }
+        else  if(game.physics.arcade.distanceBetween(player,monstergroup.children[i].children[0])<70&&(-10<monstergroup.children[i].children[0].y-player.y<10)&&monstergroup.children[i].children[0].x>=player.x&&lives>0)
+          {
+           monstergroup.children[i].children[0].body.moves=false;
+           monstergroup.children[i].children[1].body.moves=false;
+           monstergroup.children[i].children[0].play('attackleft');
+           playerhealth=playerhealth-1;
+           playerblood.scale.setTo((playerhealth/orplayer)*2,1);
+
+
+
+         }
          else if(begin)
           {    monstergroup.children[i].children[0].body.moves=true;
             monstergroup.children[i].children[1].body.moves=true;
 
             game.physics.arcade.moveToObject(monstergroup.children[i].children[0],player,120);
             game.physics.arcade.moveToObject(monstergroup.children[i].children[1],player,120);
+            if(monstergroup.children[i].children[0].x<player.x)
+            {
             monstergroup.children[i].children[0].play('normal');
+          }
+         if( monstergroup.children[i].children[0].x>=player.x)
+         {
+          monstergroup.children[i].children[0].play('normalleft');
+         }
           }
         }
 
@@ -258,7 +276,9 @@ function keyPress(char) {
               monster.scale.setTo(1.5,1.5);
               monster.health=20;
               monster.animations.add('attack', [0,1,2,3,4,5], 5, false);
+              monster.animations.add('attackleft', [8,7,6,11,10,9], 5, false);
               monster.animations.add('normal', [0], 5, false);
+                monster.animations.add('normalleft', [8], 5, false);
               game.physics.enable(monster, Phaser.Physics.ARCADE);
               game.physics.enable(monster, Phaser.Physics.ARCADE);
               game.physics.enable(blood, Phaser.Physics.ARCADE);
@@ -275,8 +295,10 @@ function keyPress(char) {
           var blood=game.add.sprite(5, 50*y-10,'bloodbar');
           monster.scale.setTo(1.5,1.5);
           monster.health=40;
-          monster.animations.add('attack', [0,1,2,3,4,5], 5, false);
-          monster.animations.add('normal', [0], 5, false);
+     monster.animations.add('attack', [0,1,2,3,4,5], 5, false);
+              monster.animations.add('attackleft', [8,7,6,11,10,9], 5, false);
+              monster.animations.add('normal', [0], 5, false);
+                monster.animations.add('normalleft', [8], 5, false);
           game.physics.enable(monster, Phaser.Physics.ARCADE);
           monsterblood.add(monster);
           blood.scale.setTo(0.1,0.1);
@@ -294,8 +316,10 @@ function keyPress(char) {
          var blood=game.add.sprite(5, 50*y-10,'bloodbar');
          monster.scale.setTo(1.5,1.5);
          monster.health=80;
-         monster.animations.add('attack', [0,1,2,3,4,5], 4, false);
-         monster.animations.add('normal', [0], 5, false);
+ monster.animations.add('attackleft', [0,1,2,3,4,5], 5, false);
+              monster.animations.add('attack', [8,7,6,11,10,9], 5, false);
+              monster.animations.add('normal', [0], 5, false);
+                monster.animations.add('normalleft', [8], 5, false);
          game.physics.enable(monster, Phaser.Physics.ARCADE);
          monsterblood.add(monster);
          blood.scale.setTo(0.1,0.1);
@@ -313,8 +337,10 @@ function keyPress(char) {
           var blood=game.add.sprite(5, 50*y-10,'bloodbar');
           monster.scale.setTo(1.5,1.5);
           monster.health=160;
-          monster.animations.add('attack', [0,1,2,3,4,5], 5, false);
-          monster.animations.add('normal', [0], 5, false);
+       monster.animations.add('attack', [0,1,2,3,4,5], 5, false);
+              monster.animations.add('attackleft', [8,7,6,11,10,9], 5, false);
+              monster.animations.add('normal', [0], 5, false);
+                monster.animations.add('normalleft', [8], 5, false);
           game.physics.enable(monster, Phaser.Physics.ARCADE);
           monsterblood.add(monster);
           blood.scale.setTo(0.1,0.1);
