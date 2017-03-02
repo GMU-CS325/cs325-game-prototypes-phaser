@@ -257,6 +257,7 @@ function keyPress(char) {
         test.visible=false;
         begin=true;
         skilltext.visible=true;
+        player.body.moves=true;
       }
       function createmonster (round) {
         monstergroup.removeAll();
@@ -609,6 +610,7 @@ function collisionHandler1 (player, landingbad) {
     // fireButton.onDown.add(killmonster, this);
      //skill1.onDown.add(playskill1, this);  //jihao
      player.scale.setTo(2,2);
+     
 
 
      playerattack.scale.setTo(2,2);
@@ -634,6 +636,7 @@ function collisionHandler1 (player, landingbad) {
     player.animations.add('up', [8,9,10,11], 5, true);
 
     player.body.collideWorldBounds=true;
+    player.body.moves=false;
     wings=game.add.sprite(player.x,player.y,'wings');
     wings.visible=false;
 
@@ -767,7 +770,7 @@ if(round==4)
 
       player.body.velocity.setTo(0, 0);
 
-      if(game.time.now>time)
+      if(game.time.now>time&&begin==true)
       {
         playerattack.visible=false;
         playerattackright.visible=false
