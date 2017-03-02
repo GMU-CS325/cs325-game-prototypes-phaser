@@ -61,7 +61,8 @@
   var gameover;
   var talked=true;
   var extradamage=0;
-  var checked=true;;
+  var checked=true;
+  var skilltext;
 
 
 
@@ -237,6 +238,7 @@ function keyPress(char) {
         wordframe.visible=false;
         test.visible=false;
         begin=true;
+        skilltext.visible=true;
       }
       function createmonster (round) {
         monstergroup.removeAll();
@@ -629,7 +631,9 @@ function collisionHandler1 (player, landingbad) {
     wordframe.scale.setTo(0.9,1.05);  
     wordframe.fixedToCamera = true;
     test = game.add.text(100,380,"Hello, young brave, thanks for your helping. You shoud \ndefence 4 round mosnter attack to save me. If you win a \nround, I can prove you a new skill,Lol, do you think I am \na snob? I have no choice man , So in this round you can \nonly use the normal attack. Just do it!", { font: '25px Arial', fill: '#0ff' });
-
+    skilltext=game.add.text(280,470,"Q            W            E", { font: '25px Arial', fill: '#0ff' });
+    skilltext.fixedToCamera=true;
+    skilltext.text=" ";
      // test = game.add.text(100,380,, { font: '25px Arial', fill: '#0ff' });
      
      game.world.bringToTop(test);
@@ -653,6 +657,18 @@ function collisionHandler1 (player, landingbad) {
 
     update: function () {
 
+if(round==2)
+{
+  skilltext.text="Q"
+}
+if(round==3)
+{
+  skilltext.text="Q            W"
+}
+if(round==4)
+{
+ skilltext.text= "Q            W            E"
+}
       checkskill();
       //  secretskill.play('skill');
       game.camera.follow(player);
@@ -870,6 +886,7 @@ function collisionHandler1 (player, landingbad) {
       }
       enter.stop();
       test.text="You win! \n Click to enter next round"
+      skilltext.visible=false;
            landingbadgroup.removeAll();
       landinggoodgroup.removeAll();
       test.visible=true;
