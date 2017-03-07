@@ -1,133 +1,231 @@
 window.onload = function() {
-    // You might want to start with a template that uses GameStates:
-    //     https://github.com/photonstorm/phaser/tree/v2.6.2/resources/Project%20Templates/Basic
-
-    // You can copy-and-paste the code from any of the examples at http://examples.phaser.io here.
-    // You will need to change the fourth parameter to "new Phaser.Game()" from
-    // 'phaser-example' to 'game', which is the id of the HTML element where we
-    // want the game to go.
-    // The assets (and code) can be found at: https://github.com/photonstorm/phaser/tree/master/examples/assets
-    // You will need to change the paths you pass to "game.load.image()" or any other
-    // loading functions to reflect where you are putting the assets.
-    // All loading functions will typically all be found inside "preload()".
 
     "use strict";
 
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', {
+    function asteroidHit(bullet, asteroid) {
+        points += 10;
+        scoreText.text = "Score " + points;
+        moo.play();
+        bullet.kill();
+        asteroid.kill();
+
+    }
+
+    function createAsteroid() {
+        var asteroid = asteroids.create(game.world.width, ((game.world.height - 128) - (game.world.height * 1 / 2 * Math.random())), 'asteroid');
+        asteroid.scale.setTo(2,2);
+        asteroid.body.velocity.x = cowSpeed;
+        return asteroid;
+    }
+
+    function createPowerup(){
+        var r = Math.random();
+        if(r <= .4){
+            powerupType = 'powerupStar';
+        }else if(r <= .8){
+            powerupType = 'powerupBolt';
+        }else{
+            powerupType = 'powerupPill';
+        }
+        var powerup = powerups.create(game.world.width, ((game.world.height - 128) - (game.world.height * 1 / 2 * Math.random())), powerupType);
+        powerup.body.velocity.x = cowSpeed/2;
+        return powerup;
+    }
+
+    function collectPowerup(player, currentPowerup){
+        powerupfx.play();
+        powerupType = 'powerupBolt';
+        switch(powerupType){
+            case 'powerupStar':
+                player.body.gravity.y = 0;
+                game.time.events.add(Phaser.Timer.SECOND * 6, resetPowerup, this);
+                break;
+            case 'powerupPill':
+                break;
+            case 'powerupBolt':
+                weapon.fireRate = 300;
+                game.time.events.add(Phaser.Timer.SECOND * 6, resetPowerup, this);
+                break;
+            default:
+                break;
+        }
+        currentPowerup.kill();
+    }
+
+    function resetPowerup(){
+        switch(powerupType){
+            case 'powerupStar':
+                player.body.gravity.y = 800;
+                break;
+            case 'powerupPill':
+                break;
+            case 'powerupBolt':
+                weapon.fireRate = 1000;
+                break;
+            default:
+                break;
+        }
+        powerupType = 'none';
+
+    }
+
+    function playerHit(player, asteroid) {
+        asteroid.kill();
+
+        for(let i = 0; i < 10; i++){
+            player.alpha = 0;
+            var tween = game.add.tween(player).to( { alpha: 1 }, 2000, "Linear", true);
+        }
+    }
+
+    var game = new Phaser.Game(1000, 600, Phaser.AUTO, 'game', {
         preload: preload,
         create: create,
         update: update
     });
 
-    function geCollide(player, groundEnemies){
-        player.loadTexture('playerDead');
-    }
-
-    function preload() {
-        // Load an image and call it 'logo'.
-        // game.load.image('logo', 'assets/phaser.png');
-        game.load.image('bg1', 'assets/set2_background.png');
-        game.load.image('bg2', 'assets/set2_hills.png');
-        game.load.image('player', 'assets/playerBlue_stand.png');
-        game.load.image('playerDead', 'assets/playerBlue_dead.png');
-        game.load.image('plaform', 'assets/blockBrown.png');
-        game.load.image('genemy', 'assets/enemySpikey_1.png');
-        game.load.image('flenemy', 'assets/enemyFloating_1.png');
-
-    }
-
-    // var bouncy;
-    var cursors;
-    var bg1;
-    var bg2;
     var player;
     var platforms;
-    // var ground;
-    var invisibleButton;
-    var groundEnemies;
-    var floatEnemies;
+    var cursors;
+    var weapon;
+    var fireButton;
+    var asteroids;
+    var ground;
+    var points;
+    var scoreText;
+    var sky;
+    var cowRate;
+    var cowSpeed;
+    var lastPoints;
+    var laser;
+    var moo;
+    var jumpfx;
+    var powerupfx;
+    var powerups;
+    var powerupType;
+    var bgm;
+
+
+    function preload() {
+        // game image assets
+        game.load.image('sky', 'assets/earth_sky.png');
+        game.load.image('ground', 'assets/moon_surface.png');
+        game.load.image('asteroid', 'assets/spr_cow_0.png');
+        game.load.spritesheet('astronaut', 'assets/orange.png', 128,128);
+        game.load.image('laserblue', 'assets/laserBlue01.png');
+        game.load.image('powerupBolt', 'assets/bold_silver.png');
+        game.load.image('powerupPill', 'assets/pill_blue.png');
+        game.load.image('powerupStar', 'assets/star_gold.png');
+
+        // game sounds
+        game.load.audio('sfx', 'assets/laser.wav');
+        game.load.audio('moofx', 'assets/cow_moo.wav');
+        game.load.audio('jumpfx', 'assets/jump.wav');
+        game.load.audio('powerupfx', 'assets/powerup.wav');
+        game.load.audio('bgm', 'assets/01 A Night Of Dizzy Spells.mp3');
+
+
+        points = 0;
+    }
 
     function create() {
-        bg1 = game.add.sprite(0, 0, 'bg1');
-        bg2 = game.add.sprite(0, 0, 'bg2');
-        bg1.scale.setTo(1.25, 1.25);
-        bg2.scale.setTo(1.25, 1.25);
+        cowRate = 2;
+        cowSpeed = -300;
+        lastPoints = 0;
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+        sky = game.add.sprite(0, 0, 'sky');
+        sky.scale.setTo(1,1);
 
-        player = game.add.sprite(32, game.world.height / 2, 'player');
-        game.physics.arcade.enable(player);
-        player.body.bounce.y = 0.2;
-        player.body.gravity.y = 800;
-        player.body.collideWorldBounds = true;
-        invisibleButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+        // add audio triggers
+        laser = game.add.audio('sfx');
+        moo = game.add.audio('moofx');
+        jumpfx = game.add.audio('jumpfx');
+        powerupfx = game.add.audio('powerupfx');
+        bgm = game.add.audio('bgm');
+        bgm.play();
+
+        // create groups
+        powerups = game.add.group();
+        powerups.enableBody = true;
+
+        asteroids = game.add.group();
+        asteroids.enableBody = true;
+
+        game.time.events.repeat(Phaser.Timer.SECOND * cowRate, 1000, createAsteroid, this);
+        game.time.events.repeat(Phaser.Timer.SECOND * cowRate*8, 1000, createPowerup, this);
+
+        scoreText = game.add.text(16, 16, 'score: 0', {
+            fontSize: '32px',
+            fill: 'white'
+        });
 
         platforms = game.add.group();
         platforms.enableBody = true;
-
-        var grndhelper = 0;
-        for(let i = 0; i < 13; i ++){
-            var ground = platforms.create(grndhelper, game.world.height - 64, 'plaform');
-            ground.scale.setTo(1, 1);
-            ground.body.immovable = true;
-            ground.body.collideWorldBounds = true;
-            game.physics.arcade.enable(ground);
-            grndhelper += 64;
-        }
+        ground = platforms.create(0, game.world.height - 64, 'ground');
+        ground.scale.setTo(.5, 1);
+        ground.body.immovable = true;
 
 
-        groundEnemies = game.add.group();
-        groundEnemies.enableBody = true;
-        floatEnemies = game.add.group();
-        floatEnemies.enableBody = true;
-        var genemyHelper = 80;
-        for(let i = 0; i < 13; i ++){
-            var genemy = groundEnemies.create(genemyHelper,game.world.height - 100, 'genemy');
-            // ground.scale.setTo(1, 1);
-            genemy.body.immovable = true;
-            // ground.body.collideWorldBounds = true;
-            game.physics.arcade.enable(genemy);
-            // grndhelper += 64;
-            genemyHelper+=320;
-        }
-        var flenemyHelper = 200;
-        for(let i = 0; i < 13; i ++){
-            var flenemy = floatEnemies.create(flenemyHelper,game.world.height - 250, 'flenemy');
-            // ground.scale.setTo(1, 1);
-            flenemy.body.immovable = true;
-            // ground.body.collideWorldBounds = true;
-            game.physics.arcade.enable(flenemy);
-            // grndhelper += 64;
-            flenemyHelper+=320;
-        }
-        // var genemy = groundEnemies.create(80,game.world.height - 100, 'genemy');
+        player = game.add.sprite(32, game.world.height/2, 'astronaut');
+        game.physics.arcade.enable(player);
+
+        player.body.bounce.y = 0.2;
+        player.body.gravity.y = 800;
+        player.body.collideWorldBounds = true;
+        player.scale.setTo(.5,.5);
+
+        player.animations.add('left', [8, 9, 10, 11], 10, true);
+        player.animations.add('right', [4, 5, 6, 7], 10, true);
+
+        weapon = game.add.weapon(30, 'laserblue');
+        weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+        weapon.bulletSpeed = 350;
+        weapon.autofire = false;
+        weapon.fireRate = 1000;
+        weapon.trackSprite(player,50, 25, true);
+
+        fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+
 
     }
 
     function update() {
-        game.physics.arcade.collide(platforms, player);
-        game.physics.arcade.collide(groundEnemies, player, geCollide);
-        game.physics.arcade.collide(floatEnemies, player, geCollide);
-
-        cursors = game.input.keyboard.createCursorKeys();
-        if (invisibleButton.isDown) {
-            player.alpha = 0.5;
-        } else {
-            player.alpha = 1;
+        if(points % 100 === 0 && points > lastPoints){
+            cowRate += 1;
+            cowSpeed -= 50;
+            lastPoints = points;
         }
+
+        game.physics.arcade.collide(player, asteroids, playerHit);
+        game.physics.arcade.collide(weapon.bullets, asteroids, asteroidHit, null, this);
+        game.physics.arcade.collide(player, powerups, collectPowerup);
+
+
+        var hitPlatform = game.physics.arcade.collide(player, platforms);
+        cursors = game.input.keyboard.createCursorKeys();
+        player.body.velocity.x = 0;
+
         if (cursors.left.isDown) {
             player.body.velocity.x = -200;
-            // player.animations.play('left');
+            player.animations.play('left');
         } else if (cursors.right.isDown) {
             player.body.velocity.x = 200;
-            // player.animations.play('right');
+            player.animations.play('right');
         } else {
-            player.body.velocity.x = 0;
-            // player.animations.stop();
-            // player.frame = 4;
+            player.animations.stop();
+            player.frame = 4;
         }
 
-        if (cursors.up.isDown && player.body.touching.down && !invisibleButton.isDown) {
-            player.body.velocity.y = -400;
-            // jumpfx.play();
+        if (cursors.up.isDown && player.body.touching.down && hitPlatform) {
+            player.body.velocity.y = -700;
+            jumpfx.play();
+        }
+
+        if (fireButton.isDown) {
+            if(weapon.fire()){
+                laser.play();
+            }
+
         }
 
     }
