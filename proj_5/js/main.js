@@ -306,7 +306,7 @@ window.onload = function() {
             lastPoints = points;
         }
 
-        if(points == 20 && bossSpawned == false){
+        if(points == 100 && bossSpawned == false){
             bossSpawned = true;
             createBoss();
         }
