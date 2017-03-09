@@ -73,7 +73,7 @@ window.onload = function() {
 
     function playerHit(player, asteroid) {
         asteroid.kill();
-        if(!hasStarPowerUp){
+        if(!hasStarPowerUp && !isGameOver){
             numLife -= 1;
             numLifeText.text = "X " + String(numLife);
             for (let i = 0; i < 10; i++) {
@@ -100,7 +100,7 @@ window.onload = function() {
     }
 
     function createBoss(){
-        boss = game.add.sprite(game.world.width / 4, game.world.height / 2, 'asteroid');
+        boss = game.add.sprite(game.world.width * 3 / 4, game.world.height / 2, 'asteroid');
         game.physics.arcade.enable(boss);
         boss.anchor.setTo(.5);
         boss.scale.setTo(-5,5);
@@ -113,7 +113,8 @@ window.onload = function() {
         bossWeapon.fireRate = 1000;
         bossWeapon.bulletSpeed = -350;
         bossWeapon.trackSprite(boss, 50, 25, true);
-        game.time.events.repeat(Phaser.Timer.SECOND * 2, 1000, fireBossWeapon, this);
+        bossShoot = game.time.events.repeat(Phaser.Timer.SECOND * 2, 1000, fireBossWeapon, this);
+        game.time.events.repeat(Phaser.Timer.SECOND * 3, 1000, bossMove, this);
         bossHealth = 10;
         bossHealthBar = game.add.sprite(game.world.width /2, game.world.height - 32, 'bossHealthBar');
         bossHealthBar.anchor.setTo(.5);
@@ -121,11 +122,14 @@ window.onload = function() {
         bossMove();
     }
 
-    function damageBoss(bullet, boss){
+    function damageBoss(boss, bullet){
         bullet.kill();
         bossHealth-=1;
         bossHealthBar.scale.setTo(bossHealth,1);
         if(bossHealth == 0){
+            points += 100;
+            scoreText.text = "Score " + points;
+            game.time.events.remove(bossShoot);
             boss.kill();
         }
         for (let i = 0; i < 10; i++) {
@@ -152,6 +156,11 @@ window.onload = function() {
         if(bossWeapon.fire()){
             laser.play();
         }
+    }
+
+    function gameOver(){
+        game.add.sprite(game.world.width / 4, game.world.height / 4, 'gameOver');
+
     }
 
     var game = new Phaser.Game(1000, 600, Phaser.AUTO, 'game', {
@@ -185,8 +194,10 @@ window.onload = function() {
     var boss;
     var bossHealth;
     var bossHealthBar;
+    var bossShoot;
     var bossSpawned;
     var bossWeapon;
+    var isGameOver;
     var bgm;
 
 
@@ -202,6 +213,8 @@ window.onload = function() {
         game.load.image('powerupStar', 'assets/star_gold.png');
         game.load.image('laserred', 'assets/laserRed04.png');
         game.load.image('bossHealthBar', 'assets/laserRed12.png');
+        game.load.image('gameOver', 'assets/gameover_zpse663rlsp.png');
+
 
 
         // game sounds
@@ -216,6 +229,7 @@ window.onload = function() {
     }
 
     function create() {
+        isGameOver = false;
         bossSpawned = false;
         hasStarPowerUp = false;
         numLife = 3;
@@ -297,8 +311,10 @@ window.onload = function() {
             createBoss();
         }
 
-        if (numLife == 0) {
-
+        if (numLife == 0 && !isGameOver) {
+            // game over
+            isGameOver = true;
+            gameOver();
         }
 
         game.physics.arcade.collide(player, asteroids, playerHit);
@@ -307,7 +323,7 @@ window.onload = function() {
         if(bossSpawned){
             game.physics.arcade.collide(bossWeapon.bullets, player, bossHitPlayer, null, this);
             game.physics.arcade.collide(weapon.bullets, boss, damageBoss, null, this);
-            bossMove();
+            // bossMove();
         }
 
 
@@ -315,10 +331,10 @@ window.onload = function() {
         cursors = game.input.keyboard.createCursorKeys();
         player.body.velocity.x = 0;
 
-        if (cursors.left.isDown) {
+        if (cursors.left.isDown && !isGameOver) {
             player.body.velocity.x = -200;
             player.animations.play('left');
-        } else if (cursors.right.isDown) {
+        } else if (cursors.right.isDown && !isGameOver) {
             player.body.velocity.x = 200;
             player.animations.play('right');
         } else {
@@ -326,12 +342,12 @@ window.onload = function() {
             player.frame = 4;
         }
 
-        if (cursors.up.isDown && player.body.touching.down && hitPlatform) {
+        if (cursors.up.isDown && player.body.touching.down && hitPlatform && !isGameOver) {
             player.body.velocity.y = -700;
             jumpfx.play();
         }
 
-        if (fireButton.isDown) {
+        if (fireButton.isDown && !isGameOver) {
             if (weapon.fire()) {
                 laser.play();
             }
