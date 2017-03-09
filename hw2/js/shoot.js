@@ -23,11 +23,13 @@ BasicGame.shoot = function (game) {
     this.gameover;
     this.laser;
     this.bomb;
-    this.heath=300;
+    this.heath=500;
     this.tween;
     this.dead=false;
     this.queen;
     this.heart;
+    this.playerblood;
+    this.orplayer=500;
 
 };
 
@@ -35,6 +37,7 @@ BasicGame.shoot.prototype = {
 
 
 	create: function () {
+        this.heath=500;
 
         this.physics.startSystem(Phaser.Physics.ARCADE);
         this.enter = this.add.audio('enter');
@@ -43,8 +46,7 @@ BasicGame.shoot.prototype = {
         this.gameover=this.add.audio('gameover');
         this.bomb=this.add.audio('bomb');
         this.enter.play();
-          
-      
+
         //  The scrolling starfield background
         this.starfield = this.add.sprite(0, 0, 'starfield');
         this.starfield.scale.setTo(0.32,0.32);
@@ -62,7 +64,7 @@ BasicGame.shoot.prototype = {
         this.enemyBullets = this.add.group();
         this.enemyBullets.enableBody = true;
         this.enemyBullets.physicsBodyType = Phaser.Physics.ARCADE;
-        this.enemyBullets.createMultiple(90, 'enemyBullet');
+        this.enemyBullets.createMultiple(50, 'enemyBullet');
         this.enemyBullets.setAll('anchor.x', 1);
         this.enemyBullets.setAll('anchor.y', 1);
         this.enemyBullets.setAll('outOfBoundsKill', true);
@@ -72,6 +74,8 @@ BasicGame.shoot.prototype = {
        
         this.heart = this.add.sprite(90, 155, 'heart');
         this.heart.visible = false;
+         this.heart.inputEnabled = true;
+   this.heart.events.onInputDown.add(this.end,this);
         this.queen = this.add.sprite(400, 300, 'queen');
          this.player = this.add.sprite(400, 500, 'this.player');
         this.queen.animations.add('down', [0,1,2,3], 5, true);
@@ -97,6 +101,12 @@ BasicGame.shoot.prototype = {
                 this.aliens.body.moves = false;
                   this.aliens.x = 600;
         this.aliens.y = 100;
+              this.playerblood=this.add.sprite(0, 0,'bloodbar');
+      this.playerblood.scale.setTo(2.15,1);
+    this.playerblood.fixedToCamera=true;
+          
+          this.world.bringToTop(this.playerblood);
+      
 
 
 
@@ -203,6 +213,7 @@ BasicGame.shoot.prototype = {
         bullets.kill();
        this.heath-=10;
         this.scoreText.text = this.scoreString + this.heath;
+       this.playerblood.scale.setTo((this.heath/this.orplayer)*2,1);
      
         if(this.heath==0)
         {
@@ -214,6 +225,7 @@ BasicGame.shoot.prototype = {
         this.death.play();
           this.heart.visible = true;
           this.queen.visible = true;
+        //  this.longcoming.stop();
              this.player.reset(350,330);
 this.player.visible = true;
          this.player.body.moves=false;
@@ -227,6 +239,10 @@ this.player.visible = true;
 
         this.bullet.kill();
 
+},
+end: function()
+{
+ this.state.start('MainMenu');
 },
  enemyFires: function  () {
 

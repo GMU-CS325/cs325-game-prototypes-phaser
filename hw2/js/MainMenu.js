@@ -37,7 +37,7 @@ BasicGame.MainMenu.prototype = {
 
 
 
-		this.playButton = this.add.button( 300, 300, 'playButton', this.startGame, this, 'over', 'out', 'down');
+		this.playButton = this.add.button( 300, 300, 'playButton', this.startGame, this);
 		this.playButton.scale.setTo(0.3,0.3);
 	},
 

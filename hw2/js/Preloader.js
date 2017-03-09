@@ -14,9 +14,27 @@ BasicGame.Preloader.prototype = {
 
 		//	These are the assets we loaded in Boot.js
 		//	A nice sparkly background and a loading progress bar
-		this.background = this.add.sprite(0, 0, 'preloaderBackground');
-		this.preloadBar = this.add.sprite(300, 400, 'preloaderBar');
+		 this.load.image('wordframe','assets/wordframe.png');
+		 this.load.audio('jumpsound','assets/jumpsound.mp3');
+		  this.load.audio('inroommusic','assets/inroommusic.mp3');
+		    this.load.audio('longcoming','assets/longcoming.mp3');
+		  this.load.audio('opendoor','assets/opendoor.wav');
+		    this.load.image('bloodbar','assets/bloodbar.png');
 
+		 this.load.audio('zhadan', 'assets/bomb.mp3');
+		this.load.image('bg_world01-sheet0', 'assets/bg_world01-sheet0.png');
+		this.load.image('bg_world02-sheet0', 'assets/bg_world02-sheet0.png');
+		this.load.image('bg_intro01-sheet0', 'assets/bg_intro01-sheet0.png');
+		this.load.image('bg_menu01-sheet1', 'assets/bg_menu01-sheet1.png');
+		this.load.image('door', 'assets/door.png');
+	    this.load.image('box', 'assets/box.png');
+		this.load.image('bosslocation', 'assets/bosslocation.png');
+
+		 this.load.image('bomb','assets/bomb.png');
+		this.background = this.add.sprite(0, 0, 'preloaderBackground');
+		this.background.scale.setTo(0.43,0.43);
+		this.preloadBar = this.add.sprite(300, 400, 'preloaderBar');
+		this.load.tilemap('tiletest', 'assets/haha.json', null, Phaser.Tilemap.TILED_JSON);
 		//	This sets the preloadBar sprite as a loader sprite.
 		//	What that does is automatically crop the sprite from 0 to full-width
 		//	as the files below are loaded in.
@@ -30,7 +48,7 @@ BasicGame.Preloader.prototype = {
 		//	+ lots of other required assets here
         this.load.image( 'logo', 'assets/phaser.png' );
 
-        this.load.image('background','assets/background.png');
+        //this.load.image('background','assets/background.png');
         this.load.image('block','assets/block.png');
         this.load.image('water','assets/water.png');
         this.load.image('brige','assets/brige.png');
