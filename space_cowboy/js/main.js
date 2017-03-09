@@ -83,7 +83,6 @@ window.onload = function() {
         create: create,
         update: update
     });
-
     var player;
     var platforms;
     var cursors;
@@ -104,6 +103,8 @@ window.onload = function() {
     var powerups;
     var powerupType;
     var bgm;
+
+    var numPlayerLives;
 
 
     function preload() {
@@ -129,6 +130,7 @@ window.onload = function() {
     }
 
     function create() {
+        numPlayerLives = 3;
         cowRate = 2;
         cowSpeed = -300;
         lastPoints = 0;
