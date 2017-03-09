@@ -461,7 +461,7 @@ talkingword:  function (pointer)  //被攻击
   {
     this.player.reset(this.doorlocation+5,1040.5);
     this.camera.follow(this.player);
-    this.doorlocation=2224;
+    this.doorlocation=2200;
     this.player.scale.setTo(1,1);
      statetext.visible = false;
   }
@@ -469,7 +469,7 @@ talkingword:  function (pointer)  //被攻击
   {
     this.player.reset(this.doorlocation+5,1040.5);
     this.camera.follow(this.player);
-    this.doorlocation=2512;
+    this.doorlocation=2512-24;
     this.player.scale.setTo(1,1);
       statetext.visible = false;
   }
