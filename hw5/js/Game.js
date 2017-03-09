@@ -654,7 +654,7 @@ talkingword:  function (pointer)  //被攻击
             else if (this.doorindex==4)
             {
                 this.wordwithframe.visble=true;
-              this.wordwithframe.text=('You have passed the fourth question, but you never can beat the dragon!');
+              this.wordwithframe.text=('You have passed the fourth question, \n but you never can beat the dragon!');
             }
 
         
