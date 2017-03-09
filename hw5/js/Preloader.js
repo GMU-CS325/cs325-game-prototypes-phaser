@@ -32,6 +32,7 @@ BasicGame.Preloader.prototype = {
 
 		 this.load.image('bomb','assets/bomb.png');
 		this.background = this.add.sprite(0, 0, 'preloaderBackground');
+		this.background.scale.setTo(0.43,0.43);
 		this.preloadBar = this.add.sprite(300, 400, 'preloaderBar');
 		this.load.tilemap('tiletest', 'assets/haha.json', null, Phaser.Tilemap.TILED_JSON);
 		//	This sets the preloadBar sprite as a loader sprite.
