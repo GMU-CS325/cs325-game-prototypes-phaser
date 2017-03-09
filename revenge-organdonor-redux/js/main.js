@@ -27,6 +27,7 @@ window.onload = function() {
 		game.load.image('rFour', 'assets/4.png');
 		game.load.image('rFive', 'assets/5.png');
 		game.load.audio('sfx', 'assets/sounds.ogg');
+        game.load.audio('bgmusic', 'assets/MegaManMusic.mp3');
 
 	}
 
@@ -35,7 +36,7 @@ window.onload = function() {
 	var grav;
 	var facing = 'left';
 	var jumpTimer = 0;
-	var score = 1;
+	var score = 0;
 	var cursors;
 	var bg;
 	var scoreText;
@@ -45,6 +46,7 @@ window.onload = function() {
 	var timer=0;
 	var stateText;
 	var arr = ["rOne", "rTwo", "rThree","rFour","rFive"];
+    var music;
 
 	function create() {
 
@@ -56,13 +58,15 @@ window.onload = function() {
 		game.physics.arcade.gravity.y = grav;
 
 	    player = game.add.sprite(350, 500, 'yume');
+//        player.body.gravity.y = 500;
 		
 	    game.physics.enable(player, Phaser.Physics.ARCADE);
 
 	    player.body.bounce.y = 0.1;
 	    player.body.collideWorldBounds = true;
-		player.body.gravity.y=100;
+		player.body.gravity.y=300;
 	    player.body.setSize(20, 32, 5, 16);
+        player.scale.setTo(2);
 		
 	    player.animations.add('left', [0, 1, 2, 3], 10, true);
 	    player.animations.add('turn', [4], 20, true);
@@ -76,11 +80,14 @@ window.onload = function() {
 		fx.addMarker('destroy', 0, 0.37);
 		fx.addMarker('over', 0.37, 0.69);
 		
-		scoreText = game.add.text(32, 10, 'score: 1', { font: "20px Arial", fill: "#ff0000", align: "left" });
-		latinNumber = game.add.text(200, 30, 'Collect Organs \n'+lNumber, { font: "30px Arial Black", fill: "#ff0000", align: "center" });
-		introText = game.add.text(game.world.centerX, 300, '- instructions to play game - \n the game is simple \n collect the correct organs\n of the number and get a point \n collect the wrong and loose a point  \n if you get to 5 points you win the game \n if you get to 0 you loose the game \n ......\n click to start and good luck!!',
+		scoreText = game.add.text(32, 10, 'score: 0', { font: "20px Arial", fill: "#ff0000", align: "left" });
+//		latinNumber = game.add.text(200, 30, 'Collect Organs \n'+lNumber, { font: "30px Arial Black", fill: "#ff0000", align: "center" });
+		introText = game.add.text(game.world.centerX, 300, '- instructions to play game - \n the game is simple \n collect the organs\n and get 100 points \n if you get to 2000 points you win the game  \n ......\n click to start and good luck!!',
 		 
-		 { font: "25px Arial Black", fill: "#0000FF", align: "center" });
+		 { font: "25px Arial Black", fill: "#ffffff", align: "center" });
+        introText.stroke = '#000000';
+    introText.strokeThickness = 6;
+//    introText.fill = '#43d637';
 		introText.anchor.setTo(0.5, 0.5);
 		
 		game.input.onDown.add(createEffect, this);
@@ -89,6 +96,9 @@ window.onload = function() {
     stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '84px Arial', fill: '#fff' });
     stateText.anchor.setTo(0.5, 0.5);
     stateText.visible = true;
+        music = game.add.audio('bgmusic');
+
+    music.play();
 
 	}
 
@@ -107,7 +117,7 @@ window.onload = function() {
 
 		if (cursors.left.isDown)
 	    {
-	        player.body.velocity.x = -250;
+	        player.body.velocity.x = -350;
 
 	        if (facing != 'left')
 	        {
@@ -117,13 +127,21 @@ window.onload = function() {
 	    }
 	    else if (cursors.right.isDown)
 	    {
-	        player.body.velocity.x = 250;
+	        player.body.velocity.x = 350;
 
 	        if (facing != 'right')
 	        {
 	            player.animations.play('right');
 	            facing = 'right';
 	        }
+	    }
+        else if (cursors.up.isDown)
+	    {
+	        player.body.velocity.y = -150;
+	    }
+        else if (cursors.down.isDown)
+	    {
+	        player.body.velocity.y = 150;
 	    }
 	    else
 	    {
@@ -178,12 +196,12 @@ window.onload = function() {
 
 		_effect.kill(); //destroy effect
 		if (rNumber == rNumber){
-			score ++; //increment score
-			if(score >4){
+			score +=100; //increment score
+			if(score >1900){
 				gameOver();
 			}
 			lNumber = Math.floor((Math.random() * 5) + 1);			
-			latinNumber.text = 'Collect Organ \n'+lNumber; //display new score
+//			latinNumber.text = 'Collect Organ \n'+lNumber; //display new score
 		}
 		else {
 			score --;
@@ -196,24 +214,14 @@ window.onload = function() {
 		fx.play('destroy');
 		
 		if(score%20==0){
-			grav=grav*1.25;
+			grav=grav*1.15;
 		}
 		createEffect();
 
 	}
 
-	
-	// function gameOver() {
-	// 	fx.play('over');
-	// 	introText.text = "gameOver";
-
-	// 	introText.visible = true;
-
-	// }
-
 	function gameOver() 
-	{
-    
+	{    
 		player.kill();
     	effect.kill();
 	    fx.play('over');
@@ -226,28 +234,16 @@ window.onload = function() {
 
 	}
 
-	function render() {
+	function render()
+    {
         //Add 
-
 	}
 
-	function restart () {
-
-    //  A new level starts
-    
-    //resets the life count
-    // lives.callAll('revive');
-    //  And brings the aliens back from the dead :)
-    // aliens.removeAll();
-    // createAliens();
-
-    //revives the player
-    // player.revive();
-    //hides the text
-    stateText.visible = false;
-    score = 1;
-    player.revive();
-
-}
+	function restart () 
+    {
+        stateText.visible = false;
+        score = 0;
+        player.revive();
+    }
     
 };
