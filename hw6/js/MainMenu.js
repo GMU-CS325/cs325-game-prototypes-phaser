@@ -73,17 +73,17 @@ function resetFade() {
    minumber=0;
 
    attacktime=0;
-
+ 
   if(timefinished)
   {
   insidemusic.stop();
-     timefinished=false;
-         game.state.start("winf");
+  timefinished=false;
+         game.state.start("win");
   }
   else
   {
   insidemusic.stop();
-     timefinished=false;
+  timefinished=false;
          game.state.start("dead");
        }
 
@@ -163,7 +163,7 @@ function resetFade() {
  }
   function timerEnd()
     {
-    //  game.state.start('loadgame');
+     // game.state.start('loadgame');
       timefinished=true;
       fade();
     }

@@ -21,7 +21,7 @@ create: function () {
 winphoto=game.add.sprite(0,0,'winphoto');
 winphoto.inputEnabled = true;
 winphoto.events.onInputDown.add(begingame, this);
-winword = game.add.text(100,200,'   Wow!!!, You  attracted < ' +attack+ " > gentleman\n Also, hope everyone can find the lovely one!",{fill: '#00f' });
+winword = game.add.text(100,200,'   Wow!!!, You  attracted 7 gentleman\n Also, hope everyone can find the lovely one!',{fill: '#00f' });
 },
 update: function () {
 
