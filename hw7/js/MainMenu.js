@@ -137,7 +137,7 @@ function resetFade() {
       in11=true
       calculation.visible=false;
       shouwan.visible=true;  
-      test.text='First challenge: Muscle challenge, \nuse your muscle to beat this superman. \n PS:Keep press W button '     // player.reset(250,2000)
+      test.text='First challenge: Muscle challenge, \nuse your muscle to beat this superman. \n PS:Keep press W button \ and reach the power Max line, you win '     // player.reset(250,2000)
       player.body.moves=false;
       game.camera.follow(null);
       test.visible=true;
