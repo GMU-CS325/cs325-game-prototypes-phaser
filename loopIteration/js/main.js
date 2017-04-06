@@ -34,12 +34,14 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
         player.anchor.setTo(0.5, 0);
         player.scale.setTo(size);
         game.physics.arcade.enable(player);
-        player.body.bounce.y = 0.2;
+        player.body.bounce.y = 0.09;
         player.body.gravity.y = 20;
         player.body.collideWorldBounds = true;
         player.animations.add('left', [0,1,2,3], 10, true);
         player.animations.add('right', [0,1, 2,3], 10, true);
         //player.rotate(.3);
+        poops = game.add.group();
+        poops.enableBody = true;
         
         // Turn on the arcade physics engine for this sprite.
         game.physics.enable(player, Phaser.Physics.ARCADE);
@@ -69,14 +71,22 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
     function update() {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(poops, platforms);
+        player.angle = 0;
 
         //game.physics.arcade.overlap(player, poops, growUp, null, this);
 
-        player.body.velocity.x = 0;
+        //player.body.velocity.x = 0;
         if (game.input.keyboard.isDown(Phaser.Keyboard.S)){
             player.scale.setTo(2*size, 2*size); 
         }
+        
+        if (game.input.keyboard.isDown(Phaser.Keyboard.D))// && !pop.body.touching.down)
+        {
+            var pop = poops.create(player.x, player.y, 'poopIMG');
+            pop.scale.setTo(.08);
 
+            pop.body.gravity.y = 300; 
+        }
         if (cursors.left.isDown)
         {
             rightMov = false;
@@ -104,27 +114,46 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
 
         if (cursors.up.isDown) //&& player.body.touching.down)
         {
-            player.body.velocity.y = -50;
+            player.body.velocity.y = -150;
+            
             //player.frame = 19;
             if(rightMov)
             {
-                player.animations.play('right');       
+                player.animations.play('right');
+                player.angle=-25;
             }
             else{
                 player.animations.play('left');
+                player.angle=25;
             }
         }
         if (cursors.down.isDown) //&& player.body.touching.down)
         {
-            player.body.velocity.y = 50;
+            player.body.velocity.y = 150;
             //player.frame = 19;
+            player.angle-=1;
             if(rightMov)
             {
-                player.animations.play('right');       
+                player.animations.play('right');
+                player.angle = 25;
+            }
+            else{
+                player.animations.play('left');
+                player.angle = -25;
+            }
+        }
+        if (player.body.touching.down)
+            {
+                player.animations.stop();
+            }
+        else
+            {
+                if(rightMov){
+                player.animations.play('right');
             }
             else{
                 player.animations.play('left');
             }
-        }
+            }
     }
 };
