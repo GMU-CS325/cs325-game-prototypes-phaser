@@ -10,6 +10,7 @@ window.onload = function ()
         game.load.spritesheet('fatEagle', 'assets/fatEagle125x72.png',125, 72);
         game.load.image('ground', 'assets/ground.png');
         game.load.image('poopIMG', 'assets/poopIMG.png');
+        game.load.image('target', 'assets/trump.png');
     }
     
     var player;
@@ -21,55 +22,58 @@ window.onload = function ()
     var size = 0.5;
     var rightMov = true;
     var poopTimer = 0;
+    var target;
+    var bulletDelay = 20;
+    var randomNumber = Math.random()*200;
     
     function create()
     {
+        //Scenery Set Up
         game.stage.backgroundColor = "#4488AA";
-        
-        
         
         platforms = game.add.group();
         platforms.enableBody = true;
         var ground = platforms.create(0, game.world.height - 30, 'ground');
-//        ground.scale.setTo(2, 2);
         ground.body.immovable = true;
         
+        //PLAYER SET UP
         player = game.add.sprite(game.world.centerX, game.world.centerY, 'fatEagle');
         player.anchor.setTo(0.5, 0);
         player.scale.setTo(size);
+        
+        //Player Physics
         game.physics.arcade.enable(player);
         player.body.bounce.y = 0.09;
         player.body.gravity.y = 20;
         player.body.collideWorldBounds = true;
+        game.physics.enable(player, Phaser.Physics.ARCADE);
+        player.body.velocity.x = 100;
+        
+        //Player Animation
         player.animations.add('left', [0,1,2,3], 10, true);
         player.animations.add('right', [0,1, 2,3], 10, true);
-        //player.rotate(.3);
-        poops = game.add.group();
-        poops.enableBody = true;
         
-        // Turn on the arcade physics engine for this sprite.
-        game.physics.enable(player, Phaser.Physics.ARCADE);
-        player.body.collideWorldBounds = true;
         
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        
+        //Screen Display        
         var text = game.add.text(game.world.centerX, 15, "Attack Eagle", style);
         text.anchor.setTo(0.5, 0.0);
         
+        //Amunition
         poops = game.add.group();
         poops.enableBody = true;
-//        for (var i = 0; i < 4; i++)
-//        {
-//            var pop = poops.create(i * 180, 0, 'poopIMG');
-//            pop.scale.setTo(.08);
-//
-//            pop.body.gravity.y = 300;
-//
-////            pop.body.bounce.y = 0.7 + Math.random() * 0.2;
-//        }
+        
+        //Target Set Up
+        target = game.add.sprite(100,400,'target');
+        target.anchor.setTo(0.5,0);
+        game.physics.arcade.enable(target);
+        target.body.collideWorldBounds = true;
+        game.physics.enable(target, Phaser.Physics.ARCADE);
+        target.body.velocity.x = 100;
+        target.body.gravity.y = 200;
+        target.body.bounce.x = 1;
+        
+        //Player input
         cursors = game.input.keyboard.createCursorKeys();
-        player.body.velocity.x = 100;
     }
     
     
@@ -77,20 +81,27 @@ window.onload = function ()
     {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(poops, platforms);
+        game.physics.arcade.collide(target, platforms);
+        game.physics.arcade.collide(target, poops);
+        game.physics.arcade.collide(target, player);
         player.angle = 0;
+        target.body.velocity.x = randomNumber;
         poopTimer+=1;
+        game.add.text(0, 15, randomNumber, style);
 
         //game.physics.arcade.overlap(player, poops, growUp, null, this);
+        //game.physics.arcade.collide(poops, platforms, killPoop, null, this);
 
         //player.body.velocity.x = 0;
         if (game.input.keyboard.isDown(Phaser.Keyboard.S))
         {
             player.scale.setTo(2*size, 2*size); 
         }        
-        if (game.input.keyboard.isDown(Phaser.Keyboard.D) && poopTimer > 60)// && !pop.body.touching.down)
+        if (game.input.keyboard.isDown(Phaser.Keyboard.D) && poopTimer > bulletDelay)// && !pop.body.touching.down)
         {
             var pop = poops.create(player.x, player.y, 'poopIMG');
             pop.scale.setTo(.08);
+            randomNumber = rightMov? Math.random()*200: -Math.random()*200;
             //pop.body.velocity.x = player.body.velocity.x;
             //pop.body.velocity.y+=100;
 
