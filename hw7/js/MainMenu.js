@@ -101,6 +101,7 @@ function notright()
 function resetFade() {
   if(live==false)
   {
+    live=true;
      game.state.start("dead");
       feelinggood.stop();
   }
