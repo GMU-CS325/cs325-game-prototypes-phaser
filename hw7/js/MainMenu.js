@@ -400,10 +400,6 @@ upbutton.onDown.add(movingup, this);
       // wordframe.events.onInputDown.add(talking, this);
     } ,
   
-render: function () 
-{
-     game.debug.spriteCoords(player, 32, 500);
-   },
 
     update: function () {
       letternumber.text="Letter Number:"+ lnumber;
