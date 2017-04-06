@@ -1,8 +1,10 @@
 "use strict";
 
-window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
-    
-    function preload() {
+window.onload = function () 
+{
+    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    function preload()
+    {
         // Load an image and call it 'logo'.
         game.load.image('logo', 'assets/phaser.png');
         game.load.spritesheet('fatEagle', 'assets/fatEagle125x72.png',125, 72);
@@ -18,8 +20,10 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
     var cursors;
     var size = 0.5;
     var rightMov = true;
+    var poopTimer = 0;
     
-    function create() {
+    function create()
+    {
         game.stage.backgroundColor = "#4488AA";
         
         
@@ -64,28 +68,34 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
 //
 ////            pop.body.bounce.y = 0.7 + Math.random() * 0.2;
 //        }
-         cursors = game.input.keyboard.createCursorKeys();
+        cursors = game.input.keyboard.createCursorKeys();
+        player.body.velocity.x = 100;
     }
     
     
-    function update() {
+    function update()
+    {
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(poops, platforms);
         player.angle = 0;
+        poopTimer+=1;
 
         //game.physics.arcade.overlap(player, poops, growUp, null, this);
 
         //player.body.velocity.x = 0;
-        if (game.input.keyboard.isDown(Phaser.Keyboard.S)){
+        if (game.input.keyboard.isDown(Phaser.Keyboard.S))
+        {
             player.scale.setTo(2*size, 2*size); 
-        }
-        
-        if (game.input.keyboard.isDown(Phaser.Keyboard.D))// && !pop.body.touching.down)
+        }        
+        if (game.input.keyboard.isDown(Phaser.Keyboard.D) && poopTimer > 60)// && !pop.body.touching.down)
         {
             var pop = poops.create(player.x, player.y, 'poopIMG');
             pop.scale.setTo(.08);
+            //pop.body.velocity.x = player.body.velocity.x;
+            //pop.body.velocity.y+=100;
 
-            pop.body.gravity.y = 300; 
+            pop.body.gravity.y = 300;
+            poopTimer = 0;
         }
         if (cursors.left.isDown)
         {
@@ -94,6 +104,7 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
             player.scale.setTo(-size, size);
 
             player.animations.play('left');
+            player.body.velocity.y = 0;
         }
         else if (cursors.right.isDown)
         {
@@ -103,6 +114,7 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
             
 
             player.animations.play('right');
+            player.body.velocity.y = 0;
             
         }
         else
@@ -111,7 +123,6 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
 
             //player.frame = 9;
         }
-
         if (cursors.up.isDown) //&& player.body.touching.down)
         {
             player.body.velocity.y = -150;
@@ -143,17 +154,19 @@ window.onload = function() {var game = new Phaser.Game( 800, 600, Phaser.AUTO, '
             }
         }
         if (player.body.touching.down)
-            {
-                player.animations.stop();
-            }
+        {
+            player.animations.stop();
+        }
         else
+        {
+            if(rightMov)
             {
-                if(rightMov){
                 player.animations.play('right');
             }
-            else{
+            else
+            {
                 player.animations.play('left');
             }
-            }
+        }
     }
 };
