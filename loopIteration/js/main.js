@@ -24,7 +24,8 @@ window.onload = function ()
     var poopTimer = 0;
     var target;
     var bulletDelay = 20;
-    var randomNumber = Math.random()*200;
+    var randomNumber = (Math.random()*200).toFixed(2);
+    var pop;
     
     function create()
     {
@@ -74,6 +75,9 @@ window.onload = function ()
         
         //Player input
         cursors = game.input.keyboard.createCursorKeys();
+        
+        topText = game.add.text(0, 15, randomNumber, style);
+        game.add.text(600,15,'press D for poop',style)
     }
     
     
@@ -82,15 +86,15 @@ window.onload = function ()
         game.physics.arcade.collide(player, platforms);
         game.physics.arcade.collide(poops, platforms);
         game.physics.arcade.collide(target, platforms);
-        game.physics.arcade.collide(target, poops);
+        //game.physics.arcade.collide(target, poops);
         game.physics.arcade.collide(target, player);
         player.angle = 0;
         target.body.velocity.x = randomNumber;
         poopTimer+=1;
-        game.add.text(0, 15, randomNumber, style);
+        topText.text = randomNumber;
 
         //game.physics.arcade.overlap(player, poops, growUp, null, this);
-        //game.physics.arcade.collide(poops, platforms, killPoop, null, this);
+        game.physics.arcade.overlap(poops, target, killPoop, null, this);
 
         //player.body.velocity.x = 0;
         if (game.input.keyboard.isDown(Phaser.Keyboard.S))
@@ -99,9 +103,9 @@ window.onload = function ()
         }        
         if (game.input.keyboard.isDown(Phaser.Keyboard.D) && poopTimer > bulletDelay)// && !pop.body.touching.down)
         {
-            var pop = poops.create(player.x, player.y, 'poopIMG');
+            pop = poops.create(player.x, player.y, 'poopIMG');
             pop.scale.setTo(.08);
-            randomNumber = rightMov? Math.random()*200: -Math.random()*200;
+            randomNumber = rightMov? (Math.random()*200).toFixed(2): (-Math.random()*200).toFixed(2);
             //pop.body.velocity.x = player.body.velocity.x;
             //pop.body.velocity.y+=100;
 
@@ -179,5 +183,9 @@ window.onload = function ()
                 player.animations.play('left');
             }
         }
+    }
+    function killPoop(platform, poops)
+    {
+        pop.kill();
     }
 };
