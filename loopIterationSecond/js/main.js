@@ -71,16 +71,17 @@ window.onload = function () {
         game.physics.arcade.enable(target);
         target.body.collideWorldBounds = true;
         game.physics.enable(target, Phaser.Physics.ARCADE);
-        target.body.velocity.x = 100;
-        target.body.gravity.y = 200;
-        target.body.bounce.x = 1;
+        target.body.velocity.x = 250;
+        target.body.gravity.y = 100;
+        target.body.bounce.x = 0;
         target.animations.add('right', [0, 1, 2, 3, 4, 5, 6, 7], 10, true);
         target.animations.play('right');
+        //target.body.immovable = true;
 
     //Player input
         cursors = game.input.keyboard.createCursorKeys();
 
-        topText = game.add.text(0, 15, randomNumber, style);
+        topText = game.add.text(10, 15, randomNumber, style);
         score = game.add.text(600, 15, "Score: 0", style)
     }
 
@@ -110,17 +111,21 @@ window.onload = function () {
         
     //VARIABLE UPDATE
         player.angle = 0;
-        target.body.velocity.x = randomNumber;
         poopTimer += 1;
-        if (target.body.touching.right){
-            target.scale.setTo(-1, 1);
+        
+    //TARGET MOVEMENT
+        target.body.velocity.x = targetRight? 250:-250;
+        if (target.body.blocked.right){
+            targetRight = false;
+            target.scale.x = -1;
             target.animations.play('right');
-            target.body.velocity.x = -250;
+//            target.body.velocity.x = -250;
         }
-        if(target.body.touching.left){
+        if(target.body.blocked.left){
+            targetRight = true;
             target.animations.play('right');
-            target.scale.setTo(-1, 1);
-            target.body.velocity.x = 250;
+            target.scale.x = 1;
+//            target.body.velocity.x = 250;
         }
         
         
@@ -130,7 +135,7 @@ window.onload = function () {
             pop.scale.setTo(.08);
             randomNumber = rightMov ? (Math.random() * 200).toFixed(2) : (-Math.random() * 200).toFixed(2);
 
-            pop.body.gravity.y = 300;
+            pop.body.gravity.y = 400;
             poopTimer = 0;
         }
         if (cursors.left.isDown) {
