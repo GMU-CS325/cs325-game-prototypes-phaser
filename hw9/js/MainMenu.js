@@ -56,19 +56,31 @@ function resetFade() {
   kongbumusic1.stop();
   if(timefinished)
   {
+    level=1000;
+    enter=true;
+    timefinished=false;
     game.state.start("dead");
   }
  else  if(cuole)
     {
+       level=1000;
+    enter=true;
+      timefinished=false;
       game.state.start("dead");
     }
     else if(duile)
     {
+       level=1000;
+    enter=true;
+          timefinished=false;
       game.state.start("win")
     }
   
  else if(level==1004)
   {
+     level=1000;
+    enter=true;
+        timefinished=false;
       game.state.start("win");
   }
   }
