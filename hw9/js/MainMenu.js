@@ -325,7 +325,7 @@ if(level==1002)
 
       if(level==1002)
      {
-      test.text="Look this item kind like bomb, this is your tool! \n Then you can shoot light buttle!  Try to press Whitespace \nThe direction of bullet is based on your last input\n(up,down,left,right)"
+      test.text="Look this item kind like bomb, this is your tool! \n Then you can shoot light buttle!  Try to press Whitespace \nThe direction of bullet is based on your last input\n(up,down,left,right)\n and you have unlimited bullets"
      }
      if(level==1003)
      {
