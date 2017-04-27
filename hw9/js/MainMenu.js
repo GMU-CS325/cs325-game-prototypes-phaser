@@ -314,7 +314,7 @@ if(level==1002)
         bullets.setAll('checkWorldBounds', true);
         fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
        game.world.bringToTop(player);
-       test = game.add.text(100,380,"Look that lightball, which is your goal. \nRemind you again! You have 5 second to rememebr the maze\n and you have limited time!!! \ trust me, maze is not so hard, but you only have 40s, Enjoy!!!", { font: '25px Arial', fill: '#0ff' }); 
+       test = game.add.text(100,380,"Look that lightball, which is your goal. \nRemind you again! You have 5 second to rememebr the maze\n and you have limited time!!! \n trust me, maze is not so hard, but you only have 40s, Enjoy!!!\n(before world enter drak, you cannot move)", { font: '25px Arial', fill: '#0ff' }); 
 
 
      test.fixedToCamera=true;
