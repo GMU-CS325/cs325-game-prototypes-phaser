@@ -1,6 +1,6 @@
 "use strict";
 
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render : render });
+var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, render : render });
     
 function preload() {
 
@@ -10,9 +10,10 @@ function preload() {
 //    game.load.image('sonic', 'assets/sprites/sonic_havok_sanity.png');
     game.load.image('phaser', 'assets/sprites/phaser1.png');
     game.load.spritesheet('player', 'assets/worm.png', 50, 50);
-
+    game.load.audio('music', ['assets/music.mp3']);
 }
 
+var music;
 var cursors;    
 var player;
 var books;
@@ -31,10 +32,14 @@ var middleText;
 
 var textStyle = { font: "32px Arial", fill: "#ffffff", align: "center" };
 
-var instructions= "Eat Books!!!\nStand on top of a Book\nPress X to start eating\nGet 5000 Points to win!."
+var instructions= "Eat Books!!!\nArrow Keys to Move\nStand on top of a Book\nPress X to start eating\nGet 5000 Points to win!."
+
 
 
 function create() {
+    music = game.add.audio('music');
+
+    music.play();
 
     //  Modify the world and camera bounds
     game.world.setBounds(-1000, -1000, 2000, 2000);
