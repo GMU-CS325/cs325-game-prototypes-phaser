@@ -32,7 +32,7 @@ var middleText;
 
 var textStyle = { font: "32px Arial", fill: "#ffffff", align: "center" };
 
-var instructions= "Eat Books!!!\nArrow Keys to Move\nStand on top of a Book\nPress X to start eating\nGet 5000 Points to win!."
+var instructions= "Eat Books!!!\nArrow Keys to Move\nStand on top of a Book\nPress X to start eating\nGet 2000 Points to win!."
 
 
 
@@ -128,7 +128,7 @@ function update() {
     }
     if(bookHealth < 1)
         bookHealth = 100;
-    if(score == 5000)
+    if(score == 2000)
         {
             middleText.text = "YOU WIN!!!!";
         }
