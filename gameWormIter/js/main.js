@@ -12,8 +12,8 @@ function preload() {
     game.load.spritesheet('player', 'assets/worm.png', 50, 50);
     game.load.audio('music', ['assets/music.mp3']);
     
-    game.load.image('bullet', 'assets/sprites/bullet.png');
-    game.load.image('ship', 'assets/sprites/shmup-ship.png');
+    game.load.image('bullet', 'assets/bullet.png');
+    game.load.image('ship', 'assets/shmup-ship.png');
 }
 
 var music;
@@ -35,18 +35,23 @@ var middleText;
 
 var textStyle = { font: "32px Arial", fill: "#ffffff", align: "center" };
 
-var instructions= "Eat Books!!!\nArrow Keys to Move\nStand on top of a Book\nPress X to start eating\nGet 2000 Points to win!."
+var instructions= "Eat Books!!!\nArrow Keys to Move\nStand on top of a Book\nPress X to start eating\nGet 2000 Points to win!.\nNEW BULLLET HITS DEDUCT POINTS!!!"
 
 var sprite;
-var weapon;
+var bullets;
 var fireButton;
+
+var targetRight = true;
+var targetDown = true;
+
+var delay = 0;
 
 
 
 function create() {
     music = game.add.audio('music');
 
-//    music.play();
+    music.play();
 
     //  Modify the world and camera bounds
     game.world.setBounds(-1000, -1000, 2000, 2000);
@@ -107,15 +112,33 @@ function create() {
     
 //WEAPON ADDITION
     
-    weapon = game.add.weapon(50, 'bullet');
-    weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
-    weapon.bulletAngleOffset = 90;
-    weapon.bulletSpeed = 400;
-    sprite = this.add.sprite(320, 500, 'ship');
+    bullets = game.add.group();
+    bullets.enableBody = true;
+    bullets.physicsBodyType = Phaser.Physics.ARCADE;
+    bullets.createMultiple(30, 'bullet');
+    bullets.setAll('anchor.x', 0.5);
+    bullets.setAll('anchor.y', 1);
+    bullets.setAll('outOfBoundsKill', true);
+    bullets.setAll('checkWorldBounds', true);
+
+    
+    
+    
+    
+//    weapon = game.add.weapon(50, 'bullet');
+//    weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+//    weapon.bulletAngleOffset = 90;
+//    weapon.bulletSpeed = 400;
+    sprite = this.add.sprite(game.world.randomX, game.world.randomX, 'ship');
     game.physics.arcade.enable(sprite);
-    weapon.trackSprite(sprite, 14, 0);
-    weapon.bulletAngleVariance = 360;
-    //fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+    
+    sprite.body.collideWorldBounds = true;
+        game.physics.enable(sprite, Phaser.Physics.ARCADE);
+    sprite.body.bounce.x = 200;
+    sprite.body.bounce.y = 100;
+//    weapon.trackSprite(sprite, 14, 0);
+//    weapon.bulletAngleVariance = 360;
+//    //fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
     
 
@@ -126,10 +149,19 @@ function create() {
 }
 function update() {
     
-    weapon.fire();
+    delay++;
+    if(delay > 10)
+        {
+            fireBullet();
+            delay = 0;
+        }
+    
+//    weapon.fire();
+//    fireBullet();
     touch = game.physics.arcade.overlap(books, player);
     game.physics.arcade.overlap(books, books, eatBook, null, this);
-    game.physics.arcade.collide(weapon, books, eatBook, null, this);
+    game.physics.arcade.collide(bullets, books, eatBook, null, this);
+    game.physics.arcade.collide(bullets, player, hitPoint, null, this);
     if(touch)
     {
         bookText.visible = true;
@@ -190,6 +222,32 @@ function update() {
         game.camera.x += 4;
         player.animations.play('right');
     }
+    
+    
+    
+//ShipMovement
+    
+    sprite.body.velocity.x = targetRight? 250:-250;
+        if (sprite.body.blocked.right){
+            targetRight = false;
+            sprite.scale.x = -1;
+//            target.body.velocity.x = -250;
+        }
+        if(sprite.body.blocked.left){
+            targetRight = true;
+//            target.body.velocity.x = 250;
+        }
+    
+    sprite.body.velocity.y = targetDown? 350:-350;
+        if (sprite.body.blocked.right){
+            targetDown = false;
+//            sprite.scale.x = -1;
+//            target.body.velocity.x = -250;
+        }
+        if(sprite.body.blocked.left){
+            targetDown = true;
+//            target.body.velocity.x = 250;
+        }
 
 }
 function render() {
@@ -205,4 +263,40 @@ function eatBook (player, book) {
 
     //  Add and update the score
 
+}
+
+function hitPoint (player, bullets) {
+    
+    // Removes the star from the screen
+    score-=100;
+    bullets.kill();
+
+    //  Add and update the score
+
+}
+
+function fireBullet() {
+    var bullet = bullets.getFirstExists(false);
+
+    if (bullet)
+    {
+        //  And fire it
+        bullet.reset(sprite.x, sprite.y + 8);
+        
+        var minSpeed = 600;
+        
+        var ySpeed = Math.floor((Math.random() * 800) + 1) - Math.floor((Math.random() * 400) + 1);
+        while(ySpeed > minSpeed && ySpeed<-minSpeed)
+            {
+                ySpeed = Math.floor((Math.random() * 800) + 1) - Math.floor((Math.random() * 400) + 1);
+            }
+        var xSpeed = Math.floor((Math.random() * 800) + 1) - Math.floor((Math.random() * 400) + 1);
+        while(xSpeed > minSpeed && xSpeed < -minSpeed)
+            {
+                xSpeed = Math.floor((Math.random() * 800) + 1) - Math.floor((Math.random() * 400) + 1);
+            }
+        
+        bullet.body.velocity.y = ySpeed;
+        bullet.body.velocity.x = xSpeed;
+    }
 }
