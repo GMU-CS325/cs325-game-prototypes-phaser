@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1080, 1920, Phaser.CANVAS, 'game', {
+var game = new Phaser.Game(0, 0, Phaser.CANVAS, 'game', {
     preload: preload,
     create: create,
     update: update
@@ -24,6 +24,9 @@ function create() {
     music.play();
 
     game.input.onDown.add(changeVolume, this);
+    game.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+    game.input.onDown.add(gofull, this);
+    
 
 }
 
@@ -37,6 +40,29 @@ function changeVolume(pointer) {
         music.volume -= 0.1;
     }
 
+}
+
+
+function gofull() {
+
+    if (game.scale.isFullScreen) {
+        game.scale.stopFullScreen();
+    } else {
+        game.scale.startFullScreen(false);
+    }
+
+}
+
+function resizeGame() {
+    var height = $(window).height();
+    var width = $(window).width();
+    game.width = width;
+    game.height = height;
+    game.stage.bounds.width = width;
+    game.stage.bounds.height = height;
+    if (game.renderType === Phaser.WEBGL) {
+        game.renderer.resize(width, height);
+    }
 }
 
 function update() {
