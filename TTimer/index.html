@@ -1,50 +1,97 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
     .city {
-        float: left;
-        margin: 5px;
-        padding: 15px;
-        max-width: device-width;
-        max-height: device-height;
-        height: 732px;
-        border: 1px solid black;
-    } 
-    gameItem {
-        float: left;
-        margin: 5px;
-        padding: 15px;
-        width: 300px;
-        border: 1px solid black;
+            float: left;
+            margin: 5px;
+            padding: 15px;
+            max-width: device-width;
+            max-height: device-height;
+            height: inherit;
+            border: 1px solid black;
+        }
+        
+        gameItem {
+            float: left;
+            margin: auto;
+            padding: 1px;
+            border: 1px solid black;
+        }
+        
+        body {
+            display: inline-block;
+            margin: 0px auto;
+            text-align: center;
+        }
+        
+        html {
+            text-align: center;
+        }
+        blockquote
+        {
+            font-style: italic;
+        }
     }
-}
-</style>
+    </style>
     <script src="js/phaser.js"></script>
     <script src="js/main.js"></script>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jul 30, 2017 19:02:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("demo").innerHTML = "Time Left: " + days + "d " + hours + "h " +
+            minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
 
 </head>
-<body>
-    
 
-<div class="city">
-    <gameItem>
+<body>
+
+
+    <div class="city">
+            
+        <p id="demo"></p>
+        <h1 style="text-align:center">
+            "Why not"
+        </h1>
+        <p style="text-align:center"><img src="https://lh3.googleusercontent.com/7lzn7X74O_41p7l8p_QMfD3w8j5SLxh1FYStKijh2A-hJ3pxmHoeicelGjF87-WMh2kqRh0zOVIK_uGO3tf-xCNr0MlEpiADR52aFrHrZjFmJUOJrWlX3m9xYC2HbP3PP0G_fuJQdZa4x3ohpqsp6IdnAQCsc1cWOX_oHbOC9ggcSnht-LlF1nCYKhXA8LS6gWc9G4AF-DQXBz6L8bsBLZRTyA3iaReiIM-hFjNxGwOZr-Q5uiNUxxFar5b8tf_M5oRoxMI5pZxSme6YEIhSUEK4ly3R5Hrsiqlwxy9vY6kNEnvgA-Prrgriaw-790ls5EPocdihlP6BE4WG5O-N8wQApdCL9G9DWQh0DF44R6ITKId-Jh-YEZQeIyG6zKjl3jHEbqGeCjAUhst9e3soz0zorLWg87qDce3QR_m095af2UOivXMIKtOFUxYwfDPqolkrHCcCK8mZnMJL894AJnXPodlNS7o94xCDwviPZLOyjWCHSd3UWIymYsKGWfKNGkbpuu84WKNEEofQkB0v0EPLfaHTTqz2UIY3k7B4eQV4jvuEy5xhUYBr5dr342qXIf_u_MTMDPpHEKWye1OyMsMyDympOyqSM5B3K3oTjE4vKHD332H7Bw55tHZtp3LDZtkb6YERfgGoJzrsQd9aXkRG15KCx0CiiNmD6wIuong=w719-h960-no" alt="Smiley face" height="450" width="*"></p>
+
+
+        <blockquote style="text-align:center">"Never would I have imagine<br/>someone tell me to wear a onesie<br/>nor me agreeing to do so.<br/>yet I said to myself<br/>"Why not"</blockquote>
         <div id="game"></div>
-    </gameItem>
-    <h1 style="text-align:center">
-        "Why not"
-    </h1>
-  <p style="text-align:center"><img src="https://lh3.googleusercontent.com/7lzn7X74O_41p7l8p_QMfD3w8j5SLxh1FYStKijh2A-hJ3pxmHoeicelGjF87-WMh2kqRh0zOVIK_uGO3tf-xCNr0MlEpiADR52aFrHrZjFmJUOJrWlX3m9xYC2HbP3PP0G_fuJQdZa4x3ohpqsp6IdnAQCsc1cWOX_oHbOC9ggcSnht-LlF1nCYKhXA8LS6gWc9G4AF-DQXBz6L8bsBLZRTyA3iaReiIM-hFjNxGwOZr-Q5uiNUxxFar5b8tf_M5oRoxMI5pZxSme6YEIhSUEK4ly3R5Hrsiqlwxy9vY6kNEnvgA-Prrgriaw-790ls5EPocdihlP6BE4WG5O-N8wQApdCL9G9DWQh0DF44R6ITKId-Jh-YEZQeIyG6zKjl3jHEbqGeCjAUhst9e3soz0zorLWg87qDce3QR_m095af2UOivXMIKtOFUxYwfDPqolkrHCcCK8mZnMJL894AJnXPodlNS7o94xCDwviPZLOyjWCHSd3UWIymYsKGWfKNGkbpuu84WKNEEofQkB0v0EPLfaHTTqz2UIY3k7B4eQV4jvuEy5xhUYBr5dr342qXIf_u_MTMDPpHEKWye1OyMsMyDympOyqSM5B3K3oTjE4vKHD332H7Bw55tHZtp3LDZtkb6YERfgGoJzrsQd9aXkRG15KCx0CiiNmD6wIuong=w719-h960-no" alt="Smiley face" height="500" width="*"></p>
-    
-    
-  <blockquote style="text-align:center">"It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants."</blockquote>
-</div>
+    </div>
 
 
 
 </body>
+
 </html>
 <!--
 <!DOCTYPE html>
