@@ -1,8 +1,13 @@
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update});
+var game = new Phaser.Game(1080, 1920, Phaser.CANVAS, 'game', {
+    preload: preload,
+    create: create,
+    update: update
+});
 
 function preload() {
-    game.load.audio('boden', ['assets/F-Zero - Death Wind.mp3']);
-    
+    game.load.audio('boden', ['assets/songOfDay.mp3']);
+
+
 }
 
 
@@ -24,16 +29,11 @@ function create() {
 
 function changeVolume(pointer) {
 
-    if (pointer.y < 100)
-    {
+    if (pointer.y < 100) {
         music.mute = false;
-    }
-    else if (pointer.y < 300)
-    {
+    } else if (pointer.y < 300) {
         music.volume += 0.1;
-    }
-    else
-    {
+    } else {
         music.volume -= 0.1;
     }
 
