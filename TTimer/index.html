@@ -2,42 +2,119 @@
 <html lang="en-us">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Slab|Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
 
-    <style>
-    .city {
-            float: left;
-            margin: 5px;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+     body {
+    background-image: url("https://previews.123rf.com/images/silvia/silvia0801/silvia080100001/2310439-square-background-cork-board-Stock-Photo.jpg");    
+     background-position: center;
+         background-size: contain;
+    background-attachment: fixed;
+} 
+
+#menu-outer {
+	height: 300px;
+ 
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+ul#horizontal-list {
+	min-width: 300px;
+	list-style: square;
+	padding-top: 20px;
+	}
+	ul#horizontal-list li {
+		display: inline;
+	}
+      .city {
+            float: left; width: 300px; 
+          transform:translateY(800px);
+          margin: 5px;
             padding: 15px;
             max-width: device-width;
             max-height: device-height;
             height: inherit;
-            border: 1px solid black;
+            
+         background-image: url(https://s-media-cache-ak0.pinimg.com/736x/df/a5/9c/dfa59cc952478f5aa96b27c6835bd74d--wrinkled-paper-crumpled-paper.jpg);
+          
         }
         
         gameItem {
-            float: left;
+            float:  left;
             margin: auto;
             padding: 1px;
             border: 1px solid black;
-        }
+            
+                    }
         
         body {
             display: inline-block;
             margin: 0px auto;
             text-align: center;
+            
         }
         
         html {
             text-align: center;
+           
         }
         
         blockquote {
-            font-style: italic;
+             font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'Josefin Slab', serif;
+            font-size-adjust: auto;
         }
-    }
+      
+  img {
+   
+}
 
-    </style>
+      h1 {
+          font-family: 'Homemade Apple', cursive;
+
+      }
+      
+    .fullscreen-bg {
+    position: top;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 100;
+        clear: both;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+      
+      }
+      
+      var countDownDate {
+      background-color: floralwhite;
+      border="0"
+      scrolling="no"
+      allowtransparency="true"
+      width="100%"
+      height="100%"
+      style="border:0;">       
+
+      }      
+      
+      
+</style>
     <script src="js/phaser.js"></script>
     <script src="js/main.js"></script>
     <script>
@@ -85,52 +162,116 @@
     </script>
 
 </head>
+    <div class="fullscreen-bg">
+    <video loop autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+       
+        <source src="assets/Lost.mp4" type="video/mp4">
+       
+    </video>
+</div>
 
 <body>
+    <div id="menu-outer">
+  <div class="table">
+    <ul id="horizontal-list">
+      <li><div class="city">
+        <p id="demo"></p>
+        <h1 style="text-align:center">
+            "Dream"
+        </h1>
+        <p style="text-align:center"><img src="assets/dream.jpg" height="*" width="300" ></p>
+
+
+        <blockquote style="text-align:center">
+            "I missed you today. Between waking and sleeping, I thought of you.<br/>
+            We met somewhere inside an insomniac's dream, in a world so precarious- it could crumble at any given time- folding at the slightest touch.<br/>
+            I wish I could have a day with you, where the sun never went past noon. Or a night, where the stars could go on forming their constellations; until the sky is filled with stories of how I loved you.<br/>
+            But, of course, that can no longer be so."
+        </blockquote>
+        
     
-    <div class="city">
+    </div>
+
+   
+        <p id="demo"></p></li>
+      <li> <div class="city"><h1 style="text-align:center">
+            "Kiss"
+        </h1>
+        <p style="text-align:center"><img src="assets/kiss.jpg" alt="Smiley face" height="*" width="300"></p>
+
+
+        <blockquote style="text-align:center">Without meaning to<br/>he disarmed me<br/>with kisses that soothe<br/>and alarm me<br/><br/>In arms that terrify<br/>and calm me</blockquote>
+          </div> </li>
+      <li><div class="city"><h1 style="text-align:center">
+            "Yours and Mine"
+        </h1>
+        <p style="text-align:center"><img src="assets/yours.jpg" alt="Smiley face" height="*" width="300"></p>
+
+
+        <blockquote style="text-align:center">"You were you;<br/>And I was I;<br/>We were two<br/>before our time<br/><br/>I was yours,<br/>before I knew <br/>and you have always<br/><br/>been mine too.</blockquote>
+          </div> </li>
+      <li><div class="city">
+        <p id="demo"></p>
+        <h1 style="text-align:center">
+            "Souls"
+        </h1>
+        <p style="text-align:center"><img src="assets/happy.jpg" height="*" width="300" ></p>
+
+
+        <blockquote style="text-align:center">
+           
+When two souls fall in love, there is nothing else but the
+yearning to be close to the other. The presence that is felt
+through a hand held, a voice heard, or a smile seen.<br/>
+<br/>
+Souls do not have calendars or clocks, nor do they understand
+the notion of time or distance. They only know it feels right to
+be with one another.<br/><br/>
+
+
+This is the reason why you miss someone so much when they
+are not there— even if they are only in the very next room.
+Your soul only feels their absence— it doesn’t realize the
+separation is temporary.”<br/>
+           
+        </blockquote>
+        
+    
+    </div>
+
+   
+        <p id="demo"></p></li>
+        <li><div class="city">
         <p id="demo"></p>
         <h1 style="text-align:center">
             "Kiss"
         </h1>
-        <p style="text-align:center"><img src="assets/parkKiss.jpg" width="298" ></p>
+        <p style="text-align:center"><img src="assets/parkKiss.jpg" height="*" width="300" ></p>
 
 
         <blockquote style="text-align:center">
-            "Little by little<br/>
-            I gained your trust<br/>
-            Little by little<br/>
-            I fell in love"
+            I love you, I do –<br/>
+        you have my word.<br/>
+<br/>
+        You have all my words.
         </blockquote>
         
-        
-    
-    
-    
-    
-    
     
     </div>
 
+   
+        <p id="demo"></p></li>
+    </ul>
+        </div>
 
-    <div class="city">
+  </div>
 
-        <p id="demo"></p>
-        
-        
-        
-        
+    
         
         
 <!--        ---------------------- SECTION TO BE MODIFY ------------------------>
         
-        <h1 style="text-align:center">
-            "Teddy Bear"
-        </h1>
-        <p style="text-align:center"><img src="assets/IMG_20170706_003648_436.png" alt="Smiley face" height="*" width="300"></p>
-
-
-        <blockquote style="text-align:center">"And in that moment I thought,<br/>"How can someone look so cuddly?<br/><br/>yet I said to myself<br/>"Why not"</blockquote>
+    
         
 <!--        ---------------------- SECTION TO BE MODIFY ------------------------>
         

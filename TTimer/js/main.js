@@ -5,7 +5,7 @@ var game = new Phaser.Game(0, 0, Phaser.CANVAS, 'game', {
 });
 
 function preload() {
-    game.load.audio('boden', ['assets/songOfDay.mp3']);
+    game.load.audio('boden', ['paused']);
 
 
 }

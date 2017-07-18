@@ -1,0 +1,60 @@
+ body {
+    background-image: url("http://moheban-ahlebeit.com/images/Wallpaper-Love-Hd-1080P/Wallpaper-Love-Hd-1080P-18.jpg");    
+     background-position: center;
+    background-attachment: fixed;
+} 
+
+#menu-outer {
+	height: 300px;
+    background-color: white;
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+ul#horizontal-list {
+	min-width: 696px;
+	list-style: square;
+	padding-top: 20px;
+	}
+	ul#horizontal-list li {
+		display: inline;
+	}
+
+<style>
+    .city {
+            float: left;
+            margin: 5px;
+            padding: 15px;
+            max-width: device-width;
+            max-height: device-height;
+            height: inherit;
+            border: 1px solid black;
+        }
+        
+        gameItem {
+            float: left;
+            margin: auto;
+            padding: 1px;
+            border: 1px solid black;
+            
+                    }
+        
+        body {
+            display: inline-block;
+            margin: 0px auto;
+            text-align: center;
+            
+        }
+        
+        html {
+            text-align: center;
+        }
+        
+        blockquote {
+            font-style: italic;
+        }
+    }
+</style>
