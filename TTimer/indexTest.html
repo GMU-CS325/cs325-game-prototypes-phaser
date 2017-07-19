@@ -11,19 +11,24 @@
     <style>
         body {
             background-image: url("https://previews.123rf.com/images/silvia/silvia0801/silvia080100001/2310439-square-background-cork-board-Stock-Photo.jpg");
-            
         }
         
         .city {
             float: left;
             width: 300px;
-            
             margin: 5px;
             padding: 15px;
             max-width: device-width;
             max-height: device-height;
             height: inherit;
             background-image: url(https://s-media-cache-ak0.pinimg.com/736x/df/a5/9c/dfa59cc952478f5aa96b27c6835bd74d--wrinkled-paper-crumpled-paper.jpg);
+        }
+        
+        .itemGroup{
+            padding: auto;
+            margin: auto
+            border: 3px solid green;
+            text-align: center;
         }
         
         html {
@@ -107,30 +112,32 @@
 
 <body>
     <div>
-        <video width=800px loop autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+        <video style="text-align:center" width=600px loop autoplay poster="img/videoframe.jpg">
             <source src="assets/Lost.mp4" type="video/mp4">
         </video>
-        
-<!--
+
+        <!--
         <audio autoplay control>
             <source src="assets/Cubaneros.mp3" type="audio/mpeg">
         </audio>
 -->
 
     </div>
-    
-    
-    
-    <div class="city">
-        <p id="demo"></p>
-        <h1 style="text-align:center">
-            "All You Do"
-        </h1>
-        <p style="text-align:center"><img src="assets/smileCar.jpg" height="*" width="300"></p>
-        <blockquote style="text-align:center">
-            "I often find it hard to show you<br/> how much you mean to me,<br/> its not cause of lack of trying. <br/> But rather beacuse it grows<br/> every single day.<br/><br/> Todo lo que medas tu,<br/> todo lo que eres tu,<br/> le dan sentido a mi vida<br/><br/> I love you so much"<br/><br/> (I wish I was as good as you)
-        </blockquote>
-    </div>
+
+    <div class="itemGroup">
+
+
+
+        <div class="city">
+            <p id="demo"></p>
+            <h1 style="text-align:center">
+                "All You Do"
+            </h1>
+            <p style="text-align:center"><img src="assets/smileCar.jpg" height="*" width="300"></p>
+            <blockquote style="text-align:center">
+                "I often find it hard to show you<br/> how much you mean to me,<br/> its not cause of lack of trying. <br/> But rather beacuse it grows<br/> every single day.<br/><br/> Todo lo que medas tu,<br/> todo lo que eres tu,<br/> le dan sentido a mi vida<br/><br/> I love you so much"<br/><br/> (I wish I was as good as you)
+            </blockquote>
+        </div>
         <div class="city">
             <h1 style="text-align:center">
                 "Dream"
@@ -178,6 +185,7 @@
                 <br/> You have all my words.
             </blockquote>
         </div>
+    </div>
 
 </body>
 
