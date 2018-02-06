@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.2" orientation="orthogonal" renderorder="right-down" width="12" height="10" tilewidth="32" tileheight="32" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" source="platformertiles.json"/>
+ <layer name="BackgroundLayer" width="12" height="10">
+  <data encoding="base64" compression="zlib">
+   eJzjYWBg4BnFJGNOIOaCYm4aqKcWBgBKswWR
+  </data>
+ </layer>
+ <layer name="AccentLayer" width="12" height="10">
+  <data encoding="base64" compression="zlib">
+   eJzjY8ANBHCIsUDZ/FjUCqCJEwvQ7eKDmoMsjs1cbG4EATEoLY7ERjcHl16Y/QJIbEIAZqYY1E6YvWJIcshiyG6kJQAAIXYCQg==
+  </data>
+ </layer>
+ <layer name="GroundLayer" width="12" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIMAIxExQzDxA9hLCIHdxAjEXkZgbiAEbLACZ
+  </data>
+ </layer>
+</map>
