@@ -51,9 +51,6 @@ window.onload = function() {
     function create() {
       game.physics.startSystem(Phaser.Physics.ARCADE);
 
-
-
-
       // Sets up the background.
       this.background = game.add.tileSprite(0, 0, this.game.width, this.game.height, 'background');
       this.background.fixedToCamera = true;
@@ -88,10 +85,10 @@ window.onload = function() {
       this.mysticGemPickup = game.add.audio('mysticGemPickup');
       this.mysticGemPickup.volume = .3;
       // Music isn't accessed anywhere else, so regular variable.
-      let music = game.add.audio('music');
-      music.loop = true;
-      music.play();
-      music.volume = .3;
+      this.music = game.add.audio('music');
+      this.music.loop = true;
+      this.music.play();
+      this.music.volume = .3;
 
       // Sets up the HUD.
       this.HUD = game.add.group();
@@ -247,6 +244,7 @@ window.onload = function() {
         // game over!
         let gameOver = game.add.text(225, 250, 'GAME OVER!', {fill:'white', fontSize:'50px', boundsAlignH:'center', boundsAlignV:'middle'});
         gameOver.fixedToCamera = true;
+        game.time.events.add(5000, restart, this);
       }
       else {
         this.player.x = 80;
@@ -266,6 +264,13 @@ window.onload = function() {
        this.scoreCounter.text = 'Score = ' + score;
        let victory = game.add.text(300, 250, 'YOU WIN!', {fill:'white', fontSize:'50px', boundsAlignH:'middle', boundsAlignV:'middle'});
        victory.fixedToCamera = true;
+       game.time.events.add(5000, restart, this);
      }
+    }
+
+    // Restarts the game state whenever a game over or a win occurs.
+    function restart() {
+      this.music.stop();
+      game.state.restart();
     }
 };
