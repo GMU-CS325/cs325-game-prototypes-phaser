@@ -256,7 +256,7 @@ window.onload = function() {
     }
     // If the player has gather all the mystic gems, opens the exit door.
     function checkPlayerWin(player, exit) {
-     if (mysticGemCount == 0) {
+     if (mysticGemCount == 5) {
        // you win!
        this.exitLayer.visible = false;
        this.underExitLayer.visible = true;
