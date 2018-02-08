@@ -1,0 +1,12 @@
+{ "columns":6,
+ "image":"gem.png",
+ "imageheight":32,
+ "imagewidth":192,
+ "margin":0,
+ "name":"gem",
+ "spacing":0,
+ "tilecount":6,
+ "tileheight":32,
+ "tilewidth":32,
+ "type":"tileset"
+}
