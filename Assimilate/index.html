@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Assimilate</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Assimilate</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+It takes the typical action adventure style game and adds a twist to the main character, he is actually a robot from the future. This being said he has the ability to process information faster than people and therefore can at times percieve the world in "slow-motion".
+</li>
+
+<li><strong>Technical Merit:</strong>
+I think that the unique mechanic I have meshed into the typical action adventure game mechanics is very interesting, and it took me some time to get into a form that I was happy with.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+I learned a lot from this prototpye. I did what I had learned from my previous game and applied that knowledge to a top-down setting, and suddenly a lot of what worked before no longer worked. I learned how to apply navigation to a top-down game, how to use sprite atlases (this took me quite a while to wrap my head around), and how to work around things that phaser doesn't have a simple solution to.
+The most challenging parts of making this game were the enemy and the attacking animation. I really am not that happy with how they turned out. The enemy does not move the way that I attempted to make it move, it merely walks into a wall. I also struggled with trying to create an attack animation hitbox, it didn't come out the way I wanted it to, and as a result attacking is a bit wonky. I will try to improve both of these aspects in my next game if it incorporates these mechanics.
+During the next iteration I would very much like to include more and better enemies, as well as npc's that you can talk with. Ideally I would like to improve the loading and title screen as well.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+I borrowed all of the assets in this game aside from the visual loading screen assests.
+<ul>
+<li>Loading screen: self-made</li>
+<li>All music by Eric Skiff: <a href="http://ericskiff.com/music/">http://ericskiff.com/music</a>).</li>
+<li>All sounds effects: <a href="https://opengameart.org/content/512-sound-effects-8-bit-style">512 Sound Effects(8-bit Style)</a></li>
+<li>All ingame sprites and tiles: <a href="https://opengameart.org/content/zelda-like-tilesets-and-sprites">Zelda-Like Tilesets and Sprites</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+My game most closesly resemebles The Legend of Zelda: A Link to the Past. This was the game that I took inspiration from when I was trying to create the world and get the different mechanics to work.
+I did not borrow code from any of the phaser examples. I only referenced the API and my existing code from the previous project.
+</li>
+
+<li><strong>High Concept:</strong>
+A robot disguised like a human is sent back in time from the future to test a theory on time-travel, however he has no way back.
+</li>
+
+<li><strong>Theme:</strong>
+A person who is actually a robot.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+Input: keyboard
+Randomness: Deterministic
+Play Styles: Explorer and storyteller
+Genres: Action Adventure
+</li>
+
+<li><strong>Prototype Goal:</strong>
+The typical top-down game mechanics, movement and attacking. There is also a unique mechanic of using your robot processing power to "slow-down" time around you and move faster.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+I want players to experience a feeling that makes them want to explore the world and immerse themselves with the characters and dialouge. However, as this is a prototype there currently isn't a lot for the character to immerse themselves in.
+</li>
+
+<li><strong>Gameplay:</strong>
+In this game you control the person who is actually a robot. You navigate using the wasd keys. You can press the e key in order to make an action. Valid actions include: swinging your sword to attack (a little wonky; default). Core mechanic: Since you are a robot, you have the ability to better process the world than the lifeforms around you. Press the q key to activate your ability and overclock your neural processor. During this time the screen will darken and your movement and action speed will double. All lifeforms speed around you will be cut in half. This effect lasts for about five seconds and takes thirty seconds to refresh. There are audio cues for activating, deactiving, and refreshing the ability.
+</li>
+
+<li><strong>Strategies:</strong>
+Use the overclocking ability to move around faster! Later down the road, when there are more and better enemies, the ability will be used to kite around them to make combat easier.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A robot was created in the distance future. Its primary directive was to travel back in time in order to test a theory on time-travel. It was disguised to look like a human, and was given all of the needed abilities it would need to survey the life there and maintain its systems. However, it has no means of traveling back to the future. Upon meeting people in this older time period it decides that its new prime directive is to stop the evil that exists in the world, without blowing its cover and causing panic. The game begins just after the robot appeared in the past.
+</li>
+
+<li><strong>Target Audience:</strong>
+Anyone who likes top down action adventure games like the old Legend of Zelda games. The storyteller and explorer would particularly enjoy this game.
+</li>
+
+<li><strong>Play Time:</strong>
+My game prototype sadly only takes a couple minutes to play. The mechanics took me so long to set up that I didn't have time to create a large world to explore. Simply navigate to the woods and kill the log monster.
+</li>
+
+</ul>
+</div>
+</body>
+</html>
