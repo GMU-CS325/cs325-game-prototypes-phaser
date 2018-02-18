@@ -5,19 +5,15 @@ GameStates.makeGame = function( game, shared ) {
   var bouncy = null;
 
   function quitGame() {
-
     //  Here you should destroy anything you no longer need.
     //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
 
     //  Then let's go back to the main menu.
     game.state.start('MainMenu');
-
   }
 
   return {
-
     create: function () {
-
       //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
       // Create a sprite at the center of the screen using the 'logo' image.
@@ -43,7 +39,6 @@ GameStates.makeGame = function( game, shared ) {
     },
 
     update: function () {
-
       //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
       // Accelerate the 'logo' sprite towards the cursor,
