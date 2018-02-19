@@ -27,6 +27,7 @@ GameStates.makePreloader = function( game ) {
       //	Here we load the rest of the assets our game needs.
       //	As this is just a Project Template I've not provided these assets, swap them for your own.
       game.load.audio('titleMusic', 'assets/audio/cosmoscope.mp3');
+			game.load.image('background', 'assets/images/night_sky(edited).png');
 			game.load.image('buttonFrame', 'assets/images/button_frame.png');
 			game.load.image('title', 'assets/images/title.png');
 			game.load.spritesheet('buttons', 'assets/images/buttons.png', 257, 48);

@@ -2,8 +2,7 @@
 
 GameStates.makeGame = function( game, shared ) {
   // Create your own variables.
-  var bouncy = null;
-
+var counter = 0;
   function quitGame() {
     //  Here you should destroy anything you no longer need.
     //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
@@ -12,41 +11,38 @@ GameStates.makeGame = function( game, shared ) {
     game.state.start('MainMenu');
   }
 
+  function selectStar(star) {
+    if (star.animations.paused == true) {
+      star.animations.paused = false;
+      star.animations.play('twinkle');
+    }
+    else {
+      star.animations.stop(null, true);
+      star.animations.paused = true;
+    }
+  }
+
   return {
     create: function () {
-      //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
+      let background = game.add.sprite(0, 0, 'background');
+      background.width = 800;
+			background.height = 600;
 
-      // Create a sprite at the center of the screen using the 'logo' image.
-      bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
-      // Anchor the sprite at its center, as opposed to its top-left corner.
-      // so it will be truly centered.
-      bouncy.anchor.setTo( 0.5, 0.5 );
-
-      // Turn on the arcade physics engine for this sprite.
-      game.physics.enable( bouncy, Phaser.Physics.ARCADE );
-      // Make it bounce off of the world bounds.
-      bouncy.body.collideWorldBounds = true;
-
-      // Add some text using a CSS style.
-      // Center it in X, and position its top 15 pixels from the top of the world.
-      var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-      var text = game.add.text( game.world.centerX, 15, "Build something amazing.", style );
-      text.anchor.setTo( 0.5, 0.0 );
-
-      // When you click on the sprite, you go back to the MainMenu.
-      bouncy.inputEnabled = true;
-      bouncy.events.onInputDown.add( function() { quitGame(); }, this );
+      this.stars = game.add.group();
+			for (var i = 0; i < 10; i++) {
+				this.stars.add(game.add.sprite(Math.floor((Math.random() * 780) + 20), Math.floor((Math.random() * 400) + 20), 'twinkleStar'));
+        this.stars.getAt(i).inputEnabled = true;
+        this.stars.getAt(i).events.onInputDown.add(selectStar, this);
+			}
+			this.stars.callAll('animations.add', 'animations', 'twinkle', [0, 1, 2, 3, 4, 5, 6], 10, true);
+      this.stars.forEach((star) => {
+        star.animations.paused = true;
+      })
     },
 
     update: function () {
-      //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
-      // Accelerate the 'logo' sprite towards the cursor,
-      // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-      // in X or Y.
-      // This function returns the rotation angle that makes it visually match its
-      // new trajectory.
-      bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, game.input.activePointer, 500, 500, 500 );
+
     }
   };
 };
