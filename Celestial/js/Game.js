@@ -1,8 +1,11 @@
 "use strict";
 
-GameStates.makeGame = function( game, shared ) {
+GameStates.makeGame = function(game, shared) {
   // Create your own variables.
-var counter = 0;
+  var counter = 0;
+  var star1 = null, star2 = null;
+  var graphics = game.add.graphics();
+
   function quitGame() {
     //  Here you should destroy anything you no longer need.
     //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
@@ -20,6 +23,21 @@ var counter = 0;
       star.animations.stop(null, true);
       star.animations.paused = true;
     }
+    if (star1 == null) {
+      star1 = star;
+    }
+    else if (star2 == null) {
+      star2 = star;
+      drawLine();
+    }
+  }
+
+  function drawLine() {
+    console.log(star1);
+    let line = new Phaser.Line(star1.worldPosition.x + 8, star1.worldPosition.y + 8, star2.worldPosition.x + 8, star2.worldPosition.y + 8);
+    game.debug.geom(line,  'rgba(255, 255, 255, .5)');
+    star1 = null;
+    star2 = null;
   }
 
   return {
