@@ -2,9 +2,9 @@
 
 GameStates.makeGame = function(game, shared) {
   // Create your own variables.
+  var connections = [];
   var counter = 0;
   var star1 = null, star2 = null;
-  var graphics = game.add.graphics();
 
   function quitGame() {
     //  Here you should destroy anything you no longer need.
@@ -26,18 +26,57 @@ GameStates.makeGame = function(game, shared) {
     if (star1 == null) {
       star1 = star;
     }
-    else if (star2 == null) {
+    else if (star2 == null && star != star1) {
       star2 = star;
-      drawLine();
+      line = lineExists(star1, star2);
+      if (line != null) {
+        removeLine(line);
+      }
+      else {
+        drawLine();
+      }
     }
   }
 
+  function lineExists(star1, star2) {
+    let pos1 = [star1.worldPosition.x + 8, star1.worldPosition.y + 8];
+    let pos2 = [star2.worldPosition.x + 8, star2.worldPosition.y + 8];
+    connections.forEach((connection) => {
+      if (connections.star1 == pos1 || connections.star2 == pos1 && connections.star1 == pos2 || connections.star2 == pos2) {
+        return connection;
+      }
+      else {
+        return null;
+      }
+    });
+  }
+
   function drawLine() {
-    console.log(star1);
-    let line = new Phaser.Line(star1.worldPosition.x + 8, star1.worldPosition.y + 8, star2.worldPosition.x + 8, star2.worldPosition.y + 8);
-    game.debug.geom(line,  'rgba(255, 255, 255, .5)');
+    let draw = game.add.graphics();
+    draw.lineStyle(1, 0xffffff, .3);
+
+    draw.moveTo(star1.worldPosition.x + 8, star1.worldPosition.y + 8)
+    draw.beginFill();
+    draw.lineTo(star2.worldPosition.x + 8, star2.worldPosition.y + 8);
+    draw.endFill();
+
+    connections.push({
+      drawer: draw,
+      star1: [star1.worldPosition.x + 8, star1.worldPosition.y + 8],
+      star2: [star2.worldPosition.x + 8, star2.worldPosition.y + 8]
+    });
+
+    star1.animations.stop(null, true);
+    star1.animations.paused = true;
     star1 = null;
+    star2.animations.stop(null, true);
+    star2.animations.paused = true;
     star2 = null;
+  }
+
+  function removeLine(line) {
+    line.drawer.kill();
+    connections.splice(connections.indexOf(line), 1);
   }
 
   return {
