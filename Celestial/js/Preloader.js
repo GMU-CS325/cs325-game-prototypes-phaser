@@ -32,6 +32,8 @@ GameStates.makePreloader = function( game ) {
 			game.load.image('title', 'assets/images/title.png');
 			game.load.spritesheet('buttons', 'assets/images/buttons.png', 257, 48);
 			game.load.spritesheet('twinkleStar', 'assets/sprites/twinkle_star.png', 16, 16);
+
+			game.load.tilemap('level1', 'assets/levels/level1.json', null, Phaser.Tilemap.TILED_JSON);
     },
 
     create: function () {
