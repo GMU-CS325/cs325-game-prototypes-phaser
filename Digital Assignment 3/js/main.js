@@ -17,9 +17,9 @@ window.onload = function() {
 
 	function preload() {
 
-	game.load.image('atari', 'assets/sprites/block.png');
-	game.load.image('background', 'assets/games/starstruck/background2.png');
-	game.load.spritesheet('dude', 'assets/games/starstruck/dude.png', 32, 48);
+	game.load.image('atari', 'assets/block.png');
+	game.load.image('background', 'assets/background2.png');
+	game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
 
 	}
 
