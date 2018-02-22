@@ -13,7 +13,7 @@ window.onload = function() {
     // mods by Patrick OReilly 
     // twitter: @pato_reilly
 
-	var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update });
+	var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update });
 
 	function preload() {
 
