@@ -1,0 +1,12 @@
+{ "columns":7,
+ "image":"..\/sprites\/twinkle_star.png",
+ "imageheight":16,
+ "imagewidth":112,
+ "margin":0,
+ "name":"twinkle_star",
+ "spacing":0,
+ "tilecount":7,
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset"
+}

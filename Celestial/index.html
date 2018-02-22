@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Celestial</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Celestial</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+My game is original in its mechanics of connecting stars together to form constellations.
+You click on stars and play a connect the dots style game with them to complete the constellation it asks you to.
+However, currently the only constellation available is The Big Dipper.
+</li>
+
+<li><strong>Technical Merit:</strong>
+My game is interesting because it has a very unique mechanic of connecting stars as if it were a game of connect the dots.
+The player's score is judged based on correct connections rather than having correct stars. This way if they use all the right stars, but connect them wrong they do not get a perfect win.
+The proper stars are placed and then many stars are placed randomly in the sky so that a player who keeps losing cannot try every combination until they win.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+I learned a lot about how phaser handles callbacks from buttons and the way that on click works for sprites. I also learned a lot more about game states, timers, and text.
+The hardest part about making this game prototype was creating the mappings betweent the different star sprites so that they would be connected properly. It was then very difficult to create a way to compare the correct solution to the solution that the player provided.
+Sadly, I did not complete as much as I would have to liked to on this assignment due to time. I wanted to have more levels and a level select, however there currently is only the one. I also had wanted to display to the users what constellation to solve but didnt have time. Curenntly you are making THE BIG DIPPER.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+The only assets I borrowed are the two background images (which I altered) and the music. The rest of the assets were created by me. In another iteration I plan on changing the music, adding more music, and adding sound effects as well. I just didn't have the time to search for more that fit the theme of the game.
+<ul>
+<li>Night Sky Image 1: <a href="https://pngtree.com/freebackground/cartoon-night-sky-background_883979.html">Night Sky Image 1</a></li>
+<li>Night Sky Image 2: <a href="https://pngtree.com/freebackground/cartoon-flat-blue-sky-night-sky-background_883976.html">Night Sky Image 2</a></li>
+<li>Au5 - Cosmoscope: <a href="https://soundcloud.com/au5/cosmoscope"> Au5 - Cosmoscope</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+I cannot think of another game that is even remotely close to the way that my game works. I suppose connect the dots is the closest it gets.
+</li>
+
+<li><strong>High Concept:</strong>
+Connect the stars in the night sky to form connstellations; the more accurate you are the more points you get.
+</li>
+
+<li><strong>Theme:</strong>
+I used the stargazer theme from the theme cards.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+Input: Mouse; Randomess: A bit of random, a bit of deterministic;  Play Styles: Competitor, Achiever; Genres: Puzzle
+</li>
+
+<li><strong>Prototype Goal:</strong>
+Using the mouse as a primary input for a game. Begin able to connect sprites by clicking on theme. Accurately measuring correct connections.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+I want the players to experience a relaxing and calming puzzle game that makes them think about the night sky.
+</li>
+
+<li><strong>Gameplay:</strong>
+The player clicks on the various stars in the sky to select them. If they are selected they will twinkle. If two stars are selected a connection will appear between them. If there alreadt was a connection it will be removed.
+The goal is to make all the connections of the constellation (currently just Big Dipper, in another interation there will be many levels). The player has 90 seconds to complete the level. They can complete the level early by clicking the complete button.
+
+I had intended on adding more interactions such as shooting stars, a brief illustration of the constellation to be drawn, multiple levels, and more, but sadly I did not have the time.
+</li>
+
+<li><strong>Strategies:</strong>
+Just attempt to connect the dots until you find the correct constellation. If you do not know the big dipper, look it up! Ideally I would have shown an image of it before the puzzle, but I ran out of time.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+The player is an astronomer looking at the night sky from their observatory. They are attempting to locate different constellations that reside within clusters of stars.
+</li>
+
+<li><strong>Target Audience:</strong>
+people who love puzzle games. People who love looking for constellations in the night sky.
+</li>
+
+<li><strong>Play Time:</strong>
+90 seconds. Ideally there would be more levels, but I did not have time to make more - setting of the game mechanics took too much time.
+</li>
+
+</ul>
+</div>
+</body>
+</html>

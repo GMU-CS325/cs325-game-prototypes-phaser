@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>The Mystic Gems</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>The Mystic Gems</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+My game is original in its theme of traveling into caves and ruins to make a great discovery. Multiple items must be collected and brought to a central point to progress.
+</li>
+
+<li><strong>Technical Merit:</strong>
+I managed to make it so that the items collected wihin the game world actually have an impact on the tilemap of the level.
+I am also very happy with how the HUD at the top left turned out.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+I learned a lot about how Phaser works and how the different elements interact with one another. This includes, but is not limited to: arcade physics, tilesets, tilesprites, sprites, tilemaps, input, etc.
+I also learned how Tiled works and how to integrate a Tiled map with objects into Phaser, and how to convert the objects into sprite.
+The easiest part was setting up the player controls and making the Tiled map. One of the hardest parts was converting Tiled objects into sprites, and getting them to display correctly and interact with the player.
+I also am not an artist, so I struggled with making decent sprites and tiles. I feel like I got a bit better over time (the character is the first I made, the tiles for the ruins are the last that I made).
+</li>
+
+<li><strong>Prototype Assets:</strong>
+All of the sprites, tiles, and images were poorly drawn by me. All of the sound files were borrowed from the links below.
+<ul>
+<li>Background Music: <a href="https://soundcloud.com/digitalr3public/cristal-cave-chiptune">Cristal Cave Chiptune, by digitalR3public</a></li>
+<li>Sounds Effects: <a href="https://opengameart.org/content/512-sound-effects-8-bit-style">512 Sound Effects(8-bit Style)</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+The closet game that I can think of that this resemebles would be Spelunky, however that game is simply above traversing the cave rather than exploring it for certain items.
+I referenced these three sources while making my game in order to help me understand some of phaser's functionality.
+<ul>
+  <li><a href='https://phaser.io/examples/v2/arcade-physics/platformer-basics'>Platformerbasics</a></li>
+  <li><a href='https://phaser.io/examples/v2/tilemaps/create-from-objects'>Create from objects</a></li>
+  <li><a href='https://www.joshmorony.com/create-a-running-platformer-game-in-phaser-with-tilemaps/'>Tiled and Phaser</a></li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+Geoff the geologist must gather all of the mystic gems in order to progess through the caves and ancient ruins.
+</li>
+
+<li><strong>Theme:</strong>
+I used the geologist theme from the themecards that were drawn. I also used the theme of cave exploration and spelunking.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+I created a platformer that attempts to be a collectathon platformer, though since this is a prototype only 5 of the items are needed to complete the game.
+I used standard controls for a platformer: left, right, and jump. No elements of randomness were included in this prototype due to the time constraint.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+The ability to collect certain items, and then have the items impact the game world somehow.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+I would like the players to experience a fun to play platformer that is challenging.
+</li>
+
+<li><strong>Gameplay:</strong>
+The core mechanic of the game is platforming and collecting the mystic gems. You can move left, right, and jump by using the arrow keys.
+Coming into contact with an item will result in you collecting it, you can see your inventory at the top left at all times.
+Coming into contact with spikes or falling down a pit will kill you, you can see you lives at the top left at all times.
+Collect all 5 mystic gems and then get to the exit marked by the "gem-stone" and you win!
+<p>Elements that I did not have time to add:</p>
+  <ul>
+    <li>Enemies - I had planned for numerous types of enemies with different movement patterns.</li>
+    <li>Fall Damage</li>
+    <li>Multiple Levels</li>
+    <li>Ability to mine cave blocks</li>
+    <li>Shop to spend blue gems at - I instead made them act like coins in a Mario game</li>
+  </ul>
+</li>
+
+<li><strong>Strategies:</strong>
+Platform well and take care of the spike's hitboxes, it is larger than it looks. Collecting 40 blue gems will give you a 1UP. There is a single 1UP hidden inside the level somewhere.
+Depending on the route you take, you may need to backtrack in order to continue.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+Geoff is a geologist on a trip to a remote village, looking for new minerals to descover. While there he heard the folktale of an ancient gem located within the old destroyed ruins in the nearby caves.
+The story told of a beautiful gem unline any other, that is locked away within the ruin's treasury. This treasury can only be opened through the collected magic of the ancient mystic gems - the power source used by the old civilization.
+Geoff must collect all of the mystic gems in order to make the discovery of a life time!
+</li>
+
+<li><strong>Target Audience:</strong>
+Those who enjoy platformers and collectathons.
+</li>
+
+<li><strong>Play Time:</strong>
+My game prototype will take about 5-10 minutes to play.
+</li>
+
+</ul>
+
+</div>
+</body>
+</html>

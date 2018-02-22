@@ -1,0 +1,12 @@
+{ "columns":5,
+ "image":"cave_purple.png",
+ "imageheight":320,
+ "imagewidth":320,
+ "margin":0,
+ "name":"cave_purple",
+ "spacing":0,
+ "tilecount":25,
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset"
+}
