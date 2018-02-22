@@ -26,7 +26,7 @@ GameStates.makeMainMenu = function( game, shared ) {
 			background.height = 600;
 			// Sets up the button in the center of the screen.
 			let playButtonFrame = game.add.sprite(game.world.centerX - 132, 350, 'buttonFrame');
-      let playButton = game.add.button(game.world.centerX - 128, 353, 'buttons', startGame, null, 0, 1, 2);
+      let playButton = game.add.button(game.world.centerX - 128, 353, 'buttons', startGame, null, 0, 2, 4);
 
 			this.stars = game.add.group();
 			for (var i = 0; i < 10; i++) {

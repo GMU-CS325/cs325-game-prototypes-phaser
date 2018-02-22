@@ -29,9 +29,15 @@ GameStates.makePreloader = function( game ) {
       game.load.audio('titleMusic', 'assets/audio/cosmoscope.mp3');
 			game.load.image('background', 'assets/images/night_sky(edited).png');
 			game.load.image('buttonFrame', 'assets/images/button_frame.png');
+			game.load.image('finished', 'assets/images/finished.png');
 			game.load.image('title', 'assets/images/title.png');
+			game.load.image('levelComplete', 'assets/images/levelComplete.png');
+			game.load.image('levelFailed', 'assets/images/levelFailed.png');
 			game.load.spritesheet('buttons', 'assets/images/buttons.png', 257, 48);
 			game.load.spritesheet('twinkleStar', 'assets/sprites/twinkle_star.png', 16, 16);
+			game.load.spritesheet('hourglass', 'assets/sprites/hourglass.png', 32, 32);
+			game.load.spritesheet('noStar', 'assets/sprites/noStar.png', 32, 32);
+			game.load.spritesheet('star', 'assets/sprites/star.png', 32, 32);
 
 			game.load.tilemap('level1', 'assets/levels/level1.json', null, Phaser.Tilemap.TILED_JSON);
     },
