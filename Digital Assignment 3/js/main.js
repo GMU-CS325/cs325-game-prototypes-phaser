@@ -13,290 +13,165 @@ window.onload = function() {
     // mods by Patrick OReilly 
     // twitter: @pato_reilly
 
-    var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update, render: render });
+	var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update });
 
-    function preload() {
+	function preload() {
 
-        game.load.tilemap('matching', 'assets/phaser_tiles.json', null, Phaser.Tilemap.TILED_JSON);
-        game.load.image('tiles', 'assets/phaser_tiles.png');//, 100, 100, -1, 1, 1);    
-    }
+	game.load.image('atari', 'assets/sprites/block.png');
+	game.load.image('background', 'assets/games/starstruck/background2.png');
+	game.load.spritesheet('dude', 'assets/games/starstruck/dude.png', 32, 48);
 
-    var timeCheck = 0;
-    var flipFlag = false;
+	}
 
-    var startList = new Array();
-    var squareList = new Array();
+	var sprite;
 
-    var masterCounter = 0;
-    var squareCounter = 0;
-    var attempt = 20;
-    var square1Num;
-    var square2Num;
-    var savedSquareX1;
-    var savedSquareY1;
-    var savedSquareX2;
-    var savedSquareY2;
+	var player;
+	var facing = 'left';
+	var jumpTimer = 0;
+	var cursors;
+	var jumpButton;
+	var yAxis = p2.vec2.fromValues(0, 1);
 
-    var map;
-    var tileset;
-    var layer;
+	function create() {
 
-    var marker;
-    var currentTile;
-    var currentTilePosition;
+	bg = game.add.tileSprite(0, 0, 800, 600, 'background');
 
-    var tileBack = 25;
-    var timesUp = '+';
-    var tryAgain = '-';
-    var youWin = '+';
+	//  Enable p2 physics
+	game.physics.startSystem(Phaser.Physics.P2JS);
 
-    var myCountdownSeconds;
+	game.physics.p2.gravity.y = 350;
+	game.physics.p2.world.defaultContactMaterial.friction = 0.3;
+	game.physics.p2.world.setGlobalStiffness(1e5);
 
-    function create() {
+	//  Add a sprite
+	player = game.add.sprite(200, 200, 'dude');
+	player.animations.add('left', [0, 1, 2, 3], 10, true);
+	player.animations.add('turn', [4], 20, true);
+	player.animations.add('right', [5, 6, 7, 8], 10, true);
 
-            map = game.add.tilemap('matching');
+	//  Enable if for physics. This creates a default rectangular body.
+	game.physics.p2.enable(player);
 
-            map.addTilesetImage('Desert', 'tiles');
-            //tileset = game.add.tileset('tiles')
+	player.body.fixedRotation = true;
+	player.body.damping = 0.5;
 
-            //layer = game.add.tilemapLayer(0, 0, 600, 600, tileset, map, 0);
-            layer = map.createLayer('Ground');//.tilemapLayer(0, 0, 600, 600, tileset, map, 0);
+	var spriteMaterial = game.physics.p2.createMaterial('spriteMaterial', player.body);
+	var worldMaterial = game.physics.p2.createMaterial('worldMaterial');
+	var boxMaterial = game.physics.p2.createMaterial('worldMaterial');
 
-            //layer.resizeWorld();
+	//  4 trues = the 4 faces of the world in left, right, top, bottom order
+	game.physics.p2.setWorldMaterial(worldMaterial, true, true, true, true);
 
-            marker = game.add.graphics();
-            marker.lineStyle(2, 0x00FF00, 1);
-            marker.drawRect(0, 0, 100, 100);
+	//  A stack of boxes - you'll stick to these
+	for (var i = 1; i < 4; i++)
+	{
+	    var box = game.add.sprite(300, 645 - (95 * i), 'atari');
+	    game.physics.p2.enable(box);
+	    box.body.mass = 6;
+	    // box.body.static = true;
+	    box.body.setMaterial(boxMaterial);
+	}
 
-        randomizeTiles();
+	//  Here is the contact material. It's a combination of 2 materials, so whenever shapes with
+	//  those 2 materials collide it uses the following settings.
 
-    }
+	var groundPlayerCM = game.physics.p2.createContactMaterial(spriteMaterial, worldMaterial, { friction: 0.0 });
+	var groundBoxesCM = game.physics.p2.createContactMaterial(worldMaterial, boxMaterial, { friction: 0.6 });
 
-    function update() {
-        
-        countDownTimer();
-        
-        if (layer.getTileX(game.input.activePointer.worldX) <= 5) // to prevent the marker from going out of bounds
-        {
-            marker.x = layer.getTileX(game.input.activePointer.worldX) * 100;
-            marker.y = layer.getTileY(game.input.activePointer.worldY) * 100;
-        }
+	//  Here are some more options you can set:
 
-        if (flipFlag == true) 
-        {
-            if (game.time.now - timeCheck > 500)
-            {
-                flipBack();
-                flipFlag = false;
-            }
-        }
-        else
-        {
-            processClick();
-        }
+	// contactMaterial.friction = 0.0;     // Friction to use in the contact of these two materials.
+	// contactMaterial.restitution = 0.0;  // Restitution (i.e. how bouncy it is!) to use in the contact of these two materials.
+	// contactMaterial.stiffness = 1e3;    // Stiffness of the resulting ContactEquation that this ContactMaterial generate.
+	// contactMaterial.relaxation = 0;     // Relaxation of the resulting ContactEquation that this ContactMaterial generate.
+	// contactMaterial.frictionStiffness = 1e7;    // Stiffness of the resulting FrictionEquation that this ContactMaterial generate.
+	// contactMaterial.frictionRelaxation = 3;     // Relaxation of the resulting FrictionEquation that this ContactMaterial generate.
+	// contactMaterial.surfaceVelocity = 0.0;        // Will add surface velocity to this material. If bodyA rests on top if bodyB, and the surface velocity is positive, bodyA will slide to the right.
 
-        if (attempt == 0 || myCountdownSeconds <= 0)
-        {
-            tryAgain = 'TRY AGAIN';
-            game.paused = true;
-        }
-    }
-       
-       
-    function countDownTimer() {
-      
-        var timeLimit = 180
-      
-        myTime = game.time.now;
-        mySeconds = parseInt(myTime/1000);
-        myCountdownSeconds = timeLimit - mySeconds;
-        
-        if (myCountdownSeconds <= 0) 
-            {
-            // time is up
-            timesUp = 'Time is up!'; 
-            myCountdownSeconds = 0;
+	text = game.add.text(20, 20, 'move with arrow, space to jump', { fill: '#ffffff' });
 
-        }
-    }
+	cursors = game.input.keyboard.createCursorKeys();
+	jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-    function processClick() {
+	}
 
-        currentTile = map.getTile(layer.getTileX(marker.x), layer.getTileY(marker.y));
-        currentTilePosition = ((layer.getTileY(game.input.activePointer.worldY)+1)*6)-(6-(layer.getTileX(game.input.activePointer.worldX)+1));
+	function update() {
 
-        if (game.input.mousePointer.isDown && (currentTile.index == tileBack))
-        {
-            // check to make sure the tile is not already flipped
-            if (currentTile.index == tileBack)
-            {
-                // get the corresponding item out of squareList
-                currentNum = squareList[currentTilePosition-1];
-                flipOver();
-                squareCounter++;
+	if (cursors.left.isDown)
+	{
+	    player.body.moveLeft(200);
 
-                if (squareCounter == 1)
-                {
-                    square1Num = currentNum;
-                    savedSquareX1 = layer.getTileX(marker.x);
-                    savedSquareY1 = layer.getTileY(marker.y);
-                }
+	    if (facing != 'left')
+	    {
+	        player.animations.play('left');
+	        facing = 'left';
+	    }
+	}
+	else if (cursors.right.isDown)
+	{
+	    player.body.moveRight(200);
 
-                // is the second tile of pair flipped?
-                if  (squareCounter == 2)
-                {
-                    // reset squareCounter
-                    squareCounter = 0;
-                    square2Num = currentNum;
-                    // check for match
-                    if (square1Num == square2Num)
-                    {
-                        masterCounter++;
+	    if (facing != 'right')
+	    {
+	        player.animations.play('right');
+	        facing = 'right';
+	    }
+	}
+	else
+	{
+	    player.body.velocity.x = 0;
 
-                        if (masterCounter == 18)
-                        {
-                            // go "win"
-                            youWin = 'Got them all!';
-                        }
-                        else
-                        {
-                            savedSquareX2 = layer.getTileX(marker.x);
-                            savedSquareY2 = layer.getTileY(marker.y);
-                        }
-                    }
-                    else
-                    {
-                        flipFlag = true;
-                        timeCheck = game.time.now;
-                        savedSquareX2 = layer.getTileX(marker.x);
-                        savedSquareY2 = layer.getTileY(marker.y);
-                        attempt--;
-                    }
+	    if (facing != 'idle')
+	    {
+	        player.animations.stop();
 
-                }
-            }
-        }
-    }
-     
-    function flipOver() {
-     
-        map.putTile(currentNum, layer.getTileX(marker.x), layer.getTileY(marker.y));
-    }
-     
-    function flipBack() {
+	        if (facing == 'left')
+	        {
+	            player.frame = 0;
+	        }
+	        else
+	        {
+	            player.frame = 5;
+	        }
 
-        map.putTile(tileBack, savedSquareX1, savedSquareY1);
-        map.putTile(tileBack, savedSquareX2, savedSquareY2);
-     
-    }
-     
-    function randomizeTiles() {
+	        facing = 'idle';
+	    }
+	}
 
-        for (num = 1; num <= 18; num++)
-        {
-            startList.push(num);
-        }
-        for (num = 1; num <= 18; num++)
-        {
-            startList.push(num);
-        }
+	if (jumpButton.isDown && game.time.now > jumpTimer && checkIfCanJump())
+	{
+	    player.body.moveUp(300);
+	    jumpTimer = game.time.now + 750;
+	}
 
-        // for debugging
-        myString1 = startList.toString();
-      
-        // randomize squareList
-        for (i = 1; i <=36; i++)
-        {
-            var randomPosition = game.rnd.integerInRange(0,startList.length-1);
-            var thisNumber = startList[ randomPosition ];
-            
-            squareList.push(thisNumber);
-            var a = startList.indexOf(thisNumber);
+	}
 
-            startList.splice(a, 1);
-            
-        }
-        
-        // for debugging
-        myString2 = squareList.toString();
-      
-        for (col = 0; col < 6; col++)
-        {
-            for (row = 0; row < 6; row++)
-            {
-                map.putTile(tileBack, col, row);
-            }
-        }
-    }
+	function checkIfCanJump() {
 
-    function getHiddenTile() {
-            
-        thisTile = squareList[currentTilePosition-1];
-        return thisTile;
-    }
+	var result = false;
 
-    function render() {
+	for (var i=0; i < game.physics.p2.world.narrowphase.contactEquations.length; i++)
+	{
+	    var c = game.physics.p2.world.narrowphase.contactEquations[i];
 
-        game.debug.text(timesUp, 620, 208, 'rgb(0,255,0)');
-        game.debug.text(youWin, 620, 240, 'rgb(0,255,0)');
+	    if (c.bodyA === player.body.data || c.bodyB === player.body.data)
+	    {
+	        var d = p2.vec2.dot(c.normalA, yAxis);
 
-        game.debug.text('Time: ' + myCountdownSeconds, 620, 15, 'rgb(0,255,0)');
+	        if (c.bodyA === player.body.data)
+	        {
+	            d *= -1;
+	        }
 
-        //game.debug.text('squareCounter: ' + squareCounter, 620, 272, 'rgb(0,0,255)');
-        game.debug.text('Matched Pairs ' + masterCounter, 620, 304, 'rgb(255,255,255)');
-        game.debug.text('Remaining Tries ' + attempt, 620, 320, 'rgb(255,255,0)');
-        game.debug.text(tryAgain, 620, 350, 'rgb(255,0,0)');
+	        if (d > 0.5)
+	        {
+	            result = true;
+	        }
+	    }
+	}
 
+	return result;
 
-        //game.debug.text('startList: ' + myString1, 620, 208, 'rgb(255,0,0)');
-        //game.debug.text('squareList: ' + myString2, 620, 240, 'rgb(255,0,0)');
+	}
 
-
-        // game.debug.text('Tile: ' + map.getTile(layer.getTileX(marker.x), layer.getTileY(marker.y)), 620, 48, 'rgb(255,0,0)');
-
-        game.debug.text('LayerX: ' + layer.getTileX(marker.x), 620, 80, 'rgb(255,0,0)');
-        game.debug.text('LayerY: ' + layer.getTileY(marker.y), 620, 112, 'rgb(255,0,0)');
-
-        // game.debug.text('Tile Position: ' + currentTilePosition, 620, 144, 'rgb(255,0,0)');
-        game.debug.text('Hidden Tile: ' + getHiddenTile(), 620, 176, 'rgb(255,0,0)');
-    }
-
-/*
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
-    
-    function preload() {
-        // Load an image and call it 'logo'.
-        game.load.image( 'logo', 'assets/phaser.png' );
-    }
-    
-    var bouncy;
-    
-    function create() {
-        // Create a sprite at the center of the screen using the 'logo' image.
-        bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
-        
-        // Turn on the arcade physics engine for this sprite.
-        game.physics.enable( bouncy, Phaser.Physics.ARCADE );
-        // Make it bounce off of the world bounds.
-        bouncy.body.collideWorldBounds = true;
-        
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Build something amazing.", style );
-        text.anchor.setTo( 0.5, 0.0 );
-    }
-    
-    function update() {
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, game.input.activePointer, 500, 500, 500 );
-    }
-*/
 };
