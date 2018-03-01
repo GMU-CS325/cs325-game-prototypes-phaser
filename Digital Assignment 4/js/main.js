@@ -38,11 +38,13 @@ window.onload = function()
 	var husky4;
 	var husky5;
 
+	/*
 	var bound1;
 	var bound2;
 	var bound3;
 	var bound4;
 	var bound5;
+	*/
 
 	var player;
 	var cursors;
@@ -80,11 +82,11 @@ window.onload = function()
 	    game.physics.p2.enable(husky4);
 	    game.physics.p2.enable(husky5);
 
-	    bound1 = new Phaser.Rectangle(100, 0, 1700, 100);
-	    bound2 = new Phaser.Rectangle(100, 100, 1700, 100);
-	    bound3 = new Phaser.Rectangle(100, 200, 1700, 100);
-	    bound4 = new Phaser.Rectangle(100, 300, 1700, 100);
-	    bound5 = new Phaser.Rectangle(100, 400, 1700, 100);
+	    //bound1 = new Phaser.Rectangle(100, 0, 1700, 100);
+	    //bound2 = new Phaser.Rectangle(100, 100, 1700, 100);
+	    //bound3 = new Phaser.Rectangle(100, 200, 1700, 100);
+	    //bound4 = new Phaser.Rectangle(100, 300, 1700, 100);
+	    //bound5 = new Phaser.Rectangle(100, 400, 1700, 100);
 
 	    cursors = game.input.keyboard.createCursorKeys();
 	    
@@ -116,13 +118,14 @@ window.onload = function()
 	    button5.onInputOut.add(out, this);
 	    button5.onInputUp.add(up, this);
 
-
+	    /*
 	    husky1.inputEnabled = true;
 	    husky1.input.boundsRect = bound1;
 	    husky2.input.boundsRect = bound2;
 	    husky3.input.boundsRect = bound3;
 	    husky4.input.boundsRect = bound4;
 	    husky5.input.boundsRect = bound5;
+	    */
 
 	}
 
@@ -363,7 +366,8 @@ window.onload = function()
 					break;
 			}
 
-			buttonS.inputEnabled = false;	
+			buttonS.inputEnabled = false;
+			buttonS.visible = false;
 		    //  Notice that the sprite doesn't have any momentum at all,
 		    //  it's all just set by the camera follow type.
 		    //  0.1 is the amount of linear interpolation to use.
