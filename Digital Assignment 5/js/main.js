@@ -22,6 +22,7 @@ window.onload = function()
 		game.load.spritesheet('arrow', 'assets/Arrow.png', 101, 50);
 	    game.load.image('background','assets/Background.png');
 	    game.load.spritesheet('husky','assets/Husky.png', 90, 58, 3);
+	    game.load.spritesheet('border','assets/Border.png', 500, 2);
 	    
 	}
 
@@ -30,7 +31,10 @@ window.onload = function()
 	var button3;
 	var button4;
 	var button5;
-	var buttonS;
+	var button_play;
+
+	var text;
+	var text2;
 
 	var husky1;
 	var husky2;
@@ -38,13 +42,19 @@ window.onload = function()
 	var husky4;
 	var husky5;
 
-	/*
+	var boundaries;
+	var huskies;
+
 	var bound1;
 	var bound2;
 	var bound3;
 	var bound4;
 	var bound5;
-	*/
+	var bound6;
+
+	var bound7;
+	var bound8;
+	var finish;
 
 	var player;
 	var cursors;
@@ -53,18 +63,70 @@ window.onload = function()
 
 	function create()
 	{
-	    game.add.tileSprite(0, 0, 1800, 600, 'background');
+		game.add.tileSprite(0, 0, 1800, 600, 'background');
+		game.world.setBounds(0, 0, 1800, 500);
+		game.physics.startSystem(Phaser.Physics.P2JS);
+	    game.physics.p2.setImpactEvents(true);
 
-	    game.world.setBounds(0, 0, 1800, 500);
+	    boundaries = game.physics.p2.createCollisionGroup();
+	    huskies = game.physics.p2.createCollisionGroup();
+	    game.physics.p2.updateBoundsCollisionGroup();
 
-	    game.physics.startSystem(Phaser.Physics.P2JS);
+	    var boundary = game.add.group();
+		boundary.enableBody = true;
+		boundary.physicsBodyType = Phaser.Physics.P2JS;
 
-	    husky1 = game.add.sprite(150, 50, 'husky', 10);
-	    husky2 = game.add.sprite(150, 150, 'husky', 10);
-	    husky3 = game.add.sprite(150, 250, 'husky', 10);
-	    husky4 = game.add.sprite(150, 350, 'husky', 10);
-	    husky5 = game.add.sprite(150, 450, 'husky', 10);
+		bound1 = boundary.create(0, 0, 'border');
+		bound1.body.setRectangle(500, 2);
+		bound2 = boundary.create(0, 100, 'border');
+		bound2.body.setRectangle(500, 2);
+		bound3 = boundary.create(0, 200, 'border');
+		bound3.body.setRectangle(500, 2);
+		bound4 = boundary.create(0, 300, 'border');
+		bound4.body.setRectangle(500, 2);
+		bound5 = boundary.create(0, 400, 'border');
+		bound5.body.setRectangle(500, 2);
+		bound6 = boundary.create(0, 500, 'border');
+		bound6.body.setRectangle(500, 2);
 
+	    bound1.body.setCollisionGroup(boundaries);
+	    bound2.body.setCollisionGroup(boundaries);
+	    bound3.body.setCollisionGroup(boundaries);
+	    bound4.body.setCollisionGroup(boundaries);
+	    bound5.body.setCollisionGroup(boundaries);
+	    bound6.body.setCollisionGroup(boundaries);
+
+	    bound1.body.collides([boundaries, huskies]);
+	    bound2.body.collides([boundaries, huskies]);
+	    bound3.body.collides([boundaries, huskies]);
+	    bound4.body.collides([boundaries, huskies]);
+	    bound5.body.collides([boundaries, huskies]);
+	    bound6.body.collides([boundaries, huskies]);
+
+	    var husky = game.add.group();
+		husky.enableBody = true;
+		husky.physicsBodyType = Phaser.Physics.P2JS;
+
+		husky1 = husky.create(150, 30, 'husky', 10);
+		husky1.body.setRectangle(90, 58);
+		husky2 = husky.create(150, 130, 'husky', 10);
+		husky2.body.setRectangle(90, 58);
+		husky3 = husky.create(150, 230, 'husky', 10);
+		husky3.body.setRectangle(90, 58);
+		husky4 = husky.create(150, 330, 'husky', 10);
+		husky4.body.setRectangle(90, 58);
+		husky5 = husky.create(150, 430, 'husky', 10);
+		husky5.body.setRectangle(90, 58);
+		
+
+		/*
+	    husky1 = game.add.sprite(150, 30, 'husky', 10);
+	    husky2 = game.add.sprite(150, 130, 'husky', 10);
+	    husky3 = game.add.sprite(150, 230, 'husky', 10);
+	    husky4 = game.add.sprite(150, 330, 'husky', 10);
+	    husky5 = game.add.sprite(150, 430, 'husky', 10);
+	    */
+	    
 	    husky1.animations.add('wag');
     	husky1.animations.play('wag', 8, true);
     	husky2.animations.add('wag');
@@ -76,17 +138,73 @@ window.onload = function()
     	husky5.animations.add('wag');
     	husky5.animations.play('wag', 8, true);
 
-	    game.physics.p2.enable(husky1);
-	    game.physics.p2.enable(husky2);
-	    game.physics.p2.enable(husky3);
-	    game.physics.p2.enable(husky4);
-	    game.physics.p2.enable(husky5);
+    	/*
+    	huskies = game.add.group();
+    	huskies.add(husky1);
+    	huskies.add(husky2);
+    	huskies.add(husky3);
+    	huskies.add(husky4);
+    	huskies.add(husky5);
+    	*/
+    	husky1.body.setCollisionGroup(huskies);
+    	husky2.body.setCollisionGroup(huskies);
+    	husky3.body.setCollisionGroup(huskies);
+    	husky4.body.setCollisionGroup(huskies);
+    	husky5.body.setCollisionGroup(huskies);
 
-	    //bound1 = new Phaser.Rectangle(100, 0, 1700, 100);
-	    //bound2 = new Phaser.Rectangle(100, 100, 1700, 100);
-	    //bound3 = new Phaser.Rectangle(100, 200, 1700, 100);
-	    //bound4 = new Phaser.Rectangle(100, 300, 1700, 100);
-	    //bound5 = new Phaser.Rectangle(100, 400, 1700, 100);
+    	husky1.body.collides(boundaries, slow_down, this);
+    	husky2.body.collides(boundaries, slow_down, this);
+    	husky3.body.collides(boundaries, slow_down, this);
+    	husky4.body.collides(boundaries, slow_down, this);
+    	husky5.body.collides(boundaries, slow_down, this);
+
+    	//game.physics.p2.enable(huskies);
+
+    	//game.physics.arcade.enable(boundaries);
+	    
+	    //game.physics.p2.enable(bound1);
+	    
+
+	    //game.physics.p2.enable(bound2);
+
+	    //bound2.body.kinematic = false;
+	    //game.physics.p2.enable(bound3);
+	    //game.physics.p2.enable(bound4);
+	    //game.physics.p2.enable(bound5);
+	    //game.physics.p2.enable(bound6);
+	    
+	    
+	    /*
+	    bound1.enableBody = true;
+	    bound2.enableBody = true;
+	    bound3.enableBody = true;
+	    bound4.enableBody = true;
+	    bound5.enableBody = true;
+	    bound6.enableBody = true;
+	    */
+
+	    /*
+	    bound1.body.immovable = true;
+	    bound2.body.immovable = true;
+	    bound3.body.immovable = true;
+	    bound4.body.immovable = true;
+	    bound5.body.immovable = true;
+	    bound6.body.immovable = true;
+
+	    bound1.body.moves = false;
+	    bound2.body.moves = false;
+	    bound3.body.moves = false;
+	    bound4.body.moves = false;
+	    bound5.body.moves = false;
+	    bound6.body.moves = false;
+
+		bound1.body.allowGravity = false;
+		bound2.body.allowGravity = false;
+		bound3.body.allowGravity = false;
+		bound4.body.allowGravity = false;
+		bound5.body.allowGravity = false;
+		bound6.body.allowGravity = false;
+		*/
 
 	    cursors = game.input.keyboard.createCursorKeys();
 	    
@@ -96,7 +214,10 @@ window.onload = function()
 		button3 = game.add.button(0, 225, 'arrow', actionOnClick3, this, 0, 1, 0);
 		button4 = game.add.button(0, 325, 'arrow', actionOnClick4, this, 0, 1, 0);
 		button5 = game.add.button(0, 425, 'arrow', actionOnClick5, this, 0, 1, 0);
-		buttonS = game.add.button(150, 510, 'button', click_play, this, 0, 0, 1, 0);
+		button_play = game.add.button(150, 510, 'button', click_play, this, 0, 0, 1, 0);
+		button_play.visible = false;
+
+		
 
 	    button1.onInputOver.add(over, this);
 	    button1.onInputOut.add(out, this);
@@ -118,15 +239,14 @@ window.onload = function()
 	    button5.onInputOut.add(out, this);
 	    button5.onInputUp.add(up, this);
 
-	    /*
-	    husky1.inputEnabled = true;
-	    husky1.input.boundsRect = bound1;
-	    husky2.input.boundsRect = bound2;
-	    husky3.input.boundsRect = bound3;
-	    husky4.input.boundsRect = bound4;
-	    husky5.input.boundsRect = bound5;
-	    */
+	    text = game.add.text(100, 520, 'Select one of the 5 Arrows to choose your character.');
+	    text.font = 'Arial Black';
+	    text.fill = '#000000';
 
+	    text2 = game.add.text(100, 520, 'Use the arrow keys to move your character');
+	    text2.visible = false;
+	    text2.font = 'Arial Black';
+	    text2.fill = '#000000';	    
 	}
 
 	function update()
@@ -153,6 +273,8 @@ window.onload = function()
 		        player.body.moveRight(300);
 		    }
 		}
+
+		game.physics.arcade.collide(huskies, boundaries, slow_down, null, this);
 	}
 
 	function render()
@@ -205,6 +327,9 @@ window.onload = function()
 	    
 		button1.inputEnabled = false;
 		input = 1;
+		text.visible = false;
+		button_play.visible = true;
+
 	}
 
 	function actionOnClick2()
@@ -237,6 +362,8 @@ window.onload = function()
 	    
 		button2.inputEnabled = false;
 		input = 2;
+		text.visible = false;
+		button_play.visible = true;
 	}
 
 	function actionOnClick3()
@@ -269,6 +396,8 @@ window.onload = function()
 	    
 		button3.inputEnabled = false;
 		input = 3;
+		text.visible = false;
+		button_play.visible = true;
 	}
 
 	function actionOnClick4()
@@ -301,6 +430,8 @@ window.onload = function()
 	    
 		button4.inputEnabled = false;
 		input = 4;
+		text.visible = false;
+		button_play.visible = true;
 	}
 
 	function actionOnClick5()
@@ -333,6 +464,8 @@ window.onload = function()
 	    
 		button5.inputEnabled = false;
 		input = 5;
+		text.visible = false;
+		button_play.visible = true;
 	}
 
 	function click_play()
@@ -366,8 +499,9 @@ window.onload = function()
 					break;
 			}
 
-			buttonS.inputEnabled = false;
-			buttonS.visible = false;
+			button_play.inputEnabled = false;
+			button_play.visible = false;
+			text2.visible = true;
 		    //  Notice that the sprite doesn't have any momentum at all,
 		    //  it's all just set by the camera follow type.
 		    //  0.1 is the amount of linear interpolation to use.
@@ -380,7 +514,11 @@ window.onload = function()
 			husky3.body.moveRight(300);
 			husky4.body.moveRight(300);
 			husky5.body.moveRight(300);
-
 		}
+	}
+
+	function slow_down()
+	{
+		console.log('Collision');
 	}
 };
