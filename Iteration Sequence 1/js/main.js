@@ -18,7 +18,7 @@ window.onload = function()
 
 	function preload()
 	{		
-	    game.load.image('Tile','assets/mapTile_087.png');    
+	    game.load.image('background','assets/temp_bg');
 	}
 
 	var button1;
@@ -32,9 +32,6 @@ window.onload = function()
 	{
 		game.add.tileSprite(0, 0, 1800, 600, 'background');
 		game.world.setBounds(0, 0, 1800, 500);
-		game.physics.startSystem(Phaser.Physics.P2JS);
-	    game.physics.p2.setImpactEvents(true);
-
 	    cursors = game.input.keyboard.createCursorKeys();    	    
 	}
 
@@ -90,7 +87,7 @@ window.onload = function()
 	{
 		console.log("Play");
 	}
-	
+
 	function slow_down()
 	{
 		console.log('Collision');
