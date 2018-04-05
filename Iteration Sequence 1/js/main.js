@@ -74,7 +74,7 @@ window.onload = function()
 	    
 	    stat_change = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-	    stat_msg = game.add.text(450, 50, '');
+	    stat_msg = game.add.text(450, 50, 'Use the arrow keys to move.\nUse the space key to attempt a trial for a stat boost.');
 	}
 
 
