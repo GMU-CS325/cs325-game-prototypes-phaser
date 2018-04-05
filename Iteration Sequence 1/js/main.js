@@ -43,13 +43,17 @@ window.onload = function()
 		game.add.tileSprite(0, 0, 1300, 650, 'background');
 		game.add.tileSprite(0, 0, 300, 200, 'stat');
 		game.add.tileSprite(400, 0, 500, 200, 'stat');
-		//game.world.setBounds(0, 0, 1800, 500);
+		game.world.setBounds(0, 0, 900, 600);
 	    cursors = game.input.keyboard.createCursorKeys();
 
 	    button1 = game.add.sprite(250, 500, 'tile', 1);
+	    button1 = game.add.text(250, 500, 'S');
 	    button2 = game.add.sprite(400, 500, 'tile', 1);
+	    button1 = game.add.text(400, 500, 'R');
 	    button3 = game.add.sprite(550, 500, 'tile', 1);
+	    button1 = game.add.text(550, 500, 'I');
 	    button4 = game.add.sprite(700, 500, 'tile', 1);
+	    button1 = game.add.text(700, 500, 'L');
 	    button5 = game.add.sprite(850, 500, 'tile', 1);
 	    button6 = game.add.sprite(1000, 500, 'tile', 1);
 	    
@@ -58,7 +62,7 @@ window.onload = function()
 	    player.scale.setTo(1, 1);
 
 	    player.animations.add('run', [0,9]);
-	    player.animations.play('run', 4, true);
+	    player.animations.play('run', 8, true);
 
 	    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
 
@@ -78,11 +82,17 @@ window.onload = function()
 	{			
 	    if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
 	    {
-	        player.x -= 4;
+	    	if (player.x > 40)
+	    	{
+	        	player.x -= 6;
+	        }
 	    }
 	    else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
 	    {
-	        player.x += 4;
+	    	if (player.x < 860)
+	        {
+	        	player.x += 6;
+	        }
 	    }
 
 	    stat_change.onDown.add(changeStats, this);
@@ -119,11 +129,14 @@ window.onload = function()
 		stat_msg.setText('Not enough Stat points');
 	}
 
+	function updateMaxStat()
+	{
+		stat_msg.setText("Stat is already maxed");
+	}
+
 	function changeStats()
 	{
-		console.log('Change Stats' + stat_remain);
-
-
+		console.log('Change Stats');
 
 		if (stat_remain > 0)
 		{
@@ -172,6 +185,10 @@ window.onload = function()
 						stat_remain--;
 						updateSuccess();
 					}
+					else if (stat_strength == 3)
+					{
+						updateMaxStat();
+					}
 					else
 					{
 						stat_remain--;
@@ -196,6 +213,10 @@ window.onload = function()
 						stat_resist++;
 						stat_remain--;
 						updateSuccess();
+					}
+					else if (stat_resist == 3)
+					{
+						updateMaxStat();
 					}
 					else
 					{
@@ -222,6 +243,10 @@ window.onload = function()
 						stat_remain--;
 						updateSuccess();
 					}
+					else if (stat_intuit == 3)
+					{
+						updateMaxStat();
+					}
 					else
 					{
 						stat_remain--;
@@ -246,6 +271,10 @@ window.onload = function()
 						stat_luck++;
 						stat_remain--;
 						updateSuccess();
+					}
+					else if (stat_luck == 3)
+					{
+						updateMaxStat();
 					}
 					else
 					{
