@@ -1,6 +1,3 @@
-https://phaser.io/examples/v2/buttons/action-on-click
-https://phaser.io/examples/v2/camera/smooth-follow
-https://phaser.io/examples/v2/arcade-physics/bounce-accelerator
-https://phaser.io/examples/v2/arcade-physics/on-collide-event
-https://phaser.io/examples/v2/input/bounds-rect
-
+https://www.123rf.com/photo_62999359_stock-vector-game-background-flat-style-2d-game-application.html
+http://kenney.nl/assets
+https://phaser.io/examples/v2/sprites/move-a-sprite
