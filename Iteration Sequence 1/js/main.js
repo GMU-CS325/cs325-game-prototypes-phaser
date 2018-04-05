@@ -7,6 +7,7 @@ window.onload = function()
 	function preload()
 	{		
 	    game.load.image('background','assets/temp_bg.jpg');
+	    game.load.image('stat','assets/stat.png');
 	    game.load.spritesheet('tile','assets/sheet.png', 70, 70);
 	    game.load.spritesheet('man','assets/adventurer_tilesheet.png', 80, 110);
 	    //game.load.atlasJSONHash('bot', 'assets/sprites/running_bot.png', 'assets/sprites/running_bot.json');
@@ -19,12 +20,29 @@ window.onload = function()
 	var button5;
 	var button6;
 
+	var stat_text;
+	var stat_text2;
+	var stat_msg;;
+	
+	var stat_change;
+
+	var stat_type = -1;
+	var stat_strength = 0;
+	var stat_resist = 0;
+	var stat_intuit = 0;
+	var stat_luck = 0;
+	var stat_remain = 7;
+
+	var RNG;
+
 	var player;
 	var cursors;
 
 	function create()
 	{
 		game.add.tileSprite(0, 0, 1300, 650, 'background');
+		game.add.tileSprite(0, 0, 300, 200, 'stat');
+		game.add.tileSprite(400, 0, 500, 200, 'stat');
 		//game.world.setBounds(0, 0, 1800, 500);
 	    cursors = game.input.keyboard.createCursorKeys();
 
@@ -35,12 +53,24 @@ window.onload = function()
 	    button5 = game.add.sprite(850, 500, 'tile', 1);
 	    button6 = game.add.sprite(1000, 500, 'tile', 1);
 	    
-	    player = game.add.sprite(100, 450, 'man', 1);
+	    player = game.add.sprite(100, 500, 'man', 0);
 	    player.anchor.setTo(0.5, 0.5);
 	    player.scale.setTo(1, 1);
 
-	    player.animations.add('run', [1,9,10]);
-	    //player.animations.play('run', 3, true);
+	    player.animations.add('run', [0,9]);
+	    player.animations.play('run', 4, true);
+
+	    this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
+
+	    stat_text = game.add.text(0, 0, 'Strength: \nResistance: \nIntuition: \nLuck: \nStat Points: ');
+	    //stat_text.font = 'Arial Black';
+	    //stat_text.fill = '#000000';
+
+	    stat_text2 = game.add.text(250, 0, stat_strength + '\n' + stat_resist + '\n' + stat_intuit + '\n' + stat_luck + '\n' + stat_remain);
+	    
+	    stat_change = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
+	    stat_msg = game.add.text(450, 50, '');
 	}
 
 
@@ -55,6 +85,9 @@ window.onload = function()
 	        player.x += 4;
 	    }
 
+	    stat_change.onDown.add(changeStats, this);
+   
+	    /*
 	    if (game.input.keyboard.isDown(Phaser.Keyboard.UP))
 	    {
 	        player.y -= 4;
@@ -63,6 +96,172 @@ window.onload = function()
 	    {
 	        player.y += 4;
 	    }
+	    */
+	}
+
+	function updateText()
+	{
+		stat_text2.setText(stat_strength + '\n' + stat_resist + '\n' + stat_intuit + '\n' + stat_luck + '\n' + stat_remain);
+	}
+
+	function updateSuccess()
+	{
+		stat_msg.setText('Success');
+	}
+
+	function updateFail()
+	{
+		stat_msg.setText('Fail');
+	}
+
+	function updateStatError()
+	{
+		stat_msg.setText('Not enough Stat points');
+	}
+
+	function changeStats()
+	{
+		console.log('Change Stats' + stat_remain);
+
+
+
+		if (stat_remain > 0)
+		{
+			if (player.x >= 250 && player.x < 320)
+			{
+				stat_type = 1;
+			}
+			else if (player.x >= 400 && player.x < 470)
+			{
+				stat_type = 2;
+			}
+			else if (player.x >= 550 && player.x < 620)
+			{
+				stat_type = 3;
+			}
+			else if (player.x >= 700 && player.x < 770)
+			{
+				stat_type = 4;
+			}
+			else
+			{
+				stat_type = -1;
+			}
+
+			RNG = game.rnd.integerInRange(0, 99);
+
+
+			switch (stat_type)
+			{
+				case 1:
+					if (stat_strength == 0 && RNG > 19)
+					{
+						stat_strength++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else if (stat_strength == 1 && RNG > 39)
+					{
+						stat_strength++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else if (stat_strength == 2 && RNG > 59)
+					{
+						stat_strength++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else
+					{
+						stat_remain--;
+						updateFail();
+					}
+					break;
+				case 2:
+					if (stat_resist == 0 && RNG > 19)
+					{
+						stat_resist++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else if (stat_resist == 1 && RNG > 39)
+					{
+						stat_resist++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else if (stat_resist == 2 && RNG > 59)
+					{
+						stat_resist++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else
+					{
+						stat_remain--;
+						updateFail();
+					}
+					break;
+				case 3:
+					if (stat_intuit == 0 && RNG > 19)
+					{
+						stat_intuit++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else if (stat_intuit == 1 && RNG > 39)
+					{
+						stat_intuit++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else if (stat_intuit == 2 && RNG > 59)
+					{
+						stat_intuit++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else
+					{
+						stat_remain--;
+						updateFail();
+					}
+					break;
+				case 4:
+					if (stat_luck == 0 && RNG > 19)
+					{
+						stat_luck++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else if (stat_luck == 1 && RNG > 39)
+					{
+						stat_luck++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else if (stat_luck == 2 && RNG > 59)
+					{
+						stat_luck++;
+						stat_remain--;
+						updateSuccess();
+					}
+					else
+					{
+						stat_remain--;
+						updateFail();
+					}
+					break;
+				default:
+					break;
+			}
+			updateText();
+		}
+		else
+		{
+			updateStatError();
+		}
 	}
 
 	function render()
@@ -94,4 +293,5 @@ window.onload = function()
 	{
 		console.log('Collision');
 	}
+
 };
