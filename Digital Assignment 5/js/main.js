@@ -76,17 +76,17 @@ window.onload = function()
 		boundary.enableBody = true;
 		boundary.physicsBodyType = Phaser.Physics.P2JS;
 
-		bound1 = boundary.create(0, 0, 'border');
+		bound1 = boundary.create(100, 0, 'border');
 		bound1.body.setRectangle(500, 2);
-		bound2 = boundary.create(0, 100, 'border');
+		bound2 = boundary.create(100, 100, 'border');
 		bound2.body.setRectangle(500, 2);
-		bound3 = boundary.create(0, 200, 'border');
+		bound3 = boundary.create(100, 200, 'border');
 		bound3.body.setRectangle(500, 2);
-		bound4 = boundary.create(0, 300, 'border');
+		bound4 = boundary.create(100, 300, 'border');
 		bound4.body.setRectangle(500, 2);
-		bound5 = boundary.create(0, 400, 'border');
+		bound5 = boundary.create(100, 400, 'border');
 		bound5.body.setRectangle(500, 2);
-		bound6 = boundary.create(0, 500, 'border');
+		bound6 = boundary.create(100, 500, 'border');
 		bound6.body.setRectangle(500, 2);
 
 	    bound1.body.setCollisionGroup(boundaries);
@@ -108,15 +108,15 @@ window.onload = function()
 		husky.physicsBodyType = Phaser.Physics.P2JS;
 
 		husky1 = husky.create(150, 30, 'husky', 10);
-		husky1.body.setRectangle(90, 58);
+		husky1.body.setRectangle(90, 40);
 		husky2 = husky.create(150, 130, 'husky', 10);
-		husky2.body.setRectangle(90, 58);
+		husky2.body.setRectangle(90, 40);
 		husky3 = husky.create(150, 230, 'husky', 10);
-		husky3.body.setRectangle(90, 58);
+		husky3.body.setRectangle(90, 40);
 		husky4 = husky.create(150, 330, 'husky', 10);
-		husky4.body.setRectangle(90, 58);
+		husky4.body.setRectangle(90, 40);
 		husky5 = husky.create(150, 430, 'husky', 10);
-		husky5.body.setRectangle(90, 58);
+		husky5.body.setRectangle(90, 40);
 		
 
 		/*
@@ -127,6 +127,7 @@ window.onload = function()
 	    husky5 = game.add.sprite(150, 430, 'husky', 10);
 	    */
 	    
+	    /*
 	    husky1.animations.add('wag');
     	husky1.animations.play('wag', 8, true);
     	husky2.animations.add('wag');
@@ -137,6 +138,7 @@ window.onload = function()
     	husky4.animations.play('wag', 8, true);
     	husky5.animations.add('wag');
     	husky5.animations.play('wag', 8, true);
+    	*/
 
     	/*
     	huskies = game.add.group();
