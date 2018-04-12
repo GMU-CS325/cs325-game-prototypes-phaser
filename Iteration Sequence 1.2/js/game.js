@@ -3,13 +3,10 @@
 GameStates.makeGame = function( game, shared )
 {
     // Create your own variables.
-    var bouncy = null;
-    
-
+    var bouncy = null;   
 
     function quitGame()
     {
-
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
 
