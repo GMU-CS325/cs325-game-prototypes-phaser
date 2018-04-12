@@ -3,6 +3,7 @@
 GameStates.makeGame = function( game, shared )
 {
     // Create your own variables.
+    // TEST
     var bouncy = null;   
 
     function quitGame()
@@ -12,6 +13,7 @@ GameStates.makeGame = function( game, shared )
 
         //  Then let's go back to the main menu.
         game.state.start('MainMenu');
+
 
     }
     
