@@ -84,7 +84,7 @@ GameStates.makeGame = function( game, shared ) {
 
     function updateMaxStat()
     {
-        stat_msg.setText("Stat is already maxed");
+        stat_msg.setText("Stat is already maxed\n Click on the boss icon.");
     }
 
     function changeStats()
