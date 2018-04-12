@@ -2,7 +2,6 @@
 
 GameStates.makeGame = function( game, shared ) {
     // Create your own variables.
-    // TEST
     var bouncy = null;   
 
     function quitGame() {
