@@ -21,10 +21,10 @@ GameStates.makeGame = function( game, shared ) {
 
     /*
     var stat_type = -1;
-    var stat_strength = 0;
-    var stat_resist = 0;
-    var stat_speed = 0;
-    var stat_luck = 0;
+    var shared.stat_strength = 0;
+    var shared.stat_resist = 0;
+    var shared.stat_speed = 0;
+    var shared.stat_luck = 0;
     var shared.stat_remain = 7;
     */
 
@@ -42,7 +42,7 @@ GameStates.makeGame = function( game, shared ) {
 
     function bossFight() {
 
-        if (shared.shared.stat_remain == 0)
+        if (shared.stat_remain == 0)
         {
             game.state.start('Boss');
         }
@@ -64,7 +64,7 @@ GameStates.makeGame = function( game, shared ) {
 
     function updateText()
     {
-        stat_text2.setText(shared.stat_strength + '\n' + shared.stat_resist + '\n' + shared.stat_speed + '\n' + shared.stat_luck + '\n' + shared.shared.stat_remain);
+        stat_text2.setText(shared.stat_strength + '\n' + shared.stat_resist + '\n' + shared.stat_speed + '\n' + shared.stat_luck + '\n' + shared.stat_remain);
     }
 
     function updateSuccess()
@@ -95,50 +95,50 @@ GameStates.makeGame = function( game, shared ) {
         {
             if (player.x >= 250 && player.x < 320)
             {
-                stat_type = 1;
+                shared.stat_type = 1;
             }
             else if (player.x >= 400 && player.x < 470)
             {
-                stat_type = 2;
+                shared.stat_type = 2;
             }
             else if (player.x >= 550 && player.x < 620)
             {
-                stat_type = 3;
+                shared.stat_type = 3;
             }
             else if (player.x >= 700 && player.x < 770)
             {
-                stat_type = 4;
+                shared.stat_type = 4;
             }
             else
             {
-                stat_type = -1;
+                shared.stat_type = -1;
             }
 
             RNG = game.rnd.integerInRange(0, 99);
 
 
-            switch (stat_type)
+            switch (shared.stat_type)
             {
                 case 1:
-                    if (stat_strength == 0 && RNG > 19)
+                    if (shared.stat_strength == 0 && RNG > 19)
                     {
-                        stat_strength++;
+                        shared.stat_strength++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_strength == 1 && RNG > 39)
+                    else if (shared.stat_strength == 1 && RNG > 39)
                     {
-                        stat_strength++;
+                        shared.stat_strength++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_strength == 2 && RNG > 59)
+                    else if (shared.stat_strength == 2 && RNG > 59)
                     {
-                        stat_strength++;
+                        shared.stat_strength++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_strength == 3)
+                    else if (shared.stat_strength == 3)
                     {
                         updateMaxStat();
                     }
@@ -149,25 +149,25 @@ GameStates.makeGame = function( game, shared ) {
                     }
                     break;
                 case 2:
-                    if (stat_resist == 0 && RNG > 19)
+                    if (shared.stat_resist == 0 && RNG > 19)
                     {
-                        stat_resist++;
+                        shared.stat_resist++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_resist == 1 && RNG > 39)
+                    else if (shared.stat_resist == 1 && RNG > 39)
                     {
-                        stat_resist++;
+                        shared.stat_resist++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_resist == 2 && RNG > 59)
+                    else if (shared.stat_resist == 2 && RNG > 59)
                     {
-                        stat_resist++;
+                        shared.stat_resist++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_resist == 3)
+                    else if (shared.stat_resist == 3)
                     {
                         updateMaxStat();
                     }
@@ -178,25 +178,25 @@ GameStates.makeGame = function( game, shared ) {
                     }
                     break;
                 case 3:
-                    if (stat_speed == 0 && RNG > 19)
+                    if (shared.stat_speed == 0 && RNG > 19)
                     {
-                        stat_speed++;
+                        shared.stat_speed++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_speed == 1 && RNG > 39)
+                    else if (shared.stat_speed == 1 && RNG > 39)
                     {
-                        stat_speed++;
+                        shared.stat_speed++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_speed == 2 && RNG > 59)
+                    else if (shared.stat_speed == 2 && RNG > 59)
                     {
-                        stat_speed++;
+                        shared.stat_speed++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_speed == 3)
+                    else if (shared.stat_speed == 3)
                     {
                         updateMaxStat();
                     }
@@ -207,25 +207,25 @@ GameStates.makeGame = function( game, shared ) {
                     }
                     break;
                 case 4:
-                    if (stat_luck == 0 && RNG > 19)
+                    if (shared.stat_luck == 0 && RNG > 19)
                     {
-                        stat_luck++;
+                        shared.stat_luck++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_luck == 1 && RNG > 39)
+                    else if (shared.stat_luck == 1 && RNG > 39)
                     {
-                        stat_luck++;
+                        shared.stat_luck++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_luck == 2 && RNG > 59)
+                    else if (shared.stat_luck == 2 && RNG > 59)
                     {
-                        stat_luck++;
+                        shared.stat_luck++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (stat_luck == 3)
+                    else if (shared.stat_luck == 3)
                     {
                         updateMaxStat();
                     }
@@ -322,7 +322,7 @@ GameStates.makeGame = function( game, shared ) {
             //stat_text.font = 'Arial Black';
             //stat_text.fill = '#000000';
 
-            stat_text2 = game.add.text(250, 0, shared.stat_strength + '\n' + shared.stat_resist + '\n' + shared.stat_speed + '\n' + shared.stat_luck + '\n' + shared.shared.stat_remain);
+            stat_text2 = game.add.text(250, 0, shared.stat_strength + '\n' + shared.stat_resist + '\n' + shared.stat_speed + '\n' + shared.stat_luck + '\n' + shared.stat_remain);
             
             stat_change = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
