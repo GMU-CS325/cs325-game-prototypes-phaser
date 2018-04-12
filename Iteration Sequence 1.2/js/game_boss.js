@@ -28,7 +28,7 @@ GameStates.makeBoss = function( game, shared ) {
         create: function () {
             boss_bg = game.add.tileSprite(0, 0, 1000, 600, 'boss_bg');
             game.add.tileSprite(0, 0, 300, 250, 'stat');
-            stat_text = game.add.text(0, 0, 'Hit Points:\nStrength: \nResistance: \nSpeed: \nLuck: \nStat Points: ');
+            stat_text = game.add.text(0, 0, 'Hit Points:\nStrength: \nResistance: \nSpeed: \nLuck: ');
             stat_text2 = game.add.text(250, 0, hp + '\n' + shared.stat_strength + '\n' + shared.stat_resist + '\n' + shared.stat_speed + '\n' + shared.stat_luck);
             
             zombie = game.add.sprite(700, 450, 'zombie', 0);
