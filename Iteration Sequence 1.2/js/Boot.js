@@ -2,12 +2,9 @@
 
 var GameStates = {};
 
-GameStates.makeBoot = function( game )
-{
-    return
-    {
-        init: function ()
-        {
+GameStates.makeBoot = function( game ) {
+    return {
+        init: function () {
     
             //  Unless you specifically know your game needs to support multi-touch I would recommend setting this to 1
             game.input.maxPointers = 1;
@@ -32,8 +29,7 @@ GameStates.makeBoot = function( game )
     
         },
     
-        preload: function ()
-        {
+        preload: function () {
     
             //  Here we load the assets required for our Preloader state (in this case a background and a loading bar)
             game.load.image('preloaderBackground', 'assets/preloader_background.jpg');
@@ -41,8 +37,7 @@ GameStates.makeBoot = function( game )
     
         },
     
-        create: function ()
-        {
+        create: function () {
     
             //  By this point the preloader assets have loaded to the cache, we've set the game settings
             //  So now let's start the real preloader going
