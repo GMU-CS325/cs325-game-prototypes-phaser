@@ -7,26 +7,21 @@ GameStates.makeGame = function( game, shared ) {
     var button3;
     var button4;
     var button5;
-    var button6;
-    var exit_button;
+    
+    //var exit_button;
+    var esc_key;
+    var space_key;
 
     var player;
     var cursors;
     
+    var txt_style = {font: "20px Arial"};
     var stat_text;
     var stat_text2;
     
-    var stat_msg;;
+    var stat_msg;
+    var stat_msg2 = '';
     var stat_change;
-
-    /*
-    var stat_type = -1;
-    var shared.stat_strength = 0;
-    var shared.stat_resist = 0;
-    var shared.stat_speed = 0;
-    var shared.stat_luck = 0;
-    var shared.stat_remain = 7;
-    */
 
     var RNG;
 
@@ -48,43 +43,46 @@ GameStates.makeGame = function( game, shared ) {
         }
         else
         {
-            stat_msg.setText("Consume all your stat points before\nfighting the boss.")
+            stat_msg2.setText("Consume all your stat points before\nfighting the boss.")
         }
     }
 
-    /*
+    
     function pauseGame() {
+        console.log('pauseGame');
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
 
         //  Then let's go back to the main menu.
         game.state.start('Pause');
 
-    } */
+    }
 
+    /*
     function updateText()
     {
         stat_text2.setText(shared.stat_strength + '\n' + shared.stat_resist + '\n' + shared.stat_speed + '\n' + shared.stat_luck + '\n' + shared.stat_remain);
     }
+    */
 
     function updateSuccess()
     {
-        stat_msg.setText('Success');
+        stat_msg2.setText('Success. Remaining stat points: ' + shared.stat_remain);
     }
 
     function updateFail()
     {
-        stat_msg.setText('Fail');
+        stat_msg2.setText('Fail. Remaining stat points: ' + shared.stat_remain);
     }
 
     function updateStatError()
     {
-        stat_msg.setText('Not enough Stat points');
+        stat_msg2.setText('Not enough Stat points. Click on the boss icon.');
     }
 
     function updateMaxStat()
     {
-        stat_msg.setText("Stat is already maxed\n Click on the boss icon.");
+        stat_msg2.setText("This stat is already maxed.");
     }
 
     function changeStats()
@@ -120,19 +118,19 @@ GameStates.makeGame = function( game, shared ) {
             switch (shared.stat_type)
             {
                 case 1:
-                    if (shared.stat_strength == 0 && RNG > 19)
+                    if (shared.stat_strength == 0 && RNG > 19 - (shared.stat_luck * 5))
                     {
                         shared.stat_strength++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (shared.stat_strength == 1 && RNG > 39)
+                    else if (shared.stat_strength == 1 && RNG > 39 - (shared.stat_luck * 5))
                     {
                         shared.stat_strength++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (shared.stat_strength == 2 && RNG > 59)
+                    else if (shared.stat_strength == 2 && RNG > 59 - (shared.stat_luck * 5))
                     {
                         shared.stat_strength++;
                         shared.stat_remain--;
@@ -149,19 +147,19 @@ GameStates.makeGame = function( game, shared ) {
                     }
                     break;
                 case 2:
-                    if (shared.stat_resist == 0 && RNG > 19)
+                    if (shared.stat_resist == 0 && RNG > 19 - (shared.stat_luck * 5))
                     {
                         shared.stat_resist++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (shared.stat_resist == 1 && RNG > 39)
+                    else if (shared.stat_resist == 1 && RNG > 39 - (shared.stat_luck * 5))
                     {
                         shared.stat_resist++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (shared.stat_resist == 2 && RNG > 59)
+                    else if (shared.stat_resist == 2 && RNG > 59 - (shared.stat_luck * 5))
                     {
                         shared.stat_resist++;
                         shared.stat_remain--;
@@ -178,19 +176,19 @@ GameStates.makeGame = function( game, shared ) {
                     }
                     break;
                 case 3:
-                    if (shared.stat_speed == 0 && RNG > 19)
+                    if (shared.stat_speed == 0 && RNG > 19 - (shared.stat_luck * 5))
                     {
                         shared.stat_speed++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (shared.stat_speed == 1 && RNG > 39)
+                    else if (shared.stat_speed == 1 && RNG > 39 - (shared.stat_luck * 5))
                     {
                         shared.stat_speed++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (shared.stat_speed == 2 && RNG > 59)
+                    else if (shared.stat_speed == 2 && RNG > 59 - (shared.stat_luck * 5))
                     {
                         shared.stat_speed++;
                         shared.stat_remain--;
@@ -207,19 +205,19 @@ GameStates.makeGame = function( game, shared ) {
                     }
                     break;
                 case 4:
-                    if (shared.stat_luck == 0 && RNG > 19)
+                    if (shared.stat_luck == 0 && RNG > 19 - (shared.stat_luck * 5))
                     {
                         shared.stat_luck++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (shared.stat_luck == 1 && RNG > 39)
+                    else if (shared.stat_luck == 1 && RNG > 39 - (shared.stat_luck * 5))
                     {
                         shared.stat_luck++;
                         shared.stat_remain--;
                         updateSuccess();
                     }
-                    else if (shared.stat_luck == 2 && RNG > 59)
+                    else if (shared.stat_luck == 2 && RNG > 59 - (shared.stat_luck * 5))
                     {
                         shared.stat_luck++;
                         shared.stat_remain--;
@@ -237,73 +235,43 @@ GameStates.makeGame = function( game, shared ) {
                     break;
                 default:
                     break;
-            }
-            updateText();
+            }    
         }
         else
         {
             updateStatError();
         }
     }
-
-    function render()
-    {
-        //game.debug.cameraInfo(game.camera, 32, 32);
-    }
-
-    function up()
-    {
-        console.log('button up', arguments);
-    }
-
-    function over()
-    {
-        console.log('button over');
-    }
-
-    function out()
-    {
-        console.log('button out');
-    }
-
-    function click_play()
-    {
-        console.log("Play");
-    }
-
-    function slow_down()
-    {
-        console.log('Collision');
-    }
-
     
     return {
     
         create: function () {
     
+        console.log('Test Game');
+
             //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
             game.add.tileSprite(0, 0, 1300, 650, 'background');
-            game.add.tileSprite(0, 0, 300, 200, 'stat');
-            game.add.tileSprite(400, 0, 500, 200, 'stat');
+            //game.add.tileSprite(0, 0, 300, 200, 'stat');
+            //game.add.tileSprite(400, 0, 500, 200, 'stat');
             game.world.setBounds(0, 0, 900, 600);
             cursors = game.input.keyboard.createCursorKeys();
 
             button1 = game.add.sprite(250, 500, 'tile', 1);
-            button1 = game.add.text(250, 500, 'S');
+            button1 = game.add.text(250, 500, 'STR', txt_style);
             button2 = game.add.sprite(400, 500, 'tile', 1);
-            button2 = game.add.text(400, 500, 'R');
+            button2 = game.add.text(400, 500, 'Resist', txt_style);
             button3 = game.add.sprite(550, 500, 'tile', 1);
-            button3 = game.add.text(550, 500, 'I');
+            button3 = game.add.text(550, 500, 'Speed', txt_style);
             button4 = game.add.sprite(700, 500, 'tile', 1);
-            button4 = game.add.text(700, 500, 'L');
-            button5 = game.add.sprite(850, 500, 'tile', 1);
-            button5 = game.add.text(850, 500, 'Boss');
+            button4 = game.add.text(700, 500, 'Luck', txt_style);
+            button5 = game.add.sprite(850, 300, 'tile', 1);
+            button5 = game.add.text(850, 300, 'Boss');
             
-            exit_button = game.add.sprite(0, 500, 'tile', 1);
-            exit_button = game.add.text(0, 500, 'Exit');
+            //exit_button = game.add.sprite(0, 500, 'tile', 1);
+            //exit_button = game.add.text(0, 500, 'Exit');
 
-            exit_button.inputEnabled = true;
-            exit_button.events.onInputDown.add( function() { quitGame(); }, this );
+            //exit_button.inputEnabled = true;
+            //exit_button.events.onInputDown.add( function() { quitGame(); }, this );
             
             button5.inputEnabled = true;
             button5.events.onInputDown.add( function() { bossFight(); }, this );
@@ -316,18 +284,21 @@ GameStates.makeGame = function( game, shared ) {
             player.animations.add('run', [0,9]);
             player.animations.play('run', 8, true);
 
-            this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
+            esc_key = game.input.keyboard.addKey(Phaser.Keyboard.ESC);
+            esc_key.onDown.addOnce(pauseGame, this);
 
+            space_key = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
+            /*
             stat_text = game.add.text(0, 0, 'Strength: \nResistance: \nSpeed: \nLuck: \nStat Points: ');
-            //stat_text.font = 'Arial Black';
-            //stat_text.fill = '#000000';
-
             stat_text2 = game.add.text(250, 0, shared.stat_strength + '\n' + shared.stat_resist + '\n' + shared.stat_speed + '\n' + shared.stat_luck + '\n' + shared.stat_remain);
-            
+            */
+
             stat_change = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-            stat_msg = game.add.text(450, 50, 'Use the arrow keys to move.\nUse the space key to attempt a trial\nfor a stat boost.');
-            
+            stat_msg = game.add.text(0, 0, 'Use the arrow keys to move.\nUse the space key to attempt a trial for a stat boost.\nOnce all the stat points are used, click on the boss button for a boss fight.\nClick the ESC key to check your stats.');
+            stat_msg2 = game.add.text(0, 250 , 'Pick a stat of your choice to upgrade.');
+
             // Add some text using a CSS style.
             // Center it in X, and position its top 15 pixels from the top of the world.
             //var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };

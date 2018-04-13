@@ -15,7 +15,8 @@ GameStates.makePreloader = function( game )
             //	These are the assets we loaded in Boot.js
             //	A nice sparkly background and a loading progress bar
             background = game.add.sprite(0, 0, 'preloaderBackground');
-            preloadBar = game.add.sprite(300, 400, 'preloaderBar');
+            preloadBar = game.add.sprite(500, 300, 'preloaderBar');
+            preloadBar.anchor.setTo(0.5);
     
             //	This sets the preloadBar sprite as a loader sprite.
             //	What that does is automatically crop the sprite from 0 to full-width
@@ -25,14 +26,14 @@ GameStates.makePreloader = function( game )
             //	Here we load the rest of the assets our game needs.
             //	As this is just a Project Template I've not provided these assets, swap them for your own.
             game.load.image('titlePage', 'assets/title.jpg');
-            game.load.atlas('playButton', 'assets/play_button.png', 'assets/play_button.json');
+            game.load.atlas('playButton', 'assets/Play.png', 'assets/play_button.json');
             //	+ lots of other required assets here
 
             // My Assets
             game.load.image('background','assets/temp_bg.jpg');
             game.load.image('boss_bg', 'assets/boss_bg.png');
             game.load.image('stat','assets/stat.png');
-            game.load.image('fire','assets/Fire.png');
+            game.load.spritesheet('fire','assets/Fire.png', 76, 74);
 
             game.load.spritesheet('boundaries', 'assets/boundaries.png', 1000, 100);
             game.load.spritesheet('tile','assets/sheet.png', 70, 70);

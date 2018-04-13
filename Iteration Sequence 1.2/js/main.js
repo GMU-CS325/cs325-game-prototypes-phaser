@@ -27,7 +27,7 @@ window.onload = function()
 	game.state.add( 'MainMenu', GameStates.makeMainMenu( game, shared ) );
 	game.state.add( 'Game', GameStates.makeGame( game, shared ) );
 	game.state.add( 'Boss', GameStates.makeBoss( game, shared ) );
-	//game.state.add( 'Pause', GameStates.makeGame( game, shared ) );
+	game.state.add( 'Pause', GameStates.makePause( game, shared ) );
 	
 
 	//	Now start the Boot state.
