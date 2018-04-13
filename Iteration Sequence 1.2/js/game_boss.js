@@ -113,6 +113,7 @@ GameStates.makeBoss = function( game, shared ) {
             //console.log('Collision: hp = ' + player_hp);
             stat_text2.setText(player_hp);
             tookDamage = true;
+            fire.body.checkCollision.none = true;
         }        
 
     }
@@ -169,9 +170,12 @@ GameStates.makeBoss = function( game, shared ) {
             player.body.collideWorldBounds = true;
             player.body.bounce.y = 0;
 
+            zombie.body.allowGravity = false;
+            zombie.body.immovable = true;
             zombie.body.collideWorldBounds = true;
-            zombie.body.bounce.y = 0;
+            //zombie.body.bounce.y = 0;
             zombie.body.setSize(60, 85, 10, 25);
+
 
             boundaries.body.allowGravity = false;
             boundaries.body.collideWolrdBounds = true;
@@ -223,15 +227,16 @@ GameStates.makeBoss = function( game, shared ) {
             {
                 fire.x = 600;
                 tookDamage = false;
+                fire.body.checkCollision.none = false;
             }
 
-            if (player_hp <= 0)
+            if (player_hp <= 0 && inputEnabled == false)
             {
                 tip_text.setText('You lose. Click ESC to return to main menu.');
                 inputEnabled = true;
 
             }
-            else if (enemy_hp <= 0)
+            else if (enemy_hp <= 0 && inputEnabled == false)
             {
                 tip_text.setText('You win. Click ESC to return to main menu.');
                 inputEnabled = true;
@@ -241,6 +246,12 @@ GameStates.makeBoss = function( game, shared ) {
             if (inputEnabled == true && game.input.keyboard.isDown(Phaser.Keyboard.ESC))
             {
                 returnMenu();
+            }
+
+            if (inputEnabled == true)
+            {
+                player.body.moves = false;
+                fire.body.moves = false;
             }
             
         }
