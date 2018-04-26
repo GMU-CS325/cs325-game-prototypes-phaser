@@ -32,12 +32,12 @@ GameStates.makePreloader = function( game )
             game.load.image('background','assets/background.png');
             game.load.image('spot','assets/spot.png');
             game.load.image('grid','assets/grid.png');
-            game.load.spritesheet('move', 'assets/move.png', 80, 80);
-            game.load.spritesheet('attack', 'assets/attack.png', 80, 80);
+            game.load.spritesheet('move', 'assets/Move.png', 80, 80);
+            game.load.spritesheet('attack', 'assets/Attack.png', 80, 80);
 
             game.load.spritesheet('char','assets/character.png', 32, 32);
             game.load.spritesheet('tank','assets/tank.png', 92, 70);
-            game.load.image('turret','assets/turret.png');
+            game.load.image('turret','assets/Turret.png');
 
             //game.load.spritesheet('tile','assets/sheet.png', 70, 70);
         },
