@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Iteration Sequence 2</title>
+        <script src="js/phaser.min.js"></script>
+        <!-- Boot.js must come first since it creates the BasicGame object
+        that stores all the states. -->
+        <script src="js/Boot.js"></script>
+        <script src="js/Preloader.js"></script>
+        <script src="js/MainMenu.js"></script>
+        <script src="js/Game.js"></script>      
+        <script src="js/pause.js"></script>   
+        <script src="js/game_boss.js"></script> 
+        <!-- main.js must come last since it references the other ones. -->
+        <script src="js/main.js"></script>
+
+        <style>
+            body
+            {
+            color: #777;
+            font-family: "Avenir", Verdana, sans-serif;
+            }
+            #readme
+            {
+            margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="game"></div>
+        <div id="readme">
+            <h2>Iteration Sequence 2</h2>
+            <ul>
+            <li><strong>Originality: </strong>
+                What is original about your game?
+            </li>
+            <ul>
+                <li>
+                    Game is work in progress. This is a game of zone control where players are actively trying to control multiple zones for economy and fighting advantage.
+                </li>
+            </ul>
+            <li><strong>Technical Merit: </strong>
+                What is interesting about your game technology?
+            </li>
+            <ul>
+                <li>Players can select/deselect their own units.</li>
+                <li>Players can view stats for individual units.</li>
+                <li>(Soon)Players will be able to purchase additional units as well as build turrets.</li>
+                <li>(Soon)Players will be able to engage in combats and destroy enemy units.</li>
+            </ul>
+            <li><strong>Prototype Postmortem: </strong>
+                What did you learn from this prototype? What was the easiest or hardest part of making it?
+            </li>
+            <ul>
+                <li>I am somewhat learning object oriented programming through javascript</li>
+                <li>Creating different keys for different function calls.</li>
+                <li>How to destory sprite/objects.</li>
+                <li>(Soon)How to balance the stats of the units</li>
+            </ul>
+            <li><strong>Prototype Assets: </strong>
+                Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+                <ul>
+                    <li>Turret: <a href="https://vignette.wikia.nocookie.net/scribblenauts/images/3/35/Turret_SU.png/revision/latest?cb=20130512101053">Turret</a></li>
+                    <li>Tank: <a href="https://kenney.nl/assets">Tank</a></li>
+                    <li>Characters: <a href="http://i2.photobucket.com/albums/y22/Avadan/Resources/VX/Spacece.png">Character</a></li>
+                </ul>
+            <li><strong>Prototype Closest Other Game:</strong>
+                Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+            </li>
+            <ul>
+                <li>Idea was inspired by starcraft but core mechanics should be original.</li>
+            </ul>
+            <li><strong>High Concept:</strong>
+                A one-sentence summary of your game.
+            </li>
+            <ul>
+                <li>(Soon)Build turrets to reinforce your troops whlie conquering your oppoenents.</li>
+            </ul>
+            <li><strong>Theme:</strong>
+                State which of the Storymatic themes you used.
+            </li>
+            <ul>
+                <li>Soldier</li>
+            </ul>
+            <li><strong>Mandated Variety:</strong>
+                State which input, randomness, genre, and play style you used in this prototype.
+            </li>
+            <ul>
+                <li>Input: keyboard clicks + mouse clicks.</li>
+                <li>Randomness: (Soon) Most elements are deterministic.</li>
+                <li>Play style: Competitor, Explorer, Director. Trying their best to defeat the opponent. Player directs their units to a certain grid and chooses whether they want to attack. If this game were to be a real game the map would be a lot bigger allowing players to explore.</li>
+                <li>Genre: Real Time Strategy</li>
+            </ul>
+            <li><strong>Prototype Goal:</strong>
+                What game mechanic is this prototype evaluating?
+            </li>
+            <ul>
+                <li>This prototype has only implemented the basic ideas of my physical prototype.</li>
+                <li>This prototype will help me with balancing the stats for each unit</li>
+            </ul>
+            <li><strong>Player Experience Goals:</strong>
+                What experience do you want players to have when playing your game?
+            </li>
+            <ul>
+                <li>Enjoyment from getting stronger every turn.</li>
+                <li>Strategicaly placing units and fighting opponents.</li>
+            </ul>
+            <li><strong>Gameplay:</strong>
+                A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+            </li>
+            <ul>
+                <li>To be announced.</li>
+            </ul>
+            <li><strong>Strategies:</strong>
+                What player strategies do you expect will be effective at playing this game?
+            </li>
+            <ul>
+                <li>TBA</li>
+            </ul>
+            <li><strong>Story/Setting/Premise:</strong>
+                A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+                How will the dramatic tension interact with the gameplay tension?
+            </li>
+            <ul>
+                <li>No Story for this game for now.</li>
+            </ul>
+            <li><strong>Target Audience:</strong>
+                A single sentence that describes the demographic you're trying to reach.
+            </li>
+            <ul>
+                <li>Ages 12+</li>
+            </ul>
+            <li><strong>Play Time:</strong>
+                How long does your game take to play?
+            </li>
+            <ul>
+                <li>Depends on how fast player thinks. My estimate would be around 10 minutes.</li>
+            </ul>
+        </div>
+    </body>
+</html>

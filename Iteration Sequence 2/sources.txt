@@ -1,0 +1,3 @@
+Turret.png: Scribblenauts turret sprite. https://vignette.wikia.nocookie.net/scribblenauts/images/3/35/Turret_SU.png/revision/latest?cb=20130512101053
+Character.png: http://i2.photobucket.com/albums/y22/Avadan/Resources/VX/Spacece.png
+Tank: https://kenney.nl/assets
