@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Iteration Sequence 1.2</title>
+        <script src="js/phaser.min.js"></script>
+        <!-- Boot.js must come first since it creates the BasicGame object
+        that stores all the states. -->
+        <script src="js/Boot.js"></script>
+        <script src="js/Preloader.js"></script>
+        <script src="js/MainMenu.js"></script>
+        <script src="js/Game.js"></script>      
+        <script src="js/pause.js"></script>   
+        <script src="js/game_boss.js"></script> 
+        <!-- main.js must come last since it references the other ones. -->
+        <script src="js/main.js"></script>
+
+        <style>
+            body
+            {
+            color: #777;
+            font-family: "Avenir", Verdana, sans-serif;
+            }
+            #readme
+            {
+            margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="game"></div>
+        <div id="readme">
+            <h2>Iteration Sequence 1.2</h2>
+            <ul>
+            <li><strong>Originality: </strong>
+                What is original about your game?
+            </li>
+            <ul>
+                <li>
+                    The final game (This is only a prototype) will be similar to super mario brothers but with additional powers from the pre-game phase.
+                </li>
+            </ul>
+            <li><strong>Technical Merit: </strong>
+                What is interesting about your game technology?
+            </li>
+            <ul>
+                <li>Players will be able to attempt trials for additional abilities. (The trial itself will be a minigame for each category but not implemented for this prototype.)</li>
+            </ul>
+            <li><strong>Prototype Postmortem: </strong>
+                What did you learn from this prototype? What was the easiest or hardest part of making it?
+            </li>
+            <ul>
+                <li>How to implement different states.</li>
+                <li>Learned more about arcade physics.</li>
+                <li>How to use different keyboard inputs.</li>
+            </ul>
+            <li><strong>Prototype Assets: </strong>
+                Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+                <ul>
+                    <li>Background1: <a href="https://www.123rf.com/photo_62999359_stock-vector-game-background-flat-style-2d-game-application.html">Background</a></li>
+                    <li>Background2: <a href="https://s3.envato.com/files/98082290/game-assets-for-mobile-games-flappy-dragon-attack-game-character-sprite-sheets-background.png">Background2</a></li>
+                </ul>
+                <ul>
+                    <li>Characters and Fire: <a href="http://kenney.nl/assets">Character</a></li>
+                </ul>
+            <li><strong>Prototype Closest Other Game:</strong>
+                Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+            </li>
+            <ul>
+                <li>Concept started from Super Mario Brothers but the end product should be completely different. Everything is original.</li>
+            </ul>
+            <li><strong>High Concept:</strong>
+                A one-sentence summary of your game.
+            </li>
+            <ul>
+                <li>Make your character stronger during the power up phase and defeat the boss.</li>
+            </ul>
+            <li><strong>Theme:</strong>
+                State which of the Storymatic themes you used.
+            </li>
+            <ul>
+                <li>N/A</li>
+            </ul>
+            <li><strong>Mandated Variety:</strong>
+                State which input, randomness, genre, and play style you used in this prototype.
+            </li>
+            <ul>
+                <li>Input: keyboard + clickable buttons.</li>
+                <li>Randomness: A lot of randomness early. Some planning is possible. Once the boss fight starts most elements are deterministic.</li>
+                <li>Play style: Competitor. Could also be collector/achiever from the stat gaining phase.</li>
+                <li>Genre: Platformer / Mini RPG</li>
+            </ul>
+            <li><strong>Prototype Goal:</strong>
+                What game mechanic is this prototype evaluating?
+            </li>
+            <ul>
+                <li>This prototype has only implemented the basic functions of my physical prototype.</li>
+                <li>This prototype will help me with balancing the stat gains and adjust the amount if needed</li>
+            </ul>
+            <li><strong>Player Experience Goals:</strong>
+                What experience do you want players to have when playing your game?
+            </li>
+            <ul>
+                <li>Deciding which stats to upgrade with the limited amount of stat points.</li>
+                <li>Multiple replay value as players can attempt to beat the game with different stats / randomly gained stats.</li>
+            </ul>
+            <li><strong>Gameplay:</strong>
+                A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+            </li>
+            <ul>
+                <li>The player enters a room to boost a stat of their choice. If they successfully complete it, they are granted a level in the stat point. With the earned stat points they can now attempt to clear the stage. All game instruction is listed directly in the game as I found it to be more helpful to find instrutions directly from the game rather than our evaluation html.</li>
+            </ul>
+            <li><strong>Strategies:</strong>
+                What player strategies do you expect will be effective at playing this game?
+            </li>
+            <ul>
+                <li>Players have to think whether it is a good idea to upgrade a certain stat. For instance, a player can choose whether they like strength or resistance more.</li>
+            </ul>
+            <li><strong>Story/Setting/Premise:</strong>
+                A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+                How will the dramatic tension interact with the gameplay tension?
+            </li>
+            <ul>
+                <li>No Story for this game for now.</li>
+            </ul>
+            <li><strong>Target Audience:</strong>
+                A single sentence that describes the demographic you're trying to reach.
+            </li>
+            <ul>
+                <li>Preferably all ages.</li>
+            </ul>
+            <li><strong>Play Time:</strong>
+                How long does your game take to play?
+            </li>
+            <ul>
+                <li>This prototype should take about a minute or two.</li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+https://phaser.io/examples/v2/buttons/action-on-click
+https://phaser.io/examples/v2/camera/smooth-follow
+https://phaser.io/examples/v2/arcade-physics/bounce-accelerator
+https://phaser.io/examples/v2/arcade-physics/on-collide-event
+https://phaser.io/examples/v2/input/bounds-rect
+
+
+https://www.leshylabs.com/apps/sstool/
