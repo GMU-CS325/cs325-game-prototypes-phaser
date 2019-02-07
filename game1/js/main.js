@@ -160,14 +160,14 @@ function update() {
     if (cursors.left.isDown)
     {
         //  Move to the left
-        player.body.velocity.x = -270;
+        player.body.velocity.x = -300;
 
         player.animations.play('left');
     }
     else if (cursors.right.isDown)
     {
         //  Move to the right
-        player.body.velocity.x = 270;
+        player.body.velocity.x = 300;
 
         player.animations.play('right');
     }
