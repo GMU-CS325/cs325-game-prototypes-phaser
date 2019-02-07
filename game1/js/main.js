@@ -9,8 +9,8 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: p
 
 function preload() {
 
-    game.load.spritesheet('ninja-tiles', 'assets/physics/ninja-tiles128.png', 128, 128, 34);
-    game.load.image('a', 'assets/sprites/firstaid.png');
+    game.load.spritesheet('ninja-tiles', 'assets/ninja-tiles128.png', 128, 128, 34);
+    game.load.image('a', 'assets/firstaid.png');
 
 }
 
