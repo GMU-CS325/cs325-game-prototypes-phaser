@@ -1,49 +1,84 @@
 "use strict";
 
 window.onload = function() {
-    // You can copy-and-paste the code from any of the examples at http://examples.phaser.io here.
-    // You will need to change the fourth parameter to "new Phaser.Game()" from
-    // 'phaser-example' to 'game', which is the id of the HTML element where we
-    // want the game to go.
-    // The assets (and code) can be found at: https://github.com/photonstorm/phaser/tree/master/examples/assets
-    // You will need to change the paths you pass to "game.load.image()" or any other
-    // loading functions to reflect where you are putting the assets.
-    // All loading functions will typically all be found inside "preload()".
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
-    
-    function preload() {
-        // Load an image and call it 'logo'.
-        game.load.image( 'logo', 'assets/phaser.png' );
+
+
+
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update});
+
+function preload() {
+
+    game.load.spritesheet('ninja-tiles', 'assets/physics/ninja-tiles128.png', 128, 128, 34);
+    game.load.image('a', 'assets/sprites/firstaid.png');
+
+}
+
+var sprite1;
+var cursors;
+
+var tile1;
+var tile2;
+
+
+
+function create() {
+
+    game.stage.smoothed = true;
+
+    //  Activate the Ninja physics system
+    game.physics.startSystem(Phaser.Physics.NINJA);
+
+    // game.physics.ninja.gravity = 0.1;
+
+    sprite1 = game.add.sprite(500, 200, 'a');
+
+    //  Enable the physics body for the Ninja physics system
+    //  By default it will create an AABB body for the sprite
+    game.physics.ninja.enableAABB(sprite1);
+
+    //  But you can change it to either a Tile or a Circle
+    tile1 = game.add.sprite(0, 500, 'ninja-tiles', 14);
+    tile1.width = 100;
+    tile1.height = 100;
+
+    game.physics.ninja.enableTile(tile1, tile1.frame);
+
+    cursors = game.input.keyboard.createCursorKeys();
+
+}
+
+function collisionHandler() {
+    game.stage.backgroundColor = 0xff0000;
+}
+
+function update() {
+
+    game.physics.ninja.collide(sprite1, tile1, collisionHandler, null, this);
+
+    tile1.body.moveRight(1);
+
+    if (cursors.left.isDown)
+    {
+        sprite1.body.moveLeft(20);
     }
-    
-    var bouncy;
-    
-    function create() {
-        // Create a sprite at the center of the screen using the 'logo' image.
-        bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
-        
-        // Turn on the arcade physics engine for this sprite.
-        game.physics.enable( bouncy, Phaser.Physics.ARCADE );
-        // Make it bounce off of the world bounds.
-        bouncy.body.collideWorldBounds = true;
-        
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( game.world.centerX, 15, "Build something amazing.", style );
-        text.anchor.setTo( 0.5, 0.0 );
+    else if (cursors.right.isDown)
+    {
+        sprite1.body.moveRight(20);
     }
-    
-    function update() {
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, game.input.activePointer, 500, 500, 500 );
+
+    if (cursors.up.isDown)
+    {
+        sprite1.body.moveUp(20);
     }
+    else if (cursors.down.isDown)
+    {
+        sprite1.body.moveUp(20);
+    }
+
+}
+
+
+
+    
 };
