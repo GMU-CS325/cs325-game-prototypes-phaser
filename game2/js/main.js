@@ -3,7 +3,7 @@
 window.onload = function() {
 
 
-var game = new Phaser.Game(1000, 500, Phaser.CANVAS, 'game', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(1000, 500, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update });
 
 function preload() {
 
@@ -15,6 +15,8 @@ function preload() {
 
     game.load.audio('music', 'assets/goaman_intro.mp3');
 
+    game.load.audio('step', 'assets/steps2.mp3');
+    game.load.audio('dying', 'assets/player_death.wav');
 }
 
 var text;   //player 1 text
@@ -37,7 +39,11 @@ var death = -1;
 
 var isGameOver = 0;
 
+//all the sounds
 var music;
+var step;
+var dying;
+
 
 function create() {
 
@@ -59,37 +65,36 @@ function create() {
     main.anchor.setTo(0.5,0.5);
     main.animations.add('walk', [5,6,7,8,9,10], 10, true);
 
-
+    //sounds
     music = game.add.audio('music');
-    music.onDecoded.add(start, this);
+    step = game.add.audio('step');
+    dying = game.add.audio('dying');
+ 
+    music.play();
 
-    text = game.add.text(150, 330, 'Action: none', { 
-        font: 'comic sans',
-        fontSize: '20px',
-        fill: '#FFF'
-     });
+    //Player 1 header
     var playerText = game.add.text(150, 300, 'Player 1', { 
         font: 'comic sans',
         fontSize: '20px',
         fill: '#FFF'
      });
+    //default state of action
+    text = game.add.text(150, 330, 'Action: none', { 
+        font: 'comic sans',
+        fontSize: '20px',
+        fill: '#FFF'
+     });
+    //player 2 header + choices
     text2 = game.add.text(550, 300, 'Player 2\nWhich door is Death hiding behind?\nDoor 1: Left arrow \nDoor 2: Right Arrow', { 
         fontSize: '20px',
         fill: '#FFF',
         font: 'Comic Sans'
      });
 
-    
-
-
-    main.events.onInputDown.add(move, this);
     game.input.onDown.add(move, this);
-
 }
 
-function start() {
-    music.fadeIn(4000);
-}
+
 
 function update() {
     if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT))
@@ -118,8 +123,15 @@ function update() {
     //animate if moving
     if(toX != main.x) {
         main.animations.play('walk', true);
+        //game.time.events.loop(100, steps, this);
+        var frame = -1;
     }  else {
         main.animations.stop(null, true);
+    }
+
+    //footsteps sounds
+    if(main.animations.frame == 7 || main.animations.frame == 9) {
+            step.play();
     }
 
     //game state to check if the game is over or not
@@ -174,6 +186,8 @@ function die(){
     text.text = "You died!";
     text2.text = "Player 2\nYou win!";
 
+    dying.play();
+
     game.time.events.add(2000, end, this);
 }
 
@@ -186,6 +200,7 @@ function live() {
 
 function end() {
     game.camera.fade(0x000000, 6000);
+
 }
 
 function move() {
