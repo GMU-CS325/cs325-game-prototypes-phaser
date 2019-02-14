@@ -109,13 +109,13 @@ function update() {
         if(death == -1) {
             death = 0;
         }
-    }
-    else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
+    } else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT))
     {
         if(death == -1) {
             death = 1;
         }
     }
+
 
     //check if facing right, flip if trying to go left and facing right
     if(toX < main.x & isRight == 1) {
@@ -182,6 +182,11 @@ function update() {
         } else {
             text.text = "Action: none";
         }
+    }
+
+    //to reset the textStatus
+    if(death != -1) {
+        textStatus.text = "";
     }
 }
 
