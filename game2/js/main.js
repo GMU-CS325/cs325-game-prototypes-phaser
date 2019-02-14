@@ -27,7 +27,7 @@ var bg;     //background art
 var wraith;
 
 var text2;  //player 2 text
-//var playerText;
+var textStatus; //for telling if door has been chosen or not
 var duration;
 
 //helper variable to check direction main is facing
@@ -91,6 +91,13 @@ function create() {
         font: 'Comic Sans'
      });
 
+    //status of whether door has been chosen or not
+    textStatus = game.add.text(150, 300, '', { 
+        fontSize: '20px',
+        fill: '#FFF',
+        font: 'Comic Sans'
+     });
+    
     game.input.onDown.add(move, this);
 }
 
@@ -143,7 +150,6 @@ function update() {
     if(main.x > 100 & main.x < 220) {
         if(game.input.activePointer.x > 133 & game.input.activePointer.x < 186 & game.input.activePointer.y > 120 & game.input.activePointer.y  < 260) {
             text.text = "Action: open door #1";
-
             //selecting the door
             if(game.input.activePointer.isDown & death == 0) {
                 die();
@@ -151,7 +157,9 @@ function update() {
             } else if(game.input.activePointer.isDown & death == 1) { 
                 live();
                 isGameOver = 1;
-            } 
+            } else if(game.input.activePointer.isDown & death == -1) { 
+                textStatus.text = "\nBe patient! Death is still deciding";
+            }
         } else {
             text.text = "Action: none";
         }
@@ -168,7 +176,9 @@ function update() {
             } else if(game.input.activePointer.isDown & death == 0) { 
                 live();
                 isGameOver = 1;
-            } 
+            } else if(game.input.activePointer.isDown & death == -1) { 
+                textStatus.text = "\nBe patient! Death is still deciding";
+            }
         } else {
             text.text = "Action: none";
         }
