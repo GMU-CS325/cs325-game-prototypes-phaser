@@ -158,7 +158,7 @@ function update() {
                 live();
                 isGameOver = 1;
             } else if(game.input.activePointer.isDown & death == -1) { 
-                textStatus.text = "\nBe patient! Death is still deciding";
+                textStatus.text = "\n\nBe patient! Death is still deciding";
             }
         } else {
             text.text = "Action: none";
@@ -177,7 +177,7 @@ function update() {
                 live();
                 isGameOver = 1;
             } else if(game.input.activePointer.isDown & death == -1) { 
-                textStatus.text = "\nBe patient! Death is still deciding";
+                textStatus.text = "\n\nBe patient! Death is still deciding";
             }
         } else {
             text.text = "Action: none";
