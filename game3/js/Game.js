@@ -38,12 +38,13 @@ BasicGame.Game.prototype = {
         //this.teacher.body.mass = 10000;
         //this.game.physics.p2.enable(this.teacher);
 
-        //physics TESTING
+        //physics system
         this.game.world.setBounds(0,0, 673, 665);
         this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.physics.p2.enable(this.player);
+
+        //input
         this.cursors = this.game.input.keyboard.createCursorKeys();
-        //this.game.camera.follow(this.player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
         
         this.player.anchor.setTo(0.5,0.5);
         this.player.fixedRotation = true;
@@ -71,18 +72,19 @@ BasicGame.Game.prototype = {
                 }
             }
         }
-       
-        var style = { font: "25px Verdana", fill: "#000", align: "center" };
-        var text = this.game.add.text( this.game.world.centerX, 15, "WELCOME TO DETENTION HAHAH", style );
-        text.anchor.setTo( 0.5, 0.0 );
         
+        //header text for teacher's speech
+        var style = { font: "25px Verdana", fill: "#000", align: "center" };
+        var text = this.game.add.text( this.game.world.centerX, 15, "WELCOME TO DETENTION HAHAHA", style );
+        text.anchor.setTo( 0.5, 0.0 );
+        //set to global variable
         this.textglobal = text;
     },
 
+    //this function randomly picks a direction for the teacher to be facing and changes text
     move: function() {
         var randomValue = this.game.rnd.integerInRange(0, 3);
         this.teacher.frame = randomValue;
-
         if(this.teacher.frame == 0) {  
             this.textglobal.text = "I'M WATCHING YOU";
         } else {
@@ -91,6 +93,7 @@ BasicGame.Game.prototype = {
        
     },
 
+    //helper function to check if the player has been caught or not
     isCaught: function() {
         //check if player is "behind a desk"
         if((this.player.x > 105 && this.player.x < 135) || 
@@ -100,6 +103,7 @@ BasicGame.Game.prototype = {
             (this.player.x > 425 && this.player.x < 455) ||
             (this.player.x > 505 && this.player.x < 535) ||
             (this.player.x > 585 && this.player.x < 615)) {
+            //in the case that the player is past the desks
             if(this.player.y < 260) {
                 this.caught();
             }
@@ -108,26 +112,29 @@ BasicGame.Game.prototype = {
         }
     },
 
+    //what happens once you are caught
     caught: function() {
         this.textglobal.text = "I CAUGHT YOU";
         this.game.add.tween(this.teacher).to( { x: this.player.x, y: this.player.y }, 2000, Phaser.Easing.Linear.None, true);   
-        this.isover = 1
+        this.isover = 1;
     
     },
     
 
     update: function () {
+        
 
-        this.player.body.rotation = 0;
-
-        this.player.body.setZeroVelocity();
-
+        //win condition check
         if(this.player.x > 650 && (this.player.y > 195 && this.player.y <255)) {
             this.textglobal.text = "YOU ESCAPED SUCCESSFULLY!!";
             this.win = 1;
             this.quitGame();
         }
 
+        this.player.body.rotation = 0;
+        this.player.body.setZeroVelocity();
+
+        //check if game is over, if not then you can move/get caught
         if(this.isover == 0) {
             //when teacher is looking down, check if you are behind a desk
             if(this.teacher.frame == 0){
@@ -191,7 +198,7 @@ BasicGame.Game.prototype = {
 
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.     
-
+        this.isover = 0;
 
         //  Then let's go back to the main menu.
         this.textglobal.text = "HOW DARE YOU TRY TO LEAVE MY DETENTION!";
