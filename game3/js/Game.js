@@ -181,7 +181,7 @@ BasicGame.Game.prototype = {
             //teacher movements
             var current_time = this.game.time.time;
             if(current_time - this.lastMove > this.moveAfter) {
-                this.moveAfter = Math.random() * 2000 + 1000;
+                this.moveAfter = Math.random() * 3000 + 300;
                 this.lastMove = current_time;
                 this.move();
             }
