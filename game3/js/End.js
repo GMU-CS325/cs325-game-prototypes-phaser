@@ -26,6 +26,8 @@ BasicGame.End.prototype = {
 		} else {
 			this.add.sprite(0, 0, 'losescreen');
 		}
+		var style = { font: "25px Verdana", fill: "#000", align: "center" };
+        	var text = this.game.add.text( this.game.world.centerX, 670, "Press SPACEBAR to restart", style );
 
 	},
 
