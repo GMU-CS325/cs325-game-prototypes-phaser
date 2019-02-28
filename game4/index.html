@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Digital Assignment #3</title>
+	<title>Digital Assignment #4</title>
 	<script src="js/phaser.min.js"></script>
 	<!-- Boot.js must come first since it creates the BasicGame object
 	that stores all the states. -->
@@ -32,79 +32,88 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Your game title</h2>
+<h2>Detention Escape v2 (Reiterated)</h2>
 
 <ul>
 <li><strong>Originality:</strong>
-What is original about your game?
+While the game is loosely based on the children's game of "red light, green light", this game is different by 
+	having four directions of "checking" by the detector and there are obstacles (students) to hinder your success. The next part is simply an avoid detection game.
 </li>
 
 <li><strong>Technical Merit:</strong>
-What is interesting about your game technology?
+This game features a new level on every playthrough because of the randomly generated obstacles (students), and the random
+	behavior of the detector (teacher). Also, it features game states to give the game possibility for replay without having
+	to restart the webpage. 
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
-What did you learn from this prototype?
-What was the easiest or hardest part of making it?
+From this prototype, I learned more about the P2 physics system as well as how to handle collisions between character and groups.
+	It was difficult to get used to the style of coding when game states are involves due to the numerous "this.xxx" statements 
+	that are needed. Also, it was difficult to create sprites/graphics at a level of satisfaction that I wanted. Eventually
+	had to compromise for a more realistic finish time.
 </li>
 
 <li><strong>Prototype Assets:</strong>
-Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
 <ul>
-<li>Loading screen: self-made</li>
-<li>Puppy image: self-made</li>
-<li>Button: Phaser example <a href="https://phaser.io/examples/v2/buttons/action-on-click">Action On Click</a></li>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
-<li>Music: "Poppers and Prosecco" Kevin MacLeod (<a href="incompetech.com">incompetech.com</a>). Licensed under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons: By Attribution 3.0 License</a></li>
+<li>Loading screen/bar: self-made</li>
+<li>Main menu screen: self-made</li>
+<li>Character sprites: self-made</li>
+<li>Music: by Komiku  <a href="http://freemusicarchive.org/music/Komiku/Captain_Glouglous_Incredible_Week_Soundtrack/school">Link to song</a></li>
+<li>Tile set: <a href="https://ccrgeek.wordpress.com/2016/01/01/mv-school-tile-set/">Candy Coded Response</a></li>
 </ul>
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
-<ul>
-<li>The code for this example is adapted from the <a href="https://github.com/photonstorm/phaser/tree/v2.6.2/resources/Project%20Templates/Basic">Phaser Basic Project Template</a></li>
-</ul>
+N/A
 </li>
 
 <li><strong>High Concept:</strong>
-A one-sentence summary of your game.
+A twist on the classic 'Red Light, Green Light' game placed in a school setting with multiple levels.
 </li>
 
 <li><strong>Theme:</strong>
-State which of the Storymatic themes you used.
+"LAST DAY OF SCHOOL"
 </li>
 
 <li><strong>Mandated Variety:</strong>
-State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+<li>Input: keyboard (spacebar to start game, arrow keys to move around</li>
+<li>Randomness: generation of obstacles (students) and the direction teacher is facing</li>
+<li>Genre: top-down escape game</li>
+</ul>
 </li>
 
 <li><strong>Prototype Goal:</strong>
-What game mechanic is this prototype evaluating?
+This game is testing obstacle creation, as well as incorporating detection events to create a semi-stealth escape game.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-What experience do you want players to have when playing your game?
+I want players to experience an upgraded version of a common childhood game that they may have played on the playground while 
+relating with the desire to ditch school.
 </li>
 
 <li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+The player controls the character with arrow keys (up, down, left, right) in order to navigate through a series of immovable 
+	desks and students to get to the exit. The game is lost if the teacher spots you not behind a desk. You progress to the next level by reaching the door. Then you must avoid hall monitors to escape the actual school.
 </li>
 
 <li><strong>Strategies:</strong>
-What player strategies do you expect will be effective at playing this game?
+Strategies may include waiting for the teacher to turn around and trying to figure out just how much time it takes for the teacher to change directions. This will give the player a general idea of how long they have to actually move.
 </li>
 
 <li><strong>Story/Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
-How will the dramatic tension interact with the gameplay tension?
+The main character is placed into detention on the last day of school for not wearing the proper school uniform. 
+	This can be evident in the actual sprite models, as the player character is the only one not wearing the same
+	clothing as the other students. The teacher is a typical, angry detention supervisor who will chase after you
+	if you are caught trying to leave. The hall monitors are also eager to catch anyone who is trying to escape.
 </li>
 
 <li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
+The target demographic is for anyone of all ages.
 </li>
 
 <li><strong>Play Time:</strong>
-How long does your game take to play?
+The game can take around two minutes.
 </li>
 
 </ul>

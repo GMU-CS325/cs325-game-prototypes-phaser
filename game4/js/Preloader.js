@@ -30,6 +30,10 @@ BasicGame.Preloader.prototype = {
 		this.load.image('losescreen', 'assets/losescreen.jpg');   
 		
 		this.load.audio('titleMusic', ['assets/School.mp3']);
+		this.load.audio('hall', 'assets/Hall.mp3');
+		this.load.audio('surprise', 'assets/surprise.wav');
+		this.load.audio('yay', 'assets/yay.mp3');
+		this.load.audio('lose', 'assets/lose.wav');
 		//	+ lots of other required assets here
        
         this.load.image('player', 'assets/player.png');
@@ -41,6 +45,7 @@ BasicGame.Preloader.prototype = {
         this.load.image('hall', 'assets/hall.jpg');
         this.load.image('monitor', 'assets/hm.png');
         this.load.image('8', 'assets/8.png');
+        this.load.image('book', 'assets/book.png');
 	},
 
 	create: function () {

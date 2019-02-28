@@ -24,7 +24,7 @@ BasicGame.MainMenu.prototype = {
 
 	update: function () {
 
-		if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+		if (this.game.input.keyboard.isDown(Phaser.KeyCode.SPACEBAR)) {
 			this.startGame();
 		}
 
@@ -34,8 +34,8 @@ BasicGame.MainMenu.prototype = {
 
 		this.music.stop();
 		// start the actual game
-		//this.state.start('Game');
-		this.state.start('Hallway');
+		this.state.start('Game');
+		
 
 	}
 

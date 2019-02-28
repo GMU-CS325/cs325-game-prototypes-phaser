@@ -12,6 +12,7 @@ BasicGame.Game = function (game) {
 
     this.textglobal;
     this.isover = 0;
+    this.music = null;
 
     this.win = 0;
 
@@ -21,6 +22,9 @@ BasicGame.Game.prototype = {
 
     
     create: function () {
+
+        this.music = this.add.audio('hall');
+        this.music.play();
       
         this.lastMove = this.game.time.time;
 
@@ -107,6 +111,8 @@ BasicGame.Game.prototype = {
 
     caught: function() {
         this.textglobal.text = "I CAUGHT YOU";
+        var surp = this.add.audio('surprise');
+        surp.play();
         this.game.add.tween(this.teacher).to( { x: this.player.x, y: this.player.y }, 2000, Phaser.Easing.Linear.None, true);   
         this.isover = 1
     
@@ -188,7 +194,7 @@ BasicGame.Game.prototype = {
 
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.     
-        
+        this.music.stop();
         if(this.win == 1) {
             this.state.start('Hallway');
         } else {
