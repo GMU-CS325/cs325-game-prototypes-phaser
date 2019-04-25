@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1600, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update });
+var game = new Phaser.Game(400, 400, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update });
 
 game.state.add('end', endState);
 
