@@ -22,7 +22,7 @@ var sprite;
 var bg;
 var cops;
 var points = 0;
-var text;
+
 
 var cursors;
 
@@ -34,12 +34,7 @@ function create() {
 
     bg = game.add.sprite(0,0,'bg');
 
-    text = game.add.text(300, 200, "TEST TEXT", {
-        font: "12px Arial",
-        fill: "white",
-        align: "center"
-    });
-    text.anchor.setTo(0.5, 0.5);
+
 
     map = game.add.tilemap('map');
 
@@ -102,7 +97,7 @@ function collide(char, tile) {
   	 	//check if cop is near
   	 	for(var i=0; i<cops.length; i++) { 
 		if(Phaser.Math.distance(sprite.x, sprite.y, cops.getAt(i).body.x, cops.getAt(i).body.y) < 150){
-			text.setText("FAIL");
+			
 			end();
 		}
 	} 
@@ -142,8 +137,7 @@ function update() {
         sprite.animations.stop(null, true);
     }
 
-    text.x = Math.floor(sprite.x + sprite.width / 2);
-    text.y = Math.floor(sprite.y + sprite.height / 2);
+   
 
     
 	
