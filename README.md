@@ -2,7 +2,7 @@
 
 Several 2D game made by Zhouxiang Cai at GMU CS325
 
-Leaning from Game!
+Learning from Game!
 
 Free to Play!
 
