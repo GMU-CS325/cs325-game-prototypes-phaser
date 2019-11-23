@@ -1,4 +1,4 @@
-# GMU CS325 Introduction to Game Design
+# 2D Game Design using Phaser
 
 Several 2D game made by Zhouxiang Cai at GMU CS325
 
