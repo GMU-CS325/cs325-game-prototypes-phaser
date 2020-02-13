@@ -247,9 +247,6 @@ BasicGame.Game.prototype = {
         this.food.destroy();
         this.char.destroy();
         var ctr = 0;
-        while(ctr < this.objects.length){
-            this.objects[ctr].destroy();
-        }
         objects = [];
 
     }
