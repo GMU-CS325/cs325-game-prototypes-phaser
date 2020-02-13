@@ -86,9 +86,9 @@ BasicGame.Game.prototype = {
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
             var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
-            this.enemy.velocity.x = xVelocity;
-            this.enemy.velocity.y = yVelocity;
-            this.enemy.body.collideWorldBounds = true;
+            enemy.velocity.x = xVelocity;
+            enemy.velocity.y = yVelocity;
+            enemy.body.collideWorldBounds = true;
 
             this.objects.push(enemy);
         }
@@ -96,9 +96,9 @@ BasicGame.Game.prototype = {
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
-        this.food.velocity.x = xVelocity;
-        this.food.velocity.y = yVelocity;
-        this.enemy.body.collideWorldBounds = true;
+        food.velocity.x = xVelocity;
+        food.velocity.y = yVelocity;
+        food.body.collideWorldBounds = true;
         this.food = food;
 
     },
@@ -179,9 +179,9 @@ BasicGame.Game.prototype = {
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
             var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
-            this.enemy.velocity.x = xVelocity;
-            this.enemy.velocity.y = yVelocity;
-            this.enemy.body.collideWorldBounds = true;
+            enemy.velocity.x = xVelocity;
+            enemy.velocity.y = yVelocity;
+            enemy.body.collideWorldBounds = true;
 
             this.objects.push(enemy);
 
@@ -189,9 +189,9 @@ BasicGame.Game.prototype = {
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
-        this.food.velocity.x = xVelocity;
-        this.food.velocity.y = yVelocity;
-        this.enemy.body.collideWorldBounds = true;
+        food.velocity.x = xVelocity;
+        food.velocity.y = yVelocity;
+        food.body.collideWorldBounds = true;
         this.food = food;
         switch(score){
             case 2:
