@@ -38,11 +38,11 @@ BasicGame.Game = function (game) {
     this.score = 1;
 
     this.ctr = 0;
-/*
+
     this.scoreup = this.add.audio('lifeSound');
     this.scoredown = this.game.audio('hitSound');
     this.death = this.add.audio('deathSound');
-    */
+    
 };
 
 BasicGame.Game.prototype = {
@@ -83,19 +83,21 @@ BasicGame.Game.prototype = {
         //var prevNode = [0, 0];
         while(ctr < 7){
             var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
+            this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
             var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
             this.enemy.velocity.x = xVelocity;
             this.enemy.velocity.y = yVelocity;
-            this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
             this.enemy.body.collideWorldBounds = true;
 
             this.objects.push(enemy);
         }
         var food = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'greenParticle');
+        this.game.physics.enable(this.food, Phaser.Physics.ARCADE);
         var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
-        this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
+        this.food.velocity.x = xVelocity;
+        this.food.velocity.y = yVelocity;
         this.enemy.body.collideWorldBounds = true;
         this.food = food;
 
@@ -156,18 +158,21 @@ BasicGame.Game.prototype = {
         score++;
         //this.scoreup.play();
         var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
-        var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
-        var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
-        this.enemy.velocity.x = xVelocity;
-        this.enemy.velocity.y = yVelocity;
-        this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
-        this.enemy.body.collideWorldBounds = true;
+            this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
+            var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
+            var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
+            this.enemy.velocity.x = xVelocity;
+            this.enemy.velocity.y = yVelocity;
+            this.enemy.body.collideWorldBounds = true;
 
-        this.objects.push(enemy);
+            this.objects.push(enemy);
+
         var food = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'greenParticle');
+        this.game.physics.enable(this.food, Phaser.Physics.ARCADE);
         var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
-        this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
+        this.food.velocity.x = xVelocity;
+        this.food.velocity.y = yVelocity;
         this.enemy.body.collideWorldBounds = true;
         this.food = food;
         switch(score){
