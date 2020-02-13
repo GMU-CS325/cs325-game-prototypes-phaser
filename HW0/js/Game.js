@@ -29,7 +29,7 @@ BasicGame.Game = function (game) {
     // member variables here. Otherwise, you will do it in create().
     this.char = null;
 
-    this.SPEED = 10;
+    this.SPEED = 100;
 
     this.objects = [];
 
@@ -118,10 +118,10 @@ BasicGame.Game.prototype = {
             this.char.body.velocity.x = 0;
         } if (this.input.keyboard.isDown(Phaser.Keyboard.UP)) {
             // If the UP key is down, move up
-            this.char.body.velocity.y = this.SPEED;
+            this.char.body.velocity.y = -this.SPEED;
         } else if(this.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
             // If the DOWN key is... down, move.. well down. Betcha' didn't see that coming.
-            this.char.body.velocity.y = -this.SPEED;
+            this.char.body.velocity.y = this.SPEED;
         } else {
             // Stop moving
             this.char.body.velocity.y = 0;

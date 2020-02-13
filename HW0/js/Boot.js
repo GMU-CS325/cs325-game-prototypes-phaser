@@ -36,7 +36,7 @@ BasicGame.Boot.prototype = {
     preload: function () {
         //**
         //  Here we load the assets required for our Preloader state (in this case a background and a loading bar)
-        this.load.image('menuBackground', 'assets/menu-background.jpg');
+        this.load.image('menuBackground', 'assets/menu-background.jpg', this.game.width, this.game.height);
         this.load.image('preloaderSlider', 'assets/taiko-slider.png');
 
     },
