@@ -114,7 +114,6 @@ BasicGame.Game.prototype = {
             this.ship.body.velocity.x = this.SPEED;
         }else{
             this.char.body.velocity.x = 0;
-        }
         } if (this.input.keyboard.isDown(Phaser.Keyboard.UP)) {
             // If the UP key is down, move up
             this.char.body.velocity.y = this.SPEED;
