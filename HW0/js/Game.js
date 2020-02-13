@@ -38,6 +38,11 @@ BasicGame.Game = function (game) {
     this.score = 1;
 
     this.ctr = 0;
+/*
+    this.scoreup = this.add.audio('lifeSound');
+    this.scoredown = this.game.audio('hitSound');
+    this.death = this.add.audio('deathSound');
+    */
 };
 
 BasicGame.Game.prototype = {
@@ -53,7 +58,7 @@ BasicGame.Game.prototype = {
         this.char.anchor.setTo( 0.5, 0.5 );
         
         // Turn on the arcade physics engine for this sprite.
-        //this.game.physics.enable( this.bouncy, Phaser.Physics.ARCADE );
+        this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
         this.char.body.collideWorldBounds = true;
         //this.game.stage.backgroundColor = 0x333333;
@@ -78,8 +83,8 @@ BasicGame.Game.prototype = {
         //var prevNode = [0, 0];
         while(ctr < 7){
             var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
-            var yVelocity = (Math.random%this.SPEED)-(SPEED/2);
-            var xVelocity = Math.sqrt((SPEED*SPEED)-(yVelocity*yVelocity));
+            var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
+            var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
             this.enemy.velocity.x = xVelocity;
             this.enemy.velocity.y = yVelocity;
             this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
@@ -88,8 +93,8 @@ BasicGame.Game.prototype = {
             this.objects.push(enemy);
         }
         var food = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'greenParticle');
-        var yVelocity = (Math.random%this.SPEED/4)-(SPEED/8);
-        var xVelocity = (Math.random%this.SPEED/4)-(SPEED/8);
+        var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
+        var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
         this.enemy.body.collideWorldBounds = true;
         this.food = food;
@@ -134,6 +139,7 @@ BasicGame.Game.prototype = {
         this.enemies[ctr] = this.enemies[ctr-1];
         switch(score){
             case 0:
+               // this.death.play();
                 this.state.start('Fail');
             case 1:
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char1' );
@@ -143,13 +149,15 @@ BasicGame.Game.prototype = {
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char3' );
 
             }
+           // this.scoredown.play();
     },
 
     point: function(){
         score++;
+        //this.scoreup.play();
         var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
-        var yVelocity = (Math.random%this.SPEED)-(SPEED/2);
-        var xVelocity = Math.sqrt((SPEED*SPEED)-(yVelocity*yVelocity));
+        var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
+        var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
         this.enemy.velocity.x = xVelocity;
         this.enemy.velocity.y = yVelocity;
         this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
@@ -157,8 +165,8 @@ BasicGame.Game.prototype = {
 
         this.objects.push(enemy);
         var food = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'greenParticle');
-        var yVelocity = (Math.random%this.SPEED/4)-(SPEED/8);
-        var xVelocity = (Math.random%this.SPEED/4)-(SPEED/8);
+        var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
+        var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
         this.enemy.body.collideWorldBounds = true;
         this.food = food;

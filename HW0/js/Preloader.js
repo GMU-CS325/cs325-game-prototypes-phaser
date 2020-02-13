@@ -36,8 +36,8 @@ BasicGame.Preloader.prototype = {
 		this.load.image('char2', 'assets/taiko-hit100k.png');
 		this.load.image('char3', 'assets/taiko-hit300.png');
 		this.load.image('char4', 'assets/taiko-hit300k.png');
-		this.load.image('failBackground', 'assets/fail-this.background.png');
-		this.load.image('pauseBackground', 'assets/pause-overlay.jpn');
+		this.load.image('failBackground', 'assets/fail-background.png');
+		this.load.image('pauseBackground', 'assets/pause-overlay.png');
 		this.load.image('blueParticle1', 'assets/particle50.png');
 		this.load.image('blueParticle2', 'assets/particle300.png');
 		this.load.image('blueParticle3', 'assets/taiko-glow.png');
