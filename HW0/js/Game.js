@@ -109,9 +109,9 @@ BasicGame.Game.prototype = {
         if (this.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
             // If the LEFT key is down, move left
             this.char.body.velocity.x = -this.SPEED;
-        } else if (this.char.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+        } else if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
             // If the RIGHT key is down, move right
-            this.ship.body.velocity.x = this.SPEED;
+            this.char.body.velocity.x = this.SPEED;
         }else{
             this.char.body.velocity.x = 0;
         } if (this.input.keyboard.isDown(Phaser.Keyboard.UP)) {
