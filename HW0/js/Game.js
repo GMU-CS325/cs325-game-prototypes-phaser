@@ -83,7 +83,7 @@ BasicGame.Game.prototype = {
         //var prevNode = [0, 0];
         var enemy = this.game.add.sprite(Math.random()*this.game.world.width, Math.random()*this.game.world.height, 'blueParticle2');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
-            var yVelocity = (Math.random*this.SPEED/5)-(this.SPEED/10);
+            var yVelocity = (Math.random()*this.SPEED/5)-(this.SPEED/10);
             var xVelocity = Math.sqrt(((this.SPEED*this.SPEED)/5)-(yVelocity*yVelocity));
             enemy.body.collideWorldBounds = false;
             this.objects.push(enemy);
@@ -92,7 +92,7 @@ BasicGame.Game.prototype = {
             var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
-            var yVelocity = (Math.random*this.SPEED)-(this.SPEED/2);
+            var yVelocity = (Math.random()*this.SPEED)-(this.SPEED/2);
             var xVelocity = Math.sqrt(((this.SPEED*this.SPEED)/2)-(yVelocity*yVelocity));
             enemy.body.velocity.x = xVelocity;
             enemy.body.velocity.y = yVelocity;
@@ -137,13 +137,13 @@ BasicGame.Game.prototype = {
         this.ctr = 0;
         while(this.ctr< this.objects.length){
             var temp = this.objects[this.ctr];
-            this.game.physics.arcade.overlap(this.char, temp, this.damage);
+            this.game.physics.arcade.overlap(this.char, temp, this.damage(this.game, this.state));
             if (temp.x > this.game.width || temp.x < 0) this.objects[this.ctr].body.velocity.x = -temp.body.velocity.x;
             if (temp.y > this.game.height || temp.y < 0) this.objects[this.ctr].body.velocity.y = -temp.body.velocity.y;
             this.ctr++;
             
         }
-        this.game.physics.arcade.overlap(this.char, this.food, this.point(this.game));
+        this.game.physics.arcade.overlap(this.char, this.food, this.point(this.game, this.state));
         if (this.food.x > this.game.width || this.food.x < 0) this.food.body.velocity.x = -this.food.body.velocity.x;
         if (this.food.y > this.game.height || this.food.y < 0) this.food.body.velocity.y = -this.food.body.velocity.y;
         // Accelerate the 'logo' sprite towards the cursor,
@@ -154,7 +154,7 @@ BasicGame.Game.prototype = {
         //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
     },
 
-    damage: function() {
+    damage: function(game, state) {
         this.score--;
         switch(this.score){
             case 0:
@@ -190,10 +190,10 @@ BasicGame.Game.prototype = {
            // this.scoredown.play();
     },
 
-    point: function(game){
+    point: function(game, state){
         this.score++;
         //this.scoreup.play();
-            var enemy = this.game.add.sprite(Math.random()*this.game.world.x, Math.random()*this.game.world.y, 'blueParticle1');
+            var enemy = this.game.add.sprite((Math.random()*this.game.world.x), (Math.random()*this.game.world.y), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
             var yVelocity = (Math.random()*this.SPEED)-(this.SPEED/2);
@@ -204,7 +204,7 @@ BasicGame.Game.prototype = {
 
             this.objects.push(enemy);
 
-        var food = this.game.add.sprite(Math.random()*this.game.world.x, Math.random()*this.game.world.y, 'greenParticle');
+        var food = this.game.add.sprite((Math.random()*this.game.world.x), (Math.random()*this.game.world.y), 'greenParticle');
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         food.anchor.setTo(0.5,0.5);
         var yVelocity = (Math.random()*this.SPEED/4)-(this.SPEED/8);
