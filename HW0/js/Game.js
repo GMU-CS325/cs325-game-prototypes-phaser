@@ -180,6 +180,7 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         this.score--;
+        this.objects[this.ctr] = this.objects[0];
         switch(this.score){
             case 0:
                // this.death.play();
@@ -192,7 +193,8 @@ BasicGame.Game.prototype = {
             case 3:
                 this.char.loadTexture('char3');
             default:
-                this.state.start('Fail');
+                this.char.loadTexture('char1');
+                score = 1;
             }
            // this.scoredown.play();
     },
@@ -200,7 +202,7 @@ BasicGame.Game.prototype = {
     point: function(){
         this.score++;
         //this.scoreup.play();
-            var enemy = this.game.add.sprite((Math.random()*this.game.world.x), (Math.random()*this.game.world.y), 'blueParticle1');
+            var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
             var yVelocity = (Math.random()*this.SPEED)-(this.SPEED/2);
@@ -210,8 +212,8 @@ BasicGame.Game.prototype = {
             enemy.body.collideWorldBounds = false;
 
             this.objects.push(enemy);
-
-        var food = this.game.add.sprite((Math.random()*this.game.world.x), (Math.random()*this.game.world.y), 'greenParticle');
+        food.destroy();
+        var food = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'greenParticle');
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         food.anchor.setTo(0.5,0.5);
         var yVelocity = (Math.random()*this.SPEED/4)-(this.SPEED/8);
@@ -229,6 +231,9 @@ BasicGame.Game.prototype = {
                 this.char.loadTexture('char4');
             case 5:
                 this.state.start('Win');
+            default:
+                this.char.loadTexture('char4');
+                score = 4;
             }
     },
 
@@ -236,7 +241,7 @@ BasicGame.Game.prototype = {
 
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
-
+        
         //  Then let's go back to the main menu.
         this.state.start('MainMenu');
 
