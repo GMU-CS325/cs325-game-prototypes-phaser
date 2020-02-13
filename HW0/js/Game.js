@@ -145,10 +145,28 @@ BasicGame.Game.prototype = {
                 this.state.start('Fail');
             case 1:
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char1' );
+                this.char.anchor.setTo( 0.5, 0.5 );
+        
+                // Turn on the arcade physics engine for this sprite.
+                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+                // Make it bounce off of the world bounds.
+                this.char.body.collideWorldBounds = true;
             case 2:
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char2' );
+                this.char.anchor.setTo( 0.5, 0.5 );
+        
+                // Turn on the arcade physics engine for this sprite.
+                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+                // Make it bounce off of the world bounds.
+                this.char.body.collideWorldBounds = true;
             case 3:
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char3' );
+                this.char.anchor.setTo( 0.5, 0.5 );
+        
+                // Turn on the arcade physics engine for this sprite.
+                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+                // Make it bounce off of the world bounds.
+                this.char.body.collideWorldBounds = true;
 
             }
            // this.scoredown.play();
@@ -176,14 +194,30 @@ BasicGame.Game.prototype = {
         this.enemy.body.collideWorldBounds = true;
         this.food = food;
         switch(score){
-            case 1:
-                this.char = this.game.add.sprite( this.char.x, this.char.y, 'char1' );
             case 2:
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char2' );
+                this.char.anchor.setTo( 0.5, 0.5 );
+        
+                // Turn on the arcade physics engine for this sprite.
+                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+                // Make it bounce off of the world bounds.
+                this.char.body.collideWorldBounds = true;
             case 3:
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char3' );
+                this.char.anchor.setTo( 0.5, 0.5 );
+        
+                // Turn on the arcade physics engine for this sprite.
+                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+                // Make it bounce off of the world bounds.
+                this.char.body.collideWorldBounds = true;
             case 4:
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char4');
+                this.char.anchor.setTo( 0.5, 0.5 );
+        
+                // Turn on the arcade physics engine for this sprite.
+                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+                // Make it bounce off of the world bounds.
+                this.char.body.collideWorldBounds = true;
             case 5:
                 this.state.start('Win');
             }
