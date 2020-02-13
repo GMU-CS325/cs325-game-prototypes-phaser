@@ -143,7 +143,7 @@ BasicGame.Game.prototype = {
             this.ctr++;
             
         }
-        this.game.physics.arcade.overlap(this.char, this.food, this.point);
+        this.game.physics.arcade.overlap(this.char, this.food, this.point(this.game));
         if (this.food.x > this.game.width || this.food.x < 0) this.food.body.velocity.x = -this.food.body.velocity.x;
         if (this.food.y > this.game.height || this.food.y < 0) this.food.body.velocity.y = -this.food.body.velocity.y;
         // Accelerate the 'logo' sprite towards the cursor,
@@ -184,12 +184,13 @@ BasicGame.Game.prototype = {
                 this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
                 // Make it bounce off of the world bounds.
                 this.char.body.collideWorldBounds = true;
-
+            default:
+                this.state.start('Fail');
             }
            // this.scoredown.play();
     },
 
-    point: function(){
+    point: function(game){
         this.score++;
         //this.scoreup.play();
             var enemy = this.game.add.sprite(Math.random()*this.game.world.x, Math.random()*this.game.world.y, 'blueParticle1');
