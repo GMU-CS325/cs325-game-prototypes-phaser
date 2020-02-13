@@ -31,7 +31,7 @@ BasicGame.Game = function (game) {
 
     this.SPEED = 100;
 
-    this.objects = [];
+    this.objects = [0];
 
     this.food;
 
