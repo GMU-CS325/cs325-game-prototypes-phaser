@@ -128,7 +128,7 @@ BasicGame.Game.prototype = {
         this.ctr = 0;
         this.objects
         while(this.ctr< this.objects.length){
-            this.game.physics.arcade.collide(this.char, objects[ctr], damage);
+            this.game.physics.arcade.collide(this.char, this.objects[ctr], damage);
             ctr++;
         }
         this.game.physics.arcade.collide(this.char, this.food, point);
