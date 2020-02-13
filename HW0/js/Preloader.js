@@ -65,7 +65,7 @@ BasicGame.Preloader.prototype = {
 		//	the update function completely.
 		//** 
 		if (this.cache.isSoundDecoded('lifeSound') && this.cache.isSoundDecoded('hitSound')
-			 && this.cache.isSoundDecoded('DeathSound') && this.ready == false)
+			 && this.cache.isSoundDecoded('deathSound') && this.ready == false)
 		{
 			this.ready = true;
 			this.state.start('MainMenu');
