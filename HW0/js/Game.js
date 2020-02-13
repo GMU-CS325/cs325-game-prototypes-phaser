@@ -176,14 +176,14 @@ BasicGame.Game.prototype = {
         switch(this.score){
             case 0:
                // this.death.play();
-                this.quitGame();
+               this.death.play();
+                this.quitGame(0);
                 this.state.start('Fail');
                 break;
             default:
                 this.char.loadTexture('char1', 0, false);
                 if(this.score< 0){
-                    this.quitGame();
-                    this.state.start('Fail');
+                    this.quitGame(0);
                 }else{
                     this.score = 1;
                 }
@@ -197,7 +197,7 @@ BasicGame.Game.prototype = {
         this.score++;
         this.scoreup.play();
         var ctr = 0;
-        while(ctr < 10){
+        while(ctr < 11){
             var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
@@ -230,8 +230,7 @@ BasicGame.Game.prototype = {
                 this.char.loadTexture('char4', 0, false);
                 break;
             case 5:
-                this.quitGame();
-                this.state.start('Win');
+                this.quitGame(1);
                 break;
             default:
                 this.char.loadTexture('char4', 0, false);
@@ -240,7 +239,7 @@ BasicGame.Game.prototype = {
            this.char.anchor.setTo(0.5,0.5);
     },
 
-    quitGame: function () {
+    quitGame: function (val) {
 
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
@@ -248,7 +247,13 @@ BasicGame.Game.prototype = {
         this.char.destroy();
         var ctr = 0;
         this.objects = [];
-
+        if(val == 0){
+            this.state.start('Fail');
+        }else if(val == 1){
+            this.state.start('Win');
+        }else{
+            this.state.start('MainMenu')
+        }
     }
 
 };
