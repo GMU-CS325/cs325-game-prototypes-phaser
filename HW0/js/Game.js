@@ -31,7 +31,7 @@ BasicGame.Game = function (game) {
 
     this.SPEED = 10;
 
-    this.enemies = [];
+    this.objects = [];
 
     this.food;
 
@@ -138,7 +138,7 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         score--;
-        this.enemies[ctr] = this.enemies[ctr-1];
+        this.objects[ctr] = this.objects[ctr-1];
         switch(score){
             case 0:
                // this.death.play();
