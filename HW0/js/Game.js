@@ -197,7 +197,7 @@ BasicGame.Game.prototype = {
 
             this.objects.push(enemy);
 
-        var food = this.game.add.sprite(Math.random()*this.game.world.x, MAth.random()*this.game.world.y, 'greenParticle');
+        var food = this.game.add.sprite(Math.random()*this.game.world.x, Math.random()*this.game.world.y, 'greenParticle');
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         food.anchor.setTo(0.5,0.5);
         var yVelocity = (Math.random()*this.SPEED/4)-(this.SPEED/8);
