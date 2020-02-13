@@ -39,9 +39,9 @@ BasicGame.Game = function (game) {
 
     this.ctr = 0;
 
-    this.scoreup = this.add.audio('lifeSound');
-    this.scoredown = this.game.audio('hitSound');
-    this.death = this.add.audio('deathSound');
+    this.scoreup = new Audio('lifeSound');
+    this.scoredown = new Audio('hitSound');
+    this.death = new Audio('deathSound');
     
 };
 
