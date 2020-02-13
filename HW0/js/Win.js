@@ -7,7 +7,7 @@ BasicGame.Win = function (game) {
 
 };
 
-BasicGame.MainMenu.prototype = {
+BasicGame.Win.prototype = {
 
 	create: function () {
 		//**

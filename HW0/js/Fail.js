@@ -7,7 +7,7 @@ BasicGame.Fail = function (game) {
 
 };
 
-BasicGame.MainMenu.prototype = {
+BasicGame.Fail.prototype = {
 
 	create: function () {
 		//**
@@ -40,5 +40,3 @@ BasicGame.MainMenu.prototype = {
 	}
 
 };
-
-30
