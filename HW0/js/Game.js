@@ -81,7 +81,7 @@ BasicGame.Game.prototype = {
 
         this.ctr = 0; 
         //var prevNode = [0, 0];
-        while(ctr < 7){
+        while(this.ctr < 7){
             var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
