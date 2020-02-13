@@ -19,7 +19,6 @@ BasicGame.MainMenu.prototype = {
 
 		//this.add.sprite(0, 0, 'titlePage');
 		var background = this.add.sprite(0,0, 'menuBackground');
-		background.scale.setTo(this.game.width, this.game.height);
 		this.playButton = this.add.button( 303, 400, 'continue', this.startGame, this);
 	},
 

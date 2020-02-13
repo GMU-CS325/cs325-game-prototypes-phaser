@@ -29,7 +29,7 @@ BasicGame.Game = function (game) {
     // member variables here. Otherwise, you will do it in create().
     this.char = null;
 
-    this.SPEED = 100;
+    this.SPEED = 150;
 
     this.objects = [0];
 
@@ -161,6 +161,7 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         this.score--;
+        this.scoredown.play();
         this.objects[this.ctr].destroy();
         this.objects[this.ctr] = this.objects[0];
         switch(this.score){
@@ -185,9 +186,9 @@ BasicGame.Game.prototype = {
 
     point: function(){
         this.score++;
-        //this.scoreup.play();
+        this.scoreup.play();
         var ctr = 0;
-        while(ctr < 6){
+        while(ctr < 10){
             var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
