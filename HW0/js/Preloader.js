@@ -26,7 +26,7 @@ BasicGame.Preloader.prototype = {
 		//	Here we load the rest of the assets our game needs.
 		//	As this is just a Project Template I've not provided these assets, swap them for your own.
 		//this.load.image('titlePage', 'assets/title.jpg');
-		this.load.atlas('continue', 'assets/pause-continue.png');
+		this.load.atlas('continue', 'assets/pause-continue.png', 'assets/continue.json');
 		this.load.audio('hitSound', ['assets/taiko-normal-hitclap.wav']);
 		this.load.audio('deathSound', ['assets/taiko-normal-hitfinish.wav']);
 		this.load.audio('lifeSound', ['assets/menuhit.wav'])
