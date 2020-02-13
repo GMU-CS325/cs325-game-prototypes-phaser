@@ -138,14 +138,38 @@ BasicGame.Game.prototype = {
         while(this.ctr< this.objects.length){
             var temp = this.objects[this.ctr];
             this.game.physics.arcade.overlap(this.char, temp, this.damage(this.game, this.state));
-            if (temp.x > this.game.width || temp.x < 0) this.objects[this.ctr].body.velocity.x = -temp.body.velocity.x;
-            if (temp.y > this.game.height || temp.y < 0) this.objects[this.ctr].body.velocity.y = -temp.body.velocity.y;
+            if (temp.x > this.game.width){
+                 this.objects[this.ctr].body.velocity.x = -temp.body.velocity.x;
+                 this.objects[this.ctr].x = this.game.width-1;
+            }else if(temp.x < 0){
+                this.objects[this.ctr].body.velocity.x = -temp.body.velocity.x;
+                this.objects[this.ctr].x = 1; 
+            }
+            if (temp.y > this.game.height){
+                this.objects[this.ctr].body.velocity.y = -temp.body.velocity.y;
+                this.objects[this.ctr].y = this.game.height-1;
+            }else if(temp.y < 0){
+                this.objects[this.ctr].body.velocity.y = -temp.body.velocity.y;
+                this.objects[this.ctr].y = 1;
+            }
             this.ctr++;
             
         }
         this.game.physics.arcade.overlap(this.char, this.food, this.point(this.game, this.state));
-        if (this.food.x > this.game.width || this.food.x < 0) this.food.body.velocity.x = -this.food.body.velocity.x;
-        if (this.food.y > this.game.height || this.food.y < 0) this.food.body.velocity.y = -this.food.body.velocity.y;
+        if (this.food.x > this.game.width){
+            this.food.body.velocity.x = -this.food.body.velocity.x;
+            this.food.x = this.game.width-1;
+        }else if(this.food.x < 0){
+            this.food.body.velocity.x = -this.food.body.velocity.x;
+            this.food.x = 1;
+        }
+        if (this.food.y > this.game.height){
+            this.food.body.velocity.y = -this.food.body.velocity.y;
+            this.food.y = this.game.height-1;
+        }else if(this.food.y < 0){
+            this.food.body.velocity.y = -this.food.body.velocity.y;
+            this.food.y = 1;
+        }
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
         // in X or Y.
