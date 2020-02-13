@@ -178,7 +178,7 @@ BasicGame.Game.prototype = {
         //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
     },
 
-    damage: function(game, state) {
+    damage: function() {
         this.score--;
         switch(this.score){
             case 0:
@@ -197,7 +197,7 @@ BasicGame.Game.prototype = {
            // this.scoredown.play();
     },
 
-    point: function(game, state){
+    point: function(){
         this.score++;
         //this.scoreup.play();
             var enemy = this.game.add.sprite((Math.random()*this.game.world.x), (Math.random()*this.game.world.y), 'blueParticle1');
