@@ -180,6 +180,7 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         this.score--;
+        this.objects[this.ctr].destroy();
         this.objects[this.ctr] = this.objects[0];
         switch(this.score){
             case 0:
@@ -194,7 +195,7 @@ BasicGame.Game.prototype = {
                 this.char.loadTexture('char3');
             default:
                 this.char.loadTexture('char1');
-                score = 1;
+                this.score = 1;
             }
            // this.scoredown.play();
     },
@@ -233,7 +234,7 @@ BasicGame.Game.prototype = {
                 this.state.start('Win');
             default:
                 this.char.loadTexture('char4');
-                score = 4;
+                this.score = 4;
             }
     },
 
@@ -241,7 +242,7 @@ BasicGame.Game.prototype = {
 
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
-        
+
         //  Then let's go back to the main menu.
         this.state.start('MainMenu');
 
