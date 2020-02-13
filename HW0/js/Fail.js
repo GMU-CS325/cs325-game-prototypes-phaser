@@ -1,6 +1,6 @@
 "use strict";
 
-BasicGame.MainMenu = function (game) {
+BasicGame.Fail = function (game) {
 
 	this.music = null;
 	this.playButton = null;

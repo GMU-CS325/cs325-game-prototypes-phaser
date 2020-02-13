@@ -188,6 +188,9 @@ BasicGame.Game.prototype = {
         this.score++;
         this.scoreup.play();
         var ctr = 0;
+        if(ctr == 0){
+            this.quitGame();
+        }
         while(ctr < 10){
             var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
@@ -231,7 +234,8 @@ BasicGame.Game.prototype = {
 
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
-
+        this.objects.destroy();
+        this.food.destroy();
         //  Then let's go back to the main menu.
         this.state.start('MainMenu');
 
