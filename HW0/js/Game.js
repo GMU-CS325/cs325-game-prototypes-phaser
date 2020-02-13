@@ -91,6 +91,7 @@ BasicGame.Game.prototype = {
             enemy.body.collideWorldBounds = true;
 
             this.objects.push(enemy);
+            ctr++;
         }
         var food = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'greenParticle');
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
@@ -125,7 +126,8 @@ BasicGame.Game.prototype = {
         this.ctr = 0;
         this.objects
         while(ctr< this.objects.length){
-            this.game.physics.arcade.collide(this.char, objects[ctr], damage)
+            this.game.physics.arcade.collide(this.char, objects[ctr], damage);
+            ctr++;
         }
         this.game.physics.arcade.collide(this.char, this.food, point);
         // Accelerate the 'logo' sprite towards the cursor,
