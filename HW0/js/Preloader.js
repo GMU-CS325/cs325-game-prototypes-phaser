@@ -12,38 +12,24 @@ BasicGame.Preloader = function (game) {
 BasicGame.Preloader.prototype = {
 
 	preload: function () {
-		//****
+
 		//	These are the assets we loaded in Boot.js
 		//	A nice sparkly background and a loading progress bar
-		this.background = this.add.sprite(0, 0, 'menuBackground');
-		this.preloadBar = this.add.sprite(300, 400, 'preloaderSlider');
+		this.background = this.add.sprite(0, 0, 'preloaderBackground');
+		this.preloadBar = this.add.sprite(300, 400, 'preloaderBar');
 
 		//	This sets the preloadBar sprite as a loader sprite.
 		//	What that does is automatically crop the sprite from 0 to full-width
 		//	as the files below are loaded in.
 		this.load.setPreloadSprite(this.preloadBar);
-		
+
 		//	Here we load the rest of the assets our game needs.
 		//	As this is just a Project Template I've not provided these assets, swap them for your own.
-		//this.load.image('titlePage', 'assets/title.jpg');
-		this.load.atlas('continue', 'assets/pause-continue.png', 'assets/continue.json');
-		this.load.audio('hitSound', ['assets/taiko-normal-hitclap.wav']);
-		this.load.audio('deathSound', ['assets/taiko-normal-hitfinish.wav']);
-		this.load.audio('lifeSound', ['assets/menuhit.wav'])
-		//	**+ lots of other required assets here
-		this.load.image( 'spinnerCircle', 'assets/spinner-circle.png' );
-		this.load.image('char1', 'assets/taiko-hit100.png', 50, 50);
-		this.load.image('char2', 'assets/taiko-hit100k.png', 50, 50);
-		this.load.image('char3', 'assets/taiko-hit300.png', 50, 50);
-		this.load.image('char4', 'assets/taiko-hit300k.png', 50, 50);
-		this.load.image('failBackground', 'assets/fail-background.png', this.game.width, this.game.height);
-		this.load.image('pauseBackground', 'assets/pause-overlay.png');
-		this.load.image('blueParticle1', 'assets/particle50.png');
-		this.load.image('blueParticle2', 'assets/particle300.png');
-		this.load.image('blueParticle3', 'assets/taiko-glow.png');
-		this.load.image('greenParticle', 'assets/particle100.png');
-		this.load.image('continue', 'assets/pause-continue.png');
-		this.load.image('WinScreen', 'assets/WinScreen.png', this.game.width, this.game.height);
+		this.load.image('titlePage', 'assets/title.jpg');
+		this.load.atlas('playButton', 'assets/play_button.png', 'assets/play_button.json');
+		this.load.audio('titleMusic', ['assets/Poppers and Prosecco.mp3']);
+		//	+ lots of other required assets here
+        this.load.image( 'logo', 'assets/phaser.png' );
 	},
 
 	create: function () {
@@ -63,9 +49,8 @@ BasicGame.Preloader.prototype = {
 		
 		//	If you don't have any music in your game then put the game.state.start line into the create function and delete
 		//	the update function completely.
-		//** 
-		if (this.cache.isSoundDecoded('lifeSound') && this.cache.isSoundDecoded('hitSound')
-			 && this.cache.isSoundDecoded('deathSound') && this.ready == false)
+		
+		if (this.cache.isSoundDecoded('titleMusic') && this.ready == false)
 		{
 			this.ready = true;
 			this.state.start('MainMenu');
