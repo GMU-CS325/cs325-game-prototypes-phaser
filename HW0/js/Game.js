@@ -137,38 +137,38 @@ BasicGame.Game.prototype = {
         this.ctr = 0;
         while(this.ctr< this.objects.length){
             var temp = this.objects[this.ctr];
-            this.game.physics.arcade.overlap(this.char, temp, this.damage(this.game, this.state));
+            this.game.physics.arcade.overlap(this.char, temp, this.damage);
             if (temp.x > this.game.width){
                  this.objects[this.ctr].body.velocity.x = -temp.body.velocity.x;
-                 this.objects[this.ctr].x = this.game.width-1;
+                 this.objects[this.ctr].x = this.game.width-10;
             }else if(temp.x < 0){
                 this.objects[this.ctr].body.velocity.x = -temp.body.velocity.x;
-                this.objects[this.ctr].x = 1; 
+                this.objects[this.ctr].x = 10; 
             }
             if (temp.y > this.game.height){
                 this.objects[this.ctr].body.velocity.y = -temp.body.velocity.y;
-                this.objects[this.ctr].y = this.game.height-1;
+                this.objects[this.ctr].y = this.game.height-10;
             }else if(temp.y < 0){
                 this.objects[this.ctr].body.velocity.y = -temp.body.velocity.y;
-                this.objects[this.ctr].y = 1;
+                this.objects[this.ctr].y = 10;
             }
             this.ctr++;
             
         }
-        this.game.physics.arcade.overlap(this.char, this.food, this.point(this.game, this.state));
+        this.game.physics.arcade.overlap(this.char, this.food, this.point);
         if (this.food.x > this.game.width){
             this.food.body.velocity.x = -this.food.body.velocity.x;
-            this.food.x = this.game.width-1;
+            this.food.x = this.game.width-10;
         }else if(this.food.x < 0){
             this.food.body.velocity.x = -this.food.body.velocity.x;
-            this.food.x = 1;
+            this.food.x = 10;
         }
         if (this.food.y > this.game.height){
             this.food.body.velocity.y = -this.food.body.velocity.y;
-            this.food.y = this.game.height-1;
+            this.food.y = this.game.height-10;
         }else if(this.food.y < 0){
             this.food.body.velocity.y = -this.food.body.velocity.y;
-            this.food.y = 1;
+            this.food.y = 10;
         }
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
@@ -178,7 +178,7 @@ BasicGame.Game.prototype = {
         //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
     },
 
-    damage: function(game, state) {
+    damage: function() {
         this.score--;
         switch(this.score){
             case 0:
@@ -186,36 +186,18 @@ BasicGame.Game.prototype = {
                 this.state.start('Fail');
             case 1:
                 //this.char.kill();
-                this.char = this.game.add.sprite( this.char.x, this.char.y, 'char1' );
-                this.char.anchor.setTo( 0.5, 0.5 );
-        
-                // Turn on the arcade physics engine for this sprite.
-                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
-                // Make it bounce off of the world bounds.
-                this.char.body.collideWorldBounds = true;
+               this.char.loadTexture('char1');
             case 2:
-                this.char = this.game.add.sprite( this.char.x, this.char.y, 'char2' );
-                this.char.anchor.setTo( 0.5, 0.5 );
-        
-                // Turn on the arcade physics engine for this sprite.
-                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
-                // Make it bounce off of the world bounds.
-                this.char.body.collideWorldBounds = true;
+                this.char.loadTexture('char2');
             case 3:
-                this.char = this.game.add.sprite( this.char.x, this.char.y, 'char3' );
-                this.char.anchor.setTo( 0.5, 0.5 );
-        
-                // Turn on the arcade physics engine for this sprite.
-                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
-                // Make it bounce off of the world bounds.
-                this.char.body.collideWorldBounds = true;
+                this.char.loadTexture('char3');
             default:
                 this.state.start('Fail');
             }
            // this.scoredown.play();
     },
 
-    point: function(game, state){
+    point: function(){
         this.score++;
         //this.scoreup.play();
             var enemy = this.game.add.sprite((Math.random()*this.game.world.x), (Math.random()*this.game.world.y), 'blueParticle1');
@@ -240,29 +222,11 @@ BasicGame.Game.prototype = {
         this.food = food;
         switch(this.score){
             case 2:
-                this.char = this.game.add.sprite( this.char.x, this.char.y, 'char2' );
-                this.char.anchor.setTo( 0.5, 0.5 );
-        
-                // Turn on the arcade physics engine for this sprite.
-                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
-                // Make it bounce off of the world bounds.
-                this.char.body.collideWorldBounds = true;
+                this.char.loadTexture('char2')      
             case 3:
-                this.char = this.game.add.sprite( this.char.x, this.char.y, 'char3' );
-                this.char.anchor.setTo( 0.5, 0.5 );
-        
-                // Turn on the arcade physics engine for this sprite.
-                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
-                // Make it bounce off of the world bounds.
-                this.char.body.collideWorldBounds = true;
+                this.char.loadTexture('char3');
             case 4:
-                this.char = this.game.add.sprite( this.char.x, this.char.y, 'char4');
-                this.char.anchor.setTo( 0.5, 0.5 );
-        
-                // Turn on the arcade physics engine for this sprite.
-                this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
-                // Make it bounce off of the world bounds.
-                this.char.body.collideWorldBounds = true;
+                this.char.loadTexture('char4');
             case 5:
                 this.state.start('Win');
             }
