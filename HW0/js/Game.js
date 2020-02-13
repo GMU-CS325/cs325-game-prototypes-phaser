@@ -89,7 +89,7 @@ BasicGame.Game.prototype = {
             this.objects.push(enemy);
 
         while(this.ctr < 7){
-            var enemy = this.game.add.sprite(Math.random()*this.game.world.x, Math.random()*this.game.world.y, 'blueParticle1');
+            var enemy = this.game.add.sprite((Math.random()*this.game.world.x), (Math.random()*this.game.world.y), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
             var yVelocity = (Math.random*this.SPEED)-(this.SPEED/2);
@@ -101,7 +101,7 @@ BasicGame.Game.prototype = {
             this.objects.push(enemy);
             this.ctr++;
         }
-        var food = this.game.add.sprite(Math.random()*this.game.world.x, Math.random()*this.game.world.y, 'greenParticle');
+        var food = this.game.add.sprite((Math.random()*this.game.world.x), Math.random()*this.game.world.y, 'greenParticle');
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         food.anchor.setTo(0.5,0.5);
         var yVelocity = (Math.random*this.SPEED/4)-(this.SPEED/8);
@@ -156,7 +156,8 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         this.score--;
-        this.objects[this.ctr] = this.objects.start;
+        var temp = this.objects[0];
+        this.objects[this.ctr] = temp;
         switch(this.score){
             case 0:
                // this.death.play();
