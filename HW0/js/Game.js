@@ -137,8 +137,8 @@ BasicGame.Game.prototype = {
             
         }
         this.game.physics.arcade.overlap(this.char, this.food, this.point);
-        if (food.x > this.game.width || food.x < 0) this.food.body.velocity.x = -food.body.velocity.x;
-        if (food.y > this.game.height || food.y < 0) this.food.body.velocity.y = -food.body.velocity.y;
+        if (this.food.x > this.game.width || this.food.x < 0) this.food.body.velocity.x = -this.food.body.velocity.x;
+        if (this.food.y > this.game.height || this.food.y < 0) this.food.body.velocity.y = -this.food.body.velocity.y;
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
         // in X or Y.
@@ -148,9 +148,9 @@ BasicGame.Game.prototype = {
     },
 
     damage: function() {
-        score--;
+        this.score--;
         this.objects[this.ctr] = this.objects[this.ctr-1];
-        switch(score){
+        switch(this.score){
             case 0:
                // this.death.play();
                 this.state.start('Fail');
@@ -184,7 +184,7 @@ BasicGame.Game.prototype = {
     },
 
     point: function(){
-        score++;
+        this.score++;
         //this.scoreup.play();
             var enemy = this.game.add.sprite(Math.random*this.game.world.x, this.game.world.y, 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
@@ -206,7 +206,7 @@ BasicGame.Game.prototype = {
         food.body.velocity.y = yVelocity;
         food.body.collideWorldBounds = false;
         this.food = food;
-        switch(score){
+        switch(this.score){
             case 2:
                 this.char = this.game.add.sprite( this.char.x, this.char.y, 'char2' );
                 this.char.anchor.setTo( 0.5, 0.5 );
