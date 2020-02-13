@@ -167,7 +167,7 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         this.score--;
-        if(ctr == 0){
+        if(this.ctr == 0){
             this.quitGame();
         }
         this.scoredown.play();
@@ -230,7 +230,6 @@ BasicGame.Game.prototype = {
                 this.state.start('Win');
             default:
                 this.char.loadTexture('char4', 0, false);
-                this.score = 4;
             }
            this.char.resetFrame();
             this.char.anchor.setTo(0.5,0.5);
