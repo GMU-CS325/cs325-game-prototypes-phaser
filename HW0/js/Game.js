@@ -108,19 +108,22 @@ BasicGame.Game.prototype = {
         
         if (this.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
             // If the LEFT key is down, move left
-            this.ship.body.velocity.x = -this.SPEED;
-        } if (this.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+            this.char.body.velocity.x = -this.SPEED;
+        } else if (this.char.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
             // If the RIGHT key is down, move right
             this.ship.body.velocity.x = this.SPEED;
+        }else{
+            this.char.body.velocity.x = 0;
+        }
         } if (this.input.keyboard.isDown(Phaser.Keyboard.UP)) {
             // If the UP key is down, move up
-            this.ship.body.velocity.y = this.SPEED;
-        } if(this.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
+            this.char.body.velocity.y = this.SPEED;
+        } else if(this.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
             // If the DOWN key is... down, move.. well down. Betcha' didn't see that coming.
-            this.ship.body.velocity.y = -this.SPEED;
+            this.char.body.velocity.y = -this.SPEED;
         } else {
             // Stop moving
-            this.ship.body.angularVelocity = 0;
+            this.char.body.velocity.y = 0;
         }
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
         this.ctr = 0;
