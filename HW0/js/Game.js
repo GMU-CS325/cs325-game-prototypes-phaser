@@ -83,7 +83,7 @@ BasicGame.Game.prototype = {
         //var prevNode = [0, 0];
         while(ctr < 7){
             var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
-            this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
+            this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
             var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
             this.enemy.velocity.x = xVelocity;
@@ -93,7 +93,7 @@ BasicGame.Game.prototype = {
             this.objects.push(enemy);
         }
         var food = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'greenParticle');
-        this.game.physics.enable(this.food, Phaser.Physics.ARCADE);
+        this.game.physics.enable(food, Phaser.Physics.ARCADE);
         var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         this.food.velocity.x = xVelocity;
@@ -175,8 +175,8 @@ BasicGame.Game.prototype = {
     point: function(){
         score++;
         //this.scoreup.play();
-        var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
-            this.game.physics.enable(this.enemy, Phaser.Physics.ARCADE);
+            var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
+            this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
             var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
             this.enemy.velocity.x = xVelocity;
@@ -186,7 +186,7 @@ BasicGame.Game.prototype = {
             this.objects.push(enemy);
 
         var food = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'greenParticle');
-        this.game.physics.enable(this.food, Phaser.Physics.ARCADE);
+        this.game.physics.enable(food, Phaser.Physics.ARCADE);
         var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         this.food.velocity.x = xVelocity;
