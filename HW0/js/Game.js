@@ -86,8 +86,8 @@ BasicGame.Game.prototype = {
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
             var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
-            enemy.velocity.x = xVelocity;
-            enemy.velocity.y = yVelocity;
+            enemy.body.velocity.x = xVelocity;
+            enemy.body.velocity.y = yVelocity;
             enemy.body.collideWorldBounds = true;
 
             this.objects.push(enemy);
@@ -96,8 +96,8 @@ BasicGame.Game.prototype = {
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
-        food.velocity.x = xVelocity;
-        food.velocity.y = yVelocity;
+        food.body.velocity.x = xVelocity;
+        food.body.velocity.y = yVelocity;
         food.body.collideWorldBounds = true;
         this.food = food;
 
@@ -179,8 +179,8 @@ BasicGame.Game.prototype = {
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random%this.SPEED)-(this.SPEED/2);
             var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
-            enemy.velocity.x = xVelocity;
-            enemy.velocity.y = yVelocity;
+            enemy.body.velocity.x = xVelocity;
+            enemy.body.velocity.y = yVelocity;
             enemy.body.collideWorldBounds = true;
 
             this.objects.push(enemy);
@@ -189,8 +189,8 @@ BasicGame.Game.prototype = {
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         var yVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
         var xVelocity = (Math.random%this.SPEED/4)-(this.SPEED/8);
-        food.velocity.x = xVelocity;
-        food.velocity.y = yVelocity;
+        food.body.velocity.x = xVelocity;
+        food.body.velocity.y = yVelocity;
         food.body.collideWorldBounds = true;
         this.food = food;
         switch(score){
