@@ -49,38 +49,24 @@ BasicGame.Game.prototype = {
 
     create: function () {
 
-        //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-        
-        // Create a sprite at the center of the screen using the 'logo' image.
+     
         this.char = this.game.add.sprite( this.game.world.centerX, this.game.world.centerY, 'char1' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-        this.char.anchor.setTo( 0.5, 0.5 );
-        
-        // Turn on the arcade physics engine for this sprite.
-        this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
-        // Make it bounce off of the world bounds.
-        this.char.body.collideWorldBounds = true;
-        //this.game.stage.backgroundColor = 0x333333;
 
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        //var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-       // var text = this.game.add.text( this.game.world.centerX, 15, "Build something amazing.", style );
-        //text.anchor.setTo( 0.5, 0.0 );
-        
-        // When you click on the sprite, you go back to the MainMenu.
-        //this.char.inputEnabled = true;
+        this.char.anchor.setTo( 0.5, 0.5 );
+
+        this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+
+        this.char.body.collideWorldBounds = true;
+
         this.game.input.keyboard.addKeyCapture([
             Phaser.Keyboard.LEFT,
             Phaser.Keyboard.RIGHT,
             Phaser.Keyboard.UP,
             Phaser.Keyboard.DOWN
         ]);
-        //this.char.events.onInputDown.add( function() { this.quitGame(); }, this );
 
         this.ctr = 0; 
-        //var prevNode = [0, 0];
+
         var enemy = this.game.add.sprite(Math.random()*this.game.world.width, Math.random()*this.game.world.height, 'blueParticle2');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random()*this.SPEED/5)-(this.SPEED/10);
@@ -170,12 +156,7 @@ BasicGame.Game.prototype = {
             this.food.body.velocity.y = -this.food.body.velocity.y;
             this.food.y = 10;
         }
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-        //this.bouncy.rotation = this.game.physics.arcade.accelerateToPointer( this.bouncy, this.game.input.activePointer, 500, 500, 500 );
+     
     },
 
     damage: function() {
@@ -213,7 +194,7 @@ BasicGame.Game.prototype = {
             enemy.body.collideWorldBounds = false;
 
             this.objects.push(enemy);
-        food.destroy();
+        this.food.destroy();
         var food = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'greenParticle');
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
         food.anchor.setTo(0.5,0.5);
