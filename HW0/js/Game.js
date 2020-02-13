@@ -40,8 +40,8 @@ BasicGame.Game = function (game) {
     this.ctr = 0;
 
     this.scoreup = new Audio('assets/menuhit.wav');
-    this.scoredown = new Audio('assets/taiko-normal-hit.wav');
-    this.death = new Audio('taiko-normal-hitfinish.wav');
+    this.scoredown = new Audio('assets/taiko-normal-hitclap.wav');
+    this.death = new Audio('assets/taiko-normal-hitfinish.wav');
     
 };
 
