@@ -99,14 +99,14 @@ BasicGame.Game.prototype = {
         food.body.collideWorldBounds = false;
         this.food = food;
 
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
+        /*var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         this.text = this.game.add.text( 15, 15, 'Score: 0', style );
-        this.text.anchor.setTo( 0.5, 0.0 );
+        this.text.anchor.setTo( 0.5, 0.0 );*/
 
     },
 
     update: function () {
-        this.text.setText('Score: ' + this.score);
+        //this.text.setText('Score: ' + this.score);
         if (this.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
             // If the LEFT key is down, move left
             this.char.body.velocity.x = -this.SPEED;
@@ -177,16 +177,14 @@ BasicGame.Game.prototype = {
             case 0:
                // this.death.play();
                 this.state.start('Fail');
-            case 1:
-                //this.char.kill();
-               this.char.loadTexture('char1', 0, false);
-            case 2:
-                this.char.loadTexture('char2', 0, false);
-            case 3:
-                this.char.loadTexture('char3', 0, false);
+                break;
             default:
                 this.char.loadTexture('char1', 0, false);
-                this.score = 1;
+                if(score< 0){
+                    this.state.start('Fail');
+                }else{
+                    score = 1;
+                }
             }
             this.char.resetFrame();
             this.char.anchor.setTo(0.5,0.5);
@@ -221,18 +219,22 @@ BasicGame.Game.prototype = {
         this.food = food;
         switch(this.score){
             case 2:
-                this.char.loadTexture('char2', 0, false);      
+                this.char.loadTexture('char2', 0, false);
+                break;      
             case 3:
                 this.char.loadTexture('char3', 0, false);
+                break;
             case 4:
                 this.char.loadTexture('char4', 0, false);
-            case 999:
+                break;
+            case 5:
                 this.state.start('Win');
+                break;
             default:
                 this.char.loadTexture('char4', 0, false);
             }
            this.char.resetFrame();
-            this.char.anchor.setTo(0.5,0.5);
+           this.char.anchor.setTo(0.5,0.5);
     },
 
     quitGame: function () {
@@ -240,6 +242,12 @@ BasicGame.Game.prototype = {
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
         this.food.destroy();
+        this.char.destroy();
+        var ctr = 0;
+        while(ctr < this.objects.length){
+            this.objects[ctr].destroy();
+        }
+        objects = [];
         //  Then let's go back to the main menu.
         this.state.start('MainMenu');
 
