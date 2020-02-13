@@ -79,7 +79,7 @@ BasicGame.Game.prototype = {
         ]);
         //this.char.events.onInputDown.add( function() { this.quitGame(); }, this );
 
-        var ctr = 0; 
+        this.ctr = 0; 
         //var prevNode = [0, 0];
         while(ctr < 7){
             var enemy = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'blueParticle1');
@@ -92,7 +92,7 @@ BasicGame.Game.prototype = {
             enemy.body.collideWorldBounds = true;
 
             this.objects.push(enemy);
-            ctr++;
+            this.ctr++;
         }
         var food = this.game.add.sprite(Math.random%this.game.world.x, this.game.world.y, 'greenParticle');
         this.game.physics.enable(food, Phaser.Physics.ARCADE);
@@ -130,7 +130,7 @@ BasicGame.Game.prototype = {
         this.ctr = 0;
         while(this.ctr< this.objects.length){
             this.game.physics.arcade.collide(this.char, this.objects[this.ctr], 'damage');
-            ctr++;
+            this.ctr++;
         }
         this.game.physics.arcade.collide(this.char, this.food, 'point');
         // Accelerate the 'logo' sprite towards the cursor,
