@@ -39,7 +39,7 @@ BasicGame.Game = function (game) {
 
     this.ctr = 0;
 
-    this.text;
+    //this.text;
 
     this.scoreup = new Audio('assets/menuhit.wav');
     this.scoredown = new Audio('assets/taiko-normal-hitclap.wav');
@@ -168,7 +168,7 @@ BasicGame.Game.prototype = {
     damage: function() {
         this.score--;
         if(this.ctr == 0){
-            this.quitGame();
+            this.quitGame(2);
         }
         this.scoredown.play();
         this.objects[this.ctr].destroy();
@@ -183,6 +183,7 @@ BasicGame.Game.prototype = {
             default:
                 this.char.loadTexture('char1', 0, false);
                 if(this.score< 0){
+                    this.death.play();
                     this.quitGame(0);
                 }else{
                     this.score = 1;
@@ -243,10 +244,10 @@ BasicGame.Game.prototype = {
 
         //  Here you should destroy anything you no longer need.
         //  Stop music, delete sprites, purge caches, free resources, all that good stuff.
-        this.food.destroy();
+        /*this.food.destroy();
         this.char.destroy();
         var ctr = 0;
-        this.objects = [];
+        this.objects = [];*/
         if(val == 0){
             this.state.start('Fail');
         }else if(val == 1){
