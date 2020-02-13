@@ -179,12 +179,15 @@ BasicGame.Game.prototype = {
                 this.score = 1;
             }
             this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+            this.char.anchor.setTo(0.5,0.5);
            // this.scoredown.play();
     },
 
     point: function(){
         this.score++;
         //this.scoreup.play();
+        var ctr = 0;
+        while(ctr < 6){
             var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
@@ -193,7 +196,8 @@ BasicGame.Game.prototype = {
             enemy.body.velocity.x = xVelocity;
             enemy.body.velocity.y = yVelocity;
             enemy.body.collideWorldBounds = false;
-
+            ctr++;
+        }
             this.objects.push(enemy);
         this.food.destroy();
         var food = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'greenParticle');
@@ -219,6 +223,7 @@ BasicGame.Game.prototype = {
                 this.score = 4;
             }
             this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+            this.char.anchor.setTo(0.5,0.5);
     },
 
     quitGame: function () {
