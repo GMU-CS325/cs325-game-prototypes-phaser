@@ -178,6 +178,7 @@ BasicGame.Game.prototype = {
                 this.char.loadTexture('char1');
                 this.score = 1;
             }
+            this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
            // this.scoredown.play();
     },
 
@@ -217,6 +218,7 @@ BasicGame.Game.prototype = {
                 this.char.loadTexture('char4');
                 this.score = 4;
             }
+            this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
     },
 
     quitGame: function () {
