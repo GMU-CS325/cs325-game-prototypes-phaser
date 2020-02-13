@@ -137,7 +137,7 @@ BasicGame.Game.prototype = {
         this.ctr = 0;
         while(this.ctr< this.objects.length){
             var temp = this.objects[this.ctr];
-            this.game.physics.arcade.overlap(this.char, temp, this.damage(this.game, this.state));
+            this.game.physics.arcade.overlap(this.char, temp, this.damage, null, this);
             if (temp.x > this.game.width){
                  this.objects[this.ctr].body.velocity.x = -temp.body.velocity.x;
                  this.objects[this.ctr].x = this.game.width-10;
@@ -155,7 +155,7 @@ BasicGame.Game.prototype = {
             this.ctr++;
             
         }
-        this.game.physics.arcade.overlap(this.char, this.food, this.point(this.game, this.state));
+        this.game.physics.arcade.overlap(this.char, this.food, this.point, null, this);
         if (this.food.x > this.game.width){
             this.food.body.velocity.x = -this.food.body.velocity.x;
             this.food.x = this.game.width-10;
