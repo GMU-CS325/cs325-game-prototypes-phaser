@@ -176,14 +176,16 @@ BasicGame.Game.prototype = {
         switch(this.score){
             case 0:
                // this.death.play();
+                this.quitGame();
                 this.state.start('Fail');
                 break;
             default:
                 this.char.loadTexture('char1', 0, false);
-                if(score< 0){
+                if(this.score< 0){
+                    this.quitGame();
                     this.state.start('Fail');
                 }else{
-                    score = 1;
+                    this.score = 1;
                 }
             }
             this.char.resetFrame();
@@ -228,6 +230,7 @@ BasicGame.Game.prototype = {
                 this.char.loadTexture('char4', 0, false);
                 break;
             case 5:
+                this.quitGame();
                 this.state.start('Win');
                 break;
             default:
@@ -248,8 +251,6 @@ BasicGame.Game.prototype = {
             this.objects[ctr].destroy();
         }
         objects = [];
-        //  Then let's go back to the main menu.
-        this.state.start('MainMenu');
 
     }
 
