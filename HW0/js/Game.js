@@ -127,7 +127,7 @@ BasicGame.Game.prototype = {
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
         this.ctr = 0;
         this.objects
-        while(ctr< this.objects.length){
+        while(this.ctr< this.objects.length){
             this.game.physics.arcade.collide(this.char, objects[ctr], damage);
             ctr++;
         }
@@ -142,7 +142,7 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         score--;
-        this.objects[ctr] = this.objects[ctr-1];
+        this.objects[this.ctr] = this.objects[this.ctr-1];
         switch(score){
             case 0:
                // this.death.play();
