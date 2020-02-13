@@ -39,9 +39,9 @@ BasicGame.Game = function (game) {
 
     this.ctr = 0;
 
-    this.scoreup = new Audio('lifeSound');
-    this.scoredown = new Audio('hitSound');
-    this.death = new Audio('deathSound');
+    this.scoreup = new Audio('assets/menuhit.wav');
+    this.scoredown = new Audio('assets/taiko-normal-hit.wav');
+    this.death = new Audio('taiko-normal-hitfinish.wav');
     
 };
 
