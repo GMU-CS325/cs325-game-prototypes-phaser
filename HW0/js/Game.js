@@ -156,7 +156,7 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         this.score--;
-        this.objects[this.ctr] = this.objects[0];
+        this.objects[this.ctr] = this.objects.start;
         switch(this.score){
             case 0:
                // this.death.play();
