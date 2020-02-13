@@ -101,7 +101,7 @@ BasicGame.Game.prototype = {
 
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         this.text = this.game.add.text( 15, 15, 'Score: 0', style );
-        text.anchor.setTo( 0.5, 0.0 );
+        this.text.anchor.setTo( 0.5, 0.0 );
 
     },
 
@@ -176,16 +176,16 @@ BasicGame.Game.prototype = {
                 this.state.start('Fail');
             case 1:
                 //this.char.kill();
-               this.char.loadTexture('char1');
+               this.char.loadTexture('char1', 0, false);
             case 2:
-                this.char.loadTexture('char2');
+                this.char.loadTexture('char2', 0, false);
             case 3:
-                this.char.loadTexture('char3');
+                this.char.loadTexture('char3', 0, false);
             default:
-                this.char.loadTexture('char1');
+                this.char.loadTexture('char1', 0, false);
                 this.score = 1;
             }
-            this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+            this.char.resetFrame();
             this.char.anchor.setTo(0.5,0.5);
            // this.scoredown.play();
     },
@@ -221,18 +221,18 @@ BasicGame.Game.prototype = {
         this.food = food;
         switch(this.score){
             case 2:
-                this.char.loadTexture('char2')      
+                this.char.loadTexture('char2', 0, false);      
             case 3:
-                this.char.loadTexture('char3');
+                this.char.loadTexture('char3', 0, false);
             case 4:
-                this.char.loadTexture('char4');
+                this.char.loadTexture('char4', 0, false);
             case 999:
                 this.state.start('Win');
             default:
-                this.char.loadTexture('char4');
+                this.char.loadTexture('char4', 0, false);
                 this.score = 4;
             }
-            this.game.physics.enable( this.char, Phaser.Physics.ARCADE );
+           this.char.resetFrame();
             this.char.anchor.setTo(0.5,0.5);
     },
 
