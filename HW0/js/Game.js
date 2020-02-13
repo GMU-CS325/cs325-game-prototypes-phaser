@@ -167,6 +167,9 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         this.score--;
+        if(ctr == 0){
+            this.quitGame();
+        }
         this.scoredown.play();
         this.objects[this.ctr].destroy();
         this.objects[this.ctr] = this.objects[0];
@@ -194,9 +197,6 @@ BasicGame.Game.prototype = {
         this.score++;
         this.scoreup.play();
         var ctr = 0;
-        if(ctr == 0){
-            this.quitGame();
-        }
         while(ctr < 10){
             var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
