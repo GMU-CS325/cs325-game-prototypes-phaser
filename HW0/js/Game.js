@@ -81,12 +81,19 @@ BasicGame.Game.prototype = {
 
         this.ctr = 0; 
         //var prevNode = [0, 0];
+        var enemy = this.game.add.sprite(Math.random()*this.game.world.x, Math.random()*this.game.world.y, 'blueParticle2');
+            this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
+            var yVelocity = (Math.random*this.SPEED/5)-(this.SPEED/10);
+            var xVelocity = Math.sqrt(((this.SPEED*this.SPEED)/5)-(yVelocity*yVelocity));
+            enemy.body.collideWorldBounds = false;
+            this.objects.push(enemy);
+
         while(this.ctr < 7){
             var enemy = this.game.add.sprite(Math.random()*this.game.world.x, Math.random()*this.game.world.y, 'blueParticle1');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             enemy.anchor.setTo(0.5,0.5);
             var yVelocity = (Math.random*this.SPEED)-(this.SPEED/2);
-            var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
+            var xVelocity = Math.sqrt(((this.SPEED*this.SPEED)/2)-(yVelocity*yVelocity));
             enemy.body.velocity.x = xVelocity;
             enemy.body.velocity.y = yVelocity;
             enemy.body.collideWorldBounds = false;
@@ -149,7 +156,7 @@ BasicGame.Game.prototype = {
 
     damage: function() {
         this.score--;
-        this.objects[this.ctr] = null;
+        this.objects[this.ctr] = this.objects[0];
         switch(this.score){
             case 0:
                // this.death.play();
