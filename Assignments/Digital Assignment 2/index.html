@@ -37,8 +37,8 @@ var game = new Phaser.Game(config);
 
 function preload() {
     this.load.image('background', 'Assets/sea.png')
-    this.load.image('player1', 'Assets/tplane1.png');
-    this.load.image('player2', 'Assets/tplane2.png');
+    this.load.image('playerOne', 'Assets/tplane1.png');
+    this.load.image('playerTwo', 'Assets/tplane2.png');
 }
 
 function create() {
@@ -47,8 +47,8 @@ function create() {
     //Enable world bounds, disable the floor
     this.physics.world.setBoundsCollision(true, true, true, false);
 
-    player1 = this.physics.add.sprite(100, 300, 'player1');
-    player2 = this.physics.add.sprite(700, 300, 'player2');
+    playerOne = this.physics.add.sprite(100, 300, 'playerOne');
+    playerTwo = this.physics.add.sprite(700, 300, 'playerTwo');
 
     openingText = this.add.text(
         this.physics.world.bounds.width / 2,
@@ -80,8 +80,8 @@ function create() {
     cursors = this.input.keyboard.createCursorKeys();
 
     //Neither plane should go out of the world
-    player1.setCollideWorldBounds(true);
-    player2.setCollideWorldBounds(true);
+    playerOne.setCollideWorldBounds(true);
+    playerTwp.setCollideWorldBounds(true);
 }
 
 function update() {
@@ -92,14 +92,14 @@ function update() {
     }
     else {
         // Put this in so that the player stays still if no key is being pressed
-        player1.body.setVelocityX(0);
+        playerOne.body.setVelocityX(0);
 
         //Be right above cursor
         if (!gameStarted) {
-            player1.body.setVelocityX(0);
-            player1.body.setVelocityY(0);
-            player2.body.setVelocityX(0);
-            player2.body.setVelocityY(0);
+            playerOne.body.setVelocityX(0);
+            playerOne.body.setVelocityY(0);
+            playerTwo.body.setVelocityX(0);
+            playerTwo.body.setVelocityY(0);
 
             if (game.input.keyboard.isDown(Phaser.Keyboard.ENTER)) {
                 gameStarted = true;
@@ -108,15 +108,15 @@ function update() {
         }
 
         if (cursors.up.isDown)
-            this.physics.velocityFromRotation(player1.rotation, 200, player1.body.acceleration);
+            this.physics.velocityFromRotation(playerOne.rotation, 200, playerOne.body.acceleration);
         else
-            player1.setAcceleration(0);
+            playerOne.setAcceleration(0);
         if (cursors.left.isDown)
-            player1.setAngularVelocity(-300);
+            playerOne.setAngularVelocity(-300);
         else if (cursors.right.isDown)
-            player1.setAngularVelocity(300);
+            playerOne.setAngularVelocity(300);
         else
-            player1.setAngularVelocity(0);
+            playerOne.setAngularVelocity(0);
         }
     }
 
