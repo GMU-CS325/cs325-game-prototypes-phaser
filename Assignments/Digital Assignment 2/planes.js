@@ -2,6 +2,8 @@
 let playerOne, playerTwo;
 let bulletOne, bulletTwo;
 
+let keyENTER;
+
 let gameStarted = false;
 let whoWon = "Player One";
 
