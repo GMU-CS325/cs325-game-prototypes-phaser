@@ -51,6 +51,8 @@ function create() {
     playerTwo = this.physics.add.sprite(700, 300, 'playerTwo');
     playerTwo.setAngle(180);
 
+    keyENTER = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+
     openingText = this.add.text(
         this.physics.world.bounds.width / 2,
         this.physics.world.bounds.height / 2,
@@ -102,7 +104,7 @@ function update() {
             playerTwo.body.setVelocityX(0);
             playerTwo.body.setVelocityY(0);
 
-            if (game.input.keyboard.isDown(Phaser.Keyboard.ENTER)) {
+            if (keyENTER.isDown) {
                 gameStarted = true;
                 openingText.setVisible(false);
             }
