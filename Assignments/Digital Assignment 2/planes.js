@@ -10,11 +10,11 @@ let frameCounter = 0;
 
 function ifSomeoneWon() {
     //if playerTwo.disableBody(true, true); happened
-    if (!playerTwo.isActive()) {
+    if (!playerTwo.active==true) {
         whoWon = "Player One";
         return true;
     }
-    else if(!playerOne.isActive()) {
+    else if(!playerOne.active==true) {
         whoWon = "Player Two";
         return true;
     }
