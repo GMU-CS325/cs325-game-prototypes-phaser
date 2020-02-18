@@ -48,6 +48,9 @@ function create() {
     this.physics.world.setBoundsCollision(true, true, true, true);
 
     playerOne = this.physics.add.sprite(100, 300, 'playerOne');
+    playerOne.setDamping(true);
+    playerOne.setDrag(0.99);
+    playerOne.setMaxVelocity(200);
     playerTwo = this.physics.add.sprite(700, 300, 'playerTwo');
     playerTwo.setAngle(180);
 
