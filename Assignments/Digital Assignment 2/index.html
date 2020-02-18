@@ -40,6 +40,8 @@ function preload() {
     this.load.image('background', 'Assets/sea.png')
     this.load.image('playerOne', 'Assets/ship.png');
     this.load.image('playerTwo', 'Assets/ship.png');
+    this.load.image('bulletOne', 'Assets/BulletOne.png');
+    this.load.image('bulletTwo', 'Assets/BulletTwo.png');
 }
 
 function create() {
@@ -47,6 +49,16 @@ function create() {
 
     //Enable world bounds, disable the floor
     this.physics.world.setBoundsCollision(true, true, true, true);
+
+    bulletsOne = game.add.group();
+	// To move the sprites later on, we have to enable the body
+	bulletsOne.enableBody = true;
+	// We're going to set the body type to the ARCADE physics, since we don't need any advanced physics
+    bulletsOne.physicsBodyType = Phaser.Physics.ARCADE;
+    bulletsOne.createMultiple(20, 'bulletOne');
+    bulletsOne.callAll('events.onOutOfBounds.add', 'events.onOutOfBounds', resetBullets);
+    lasers.setAll('checkWorldBounds', true);
+
 
     playerOne = this.physics.add.sprite(100, 300, 'playerOne');
     playerOne.setDamping(true);
@@ -86,7 +98,7 @@ function create() {
     aPlayerWonText.setVisible(false);
 
     cursors = this.input.keyboard.createCursorKeys();
-    playerTwoKeys = this.input.keyboard.addKeys('W,A,S,D');
+    playerTwoKeys = this.input.keyboard.addKeys('W,A,S,D, TAB');
 
     //Neither plane should go out of the world
     playerOne.setCollideWorldBounds(true);
@@ -156,6 +168,11 @@ function update() {
         else
         {
             playerTwo.setAngularVelocity(0);
+        }
+
+        if (cursors.space.isDown)
+        {
+            fireBullets();
         }
     }
 }

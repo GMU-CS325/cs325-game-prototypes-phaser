@@ -2,6 +2,8 @@
 let playerOne, playerTwo;
 let bulletOne, bulletTwo;
 
+var bulletsOne, bulletsTwo;
+
 let keyENTER;
 let cursors, playerTwoKeys;
 
@@ -22,4 +24,21 @@ function ifSomeoneWon() {
         return true;
     }
     return false;
+}
+
+function resetBullets(bulletsOne) {
+    // Destroy the laser
+    bulletsOne.kill();
+}
+
+function fireBullets() {
+    // Get the first laser that's inactive, by passing 'false' as a parameter
+    var bulletOne = bulletsOne.getFirstExists(false);
+    if (bulletOne) {
+        // If we have a laser, set it to the starting position
+        bulletOne.reset(playerOne.x, playerOne.y - 20);
+        // Give it a velocity of -500 so it starts shooting
+        bulletOne.body.velocity.y = -500;
+    }
+
 }
