@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Digital Assignment 2-Planes</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <script src="planes.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: false,
+        },
+    },
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
+    },
+
+};
+
+var game = new Phaser.Game(config);
+
+function preload() {
+    this.load.image('background', 'assets/sea.png')
+    this.load.image('player1', 'assets/tplane1.png');
+    this.load.image('player2', 'assets/tplane2.png');
+}
+
+function create() {
+    this.add.image(400, 300, 'background');
+
+    //Enable world bounds, disable the floor
+    this.physics.world.setBoundsCollision(true, true, true, false);
+
+    player1 = this.physics.add.sprite(100, 300, 'player1');
+    player2 = this.physics.add.sprite(700, 300, 'player2');
+
+    openingText = this.add.text(
+        this.physics.world.bounds.width / 2,
+        this.physics.world.bounds.height / 2,
+        'Press ENTER to Start',
+        {
+            fontFamily: 'Monaco, Courier, monospace',
+            fontSize: '50px',
+            fill: '#fff'
+        }
+    );
+    openingText.setOrigin(0.5);
+
+    // Create the game won text
+    aPlayerWonText = this.add.text(
+        this.physics.world.bounds.width / 2,
+        this.physics.world.bounds.height / 2,
+        'You' + whoWon + 'won!',
+        {
+            fontFamily: 'Monaco, Courier, monospace',
+            fontSize: '50px',
+            fill: '#fff'
+        }
+    );
+    playerWonText.setOrigin(0.5);
+    // Make it invisible until the player wins
+    playerWonText.setVisible(false);
+
+    cursors = this.input.keyboard.createCursorKeys();
+
+    //Neither plane should go out of the world
+    player1.setCollideWorldBounds(true);
+    player2.setCollideWorldBounds(true);
+}
+
+function update() {
+    // Check if the ball left the scene i.e. game over
+    frameCounter++;
+    if (isGameOver(this.physics.world)) {
+        //TODO
+    }
+    else if (isWon()) {
+       //TODO
+    }
+    else {
+        // Put this in so that the player stays still if no key is being pressed
+        player.body.setVelocityX(0);
+
+        //Be right above cursor
+        if (!gameStarted) {
+            player1.body.setVelocityX(0);
+            player1.body.setVelocityY(0);
+            player2.body.setVelocityX(0);
+            player2.body.setVelocityY(0);
+
+            if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+                gameStarted = true;
+                openingText.setVisible(false);
+            }
+        }
+
+        if (cursors.up.isDown)
+            this.physics.velocityFromRotation(player1.rotation, 200, player1.body.acceleration);
+        else
+            player1.setAcceleration(0);
+        if (cursors.left.isDown)
+            player1.setAngularVelocity(-300);
+        else if (cursors.right.isDown)
+            player1.setAngularVelocity(300);
+        else
+            player1.setAngularVelocity(0);
+        }
+    }
+
+    </script>
+
+</body>
+</html>
