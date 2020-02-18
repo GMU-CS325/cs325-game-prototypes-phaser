@@ -123,7 +123,7 @@ function update() {
             playerOne.setAcceleration(0);
         }
 
-        if (playerTwoKeys.up.isDown)
+        if (playerTwoKeys.W.isDown)
         {
             this.physics.velocityFromRotation(playerTwo.rotation, 200, playerTwo.body.acceleration);
         }
@@ -145,11 +145,11 @@ function update() {
             playerOne.setAngularVelocity(0);
         }
 
-        if (playerTwoKeys.left.isDown)
+        if (playerTwoKeys.A.isDown)
         {
             playerTwo.setAngularVelocity(-300);
         }
-        else if (playerTwoKeys.right.isDown)
+        else if (playerTwoKeys.D.isDown)
         {
             playerTwo.setAngularVelocity(300);
         }
