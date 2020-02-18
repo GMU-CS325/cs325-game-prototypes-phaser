@@ -37,8 +37,8 @@ var game = new Phaser.Game(config);
 
 function preload() {
     this.load.image('background', 'Assets/sea.png')
-    this.load.image('playerOne', 'Assets/tplane1.png');
-    this.load.image('playerTwo', 'Assets/tplane2.png');
+    this.load.image('playerOne', 'Assets/ship.png');
+    this.load.image('playerTwo', 'Assets/ship.png');
 }
 
 function create() {
@@ -49,6 +49,7 @@ function create() {
 
     playerOne = this.physics.add.sprite(100, 300, 'playerOne');
     playerTwo = this.physics.add.sprite(700, 300, 'playerTwo');
+    playerTwo.rotation(180);
 
     openingText = this.add.text(
         this.physics.world.bounds.width / 2,
@@ -56,7 +57,7 @@ function create() {
         'Press ENTER to Start',
         {
             fontFamily: 'Monaco, Courier, monospace',
-            fontSize: '50px',
+            fontSize: '30px',
             fill: '#fff'
         }
     );
