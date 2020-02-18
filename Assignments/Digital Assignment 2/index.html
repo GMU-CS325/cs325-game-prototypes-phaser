@@ -87,15 +87,12 @@ function create() {
 function update() {
     // Check if the ball left the scene i.e. game over
     frameCounter++;
-    if (isGameOver(this.physics.world)) {
-        //TODO
-    }
-    else if (isWon()) {
-       //TODO
+    if (ifSomeoneWon()) {
+        aPlayerWonText.setVisible(true);
     }
     else {
         // Put this in so that the player stays still if no key is being pressed
-        player.body.setVelocityX(0);
+        player1.body.setVelocityX(0);
 
         //Be right above cursor
         if (!gameStarted) {
@@ -104,7 +101,7 @@ function update() {
             player2.body.setVelocityX(0);
             player2.body.setVelocityY(0);
 
-            if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+            if (game.input.keyboard.isDown(Phaser.Keyboard.ENTER)) {
                 gameStarted = true;
                 openingText.setVisible(false);
             }
