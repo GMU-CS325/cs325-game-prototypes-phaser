@@ -1,3 +1,4 @@
+//BANApifwje ajioef oijegfojidfs oijdflij ijdfjludfuhjhdfjuhdvfshujvfuhj
 let player1, player2;
 let bullet1, bullet2;
 
