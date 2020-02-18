@@ -3,6 +3,7 @@ let playerOne, playerTwo;
 let bulletOne, bulletTwo;
 
 let keyENTER;
+let cursors, playerTwoKeys;
 
 let gameStarted = false;
 let whoWon = "Player One";
