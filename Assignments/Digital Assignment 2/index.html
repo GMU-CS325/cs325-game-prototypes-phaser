@@ -45,7 +45,7 @@ function create() {
     this.add.image(400, 300, 'background');
 
     //Enable world bounds, disable the floor
-    this.physics.world.setBoundsCollision(true, true, true, false);
+    this.physics.world.setBoundsCollision(true, true, true, true);
 
     playerOne = this.physics.add.sprite(100, 300, 'playerOne');
     playerTwo = this.physics.add.sprite(700, 300, 'playerTwo');
@@ -99,10 +99,8 @@ function update() {
 
         //Be right above cursor
         if (!gameStarted) {
-            playerOne.body.setVelocityX(0);
-            playerOne.body.setVelocityY(0);
-            playerTwo.body.setVelocityX(0);
-            playerTwo.body.setVelocityY(0);
+            playerOne.body.setVelocity(0);
+            playerTwo.body.setVelocity(0);
 
             if (keyENTER.isDown) {
                 gameStarted = true;
@@ -112,16 +110,20 @@ function update() {
 
         if (cursors.up.isDown)
             this.physics.velocityFromRotation(playerOne.rotation, 200, playerOne.body.acceleration);
+
         else
             playerOne.setAcceleration(0);
+
         if (cursors.left.isDown)
             playerOne.setAngularVelocity(-300);
+
         else if (cursors.right.isDown)
             playerOne.setAngularVelocity(300);
+
         else
             playerOne.setAngularVelocity(0);
-        }
     }
+}
 
     </script>
 
