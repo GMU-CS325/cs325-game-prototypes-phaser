@@ -86,7 +86,7 @@ function create() {
     aPlayerWonText.setVisible(false);
 
     cursors = this.input.keyboard.createCursorKeys();
-    keys = this.input.keyboard.addKeys('W,A,S,D');
+    playerTwoKeys = this.input.keyboard.addKeys('W,A,S,D');
 
     //Neither plane should go out of the world
     playerOne.setCollideWorldBounds(true);
