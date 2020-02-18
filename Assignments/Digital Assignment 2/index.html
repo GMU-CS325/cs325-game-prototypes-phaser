@@ -49,7 +49,7 @@ function create() {
 
     playerOne = this.physics.add.sprite(100, 300, 'playerOne');
     playerTwo = this.physics.add.sprite(700, 300, 'playerTwo');
-    playerTwo.rotation(180);
+    playerTwo.setAngle(180);
 
     openingText = this.add.text(
         this.physics.world.bounds.width / 2,
