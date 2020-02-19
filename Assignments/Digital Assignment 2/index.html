@@ -50,15 +50,17 @@ function create() {
     //Enable world bounds, disable the floor
     this.physics.world.setBoundsCollision(true, true, true, true);
 
-    bulletsOne = game.add.group();
-	// To move the sprites later on, we have to enable the body
-	bulletsOne.enableBody = true;
-	// We're going to set the body type to the ARCADE physics, since we don't need any advanced physics
-    bulletsOne.physicsBodyType = Phaser.Physics.ARCADE;
-    bulletsOne.createMultiple(20, 'bulletOne');
-    bulletsOne.callAll('events.onOutOfBounds.add', 'events.onOutOfBounds', resetBullets);
-    lasers.setAll('checkWorldBounds', true);
-
+    bulletsOne = this.add.group({
+        defaultKey: 'BulletOne',
+        maxSize: 100,
+        createCallback: function (BulletOne) {
+            bulletOne.setName('Bullet One' + this.getLength());
+            console.log('Created', bulletOne.name);
+        },
+        removeCallback: function (BulletOne) {
+            //console.log('Removed', alien.name);
+        }
+    })
 
     playerOne = this.physics.add.sprite(100, 300, 'playerOne');
     playerOne.setDamping(true);
@@ -126,6 +128,12 @@ function update() {
             }
         }
 
+        bulletsOne.children.iterate(function (bulletOne) {
+        if (bulletOne.y > 600 || bulletOne.y < 0 || bulletOne.x > 800 || bulletOne.x < 0) {
+            group.killAndHide(bulletOne);
+        }
+        });
+
         if (cursors.up.isDown)
         {
             this.physics.velocityFromRotation(playerOne.rotation, 200, playerOne.body.acceleration);
@@ -172,7 +180,7 @@ function update() {
 
         if (cursors.space.isDown)
         {
-            fireBullets();
+            addBulletOne();
         }
     }
 }
