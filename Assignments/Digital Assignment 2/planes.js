@@ -39,8 +39,8 @@ function activateBulletOne(bulletOne) {
     bulletOne
         .setActive(true)
         .setVisible(true)
-    bulletOne.reset(playerOne.x, playerOne.y);
-    bulletOne.body.velocity.y = -300;
+    //bulletOne.reset(playerOne.x, playerOne.y);
+    //bulletOne.body.velocity.y = -300;
 }
 
 function removebulletOne() {
