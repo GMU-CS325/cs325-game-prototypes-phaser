@@ -70,6 +70,11 @@ function create() {
         }
     })
 
+    bullets.enableBody = true;
+    bullets.physicsBodyType = Phaser.Physics.ARCADE;
+    bullets.setAll('outofBoundsKill', true);
+    bullets.setAll('checkWorldBounds', true);
+
     keyENTER = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
     openingText = this.add.text(
