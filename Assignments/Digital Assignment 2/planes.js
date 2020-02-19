@@ -38,6 +38,7 @@ function activateBulletOne(bulletOne) {
     bulletOne
         .setActive(true)
         .setVisible(true)
+        .setVelocity(300);
 }
 
 function removebulletOne() {
