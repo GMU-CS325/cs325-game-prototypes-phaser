@@ -33,7 +33,6 @@ function addBulletOne() {
 
     activateBulletOne(bulletOne);
 
-    bulletOne.setVelocity(300);
 }
 
 function activateBulletOne(bulletOne) {
