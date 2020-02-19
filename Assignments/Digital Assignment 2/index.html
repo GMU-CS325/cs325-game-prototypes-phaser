@@ -59,13 +59,13 @@ function create() {
     playerTwo.setAngle(180);
 
     bulletsOne = this.add.group({
-        defaultKey: 'BulletOne',
+        defaultKey: 'bulletOne',
         maxSize: 100,
-        createCallback: function (BulletOne) {
+        createCallback: function (bulletOne) {
             //bulletOne.setName('Bullet One' + this.getLength());
             //console.log('Created', bulletOne.name);
         },
-        removeCallback: function (BulletOne) {
+        removeCallback: function (bulletOne) {
             //console.log('Removed', alien.name);
         }
     })
