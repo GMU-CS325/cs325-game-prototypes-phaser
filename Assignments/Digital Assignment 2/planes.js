@@ -32,13 +32,15 @@ function addBulletOne() {
     if (!bulletOne) return; // None free
 
     activateBulletOne(bulletOne);
+
+    bulletOne.setVelocity(300);
 }
 
 function activateBulletOne(bulletOne) {
     bulletOne
         .setActive(true)
         .setVisible(true)
-        .setVelocity(300);
+        
 }
 
 function removebulletOne() {
