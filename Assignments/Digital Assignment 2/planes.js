@@ -40,7 +40,7 @@ function activateBulletOne(bulletOne) {
         .setActive(true)
         .setVisible(true)
     bulletOne.reset(playerOne.x, playerOne.y);
-    bullet.body.velocity.y = -300;
+    bulletOne.body.velocity.y = -300;
 }
 
 function removebulletOne() {
