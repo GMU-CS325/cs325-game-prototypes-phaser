@@ -27,7 +27,7 @@ function ifSomeoneWon() {
 }
 
 function addBulletOne() {
-    var bulletOne = group.get(playerOne.x, playerOne.y);
+    var bulletOne = bulletsOne.get(playerOne.x, playerOne.y);
 
     if (!bulletOne) return; // None free
 
