@@ -26,14 +26,15 @@ function ifSomeoneWon() {
     return false;
 }
 
-function addBulletOne() {
+function addBulletOne(world) {
     var bulletOne = bulletsOne.get(playerOne.x, playerOne.y);
 
     if (!bulletOne) return; // None free
 
     console.log(this);
-    this.physics.world.enable(bulletOne);
-    bulletOne.setVelocityX(300);
+    world.enable(bulletOne);
+    bulletOne.body.setVelocityX(300);
+    bulletOne.setRotation(playerOne.rotation);
     activateBulletOne(bulletOne);
 
 }
