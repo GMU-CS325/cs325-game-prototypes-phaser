@@ -12,6 +12,8 @@ let whoWon = "Player One";
 
 let openingText, aPlayerWonText;
 let frameCounter = 0;
+let shotFrequency = 500;
+let lastShot = 0;
 
 function ifSomeoneWon() {
     //if playerTwo.disableBody(true, true); happened
@@ -26,15 +28,22 @@ function ifSomeoneWon() {
     return false;
 }
 
-function addBulletOne(world) {
+function addBulletOne(physics, game) {
+    if (lastShot == 0)
+        lastShot = new Date().getTime();
+    var currentTime = new Date().getTime();
+    if (currentTime - lastShot < shotFrequency)
+        return;
+
     var bulletOne = bulletsOne.get(playerOne.x, playerOne.y);
 
     if (!bulletOne) return; // None free
 
     console.log(this);
-    world.enable(bulletOne);
-    bulletOne.body.setVelocityX(300);
-    bulletOne.setRotation(playerOne.rotation);
+    physics.world.enable(bulletOne);
+    physics.velocityFromAngle(playerOne.angle, 300, bulletOne.body.velocity);
+    //bulletOne.setRotation(playerOne.rotation);
+    lastShot = currentTime;
     activateBulletOne(bulletOne);
 
 }
