@@ -31,6 +31,9 @@ function addBulletOne() {
 
     if (!bulletOne) return; // None free
 
+    console.log(this);
+    this.physics.world.enable(bulletOne);
+    bulletOne.setVelocityX(300);
     activateBulletOne(bulletOne);
 
 }
