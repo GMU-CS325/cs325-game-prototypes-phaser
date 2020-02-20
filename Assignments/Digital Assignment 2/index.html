@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -135,7 +135,7 @@ function update() {
 
         bulletsOne.children.iterate(function (bulletOne) {
         if (bulletOne.y > 600 || bulletOne.y < 0 || bulletOne.x > 800 || bulletOne.x < 0) {
-            group.killAndHide(bulletOne);
+            bulletsOne.killAndHide(bulletOne);
         }
         });
 
@@ -185,7 +185,7 @@ function update() {
 
         if (cursors.space.isDown)
         {
-            addBulletOne();
+            addBulletOne(this.physics.world);
         }
     }
 }
