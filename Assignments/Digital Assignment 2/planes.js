@@ -8,22 +8,21 @@ let keyENTER;
 let cursors, playerTwoKeys;
 
 let gameStarted = false;
-let whoWon = "Player One";
 
-let openingText, aPlayerWonText;
+let openingText, playerOneWinsText, playerTwoWinsText;
 let frameCounter = 0;
 let shotFrequency = 500;
 let lastShot = 0;
 let lastShotTwo = 0;
 
 function ifSomeoneWon() {
-    //if playerTwo.disableBody(true, true); happened
-    if (!playerTwo.active==true) {
-        whoWon = "Player One";
+    //if playerTw.disableBody(true, true); happened
+    if (!playerTwo.active) {
+        playerOneWinsText.setVisible(true);
         return true;
     }
-    else if(!playerOne.active==true) {
-        whoWon = "Player Two";
+    else if (!playerOne.active) {
+        playerTwoWinsText.setVisible(true);
         return true;
     }
     return false;
@@ -88,10 +87,16 @@ function activateBulletTwo(bulletTwo) {
     bulletTwo
         .setActive(true)
         .setVisible(true)
-    //bulletOne.reset(playerOne.x, playerOne.y);
-    //bulletOne.body.velocity.y = -300;
 }
 
 function removebulletTwo() {
 
+}
+
+function playerOneLost() {
+    playerOne.disableBody(true, true);
+}
+
+function playerTwoLost() {
+    playerTwo.disableBody(true, true);
 }
