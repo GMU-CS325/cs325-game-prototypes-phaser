@@ -173,7 +173,7 @@
             let chance = Math.random();
             let newSize = Math.random();
             if( (chance < 0.5) && (frameCounter % 25 == 0))
-                player.setDisplaySize((newSize * 200), 24);
+                player.setDisplaySize((newSize * 250), 24);
 
             //Be right above cursor
             if (!gameStarted) {
@@ -187,9 +187,9 @@
             }
 
             if (cursors.left.isDown) {
-                player.body.setVelocityX(-350);
+                player.body.setVelocityX(-500);
             } else if (cursors.right.isDown) {
-                player.body.setVelocityX(350);
+                player.body.setVelocityX(500);
             }
         }
     }
