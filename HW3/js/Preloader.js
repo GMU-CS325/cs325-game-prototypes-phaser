@@ -47,6 +47,7 @@ BasicGame.Preloader.prototype = {
 		//	If you don't have any music in your game then put the game.state.start line into the create function and delete
 		//	the update function completely.
 		//** 
+		
 		if (this.cache.isSoundDecoded('lifeSound') && this.cache.isSoundDecoded('hitSound')
 			 && this.cache.isSoundDecoded('deathSound') && this.ready == false)
 		{

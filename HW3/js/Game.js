@@ -35,6 +35,8 @@ BasicGame.Game = function (game) {
 
     this.food;
 
+    this.enemies;
+
     this.score = 1;
 
     this.ctr = 0;
@@ -68,7 +70,14 @@ BasicGame.Game.prototype = {
         ]);
 
         this.ctr = 0; 
+        
+        var enemies = this.game.add.group();
+            enemies.enableBody = true;
+            enemies.physicsBodyType = Phaser.Physics.ARCADE;
+            this.createEnemies();
+        
 
+/*
         var enemy = this.game.add.sprite(Math.random()*this.game.world.width, Math.random()*this.game.world.height, 'blueParticle2');
             this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
             var yVelocity = (Math.random()*this.SPEED/5)-(this.SPEED/10);
@@ -89,20 +98,29 @@ BasicGame.Game.prototype = {
             this.objects.push(enemy);
             this.ctr++;
         }
-        var food = this.game.add.sprite((Math.random()*this.game.world.width), Math.random()*this.game.world.height, 'greenParticle');
-        this.game.physics.enable(food, Phaser.Physics.ARCADE);
-        food.anchor.setTo(0.5,0.5);
-        var yVelocity = (Math.random*this.SPEED/4)-(this.SPEED/8);
-        var xVelocity = (Math.random*this.SPEED/4)-(this.SPEED/8);
-        food.body.velocity.x = xVelocity;
-        food.body.velocity.y = yVelocity;
-        food.body.collideWorldBounds = false;
-        this.food = food;
+
+*/
+
+        this.createFood();
 
         /*var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
         this.text = this.game.add.text( 15, 15, 'Score: 0', style );
         this.text.anchor.setTo( 0.5, 0.0 );*/
 
+    },
+
+    createEnemies: function () {
+        while(this.ctr < 7) {
+            var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
+            enemy.anchor.setTo(0.5,0.5);
+            var yVelocity = (Math.random()*this.SPEED)-(this.SPEED/2);
+            var xVelocity = Math.sqrt(((this.SPEED*this.SPEED)/2)-(yVelocity*yVelocity));
+            enemy.body.velocity.x = xVelocity;
+            enemy.body.velocity.y = yVelocity;
+        }
+        this.enemies.setAll('body.collideWorldBounds', true);
+        this.enemies.setAll('body.bounce.x', 1);
+        this.enemies.setAll('body.bounce.y', 1);
     },
 
     update: function () {
@@ -127,9 +145,11 @@ BasicGame.Game.prototype = {
         }
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
         this.ctr = 0;
+        
+        /*
         while(this.ctr< this.objects.length){
             var temp = this.objects[this.ctr];
-            this.game.physics.arcade.overlap(this.char, temp, this.damage, null, this);
+            this.game.physics.arcade.overlap(this.char, temp, this.damage, null, this);//player hits enemy object
             if (temp.x > this.game.width){
                  this.objects[this.ctr].body.velocity.x = -temp.body.velocity.x;
                  this.objects[this.ctr].x = this.game.width-10;
@@ -145,34 +165,22 @@ BasicGame.Game.prototype = {
                 this.objects[this.ctr].y = 10;
             }
             this.ctr++;
-            
         }
-        this.game.physics.arcade.overlap(this.char, this.food, this.point, null, this);
-        if (this.food.x > this.game.width){
-            this.food.body.velocity.x = -this.food.body.velocity.x;
-            this.food.x = this.game.width-10;
-        }else if(this.food.x < 0){
-            this.food.body.velocity.x = -this.food.body.velocity.x;
-            this.food.x = 10;
-        }
-        if (this.food.y > this.game.height){
-            this.food.body.velocity.y = -this.food.body.velocity.y;
-            this.food.y = this.game.height-10;
-        }else if(this.food.y < 0){
-            this.food.body.velocity.y = -this.food.body.velocity.y;
-            this.food.y = 10;
-        }
+        */
+        this.game.physics.arcade.collide(this.enemies, this.char, this.damage);//this.damage, null, this
+
+        
+        this.game.physics.arcade.collide(this.char, this.food, this.point, null, this);
      
     },
 
-    damage: function() {
+    damage: function(enemy, player) {
         this.score--;
         if(this.ctr == 0){
             this.quitGame(2);
         }
         this.scoredown.play();
-        this.objects[this.ctr].destroy();
-        this.objects[this.ctr] = this.objects[0];
+        enemy.kill();
         switch(this.score){
             case 0:
                // this.death.play();
@@ -181,7 +189,7 @@ BasicGame.Game.prototype = {
                 this.state.start('Fail');
                 break;
             default:
-                this.char.loadTexture('char1', 0, false);
+                player.loadTexture('char1', 0, false);
                 if(this.score< 0){
                     this.death.play();
                     this.quitGame(0);
@@ -189,37 +197,26 @@ BasicGame.Game.prototype = {
                     this.score = 1;
                 }
             }
-            this.char.resetFrame();
-            this.char.anchor.setTo(0.5,0.5);
+            player.resetFrame();
+            player.anchor.setTo(0.5,0.5);
            // this.scoredown.play();
+    },
+
+    createFood: function() {
+        var food = this.game.add.sprite((Math.random()*this.game.world.width), Math.random()*this.game.world.height, 'greenParticle');
+        this.game.physics.enable(food, Phaser.Physics.ARCADE);
+        food.anchor.setTo(0.5,0.5);
+        food.body.collideWorldBounds = false;
+        this.food = food;
     },
 
     point: function(){
         this.score++;
         this.scoreup.play();
         var ctr = 0;
-        while(ctr < 16){
-            var enemy = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'blueParticle1');
-            this.game.physics.enable(enemy, Phaser.Physics.ARCADE);
-            enemy.anchor.setTo(0.5,0.5);
-            var yVelocity = (Math.random()*this.SPEED)-(this.SPEED/2);
-            var xVelocity = Math.sqrt((this.SPEED*this.SPEED)-(yVelocity*yVelocity));
-            enemy.body.velocity.x = xVelocity;
-            enemy.body.velocity.y = yVelocity;
-            enemy.body.collideWorldBounds = false;
-            ctr++;
-        }
-            this.objects.push(enemy);
+        this.createEnemies();
         this.food.destroy();
-        var food = this.game.add.sprite((Math.random()*this.game.world.width), (Math.random()*this.game.world.height), 'greenParticle');
-        this.game.physics.enable(food, Phaser.Physics.ARCADE);
-        food.anchor.setTo(0.5,0.5);
-        var yVelocity = (Math.random()*this.SPEED/4)-(this.SPEED/8);
-        var xVelocity = (Math.random()*this.SPEED/4)-(this.SPEED/8);
-        food.body.velocity.x = xVelocity;
-        food.body.velocity.y = yVelocity;
-        food.body.collideWorldBounds = false;
-        this.food = food;
+        this.createFood();
         switch(this.score){
             case 2:
                 this.char.loadTexture('char2', 0, false);
