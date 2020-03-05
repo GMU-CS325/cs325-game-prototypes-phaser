@@ -1,0 +1,140 @@
+{
+"frames": {
+	"roll_01.png": {
+		"frame": {"x":30, "y":0, "w":19, "h":33},
+		"spriteSourceSize": {"x":0,"y":0,"w":19,"h":33},
+		"sourceSize": {"w":19,"h":33}
+	},
+	"roll_02.png": {
+		"frame": {"x":27, "y":62, "w":24, "h":29},
+		"spriteSourceSize": {"x":0,"y":0,"w":24,"h":29},
+		"sourceSize": {"w":24,"h":29}
+	},
+	"roll_03.png": {
+		"frame": {"x":0, "y":62, "w":26, "h":26},
+		"spriteSourceSize": {"x":0,"y":0,"w":26,"h":26},
+		"sourceSize": {"w":26,"h":26}
+	},
+	"roll_04.png": {
+		"frame": {"x":0, "y":33, "w":27, "h":28},
+		"spriteSourceSize": {"x":0,"y":0,"w":27,"h":28},
+		"sourceSize": {"w":27,"h":28}
+	},
+	"roll_05.png": {
+		"frame": {"x":88, "y":19, "w":16, "h":18},
+		"spriteSourceSize": {"x":0,"y":0,"w":16,"h":18},
+		"sourceSize": {"w":16,"h":18}
+	},
+	"roll_06.png": {
+		"frame": {"x":88, "y":0, "w":17, "h":18},
+		"spriteSourceSize": {"x":0,"y":0,"w":17,"h":18},
+		"sourceSize": {"w":17,"h":18}
+	},
+	"roll_07.png": {
+		"frame": {"x":69, "y":17, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_08.png": {
+		"frame": {"x":69, "y":0, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_09.png": {
+		"frame": {"x":90, "y":55, "w":16, "h":16},
+		"spriteSourceSize": {"x":1,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_10.png": {
+		"frame": {"x":52, "y":68, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_11.png": {
+		"frame": {"x":71, "y":85, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_12.png": {
+		"frame": {"x":71, "y":51, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_13.png": {
+		"frame": {"x":90, "y":38, "w":16, "h":16},
+		"spriteSourceSize": {"x":1,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_14.png": {
+		"frame": {"x":71, "y":68, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_15.png": {
+		"frame": {"x":47, "y":34, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_16.png": {
+		"frame": {"x":28, "y":34, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_17.png": {
+		"frame": {"x":0, "y":89, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_18.png": {
+		"frame": {"x":52, "y":51, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_19.png": {
+		"frame": {"x":50, "y":0, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_20.png": {
+		"frame": {"x":52, "y":85, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_21.png": {
+		"frame": {"x":50, "y":17, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_22.png": {
+		"frame": {"x":66, "y":34, "w":18, "h":16},
+		"spriteSourceSize": {"x":0,"y":0,"w":18,"h":16},
+		"sourceSize": {"w":18,"h":16}
+	},
+	"roll_25.png": {
+		"frame": {"x":0, "y":62, "w":26, "h":26},
+		"spriteSourceSize": {"x":0,"y":0,"w":26,"h":26},
+		"sourceSize": {"w":26,"h":26}
+	},
+	"roll_26.png": {
+		"frame": {"x":27, "y":62, "w":24, "h":29},
+		"spriteSourceSize": {"x":0,"y":0,"w":24,"h":29},
+		"sourceSize": {"w":24,"h":29}
+	},
+	"roll_27.png": {
+		"frame": {"x":30, "y":0, "w":19, "h":33},
+		"spriteSourceSize": {"x":0,"y":0,"w":19,"h":33},
+		"sourceSize": {"w":19,"h":33}
+	},
+	"roll_28.png": {
+		"frame": {"x":0, "y":0, "w":29, "h":32},
+		"spriteSourceSize": {"x":0,"y":0,"w":29,"h":32},
+		"sourceSize": {"w":29,"h":32}
+	}
+
+},
+"meta": {
+	"image": "roll.png",
+	"size": {"w": 107, "h": 106},
+	"scale": "1"
+}
+}
