@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Koopa's Revenge</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/breakout.json"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Plain Planes On Planes</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+The story aspect behind it. Rather than play as Mario, you get to play as one of his mnay victims, who is sick and tired of having to follow his boss's (King Bowser) orders to only end up dying as a generic enemy under Mario's foot.
+    There also hasn't  been a Mario-style runner on the web, though Nintendo has come out with Super Mario Run on mobile.
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+Several parts of this game were new and things that I haven't used before:
+    <ol>
+        <li>The game consists of FIVE scenes that are put together into a scene array. As such, manipulating the scenes, switching to and from them, accessing different varialbes in different scenes, and making sure everything flowed smoothly was quite the challenge.</li>
+        <li>The game also uses timers in several areas, such as to delay transitioning to a new scene, or to manipulate the player's animation correctly.</li>
+        <li>This is also the first time I've used event listeners to listen to several different events, such as when a file has finished loading, checking when an animation is complete, and checking when a player clicks on something</li>
+        <li>This is the first time I did a UI scene and implement several buttons</li>
+        <li>This is the first game to implement tileSprites and sprite animations using ShoeBox. The player can actually jump and roll.</li>
+        <li>The bakground moves in a parallax motion, giving the illusion of depth (known as 2.5D)</li>
+        <li>Unlike my previous games, this game has all assets loaded up BEFORE the game starts in a separate loading screen. There's also a nice loading bar as well.</li>
+        <li>The player goes at the same speed as the background</li>
+        <li>I used setText to change the high score and current score</li>
+        <li>This is the first time I used localStorage, so even pressing reload, the person's high score will remain</li>
+        <li>Checked to see if an element was defined to prevent multiple instances of an object from being created.</li>
+    </ol>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+What was the easiest or hardest part of making it?
+    I learned how to create clickable buttons that can actually do something when a user clicks on them. I have a better idea of how Phaser 3's SceneManager works and how to transition from scene to scene. I also now understand how to do sprite animations and settign backgrounds.
+    The hardest part of making this prototype was making the player jump correctly, making scenes transition correctly (the GameOver scene at one point overlayed the TitleScreen), and keeping my motivation for finishing the game.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+    <ul>
+        <li>Bullet Sprite: <a href="https://opengameart.org/content/bullet-collection-1-m484">Bullet Spritesheet</a></li>
+        <li>Game Over Music: <a href="https://www.youtube.com/watch?v=Furs535ly94">Mario Dying Sound</a></li>
+        <li>Phaser 3 Notes: <a href="https://rexrainbow.github.io/phaser3-rex-notes/docs/site">Rex Rainbow's Notes</a></li>
+        <li>Using Separate Files For Scene and Config: <a href="https://phaser.discourse.group/t/how-to-use-separate-files-for-scenes-and-config/4351">Phaser 3 Post</a></li>
+        <li>Phaser 3 API: <a href="https://photonstorm.github.io/phaser3-docs/">API</a></li>
+        <li>Generating Random Number: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">MDN Web Docs</a></li>
+        <li>Looping Through Enemies: <a href="https://phaser.discourse.group/t/issue-removing-sprite-from-group/1064/7">Another Phaser 3 Post</a></li>
+        <li>Modifying Collision Box: <a href="https://phaser.discourse.group/t/phaser-3-modifying-collision-box/2693">Yet Another Phaser 3 Post</a></li>
+        <li>Current Score: <a href="https://phaser.io/examples/v3/view/components/data/store-scene-data">Phaser 3 Text Example</a></li>
+        <li>Creating a Loading Screen: <a href="https://gamedevacademy.org/creating-a-preloading-screen-in-phaser-3/?a=13">GameDevAcademy</a></li>
+        <li>Check If Variable Is Initialized: <a href="https://stackoverflow.com/questions/5113374/javascript-check-if-variable-exists-is-defined-initialized">Stack Overflow</a></li>
+        <li>Save local progess: <a href="https://www.dynetisgames.com/2018/10/28/how-save-load-player-progress-localstorage/">Dynetis Games</a></li>
+        <li>Parallax Scrolling TileSprite and Ground Sprite: <a href="https://www.youtube.com/watch?v=pknZUn82x2U&list=PLDyH9Tk5ZdFzEu_izyqgPFtHJJXkc79no&index=7">Luis Zeno</a></li>
+        <li>Thwomp Enemy: <a href="http://pixelartmaker.com/art/d68ce2b13313e7c">Pixel Art Maker</a></li>
+        <li>Flying Bird Enemy: <a href="http://www.mariouniverse.com/sprites-gba-yi/">Mario Universe (Special Thanks to AJ Nitro)</a></li>
+        <li>Animate from Spritesheets: <a href="https://www.youtube.com/watch?v=RrOGj6x5Y8I&t=718s">Tobe Osakwe</a></li>
+        <li>Koopa Spritesheet One: <a href="https://www.deviantart.com/boomerbro6/art/Basic-Koopa-sheet-update-292817689">Deviant Art - BoomerBro6</a></li>
+        <li>Koopa Spritesheet Two: <a href="https://www.deviantart.com/irisacro/art/Koopa-Ultimate-Sprite-Sheet-405567705">Deviant Art - Irisacro</a></li>
+        <li>Big Background: <a href="https://www.deviantart.com/sonicx64ds/art/Sprite-Background-Super-Mario-Bros-772584029">Deviant Art - SonicX64DS</a></li>
+        <li>Lock: <a href="https://pixabay.com/vectors/lock-closed-shut-keyhole-306311/">Pixabay</a></li>
+        <li>Our god is an awesome god: <a href="https://www.youtube.com/watch?v=Wdo4Eyw4DqM">YouTube</a></li>
+
+    </ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+This most closely resembles endless runners such as Jetpack Joyride, with a Mario-themed style.
+</li>
+
+<li><strong>High Concept:</strong>
+The goal is to either jump to avoid the thwomps or roll to avoid the birds and get a higher score.
+</li>
+
+<li><strong>Theme:</strong>
+The koopa seeks revenge against anyone and everyone! He's tired of being used by Bowser to just be fodder to Mario, and he's tired of Mario killing all of his brethren! Cowabunga (revenge for his fallen compatriots) it is!
+</li>
+
+<li><strong>Mandated Variety:</strong>
+Pretty much all of this game is vastly different from my previous games. The keyboard was used as input. Revenge was used as the theme.
+    The game is both random in what enemies appear and skill-based as you need quick reflexes. The genre is endless runner.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Endless runners usually invoke the tense feeling of not messing up. I hope I accomplished that with my game.
+</li>
+
+<li><strong>Gameplay:</strong>
+    The core mechanic of the game is to control the player by pressing the up and down arrow keys to jump and roll, thus avoiding the enemies and keeping on running.
+</li>
+
+<li><strong>Strategies:</strong>
+One strategy is to jump at the very last second, as the jumping mechanic is a little weird. The player goes straight down, not slowly.
+</li>
+
+<li>
+    <strong>Story/Setting/Premise:</strong>
+    The koopa seeks revenge against anyone and everyone! He's tired of being used by Bowser to just be fodder to Mario, and he's tired of Mario killing all of his brethren! Cowabunga (revenge for his fallen compatriots) it is!
+    It's set somewhere outside of the Mushroom Kingdom.
+</li>
+
+<li><strong>Target Audience:</strong>
+People who are fond of endless runners.
+</li>
+
+<li><strong>Play Time:</strong>
+Anywehre from 1 to 10 minutes.
+</li>
+
+</ul>
+</div>
+</body>
+</html>
