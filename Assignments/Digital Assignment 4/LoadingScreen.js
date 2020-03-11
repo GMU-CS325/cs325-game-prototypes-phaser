@@ -104,10 +104,6 @@ class LoadingScreen extends Phaser.Scene {
         //For GameOver.js
         this.load.audio('gameOver', 'Sounds/GameOver.mp3');
         this.load.image('replayButton', 'Assets/replay.png');
-
-        for (var i = 0; i < 300; i++) {
-            this.load.image('logo' + i, 'Assets/koopa.png');
-        }
     }
 
     create() {
