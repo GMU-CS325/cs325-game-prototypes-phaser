@@ -99,7 +99,7 @@ class LoadingScreen extends Phaser.Scene {
         this.load.atlas('bird', 'birdie.png', 'birdie.json');
         this.load.image('thwomp', 'Assets/thwomp.png');
         this.load.audio('gameOver', 'Sounds/GameOver.mp3');
-        this.load.audio('play', 'Sounds/play.mp3');
+        this.load.audio('play', 'Sounds/Play.mp3');
 
         //For GameOver.js
         this.load.audio('gameOver', 'Sounds/GameOver.mp3');
