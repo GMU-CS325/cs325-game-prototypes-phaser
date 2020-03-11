@@ -6,12 +6,7 @@ class LevelSelect extends Phaser.Scene
     }
 
     preload() {
-        this.load.image('background', 'Assets/background.png');
-        this.load.image('title', 'Assets/title.png');
-        this.load.image('ground', 'Assets/afloor.png');
-        this.load.image('koopatitle', 'Assets/koopa.png');
-        this.load.image('mountain', 'Assets/MountainSelect.png');
-        this.load.image('locked', 'Assets/lock.png');
+        
     }
 
     create() {
@@ -27,8 +22,14 @@ class LevelSelect extends Phaser.Scene
 
         var koopa = this.add.sprite(100, 725, 'koopatitle').setOrigin(0, 0);
 
-        this.add.sprite(700, 400, 'mountain');
+        var mountainlevel = this.add.sprite(700, 400, 'mountain');
         this.add.sprite(1100, 400, 'locked');
+        mountainlevel.setInteractive({ useHandCursor: true });
+        mountainlevel.on('pointerdown', () => this.startGame());
+    }
+
+    startGame() {
+        this.scene.switch('MountainLevel');
     }
 }
 

@@ -7,12 +7,6 @@ class TitleScreen extends Phaser.Scene {
     //this.scene.start("key") starts scene
 
     preload() {
-        this.load.image('background', 'Assets/background.png');
-        this.load.image('title', 'Assets/title.png');
-        this.load.image('koopatitle', 'Assets/koopa.png');
-        this.load.image('play', 'Assets/tPlay.png');
-        this.load.image('levelselect', 'Assets/tLevelSelect.png');
-        this.load.image('ground', "Assets/afloor.png");
     }
     create() {
         this.add.sprite(0, 0, 'background').setOrigin(0,0);
@@ -42,5 +36,9 @@ class TitleScreen extends Phaser.Scene {
 
     selectLevel() {
         this.scene.switch('LevelSelect');
+    }
+
+    update() {
+        
     }
 }
