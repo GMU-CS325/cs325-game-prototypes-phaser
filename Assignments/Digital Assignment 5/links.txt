@@ -1,0 +1,6 @@
+https://media.giphy.com/media/Cm9ZFs8crAc7e/source.gif
+https://www.dafont.com/theme.php?cat=201
+http://labs.phaser.io/edit.html?src=src\game%20objects\text\static\custom%20webfont.js
+https://learn.yorkcs.com/2019/09/28/phaser-3-basics-custom-fonts/
+https://theultralinx.com/2013/05/stunning-animated-gifs-backgrounds-fighting-games/
+https://www.codeandweb.com/physicseditor/tutorials/how-to-create-physics-shapes-for-phaser-3-and-matterjs
