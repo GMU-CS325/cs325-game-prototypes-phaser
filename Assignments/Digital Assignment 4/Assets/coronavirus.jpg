@@ -1,0 +1,1161 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://www2.gmu.edu/sites/all/themes/mason_core/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="referrer" content="origin-when-crossorigin" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www2.gmu.edu/coronavirus" />
+<link rel="shortlink" href="https://www2.gmu.edu/node/3581" />
+<meta property="fb:pages" content="5625209996" />
+  <title>Coronavirus/COVID-19 | George Mason</title>
+  <style type="text/css" media="all">
+@import url("https://www2.gmu.edu/modules/system/system.base.css?q62s48");
+@import url("https://www2.gmu.edu/modules/system/system.messages.css?q62s48");
+@import url("https://www2.gmu.edu/modules/system/system.theme.css?q62s48");
+</style>
+<style type="text/css" media="all">
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.datepicker.min.css?q62s48");
+</style>
+<style type="text/css" media="all">
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/date/date_api/date.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/features/feature_homepage/css/fpp-banner-swiper.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/features/feature_page/css/fpp-photo-grid.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/features/feature_page/css/expandable_area___3_column.css?q62s48");
+@import url("https://www2.gmu.edu/modules/field/theme/field.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/google_appliance/theme/google_appliance.css?q62s48");
+@import url("https://www2.gmu.edu/modules/node/node.css?q62s48");
+@import url("https://www2.gmu.edu/modules/user/user.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/views/css/views.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/ckeditor/css/ckeditor.css?q62s48");
+</style>
+<style type="text/css" media="all">
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/ctools/css/ctools.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/contrib/panels/css/panels.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/modules/features/feature_landing_page/plugins/layouts/landingpage_default/landingpage_default.css?q62s48");
+</style>
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+#panels-ipe-control-container{display:none !important;}
+.node-drafted h1:after{content:' [Draft]';}.node-archived h1:after{content:' [Archived]';}.node-pending h1:after{content:' [Pending]';}
+
+/*]]>*/-->
+</style>
+<style type="text/css" media="screen">
+@import url("https://www2.gmu.edu/sites/all/themes/mason_base/resources/stylesheets/system.tabs.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/themes/mason_base/resources/stylesheets/system.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/themes/mason_base/resources/stylesheets/styles.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/themes/mason_core/resources/stylesheets/global-nav.css?q62s48");
+@import url("https://www2.gmu.edu/sites/all/themes/mason_core/resources/stylesheets/footer.css?q62s48");
+</style>
+<link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" media="all" />
+<style type="text/css" media="all">
+@import url("https://www2.gmu.edu/sites/core/resources/css/custom-core.css?q62s48");
+</style>
+<style type="text/css" media="all">
+@import url("https://www2.gmu.edu/sites/all/themes/mason_school/resources/stylesheets/news-listing.css?q62s48");
+</style>
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+body,body.html,body.school,body.school.html{background-image:url(https://www2.gmu.edu/sites/core/files/banner-image/Covid19-topper-option-E-1600-by-700-SIZED.jpg);}
+.school footer{background-image:url(/sites/core/resources/images/footer-banner.jpg);}
+
+/*]]>*/-->
+</style>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www2.gmu.edu/misc/jquery-extend-3.4.0.js?v=1.10.2"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/misc/drupal.js?q62s48"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery.ui || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/modules/features/feature_social_media_feeds/js/fb-sdk.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/modules/features/feature_social_media_feeds/js/social-feeds-ajax.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/modules/features/feature_emergency_alerts/js/emergency-alert.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/modules/features/feature_news/js/news.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/modules/features/feature_topics/js/topics.js?q62s48"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var switchTo5x = true;
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (stLight !== undefined) { stLight.options({"publisher":"dr-bdbe7786-75c7-87f7-4821-1703e957eb80","version":"5x"}); }
+//--><!]]>
+</script>
+<script type="text/javascript" src="//25livepub.collegenet.com/scripts/spuds.js"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/system.js?q62s48"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"mason_core","theme_token":"brj-5y70OlrIYVQwzOMZiTKX5EPImsAbleHgTNh5gAI","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.datepicker.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/features\/feature_homepage\/css\/fpp-banner-swiper.css":1,"sites\/all\/modules\/features\/feature_page\/css\/fpp-photo-grid.css":1,"sites\/all\/modules\/features\/feature_page\/css\/expandable_area___3_column.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/google_appliance\/theme\/google_appliance.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/features\/feature_landing_page\/plugins\/layouts\/landingpage_default\/landingpage_default.css":1,"0":1,"3":1,"sites\/all\/themes\/mason_base\/resources\/stylesheets\/system.tabs.css":1,"sites\/all\/themes\/mason_base\/resources\/stylesheets\/system.css":1,"sites\/all\/themes\/mason_base\/resources\/stylesheets\/styles.css":1,"sites\/all\/themes\/mason_core\/resources\/stylesheets\/global-nav.css":1,"sites\/all\/themes\/mason_core\/resources\/stylesheets\/footer.css":1,"sites\/all\/themes\/mason_base\/css\/print.css":1,"https:\/\/use.fontawesome.com\/releases\/v5.1.0\/css\/all.css":1,"sites\/core\/resources\/css\/custom-core.css":1,"sites\/all\/themes\/mason_school\/resources\/stylesheets\/news-listing.css":1,"1":1,"2":1},"js":{"\/\/cdnjs.cloudflare.com\/ajax\/libs\/jquery-color\/2.1.2\/jquery.color.min.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/jquery.hoverIntent.minified.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/owl.carousel.min.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/enquire.min.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/media.match.min.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/slick-1.5.8\/slick\/slick.min.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/jquery.table.scroller-1.0.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/jquery.quicksearch.min.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/jquery.content-effects.js":1,"\/\/code.jquery.com\/jquery-1.10.2.min.js":1,"0":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/code.jquery.com\/ui\/1.10.2\/jquery-ui.min.js":1,"1":1,"sites\/all\/modules\/features\/feature_social_media_feeds\/js\/fb-sdk.js":1,"sites\/all\/modules\/features\/feature_social_media_feeds\/js\/social-feeds-ajax.js":1,"sites\/all\/modules\/features\/feature_emergency_alerts\/js\/emergency-alert.js":1,"sites\/all\/modules\/features\/feature_news\/js\/news.js":1,"sites\/all\/modules\/features\/feature_topics\/js\/topics.js":1,"2":1,"https:\/\/ws.sharethis.com\/button\/buttons.js":1,"3":1,"\/\/25livepub.collegenet.com\/scripts\/spuds.js":1,"sites\/all\/themes\/mason_base\/resources\/javascript\/system.js":1}},"emergency_alert":{"url_prefix":""},"site_id":"8","content_site_url":"https:\/\/content.gmu.edu","byline_autocomplete_id":"edit-field-byline-target-id-value","search_autocomplete_id":"edit-field-content-topics-target-id-value"});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-3581 node-type-landing-page landing landing" >
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PX3VVD5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PX3VVD5');</script>
+<!-- End Google Tag Manager -->
+<div id="skip-link">
+  <a href="#primary-content" class="element-invisible element-focusable">Skip to main content</a>
+</div>
+        
+    
+
+  <div id="emergency-alert"></div>
+
+
+  <script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','GEon5RGoxVh47VR9viwL','2.0.0');
+
+//--><!]]>
+</script>
+<header>
+      
+
+  
+<div class="branding">
+  <a href="/"><img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo.png" alt="George Mason University"/></a>
+</div>
+
+
+
+
+  <nav class="global-nav">
+  <div class="back-to-mason">
+    &nbsp;
+  </div>
+  
+  <div class="menu-band">
+  
+    <p class="off-screen">Utility links:</p>
+    <ul class="utility-links">
+      <li class=""><a href="/admissions-aid/apply-now" data-section="841" tabindex="">Apply</a></li><li class=""><a href="https://giving.gmu.edu/" data-section="842" tabindex="1">Give</a></li><li class=""><a href="http://mymason.gmu.edu" data-section="845" tabindex="2">MyMason</a></li><li class=""><a href="https://patriotweb.gmu.edu/" data-section="12251" tabindex="4">PatriotWeb</a></li><li class=""><a href="http://peoplefinder.gmu.edu/" data-section="12241" tabindex="5">Peoplefinder</a></li><li class=""><a href="http://www.gomason.com" data-section="843" tabindex="6">Athletics</a></li><li class=""><a href="/news" data-section="844" tabindex="7">News</a></li><li class=""><a href="/today-mason" data-section="6221" tabindex="8">CALENDAR</a></li><li class=""><a href="https://library.gmu.edu/" data-section="12236" tabindex="9">Library</a></li><li class=""><a href="/spring-graduation" data-section="13311" tabindex="10">Graduation</a></li>    </ul>
+  
+    <p class="off-screen">Main menu</p>
+    <ul class="main-menu">
+      <li class=""><a href="/academics" data-section="12321" tabindex="2">Academics</a></li><li class=""><a href="/admissions-aid" data-section="833" tabindex="5">Admissions &amp; Aid</a></li><li class=""><a href="/student-life" data-section="1307" tabindex="6">Student Life</a></li><li class=""><a href="/research" data-section="12371" tabindex="7">Research</a></li><li class=""><a href="/about-mason" data-section="836" tabindex="8">About Mason</a></li>      <li>
+        <form class="search" action="/search">
+          <a class="off-screen" href="/search" tabindex="">Search:</a>
+          <div class="box">
+            <div class="search-box">
+                            <label for="search_keys" class="sc-reader-only">Enter Search Keywords</label>
+              <input name="search_keys" class="st-default-search-input" type="text" placeholder="Search"  title="Enter Search Keywords..." />
+              <button type="submit" class="button" >Search</button>
+            </div>
+          </div>
+        </form>
+      </li>
+    </ul>
+    
+    <p class="compressed">
+      <a class="logo" href="/"><img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-compressed.png" alt="George Mason University"/></a>
+      <a class="global-nav-icon" href="#main-menu">Expand/Collapse Global Navigation</a>
+    </p>
+  </div>
+  
+  <div id="nav-underlay"></div>
+</nav>
+<div class="flyout">
+        <div class="12321">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                          </div>
+            <div class="column col-33 featured-links">
+              
+<form class="find-area-of-study">
+  <fieldset>
+    <legend><h2>Find Your Area of Study </h2></legend>
+    <p><em>How will YOU make an impact? </em></p>
+    <!--<p>
+      <label class="off-screen" for="usersPosition">I am a...</label>
+      <select id="usersPosition" name="position">
+        <option value="">I am a...</option>
+        <option>Position 1</option>
+        <option>Position 2</option>
+        <option>Position 2</option>
+      </select>
+    </p>-->
+    <p>
+      <label class="off-screen" for="usersInterest">I am interested in...</label>
+      <select id="usersInterest" name="interest">
+        <option value="">I am interested in</option>
+        <option value="/academics">I don't know</option>
+                  <option value="/academics/accelerated-masters-programs">Accelerated Master's Programs</option>
+                  <option value="/academics/arts-creative-study">Arts and Creative Study</option>
+                  <option value="/academics/business-and-economics">Business and Economics</option>
+                  <option value="/academics/computer-science-and-information-technology">Computer Science and Information Technology</option>
+                  <option value="/academics/education">Education</option>
+                  <option value="/academics/engineering">Engineering</option>
+                  <option value="/academics/forensic-science-and-criminology">Forensic Science and Criminology</option>
+                  <option value="/academics/global">Global</option>
+                  <option value="/academics/government-and-policy">Government and Policy</option>
+                  <option value="/academics/health-and-well-being">Health and Well-Being</option>
+                  <option value="/academics/languages-and-culture">Languages and Culture</option>
+                  <option value="/academics/law">Law</option>
+                  <option value="/academics/liberal-arts">Liberal Arts</option>
+                  <option value="/academics/science-and-biomedicine">Science and Biomedicine</option>
+                  <option value="/academics/security">Security</option>
+                  <option value="/academics/social-and-human-behavior">Social and Human Behavior</option>
+                  <option value="/academics/social-impact">Social Impact</option>
+                  <option value="/academics/sports-recreation-and-tourism">Sports, Recreation and Tourism</option>
+                  <option value="/academics/sustainability">Sustainability</option>
+                  <option value="/academics/smithsonian-mason-school-conservation">Smithsonian-Mason School of Conservation</option>
+              </select>
+    </p>
+  </fieldset>
+  <!--<button class="button" type="submit"></button>-->
+</form>            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/academics/undergraduate-programs" data-section="12346" tabindex="0">Undergraduate Programs</a></li><li class=""><a href="/academics/graduate-programs" data-section="12351" tabindex="1">Graduate Programs</a></li><li class=""><a href="/academics/colleges-and-schools" data-section="12326" tabindex="2">Colleges and Schools</a></li><li class=""><a href="/academics/mason-online" data-section="3301" tabindex="3">Mason Online</a></li><li class=""><a href="/academics/study-abroad" data-section="12341" tabindex="4">Study Abroad</a></li><li class=""><a href="/academics/smithsonian-mason-school-conservation" data-section="11761" tabindex="5">Smithsonian-Mason School of Conservation</a></li><li class=""><a href="/academics/honors-college" data-section="5176" tabindex="6">Honors College</a></li><li class=""><a href="/academics/undergraduate-research" data-section="4086" tabindex="7">Undergraduate Research</a></li><li class=""><a href="/academics/internships" data-section="3296" tabindex="8">Internships</a></li><li class=""><a href="http://catalog.gmu.edu/" data-section="8851" tabindex="9">Academic Catalog</a></li><li class=""><a href="/academics/academic-calendar" data-section="3281" tabindex="10">Academic Calendar</a></li><li class=""><a href="/academics/teaching-and-learning" data-section="12331" tabindex="11">Teaching and Learning</a></li><li class=""><a href="/academics/accessibility-resources" data-section="3306" tabindex="12">Accessibility Resources</a></li><li class=""><a href="/academics/university-libraries" data-section="5171" tabindex="13">University Libraries</a></li><li class=""><a href="/student-life/mason-stem-programs/youth-leadership-conferences" data-section="12336" tabindex="14">Youth Leadership Conferences</a></li><li class=""><a href="/academics/executive-and-professional-education" data-section="12466" tabindex="15">Executive and Professional Education</a></li><li class=""><a href="/into-mason" data-section="13221" tabindex="16">INTO Mason</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="833">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                              <img src="https://www2.gmu.edu/sites/core/files/131025517_Admissions_MFlyout.jpg" alt=""/>
+                          </div>
+            <div class="column col-33 featured-links">
+              <ul><li><a href="https://www2.gmu.edu/admissions-aid/apply-now">Apply Now </a></li><li><a href="https://www2.gmu.edu/admissions-aid">Admissions</a></li><li><a href="https://www2.gmu.edu/admissions-aid/financial-aid">Financial Aid </a></li><li><a href="https://www2.gmu.edu/admissions-aid/next-steps-for-admitted-students">Next Steps for Admitted Students</a></li></ul>            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/admissions-aid/apply-now" data-section="2996" tabindex="0">Apply Now</a></li><li class=""><a href="/admissions-aid/how-apply" data-section="3051" tabindex="1">How to Apply</a></li><li class=""><a href="/next-steps-menu-redirect" data-section="13186" tabindex="2">Next Steps for Admitted Students</a></li><li class=""><a href="/admissions-aid/visit-mason" data-section="12431" tabindex="3">Visit Mason</a></li><li class=""><a href="/admissions-aid/request-information" data-section="3021" tabindex="4">Request Information</a></li><li class=""><a href="/admissions-aid/financial-aid" data-section="8531" tabindex="5">Financial Aid</a></li><li class=""><a href="/why-mason" data-section="4101" tabindex="6">Why Mason?</a></li><li class=""><a href="/admissions-aid/paying-for-college" data-section="3026" tabindex="7">Paying for College</a></li><li class=""><a href="/admissions-aid/parents-and-families" data-section="3101" tabindex="8">Parents and Families</a></li><li class=""><a href="/admissions-aid/counselors-and-educators" data-section="3106" tabindex="9">Counselors and Educators</a></li><li class=""><a href="/admissions-aid/contact-us" data-section="7626" tabindex="10">Contact Us</a></li><li class=""><a href="/admissions-aid/advance" data-section="11771" tabindex="11">ADVANCE</a></li><li class=""><a href="/privacy-notice" data-section="11786" tabindex="12">Privacy Notice: Application for Admission</a></li><li class=""><a href="/admissions-aid/youthleaders" data-section="12256" tabindex="13">Youth Leadership Conferences</a></li><li class=""><a href="/admissions-aid/office-international-enrollment-partnerships" data-section="12416" tabindex="14">Office of International Enrollment Partnerships</a></li><li class=""><a href="/into-mason" data-section="13216" tabindex="15">INTO Mason</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="1307">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                              <img src="https://www2.gmu.edu/sites/core/files/150214700_Student_Life_MFlyout.jpg" alt=""/>
+                          </div>
+            <div class="column col-33 featured-links">
+              <ul><li><a href="/student-life/clubs-and-organizations">Clubs &amp; Organizations</a></li><li><a href="/student-life/get-job">Career Services</a></li><li><a href="https://diversity.gmu.edu/node/246">Sexual Misconduct, Harassment &amp; Violence</a></li></ul>            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/student-life/housing" data-section="2606" tabindex="0">Residential and Off-Campus Housing</a></li><li class=""><a href="/student-life/where-shop" data-section="10851" tabindex="1">Where to Shop</a></li><li class=""><a href="/student-life/where-eat" data-section="2611" tabindex="2">Where to Eat</a></li><li class=""><a href="/student-life/recreation" data-section="2616" tabindex="3">Recreation</a></li><li class=""><a href="/student-life/health-and-wellness" data-section="2626" tabindex="4">Health and Wellness</a></li><li class=""><a href="/student-life/clubs-and-organizations" data-section="2631" tabindex="5">Clubs and Organizations</a></li><li class=""><a href="/student-life/activities-and-events" data-section="2636" tabindex="6">Activities and Events</a></li><li class=""><a href="/student-life/get-job" data-section="2641" tabindex="7">Get a Job</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="12371">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                          </div>
+            <div class="column col-33 featured-links">
+              
+<form class="find-area-of-study">
+  <fieldset>
+    <legend><h2>Find Your Area of Study </h2></legend>
+    <p><em>How will YOU make an impact? </em></p>
+    <!--<p>
+      <label class="off-screen" for="usersPosition">I am a...</label>
+      <select id="usersPosition" name="position">
+        <option value="">I am a...</option>
+        <option>Position 1</option>
+        <option>Position 2</option>
+        <option>Position 2</option>
+      </select>
+    </p>-->
+    <p>
+      <label class="off-screen" for="usersInterest">I am interested in...</label>
+      <select id="usersInterest" name="interest">
+        <option value="">I am interested in</option>
+        <option value="/academics">I don't know</option>
+                  <option value="/academics/accelerated-masters-programs">Accelerated Master's Programs</option>
+                  <option value="/academics/arts-creative-study">Arts and Creative Study</option>
+                  <option value="/academics/business-and-economics">Business and Economics</option>
+                  <option value="/academics/computer-science-and-information-technology">Computer Science and Information Technology</option>
+                  <option value="/academics/education">Education</option>
+                  <option value="/academics/engineering">Engineering</option>
+                  <option value="/academics/forensic-science-and-criminology">Forensic Science and Criminology</option>
+                  <option value="/academics/global">Global</option>
+                  <option value="/academics/government-and-policy">Government and Policy</option>
+                  <option value="/academics/health-and-well-being">Health and Well-Being</option>
+                  <option value="/academics/languages-and-culture">Languages and Culture</option>
+                  <option value="/academics/law">Law</option>
+                  <option value="/academics/liberal-arts">Liberal Arts</option>
+                  <option value="/academics/science-and-biomedicine">Science and Biomedicine</option>
+                  <option value="/academics/security">Security</option>
+                  <option value="/academics/social-and-human-behavior">Social and Human Behavior</option>
+                  <option value="/academics/social-impact">Social Impact</option>
+                  <option value="/academics/sports-recreation-and-tourism">Sports, Recreation and Tourism</option>
+                  <option value="/academics/sustainability">Sustainability</option>
+                  <option value="/academics/smithsonian-mason-school-conservation">Smithsonian-Mason School of Conservation</option>
+              </select>
+    </p>
+  </fieldset>
+  <!--<button class="button" type="submit"></button>-->
+</form>            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/institutes-and-centers" data-section="12996" tabindex="0">Institutes and Centers</a></li><li class=""><a href="/research/about-mason-research" data-section="12386" tabindex="1">Mason Research Overview</a></li><li class=""><a href="/research/faculty-research-resources" data-section="12381" tabindex="2">Faculty Research Resources</a></li><li class=""><a href="/research/student-research" data-section="12391" tabindex="3">Student Research</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="836">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                              <img src="https://www2.gmu.edu/sites/core/files/GeorgeStatueMenuFeature_321x219.jpg" alt="Bronze statue of George Mason IV, at the center of campus at George Mason University"/>
+                          </div>
+            <div class="column col-33 featured-links">
+              <h2>Welcome, Gregory Washington</h2>
+<p>On February 24, 2020, the Board of Visitors named Dr. Gregory Washington the eighth president of George Mason University.</p>
+<p><a href="/presidential-search">Learn More</a></p>
+            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/about-mason/university-leadership" data-section="2561" tabindex="0">University Leadership</a></li><li class=""><a href="/about-mason/general-contact-information" data-section="5021" tabindex="1">General Contact Information</a></li><li class=""><a href="/about-mason/location-fairfax-campus" data-section="12411" tabindex="2">Campus Locations</a></li><li class=""><a href="https://construction.gmu.edu/" data-section="12266" tabindex="3">Construction on Campus</a></li><li class=""><a href="https://accessibility.gmu.edu" data-section="12261" tabindex="4">Accessibility</a></li><li class=""><a href="/about-mason/diversity-mason" data-section="2576" tabindex="7">Diversity at Mason</a></li><li class=""><a href="https://universitypolicy.gmu.edu" data-section="12271" tabindex="8">University Policy</a></li><li class=""><a href="/about-mason/freedom-information-act-requests" data-section="8386" tabindex="9">FOIA Requests</a></li><li class=""><a href="/discover-mason/for-media" data-section="9306" tabindex="10">For Media</a></li><li class=""><a href="/about-mason/internet-privacy" data-section="10846" tabindex="11">Internet Privacy</a></li><li class=""><a href="/about-mason/todayatmason-twitter" data-section="12246" tabindex="12">@TodayatMason on Twitter</a></li><li class=""><a href="/1stAmendment" data-section="12356" tabindex="13">Free Speech at Mason</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="9312">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                          </div>
+            <div class="column col-33 featured-links">
+              
+<form class="find-area-of-study">
+  <fieldset>
+    <legend><h2>Find Your Area of Study </h2></legend>
+    <p><em>How will YOU make an impact? </em></p>
+    <!--<p>
+      <label class="off-screen" for="usersPosition">I am a...</label>
+      <select id="usersPosition" name="position">
+        <option value="">I am a...</option>
+        <option>Position 1</option>
+        <option>Position 2</option>
+        <option>Position 2</option>
+      </select>
+    </p>-->
+    <p>
+      <label class="off-screen" for="usersInterest">I am interested in...</label>
+      <select id="usersInterest" name="interest">
+        <option value="">I am interested in</option>
+        <option value="/academics">I don't know</option>
+                  <option value="/academics/accelerated-masters-programs">Accelerated Master's Programs</option>
+                  <option value="/academics/arts-creative-study">Arts and Creative Study</option>
+                  <option value="/academics/business-and-economics">Business and Economics</option>
+                  <option value="/academics/computer-science-and-information-technology">Computer Science and Information Technology</option>
+                  <option value="/academics/education">Education</option>
+                  <option value="/academics/engineering">Engineering</option>
+                  <option value="/academics/forensic-science-and-criminology">Forensic Science and Criminology</option>
+                  <option value="/academics/global">Global</option>
+                  <option value="/academics/government-and-policy">Government and Policy</option>
+                  <option value="/academics/health-and-well-being">Health and Well-Being</option>
+                  <option value="/academics/languages-and-culture">Languages and Culture</option>
+                  <option value="/academics/law">Law</option>
+                  <option value="/academics/liberal-arts">Liberal Arts</option>
+                  <option value="/academics/science-and-biomedicine">Science and Biomedicine</option>
+                  <option value="/academics/security">Security</option>
+                  <option value="/academics/social-and-human-behavior">Social and Human Behavior</option>
+                  <option value="/academics/social-impact">Social Impact</option>
+                  <option value="/academics/sports-recreation-and-tourism">Sports, Recreation and Tourism</option>
+                  <option value="/academics/sustainability">Sustainability</option>
+                  <option value="/academics/smithsonian-mason-school-conservation">Smithsonian-Mason School of Conservation</option>
+              </select>
+    </p>
+  </fieldset>
+  <!--<button class="button" type="submit"></button>-->
+</form>            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/discover-mason/business-resources-and-services" data-section="8676" tabindex="0">Business Resources and Services</a></li><li class=""><a href="/discover-mason/camps-and-recreation" data-section="8686" tabindex="1">Camps and Recreation</a></li><li class=""><a href="/discover-mason/events-venues-space-rentals" data-section="8681" tabindex="2">Events, Venues &amp; Space Rentals</a></li><li class=""><a href="/discover-mason/for-media" data-section="8691" tabindex="3">For Media</a></li><li class=""><a href="/community-connection/professional-community-learning" data-section="8671" tabindex="4">Professional &amp; Community Learning</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="13116">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                          </div>
+            <div class="column col-33 featured-links">
+              
+<form class="find-area-of-study">
+  <fieldset>
+    <legend><h2>Find Your Area of Study </h2></legend>
+    <p><em>How will YOU make an impact? </em></p>
+    <!--<p>
+      <label class="off-screen" for="usersPosition">I am a...</label>
+      <select id="usersPosition" name="position">
+        <option value="">I am a...</option>
+        <option>Position 1</option>
+        <option>Position 2</option>
+        <option>Position 2</option>
+      </select>
+    </p>-->
+    <p>
+      <label class="off-screen" for="usersInterest">I am interested in...</label>
+      <select id="usersInterest" name="interest">
+        <option value="">I am interested in</option>
+        <option value="/academics">I don't know</option>
+                  <option value="/academics/accelerated-masters-programs">Accelerated Master's Programs</option>
+                  <option value="/academics/arts-creative-study">Arts and Creative Study</option>
+                  <option value="/academics/business-and-economics">Business and Economics</option>
+                  <option value="/academics/computer-science-and-information-technology">Computer Science and Information Technology</option>
+                  <option value="/academics/education">Education</option>
+                  <option value="/academics/engineering">Engineering</option>
+                  <option value="/academics/forensic-science-and-criminology">Forensic Science and Criminology</option>
+                  <option value="/academics/global">Global</option>
+                  <option value="/academics/government-and-policy">Government and Policy</option>
+                  <option value="/academics/health-and-well-being">Health and Well-Being</option>
+                  <option value="/academics/languages-and-culture">Languages and Culture</option>
+                  <option value="/academics/law">Law</option>
+                  <option value="/academics/liberal-arts">Liberal Arts</option>
+                  <option value="/academics/science-and-biomedicine">Science and Biomedicine</option>
+                  <option value="/academics/security">Security</option>
+                  <option value="/academics/social-and-human-behavior">Social and Human Behavior</option>
+                  <option value="/academics/social-impact">Social Impact</option>
+                  <option value="/academics/sports-recreation-and-tourism">Sports, Recreation and Tourism</option>
+                  <option value="/academics/sustainability">Sustainability</option>
+                  <option value="/academics/smithsonian-mason-school-conservation">Smithsonian-Mason School of Conservation</option>
+              </select>
+    </p>
+  </fieldset>
+  <!--<button class="button" type="submit"></button>-->
+</form>            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/admissions-aid/newly-admitted-students" data-section="3111" tabindex="0">All Students - Spring 2020</a></li><li class=""><a href="/admissions-aid/next-steps-for-admitted-students/freshmen" data-section="13111" tabindex="1">Freshman</a></li><li class=""><a href="/admissions-aid/next-steps-for-admitted-students/transfer" data-section="13051" tabindex="2">Transfer</a></li><li class=""><a href="/next-steps-for-admitted-students/international" data-section="13196" tabindex="3">International</a></li><li class=""><a href="/admissions-aid/next-steps-for-admitted-students/graduate-student" data-section="13056" tabindex="4">Graduate Students</a></li><li class=""><a href="/admissions-aid/next-steps-for-admitted-students/non-degree-students" data-section="13061" tabindex="5">Non-Degree Students</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="13001">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                          </div>
+            <div class="column col-33 featured-links">
+              
+<form class="find-area-of-study">
+  <fieldset>
+    <legend><h2>Find Your Area of Study </h2></legend>
+    <p><em>How will YOU make an impact? </em></p>
+    <!--<p>
+      <label class="off-screen" for="usersPosition">I am a...</label>
+      <select id="usersPosition" name="position">
+        <option value="">I am a...</option>
+        <option>Position 1</option>
+        <option>Position 2</option>
+        <option>Position 2</option>
+      </select>
+    </p>-->
+    <p>
+      <label class="off-screen" for="usersInterest">I am interested in...</label>
+      <select id="usersInterest" name="interest">
+        <option value="">I am interested in</option>
+        <option value="/academics">I don't know</option>
+                  <option value="/academics/accelerated-masters-programs">Accelerated Master's Programs</option>
+                  <option value="/academics/arts-creative-study">Arts and Creative Study</option>
+                  <option value="/academics/business-and-economics">Business and Economics</option>
+                  <option value="/academics/computer-science-and-information-technology">Computer Science and Information Technology</option>
+                  <option value="/academics/education">Education</option>
+                  <option value="/academics/engineering">Engineering</option>
+                  <option value="/academics/forensic-science-and-criminology">Forensic Science and Criminology</option>
+                  <option value="/academics/global">Global</option>
+                  <option value="/academics/government-and-policy">Government and Policy</option>
+                  <option value="/academics/health-and-well-being">Health and Well-Being</option>
+                  <option value="/academics/languages-and-culture">Languages and Culture</option>
+                  <option value="/academics/law">Law</option>
+                  <option value="/academics/liberal-arts">Liberal Arts</option>
+                  <option value="/academics/science-and-biomedicine">Science and Biomedicine</option>
+                  <option value="/academics/security">Security</option>
+                  <option value="/academics/social-and-human-behavior">Social and Human Behavior</option>
+                  <option value="/academics/social-impact">Social Impact</option>
+                  <option value="/academics/sports-recreation-and-tourism">Sports, Recreation and Tourism</option>
+                  <option value="/academics/sustainability">Sustainability</option>
+                  <option value="/academics/smithsonian-mason-school-conservation">Smithsonian-Mason School of Conservation</option>
+              </select>
+    </p>
+  </fieldset>
+  <!--<button class="button" type="submit"></button>-->
+</form>            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/presidential-search/presidential-search-committee" data-section="13016" tabindex="0">Search Committee</a></li><li class=""><a href="/presidential-search/presidential-search-process-roadmap" data-section="13006" tabindex="1">Process Roadmap</a></li><li class=""><a href="/presidential-search/presidential-search-news-updates" data-section="13011" tabindex="2">News &amp; Updates</a></li><li class=""><a href="/presidential-search/presidential-search-listening-sessions" data-section="13021" tabindex="3">Listening Sessions</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="13176">
+        <div class="wrapper">
+          <div class="branding flyout-logo">
+            <a href="/">
+              <img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo-green.png" alt="George Mason University"/>
+            </a>
+          </div>
+          <div class="columns">
+            <div class="column col-33 featured-img">
+                          </div>
+            <div class="column col-33 featured-links">
+              
+<form class="find-area-of-study">
+  <fieldset>
+    <legend><h2>Find Your Area of Study </h2></legend>
+    <p><em>How will YOU make an impact? </em></p>
+    <!--<p>
+      <label class="off-screen" for="usersPosition">I am a...</label>
+      <select id="usersPosition" name="position">
+        <option value="">I am a...</option>
+        <option>Position 1</option>
+        <option>Position 2</option>
+        <option>Position 2</option>
+      </select>
+    </p>-->
+    <p>
+      <label class="off-screen" for="usersInterest">I am interested in...</label>
+      <select id="usersInterest" name="interest">
+        <option value="">I am interested in</option>
+        <option value="/academics">I don't know</option>
+                  <option value="/academics/accelerated-masters-programs">Accelerated Master's Programs</option>
+                  <option value="/academics/arts-creative-study">Arts and Creative Study</option>
+                  <option value="/academics/business-and-economics">Business and Economics</option>
+                  <option value="/academics/computer-science-and-information-technology">Computer Science and Information Technology</option>
+                  <option value="/academics/education">Education</option>
+                  <option value="/academics/engineering">Engineering</option>
+                  <option value="/academics/forensic-science-and-criminology">Forensic Science and Criminology</option>
+                  <option value="/academics/global">Global</option>
+                  <option value="/academics/government-and-policy">Government and Policy</option>
+                  <option value="/academics/health-and-well-being">Health and Well-Being</option>
+                  <option value="/academics/languages-and-culture">Languages and Culture</option>
+                  <option value="/academics/law">Law</option>
+                  <option value="/academics/liberal-arts">Liberal Arts</option>
+                  <option value="/academics/science-and-biomedicine">Science and Biomedicine</option>
+                  <option value="/academics/security">Security</option>
+                  <option value="/academics/social-and-human-behavior">Social and Human Behavior</option>
+                  <option value="/academics/social-impact">Social Impact</option>
+                  <option value="/academics/sports-recreation-and-tourism">Sports, Recreation and Tourism</option>
+                  <option value="/academics/sustainability">Sustainability</option>
+                  <option value="/academics/smithsonian-mason-school-conservation">Smithsonian-Mason School of Conservation</option>
+              </select>
+    </p>
+  </fieldset>
+  <!--<button class="button" type="submit"></button>-->
+</form>            </div>
+            <div class="column col-33 flyout-sub-nav">
+              <p class="off-screen">Sub-navigation:</p>
+              <ul><li class=""><a href="/academics/into-mason/about-into-mason" data-section="13171" tabindex="0">About INTO Mason</a></li><li class=""><a href="/into-mason/how-apply-into-mason" data-section="13166" tabindex="1">How to Apply to INTO Mason</a></li><li class=""><a href="/into-mason/into-mason-academic-programs" data-section="13161" tabindex="2">INTO Mason Academic Programs</a></li><li class=""><a href="/academics/into-mason/into-mason-pre-arrival-information" data-section="13156" tabindex="3">INTO Mason Pre-Arrival Information</a></li><li class=""><a href="/into-mason/%C3%A1ngel-cabrera-global-center" data-section="13151" tabindex="4">Mason Global Center</a></li><li class=""><a href="/into-mason/student-resources" data-section="13136" tabindex="5">Student Resources</a></li></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+
+
+</header>
+
+<div class="drawers">
+  <div class="drawer-top">
+            
+
+  
+<div class="panelizer-view-mode node node-full node-landing-page node-3581">
+        <article id="primary-content">
+  <div class="pre-content">
+    <div class="wrapper">
+      <h1>Coronavirus/COVID-19</h1>
+
+      <div class="cta-boxes columns">
+        <div class="column col-33">
+          
+
+<div class="cta-boxes">
+  <a class="cta info" href="https://ready.gmu.edu/coronavirus-outbreak/"  target=_blank>
+    <span>Read Mason's Plans and Procedures</span>
+  </a>
+</div>
+
+
+
+
+        </div>
+        <div class="column col-33">
+          
+
+<div class="cta-boxes">
+  <a class="cta person" href="https://shs.gmu.edu/locations/"  target=_blank>
+    <span>Find a Student Health Services Clinic</span>
+  </a>
+</div>
+
+
+
+
+        </div>
+        <div class="column col-33">
+          
+
+<div class="cta-boxes">
+  <a class="cta research" href="https://www2.gmu.edu/research-continuity-guidelines"  target=_blank>
+    <span>Read Our Research Continuity Guidelines</span>
+  </a>
+</div>
+
+
+
+
+        </div>
+      </div>
+      <div><div class="intro"><p>Mason is monitoring the outbreak of COVID-19, a respiratory disease caused by a new coronavirus, and is following guidelines from the <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank">Centers for Disease Control and Prevention (CDC)</a> and the <a href="http://www.vdh.virginia.gov/surveillance-and-investigation/novel-coronavirus/" target="_blank">Virginia Department of Health</a>. The university will extend spring break, then move to virtual instruction. As new information about the outbreak and its potential impact on the Mason community becomes available, the university will send updates via email.</p>
+</div>
+
+
+</div>
+    </div>
+  </div>
+    <div id="main-content" class="content-area">
+    <div class="wrapper">
+      <div class="columns">
+        <div class="column col-33 navigation">
+          <p><em>Page updated Thursday, March 12.</em></p>
+
+
+
+        </div>
+        <div class="column col-33">
+                  </div>
+        <div class="column col-33">
+                  </div>
+        <div class="additional-content">
+          <h2>A Message from President Holton Regarding the Coronavirus</h2>
+<p><strong>Dear Patriots,</strong></p>
+<p>Your health and safety are our highest priorities, and we continue to monitor the coronavirus outbreak around the globe and in the region. While there are no known cases on our campus, we are aware of a number of confirmed cases in Virginia and the Washington, D.C. region. With this in mind, we are taking a number of precautionary measures to limit exposure and minimize risk. </p>
+<h3>Mason to Extend Spring Break, then Move to Virtual Instruction</h3>
+<p>To limit exposure on our campus, Mason is extending spring break by an additional week through March 20. This will allow students and faculty to prepare for virtual alternative instruction and reduce close contact on campus.</p>
+<p>The Antonin Scalia Law School will move immediately to virtual alternative instruction and will not go on an extended spring break. Additionally, classes in other colleges and schools that are already online will not be delayed by the extended spring break and will continue as scheduled.</p>
+<p>When spring break ends, most classes will be conducted through virtual alternative instruction, from Monday, March 23 through Friday, April 3.  Students will be contacted by their faculty with additional details about virtual learning. The university will continue to monitor and reevaluate the situation prior to April 3. If an extension of virtual learning is needed, we will adjust as determined and communicate that with you.</p>
+<p>We are also committed to ensuring that our students will successfully complete their coursework this semester, and will work to create tailored plans for those instances where virtual instruction is not a sufficient solution.</p>
+<h3>Students Encouraged to Stay Off Campus, but Residence Halls Remain Open</h3>
+<p>We know that one of the most powerful ways to minimize the spread of coronavirus is limiting interaction in close spaces. For that reason, we encourage students who are home to stay home during this time. We will continue to keep residence and dining halls open for students who cannot return home.  Specific details will be sent to all residential students on Thursday. More information about student services, student centers, and the library will be forthcoming.</p>
+<h3>Mason to Remain Operational During this Time</h3>
+<p>The university will remain open, and faculty and staff are expected to continue working during this period. In fact, for some, constraints on their time will increase, particularly as we work to shift classes to virtual instruction. I appreciate everyone’s patience as we move through this uncharted territory.</p>
+<p>Of course, if you feel unwell, please stay home. And some faculty and staff may need to telework, particularly those who have medical vulnerabilities that put them at <a href="https://www.cdc.gov/coronavirus/2019-ncov/specific-groups/high-risk-complications.html" target="_blank">high risk</a>. I encourage supervisors to work with faculty and staff who request flexible work options due to medical susceptibility to coronavirus.</p>
+<p>If you are returning from <a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/after-travel-precautions.html" target="_blank">a level 3 travel restriction country</a>, or have been instructed by the health department, please follow guidance from the CDC about self-quarantine, whether on or off-campus.</p>
+<p>The Stearns Center for Teaching and Learning and ITS have resources for faculty to migrate to virtual alternative instruction and for staff to be telework-ready as necessary.  <a href="https://stearnscenter.gmu.edu/knowledge-center/instructional-continuity/" target="_blank">Instructional continuity plans</a> can be found on the <a href="https://stearnscenter.gmu.edu/knowledge-center/instructional-continuity/" target="_blank">Stearns Center website</a>, and <a href="https://its.gmu.edu/service/virtual-private-network-vpn/" target="_blank">VPN information</a> is available from <a href="https://its.gmu.edu/" target="_blank">ITS</a>. Guidance on telework is available from <a href="https://hr.gmu.edu/emp_relations/" target="_blank">Employee Relations</a>. Deans, directors and department heads have been in contact with their teams to ensure continuity of operations during this time.</p>
+<p>As a reminder, the university also has suspended university-related domestic and international travel through April 10 for students, faculty and staff, and has cancelled study abroad-related travel for the semester. In addition, we strongly encourage our campus community to postpone or forgo nonessential personal travel during this time.</p>
+<h3>Moving Forward</h3>
+<p>We are currently evaluating additional options, including cancelling events. We anticipate sending more information about events and other university business this week, and we encourage you to reach out to organizers to check the status of those events.</p>
+<p>As you know, this situation is changing rapidly and we will continue to send information often. I want to urge everyone to monitor their email. Students, if your family members want to receive these emails, please make sure they sign up for the <a href="https://masonfamily.gmu.edu/mason-family-association/" target="_blank">Mason Family Flash newsletter</a>.  In addition, please utilize other university information channels, including the <a href="https://www2.gmu.edu/coronavirus" target="_blank">university’s coronavirus website</a> and the university’s switchboard, which can assist in directing calls about Mason’s response to the coronavirus. The number is 703-993-1000.</p>
+<p>All of these decisions are being made with the health and safety of our campus community in mind. Remember to take time to practice good self-care and focus on what you can do to remain healthy: frequent hand washing for at least 20 seconds, getting enough rest, eating healthy and drinking plenty of water.</p>
+<p>We appreciate your patience and flexibility during this time as we navigate this evolving situation, and we will continue to provide regular updates through email and through the website.</p>
+<p><strong>Sincerely,</strong></p>
+<p><strong>Anne Holton</strong></p>
+<p><strong>Interim President</strong></p>
+
+
+
+<h4>For questions regarding the Virginia cases or general coronavirus questions, contact the Virginia Department of Health on their hotline: 1-877-ASK-VDH3 (1-877-275-8343).</h4>
+
+
+
+<hr /><p> </p>
+
+
+
+
+
+
+<div class="img-wrapper right has-caption">
+  <img src="https://www2.gmu.edu/sites/core/files/content-image/coronavirus-page-social-distancing.jpg" width="350" height="250" alt="legs walking along a road" />      <div class="caption"><p>Social distancing doesn't have to mean social isolation. You can still take walks with your friends. Just keep a little physical distance between you.</p></div>
+  </div>
+
+
+
+
+<h3>Use Social Distancing to Reduce the Chance of Infection</h3>
+<p>Social distancing is the practice of keeping your distance from others in public and private places.</p>
+<p>To mitigate the potential spread of coronavirus, Mason asks students, faculty, and staff to implement social distancing measures wherever and whenever possible. </p>
+<p>Social distancing strategies include:</p>
+<ul><li>Avoid close contact with others when possible.</li>
+<li>Don’t shake hands; use elbow bumps.</li>
+<li>Wash your hands/use hand sanitizer frequently.</li>
+<li>Arrange classroom chairs to maintain six feet between students</li>
+<li>Arrange dining areas to allow six feet between patrons</li>
+<li>Avoid face-to-face meetings and use videoconference or teleconference technology to communicate with friends, colleagues, and students.</li>
+<li>Avoid using public transportation, and limit local travel.</li>
+<li>Avoid large gatherings and public events.</li>
+<li>Suspend campus tours and visits by prospective students and visitors.</li>
+<li>When face-to-face meetings are required, arrange meeting space to maintain six feet between attendees.</li>
+<li>If you are sick, remain home.  Call your health care provider for guidance before going to a medical facility.</li>
+</ul>
+
+
+<hr /><p> </p>
+
+
+
+<div class="expandable-content-wrapper">
+  <h2>Frequently  Asked Questions about Coronavirus/COVID-19 and Mason Plans</h2>
+
+  <div class="expandable-content">
+    <div class="header">What are the symptoms of COVID-19?</div><div class="expanded-content"><p>Symptoms, which can appear&nbsp;2 to 14 days after exposure, include fever, muscle or body aches, sore throat and cough, fatigue and headaches. If you've been in contact with someone with COVID-19, or in an area where there is an outbreak, contact a health care professional.</p>
+</div><div class="header">What precautions is Mason taking? What precautions can I take?</div><div class="expanded-content"><p>Student Health Services and Mason Safety, Emergency, and Enterprise Risk Management are coordinating with Virginia Department of Health and local health departments to recommended precautionary measures, such as:</p>
+
+<p>Avoid close contact with sick people.</p>
+
+<ul>
+	<li>Avoid touching your eyes, nose, and mouth.</li>
+	<li>Stay home if you're ill.</li>
+	<li>Cover a cough or sneeze with a tissue, then discard the tissue.</li>
+	<li>Clean frequently touched objects and surfaces with a cleaning spray or wipe.</li>
+	<li>Wash your hands or use hand sanitizer.</li>
+	<li>Cough into your elbow or a tissue.</li>
+	<li>Eat healthy foods,</li>
+	<li>Get enough sleep,</li>
+	<li>Decrease stress,</li>
+	<li>Limit or eliminate the use of tobacco products.</li>
+	<li>Avoid others when sick and avoid those who are sick. &nbsp;</li>
+</ul>
+
+<p>Mason is cleaning public areas more frequently,&nbsp;wiping down surfaces in dining areas throughout campus buildings and common areas. Mason is also cleaning areas that are touched often&nbsp;(e.g., doorknobs, light switch, handrails, etc.) within buildings and residence halls more frequently.</p>
+
+<p>The best way to prevent the spread of disease is to identify illness&nbsp;early and seek medical advice or care.</p>
+</div><div class="header">Who is at risk for COVID-19?</div><div class="expanded-content"><p>People with&nbsp;weakened immune systems or current respiratory illnesses might have a higher chance of contracting COVID-19 and additional trouble recovering from the infection.</p>
+</div><div class="header">I'm a student, and I think I'm sick; what should I do?</div><div class="expanded-content"><p>If you have a fever and symptoms of respiratory illness, such as cough, difficulty breathing, or shortness of breath:</p>
+
+<ul>
+	<li>Do not attend classes, work, or university events. Avoid contact with others. Stay home except when seeking medical care.</li>
+	<li>Wash your hands with soap and water for at least 20 seconds. Use an alcohol-based hand sanitizer if soap and water are not available and stay well hydrated/drink fluids</li>
+	<li>Cover your cough, and avoid close contact with others</li>
+	<li>Before you go to <a href="http://shs.gmu.edu/" target="_blank">Student Health Services</a>&nbsp;(703-993-2831), a doctor’s office, or emergency room, call ahead and inform the clinic about your symptoms and&nbsp;recent travel, especially to China, Iran, Italy, or South Korea. Follow medical providers' instructions to get the care you need while keeping others safe.</li>
+	<li>Contact your professors to arrange accommodations for missing classes for a temporary time period.&nbsp;</li>
+</ul>
+
+<p>Student Health Services has developed triage phone and in-person screening process and has implemented additional protocols to help identify possible cases of coronavirus to provide optimal care for those with symptoms and to protect Mason community.</p>
+
+<p>For more information about Mason's communicable disease response procedures, consult the&nbsp;<a href="https://public.huddle.com/b/aJzoan/index.html" target="_blank">Communicable Disease Guide</a>&nbsp;(PDF).</p>
+</div><div class="header">I'm sick and live near/on campus; what should I do?</div><div class="expanded-content"><p><a href="https://shs.gmu.edu/locations/">Health facilities are available on all of Mason's Virginia campuses</a>:</p>
+
+<ul>
+	<li>The Fairfax Campus's&nbsp;Student Health Services office is in the Student Union Building (SUB 1). Call&nbsp;703-993-2831.</li>
+	<li>The Arlington Clinic is in Van Metre Hall, Room B102. Call&nbsp;703-993-4863.</li>
+	<li>The SciTech Clinic is in&nbsp;Colgan Hall, Room 229. Call&nbsp;703-993-8374.</li>
+</ul>
+
+<p><a href="https://masonkorea.gmu.edu/corona">Mason Korea also has plans in place if students there get sick.</a></p>
+
+<p><strong>Before you go to Student Health Services, a doctor’s office, or emergency room, call ahead and inform the clinic about your symptoms and travel history.</strong></p>
+
+<p><a href="https://housing.gmu.edu/about/contact-housing-staff" target="_blank">Housing and Residence Life staff</a> will work closely with Student Health Services to monitor suspected cases and to support the residential students’ community. If the Health Department deems isolation necessary, we&nbsp;will make arrangements based on their recommendations.</p>
+
+<p>Students who live close enough to return home might be advised to do that for the duration of their illness. Mason will provide support and accommodations for international students, and those who live too far to get home easily.</p>
+
+<p><a href="https://content-service.sodexomyway.com/media/Sick%20Tray%20Form%202019_tcm991-84103.pdf?url=https%3A//masondining.sodexomyway.com/" target="_blank">Mason Dining Services </a>can provide meals if you live on the Fairfax Campus, and you're too ill to eat in a dining hall.</p>
+</div><div class="header">I'm faculty/staff and think I'm sick; what should I do?</div><div class="expanded-content"><p>If you have a fever and symptoms of respiratory illness, such as cough, difficulty breathing, or shortness of breath:</p>
+
+<ul>
+	<li>Do not attend work&nbsp;or university events. Avoid contact with others. Stay home except when seeking medical care.</li>
+	<li>Report your absence to your supervisor.&nbsp;</li>
+	<li>Wash your hands with soap and water for at least 20 seconds. Use an alcohol-based hand sanitizer if soap and water are not available and stay well hydrated/drink fluids</li>
+	<li>Cover your cough, and avoid close contact with others</li>
+	<li>Before you go to your primary care doctor or emergency room, call ahead and notify&nbsp;staff of your condition and travel history, especially to China, Iran, Italy, or South Korea. Follow medical providers' instructions to get the care you need while keeping others safe. Follow the instructions of health care professionals.</li>
+</ul>
+
+<p>For more information about Mason's communicable disease response procedures, consult the&nbsp;<a href="https://public.huddle.com/b/aJzoan/index.html" target="_blank">Communicable Disease Guide</a>&nbsp;(PDF).</p>
+</div><div class="header">I have a severe chronic medical condition; what should I do?</div><div class="expanded-content"><p>Effective March 9, individuals with health conditions who are considered to be a&nbsp;high risk for COVID-19 complications&nbsp;should make arrangements to remain out of class and away from work.</p>
+
+<ul>
+	<li>If you are a student with a medical condition which compromises your immune system or puts you at risk for coronavirus complications, consult with your primary care provider. Based on your medical condition, your provider can help you make the decision about whether you should stay away from classes and other activities and discuss any other precautions you should take to care for your health. If your primary health care provider is <a href="https://shs.gmu.edu/" target="_blank">Student Health Services</a>, call us at 703-993-2831. Once you have talked with your provider, email your professors to discuss how to manage your class work. If students have more specific accommodations that are not approved by faculty, please contact <a href="http://ds.gmu.edu/" target="_blank">Disability Services</a>.</li>
+	<li>Faculty who are at high risk should convert their coursework to alternative teaching methods to avoid contact with sick individuals;&nbsp;the&nbsp;<a href="https://stearnscenter.gmu.edu/" target="_blank">Stearns Center for Teaching and Learning</a>&nbsp;can provide&nbsp;information on how to maintain instructional continuity.</li>
+	<li>Staff who are at high risk should contact their supervisor to discuss telework, flexible work, or accommodations to maintain social distancing while at work. More information is available from <a href="https://hr.gmu.edu/emp_relations/" target="_blank">HR at the Employee Relations website</a>.</li>
+</ul>
+</div><div class="header">What are the most effective methods to clean surfaces?</div><div class="expanded-content"><p>While COVID-19 is commonly transmitted through respiratory droplets, it can also be picked up&nbsp;through contact with contaminated inanimate objects. The virus might&nbsp;remain viable on surfaces for hours or days.</p>
+
+<ul>
+	<li>Routine cleaning of frequently touched surfaces with soap and water followed by disinfection with an EPA-registered disinfectant is a best practice measure to prevent transmission of any viral respiratory illness in households and community settings.</li>
+	<li>Wear disposable gloves when cleaning and disinfecting.</li>
+	<li>Use unexpired diluted household bleach solutions (1/3 cup bleach per gallon of water or 4 teaspoons bleach per quart of water), alcohol solutions with at least 70 percent alcohol, and most common EPA-registered household disinfectants.</li>
+	<li>Follow product directions.</li>
+	<li>Clean and disinfect high-touch surfaces daily in household common areas such as tables, chairs, doorknobs, light switches, remotes, handles, counters, desks, toilets, and sinks.</li>
+	<li>Wash your hands immediately after removing gloves.</li>
+</ul>
+</div><div class="header">Do I need to wear a mask?</div><div class="expanded-content"><p>No. The Surgeon General of the United States says masks do&nbsp;not protect against the spread of COVID-19. The rush of individuals to purchase masks had decreased the amount of masks available to the medical community.</p>
+
+<p>Mason does not encourage the use of respiratory protection and does not provide respirators to students unless they are being cared for at Student Health Services, when they might get one to prevent the spread of an illness among other patients.</p>
+</div><div class="header">Are classes still being held?</div><div class="expanded-content"><p>Yes; however, on-campus classes have been suspended; the university will hold classes through virtual alternative instruction.</p>
+
+<ul>
+	<li>For the Virginia campuses, spring break has been extended a week, through March 20. When spring break ends, most classes will be conducted through&nbsp;virtual alternative instruction, from Monday, March 23, through Friday, April 3.&nbsp;&nbsp;The university will re-evaluate the situation prior to April 3 and notify the community of next steps.&nbsp;</li>
+	<li>Mason Korea is providing virtual alternative instruction to students through April 6, in accordance with recommendations from the government of South Korea.</li>
+</ul>
+</div><div class="header">What's going on with study abroad programs/international trips?</div><div class="expanded-content"><p>Mason has suspended all university-authorized travel for students, faculty and staff effective Monday, March 16 through at least April 10.</p>
+
+<p>This includes domestic and international travel. Exceptions can be granted on a case-by-case basis in accordance with <a href="https://universitypolicy.gmu.edu/policies/international-educational-travel/" title="https://universitypolicy.gmu.edu/policies/international-educational-travel/">Policy 1134</a>; however, travelers must be able to demonstrate a compelling and necessary reason to travel.</p>
+
+<p>In brief:</p>
+
+<ul>
+	<li>No student international travel/study abroad through May 15.</li>
+	<li>No university-authorized domestic travel for students, faculty or staff through at least April 10.</li>
+	<li>No university-authorized international travel for students, faculty or staff through at least April 10. &nbsp;</li>
+</ul>
+
+<p>The<a href="https://masonabroad.gmu.edu/index.cfm?FuseAction=Announcements.Announcement&amp;Announcement_ID=3051" target="_blank">&nbsp;Global Education Office</a>&nbsp;(GEO) will work directly with affected study-abroad students to provide information and address questions.&nbsp;The office is also&nbsp;working to refund program fees for committed students on all spring programs that are suspended.&nbsp;For group flights (purchased through GEO), all tickets were cancelled. You will receive the cost of the ticket in your refund.</p>
+
+<p>Because some planned business travel might already be scheduled, <a href="https://fiscal.gmu.edu/" target="_blank">Fiscal Services</a> advises travelers to cancel their flights and request a full refund. It that’s not possible, cancel the flight and request a credit for a future date.</p>
+
+<p>Please monitor individual airlines’ announcements about policy changes, as you might be able to make a change without incurring a fee.</p>
+
+<p>You should also make a reasonable attempt to receive a refund for all other travel-related expenses. Trip- related expenses that cannot be refunded may be reimbursed with department approval.</p>
+</div><div class="header">I’ve been around someone who might have been exposed; should I be tested?</div><div class="expanded-content"><p>The CDC does not recommend testing, symptom monitoring or special management for people exposed to asymptomatic people with potential exposures to the coronavirus (such as in a household), i.e., “contacts of contacts.”</p>
+
+<p>These people aren’t considered exposed to the coronavirus. If you’re a high-risk contact of someone with suspected coronavirus, the health department will contact you.</p>
+</div><div class="header">I'm stressed and anxious about COVID-19; where can I get help?</div><div class="expanded-content"><p>Students can contact the&nbsp;<a href="https://ssac.gmu.edu/" target="_blank">Student Support and Advocacy Center</a>&nbsp;and/or <a href="http://caps.gmu.edu" target="_blank">Counseling and Psychological Services</a>. Employees have access to the university’s <a href="https://hr.gmu.edu/emp_relations/resources.php" target="_blank">Employee Assistance Program</a> to help during difficult circumstances, hardship, and stress. <a href="http://hr.gmu.edu" target="_blank">Human Resources</a> has a variety of services available.</p>
+</div><div class="header">What if I want to withdraw/want my child to withdraw?</div><div class="expanded-content"><p>If you wish to remove yourself or your student from Mason, contact the <a href="https://registrar.gmu.edu/" target="_blank">Office of the Registrar</a> at 703-993-2441.</p>
+</div><div class="header">I have tickets to an event at a Mason venue; are they still being held?</div><div class="expanded-content"><p>All performances and events are proceeding as scheduled at the Center for the Arts (CFA), Hylton Center, and all venues managed by Mason's College of Visual and Performing Arts.&nbsp;<a href="https://hyltoncenter.org/ticketsevents/ticket-policies" target="_blank">Flexible ticket exchange policies</a>, including waived exchange fees, are in place at CFA and Hylton. The college&nbsp;is evaluating the situation as it evolves and will continue to follow university guidelines, as well as those from&nbsp;local officials.&nbsp;</p>
+
+<p>For the latest information, you can check our websites:</p>
+
+<ul>
+	<li><a href="https://cfa.gmu.edu/plan-your-visit/covid-19-updates" target="_blank">Center for the Arts</a></li>
+	<li><a href="https://hyltoncenter.org/plan-your-visit/covid-19-updates" target="_blank">Hylton Center</a></li>
+</ul>
+
+<p><a href="https://www.eaglebankarena.com/" target="_blank">EagleBank Arena</a> will be closed to the public through April 3, 2020, out of an abundance of caution.&nbsp;We regret any inconvenience and disappointment.</p>
+
+<p>If you hold tickets for upcoming events (including <em>Trolls Live</em>, Harlem Globetrotters, or Thom Yorke), or had planned to attend the Northern Virginia Regional College Fair, we are working to reschedule these activities.&nbsp;</p>
+
+<p>We'll provide updated information as it becomes available&nbsp;here and on the <a href="http://www.eaglebankarena.com/" target="_blank">EagleBank site</a>.&nbsp;</p>
+</div><div class="header">Will Mason's Child Development Center Remain Open?</div><div class="expanded-content"><p>Yes, although our operating status is subject to change at any time under the guidance of the university and local health department.&nbsp;</p>
+
+<p>Because some workers are student employees, if they are unavailable,&nbsp;it will affect&nbsp;staffing in classrooms. Maintaining National Association for the Education of Young Childre (NAEYC) or at minimum, state ratios, is of the utmost importance to us, and the safety and supervision of your children is our priority.</p>
+
+<p>We will monitor staffing closely to ensure ratios. If staffing becomes insufficient, center operating status may be affected.</p>
+
+<p>Check for updates here or on the <a href="https://cdc.gmu.edu/" target="_blank">center's website</a>.&nbsp;</p>
+</div>  </div>
+</div>
+
+
+
+
+<hr /><p> </p>
+
+
+
+ 
+
+<div class="latest-news-feed">
+  <h2> Mason COVID-19 Communications </br> to the University and Surrounding Community    <a href="/node/3601" class="button">See Older Messages</a>  </h2>
+  <div class="rss-link-wrapper"><a href="https://content.gmu.edu/rss/news/8/24716,25046,24621/" class="rss-link">RSS <i class="fa fa-rss" aria-hidden="true"></i></a></div><div class="view view-news-items view-id-news_items view-display-id-block_1 view-dom-id-b0347435f6ee493cdf52801061b0162b">
+        
+  
+  
+      <div class="view-content">
+      <ul>
+  <li>  
+  <div>        <div></div>  </div>  
+  <div>        <span><p><a href="/news/583866">March 11, 2020: A message from President Holton regarding the coronavirus</a></p></span>  </div>  
+  <div>        <span><p class="date">March 11, 2020 </p></span>  </div></li>
+  <li>  
+  <div>        <div></div>  </div>  
+  <div>        <span><p><a href="/news/583851">March 10, 2020: Mason Develops Contingency Plans</a></p></span>  </div>  
+  <div>        <span><p class="date">March 10, 2020 </p></span>  </div></li>
+  <li>  
+  <div>        <div></div>  </div>  
+  <div>        <span><p><a href="/news/583831">March 8, 2020: Cases Confirmed in Virginia, Maryland, D.C.</a></p></span>  </div>  
+  <div>        <span><p class="date">March 8, 2020 </p></span>  </div></li>
+  <li>  
+  <div>        <div></div>  </div>  
+  <div>        <span><p><a href="/news/583826">March 6, 2020: Put Coursework Online in the Event of Campus Operation Interuption</a></p></span>  </div>  
+  <div>        <span><p class="date">March 6, 2020 </p></span>  </div></li>
+</ul>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div>
+
+
+
+
+
+<hr /><p> </p>
+
+
+
+
+
+<div class="feature">
+    <h2>Get the Latest Reports from the CDC</h2>  <p>The Centers for Disease Control and Prevention (CDC) posts reports on its response to the novel coronavirus outbreak, as well as the latest news and advice on how to avoid getting sick. They also feature guidance for <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/guidance-ihe-response.html" target="_blank">colleges and universities</a>, as well as for <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/student-foreign-travel.html" target="_blank">student foreign travel</a>.&nbsp;</p>
+      <p><a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank" class="button">LEARN MORE</a></p>
+  </div>
+
+
+
+
+
+
+<div class="feature">
+    <h2><i>New York Times</i> Offers Overview of Virus, Possible Factors in Outbreak</h2>  <p>The newspaper looks at six key areas that might have an impact on the size and spread of the outbreak, such as the rate of contagion, the incubation period, and the likely time it will take to develop a vaccine. Although&nbsp;the <em>Times</em>&nbsp;generally requires payment for access after five free articles&nbsp;per month,&nbsp;the newspaper is providing free access to stories on the global coronavirus crisis.</p>
+      <p><a href="https://www.nytimes.com/interactive/2020/world/asia/china-coronavirus-contain.html?action=click&amp;pgtype=Article&amp;state=default&amp;module=styln-coronavirus&amp;variant=show&amp;region=TOP_BANNER&amp;context=storyline_menu&amp;fbclid=IwAR0YlFA39NeslkDeK4H-eRL9NZNTQtjtvZSrTUsKjJ_MLzQ6bWNMrsJigxE" target="_blank" class="button">LEARN MORE</a></p>
+  </div>
+
+
+
+
+
+
+<div class="feature">
+    <h2><i>Washington Post</i> Compares Coronavirus and the Flu</h2>  <p>The newspaper<em>&nbsp;</em>looks at the similarities and differences between the coronavirus and the flu. Note that the&nbsp;<em>Post </em>has a paywall that goes into effect after a user hits their article limits, so reading may require a subscription.</p>
+      <p><a href="https://www.washingtonpost.com/health/2020/03/04/coronavirus-flu-comparison/" target="_blank" class="button">LEARN MORE</a></p>
+  </div>
+
+
+
+
+        </div>
+        <div class="site-sharethis"><label>Share:</label><div class="sharethis-wrapper"><span st_url="https://www2.gmu.edu/coronavirus" st_title="Coronavirus/COVID-19" class="st_facebook_large" displayText="facebook"></span>
+<span st_url="https://www2.gmu.edu/coronavirus" st_title="Coronavirus/COVID-19" class="st_twitter_large" displayText="twitter"></span>
+<span st_url="https://www2.gmu.edu/coronavirus" st_title="Coronavirus/COVID-19" class="st_linkedin_large" displayText="linkedin"></span>
+<span st_url="https://www2.gmu.edu/coronavirus" st_title="Coronavirus/COVID-19" class="st_email_large" displayText="email"></span>
+<span st_url="https://www2.gmu.edu/coronavirus" st_title="Coronavirus/COVID-19" class="st_sharethis_large" displayText="sharethis"></span>
+<span st_url="https://www2.gmu.edu/coronavirus" st_title="Coronavirus/COVID-19" class="st_pinterest_large" displayText="pinterest"></span>
+</div></div>      </div>
+    </div>
+</article></div>
+
+      </div>
+  <!-- /drawer-top -->
+  <div class="drawer-box drawer-full-stretch">
+      </div>
+</div>
+
+<footer>
+    <div class="footer">
+    <div class="wrapper">
+          
+
+  
+<div class="branding">
+  <a href="/"><img src="/sites/all/modules/features/feature_core_theme/templates/resources/images/mason-logo.png" alt="George Mason University"/></a>
+</div>
+
+
+
+
+  <div class="slogan-and-copyright desktop">
+  <h2 class="site-slogan">Patriots Brave &amp; Bold</h2>
+  <span>
+    4400 University Drive, Fairfax, Virginia 22030  <Br />
+    &copy; 2020 George Mason University – Call: +1 (703) 993-1000  </span>
+</div>
+
+<div id="footer-links">
+    <ul>
+    <li><a href="#sitemap" class="sitemap-toggle">Sitemap</a></li>
+    <li><a href="https://info.gmu.edu/campus-information/university-switchboard/#SkypeChat" target="_blank">Contact via Skype</a></li><li><a href="https://diversity.gmu.edu/node/246" target="_blank">Title IX</a></li><li><a href="https://accessibility.gmu.edu/" target="_blank">Accessibility</a></li><li><a href="https://jobs.gmu.edu/" target="_blank">Jobs</a></li><li><a href="https://irr2.gmu.edu/New/N_IRRHome/HEOA/" target="_blank">Student Consumer Information</a></li><li><a href="https://www2.gmu.edu/node/2541" target="_blank">Privacy Statement</a></li><li><a href="https://www2.gmu.edu/about-mason/freedom-information-act-requests" target="_blank">FOIA</a></li>  </ul>
+</div>
+
+<div class="slogan-and-copyright mobile">
+  <span>
+    4400 University Drive, Fairfax, Virginia 22030  <Br />
+    &copy; 2020 George Mason University – Call: +1 (703) 993-1000  </span>
+</div>
+
+
+  
+
+<div id="sitemap">
+  <p class="off-screen">Sitemap:</p>
+  <ul>
+                </li>
+                </li>
+          <li><a href="/academics">Academics</a>                <ul>
+                    <li><a href="/academics/undergraduate-programs">Undergraduate Programs</a></li>
+                              <li><a href="/academics/graduate-programs">Graduate Programs</a></li>
+                              <li><a href="/academics/colleges-and-schools">Colleges and Schools</a></li>
+                              <li><a href="/academics/mason-online">Mason Online</a></li>
+                              <li><a href="/academics/study-abroad">Study Abroad</a></li>
+                              <li><a href="/academics/smithsonian-mason-school-conservation">Smithsonian-Mason School of Conservation</a></li>
+                              <li><a href="/academics/honors-college">Honors College</a></li>
+                              <li><a href="/academics/undergraduate-research">Undergraduate Research</a></li>
+                              <li><a href="/academics/internships">Internships</a></li>
+                              <li><a href="http://catalog.gmu.edu/">Academic Catalog</a></li>
+                              <li><a href="/academics/academic-calendar">Academic Calendar</a></li>
+                              <li><a href="/academics/teaching-and-learning">Teaching and Learning</a></li>
+                              <li><a href="/academics/accessibility-resources">Accessibility Resources</a></li>
+                              <li><a href="/academics/university-libraries">University Libraries</a></li>
+                              <li><a href="/student-life/mason-stem-programs/youth-leadership-conferences">Youth Leadership Conferences</a></li>
+                              <li><a href="/academics/executive-and-professional-education">Executive and Professional Education</a></li>
+                              <li><a href="/into-mason">INTO Mason</a></li>
+                        </ul>
+          </li>
+                </li>
+                </li>
+          <li><a href="/admissions-aid">Admissions &amp; Aid</a>                <ul>
+                    <li><a href="/admissions-aid/apply-now">Apply Now</a></li>
+                              <li><a href="/admissions-aid/how-apply">How to Apply</a></li>
+                              <li><a href="/next-steps-menu-redirect">Next Steps for Admitted Students</a></li>
+                              <li><a href="/admissions-aid/visit-mason">Visit Mason</a></li>
+                              <li><a href="/admissions-aid/request-information">Request Information</a></li>
+                              <li><a href="/admissions-aid/financial-aid">Financial Aid</a></li>
+                              <li><a href="/why-mason">Why Mason?</a></li>
+                              <li><a href="/admissions-aid/paying-for-college">Paying for College</a></li>
+                              <li><a href="/admissions-aid/parents-and-families">Parents and Families</a></li>
+                              <li><a href="/admissions-aid/counselors-and-educators">Counselors and Educators</a></li>
+                              <li><a href="/admissions-aid/contact-us">Contact Us</a></li>
+                              <li><a href="/admissions-aid/advance">ADVANCE</a></li>
+                              <li><a href="/privacy-notice">Privacy Notice: Application for Admission</a></li>
+                              <li><a href="/admissions-aid/youthleaders">Youth Leadership Conferences</a></li>
+                              <li><a href="/admissions-aid/office-international-enrollment-partnerships">Office of International Enrollment Partnerships</a></li>
+                              <li><a href="/into-mason">INTO Mason</a></li>
+                        </ul>
+          </li>
+          <li><a href="/student-life">Student Life</a>                <ul>
+                    <li><a href="/student-life/housing">Residential and Off-Campus Housing</a></li>
+                              <li><a href="/student-life/where-shop">Where to Shop</a></li>
+                              <li><a href="/student-life/where-eat">Where to Eat</a></li>
+                              <li><a href="/student-life/recreation">Recreation</a></li>
+                              <li><a href="/student-life/health-and-wellness">Health and Wellness</a></li>
+                              <li><a href="/student-life/clubs-and-organizations">Clubs and Organizations</a></li>
+                              <li><a href="/student-life/activities-and-events">Activities and Events</a></li>
+                              <li><a href="/student-life/get-job">Get a Job</a></li>
+                              <li><a href="https://www2.gmu.edu/node/2596">Mason STEM Programs</a></li>
+                        </ul>
+          </li>
+          <li><a href="/research">Research</a>                <ul>
+                    <li><a href="/institutes-and-centers">Institutes and Centers</a></li>
+                              <li><a href="/research/about-mason-research">Mason Research Overview</a></li>
+                              <li><a href="/research/faculty-research-resources">Faculty Research Resources</a></li>
+                              <li><a href="/research/student-research">Student Research</a></li>
+                        </ul>
+          </li>
+          <li><a href="/about-mason">About Mason</a>                <ul>
+                    <li><a href="/about-mason/university-leadership">University Leadership</a></li>
+                              <li><a href="/about-mason/general-contact-information">General Contact Information</a></li>
+                              <li><a href="/about-mason/location-fairfax-campus">Campus Locations</a></li>
+                              <li><a href="https://construction.gmu.edu/">Construction on Campus</a></li>
+                              <li><a href="https://accessibility.gmu.edu">Accessibility</a></li>
+                              <li><a href="/about-mason/featured-faculty">Featured Faculty</a></li>
+                              <li><a href="/about-mason/featured-alumni">Featured Alumni</a></li>
+                              <li><a href="/about-mason/diversity-mason">Diversity at Mason</a></li>
+                              <li><a href="https://universitypolicy.gmu.edu">University Policy</a></li>
+                              <li><a href="/about-mason/freedom-information-act-requests">FOIA Requests</a></li>
+                              <li><a href="/discover-mason/for-media">For Media</a></li>
+                              <li><a href="/about-mason/internet-privacy">Internet Privacy</a></li>
+                              <li><a href="/about-mason/todayatmason-twitter">@TodayatMason on Twitter</a></li>
+                              <li><a href="/1stAmendment">Free Speech at Mason</a></li>
+                        </ul>
+          </li>
+                <ul>
+                                                      </ul>
+          </li>
+                </li>
+                </li>
+                <ul>
+                                                              </ul>
+          </li>
+                <ul>
+                                              </ul>
+          </li>
+                <ul>
+                                                              </ul>
+          </li>
+                <ul>
+                                              </ul>
+          </li>
+        </ul>
+</div>
+
+
+
+    </div>
+  </div>
+</footer>
+
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/jquery.hoverIntent.minified.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/owl.carousel.min.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/enquire.min.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/media.match.min.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/slick-1.5.8/slick/slick.min.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/jquery.table.scroller-1.0.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/jquery.quicksearch.min.js?q62s48"></script>
+<script type="text/javascript" src="https://www2.gmu.edu/sites/all/themes/mason_base/resources/javascript/jquery.content-effects.js?q62s48"></script>
+</body>
+</html>
