@@ -89,10 +89,10 @@ class PreloadScene extends Phaser.Scene {
         this.load.image('ground', '../../assets/ground.png');
 
         // Load sprite sheet generated with TexturePacker
-        this.load.atlas('sheet', 'assets/gameObstacles-sprites.png', 'assets/gameObstacles-sprites.json');
+        this.load.atlas('obstaclessheet', 'assets/gameObstacles-sprites.png', 'assets/gameObstacles-sprites.json');
 
         // Load body shapes from JSON file generated using PhysicsEditor
-        this.load.json('shapes', 'assets/gameObstacles.json');
+        this.load.json('obstaclesshapes', 'assets/gameObstacles.json');
 	}
 
 }

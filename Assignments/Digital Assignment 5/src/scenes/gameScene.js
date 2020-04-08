@@ -1,4 +1,5 @@
 var shapes;
+var background;
 var ground;
 var obstacles;
 var frameCounter;
@@ -18,7 +19,7 @@ class GameScene extends Phaser.Scene {
 	}
 
 	create() {
-		/*this.anims.create(
+		this.anims.create(
 			{
 				key: 'level_background',
 				frames: [
@@ -33,39 +34,20 @@ class GameScene extends Phaser.Scene {
 				],
 				frameRate: 10,
 				repeat: -1
-			});*/
-		//this.matter.add.sprite(0, 0, 'level_bg_001', { isStatic: true }).setOrigin(0, 0).play('level_background');
-		ground = this.matter.add.sprite(600, 800, 'ground', null, { isStatic: true, ignoreGravity: true }).setOrigin(0, 0);
-		//ground.setPosition(0 + ground.centerOfMass.x, 0 + ground.centerOfMass.y);
-		//this.matter.add.
-		console.log(ground);
-
+			});
+		this.matter.world.setBounds(0, 0, 1200, 720);
+		background = this.matter.add.sprite(600, 360, 'level_bg_001', { isStatic: true, ignoreGravity: true }).play('level_background');
+		//ground = this.matter.add.sprite(600, 800, 'ground', null, { isStatic: true, ignoreGravity: true }).setDepth(2).setOrigin(0, 0);
+		console.log(background.body);
+		//background.body.setCollideWorldBounds(true);
 		shapes = this.cache.json.get('shapes');
-		obstacles = this.add.group({
-			key: 'obstacles',
-			maxSize: 10,
-			//setXY: { x: Phaser.Math.Between(0, 1200), y: -50 }
-			//classType: Phaser.Physics.Matter.Image(this.world, 0, 0, null, null, {}),
-		});
 
-		var obstacle = this.matter.add.sprite(Phaser.Math.Between(0, 1200), 250, 'sheet', 'Obstacle_06.png', { shape: shapes.spikyball});
-
-		var cat1 = this.matter.world.nextCategory();
-		obstacle.setCollisionCategory(cat1);
-		ground.setCollisionCategory(cat1);
+		//var obstacle = this.matter.add.sprite(Phaser.Math.Between(0, 1200), 250, 'sheet', 'spikyball');
 	}
 
 	update() {
 		frameCounter = frameCounter + 1;
-		if (frameCounter % 125 == 0) {
-			var x = Phaser.Math.Between(1,5);
-			switch (x) {
-				case 1:
-					//var obstacle = this.matter.add.sprite(Phaser.Math.Between(0, 1200), -50, 'obstaclessheet', 'ball', { shape: obstaclesshapes.ball });
-					//obstacles.add(obstacle);
-					break;
-			}
-		}
+		
 	}
 
 

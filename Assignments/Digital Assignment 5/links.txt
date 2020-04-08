@@ -4,3 +4,22 @@ http://labs.phaser.io/edit.html?src=src\game%20objects\text\static\custom%20webf
 https://learn.yorkcs.com/2019/09/28/phaser-3-basics-custom-fonts/
 https://theultralinx.com/2013/05/stunning-animated-gifs-backgrounds-fighting-games/
 https://www.codeandweb.com/physicseditor/tutorials/how-to-create-physics-shapes-for-phaser-3-and-matterjs
+
+
+obstacles = this.add.group({
+			key: 'obstacles',
+			maxSize: 10,
+			//setXY: { x: Phaser.Math.Between(0, 1200), y: -50 }
+			//classType: Phaser.Physics.Matter.Image(this.world, 0, 0, null, null, {}),
+		});
+
+
+if (frameCounter % 125 == 0) {
+			var x = Phaser.Math.Between(1,5);
+			switch (x) {
+				case 1:
+					//var obstacle = this.matter.add.sprite(Phaser.Math.Between(0, 1200), -50, 'obstaclessheet', 'ball', { shape: obstaclesshapes.ball });
+					//obstacles.add(obstacle);
+					break;
+			}
+		}
