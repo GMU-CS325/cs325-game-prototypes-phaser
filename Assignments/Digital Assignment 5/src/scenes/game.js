@@ -18,9 +18,9 @@ var config = {
         matter: {
             debug: true
         },
-        /*gravity: {
-            y: 0.05
-        }*/
+        gravity: {
+            y: 30
+        }
     }
 };
 var game = new Phaser.Game(config);
