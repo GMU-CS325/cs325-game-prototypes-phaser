@@ -13,10 +13,13 @@ var config = {
     type: Phaser.AUTO,
     width: 1200,
     height: 720,
+    parent: 'game',
     physics: {
         default: "matter",
         matter: {
-            debug: true
+            debug: true,
+            showBody: true,
+            showStaticBody: true
         },
         gravity: {
             y: 30

@@ -73,29 +73,31 @@ class PreloadScene extends Phaser.Scene {
         });
 
         // Load sprite sheet generated with TexturePacker
-        this.load.atlas('asheet', 'assets/obs-sprites.png', 'assets/obs-sprites.json');
+        this.load.atlas('asheet', '../../assets/obs-sprites.png', '../../assets/obs-sprites.json');
 
         // Load body shapes from JSON file generated using PhysicsEditor
-        this.load.json('ashapes', 'assets/obs-shapes.json');
+        this.load.json('ashapes', '../../assets/obs-shapes.json');
 
-        this.load.atlas('ssheet', 'assets/Stick-sprites.png', 'assets/Stick-sprites.json');
-        this.load.json('sshapes', 'assets/stick-shapes.json');
+        this.load.atlas('sheet', '../../assets/fruit-sprites.png', '../../assets/fruit-sprites.json');
 
-        this.load.image('bg_001', 'assets/titleScene/bg_001.gif');
-        this.load.image('bg_002', 'assets/titleScene/bg_002.gif');
-        this.load.image('bg_003', 'assets/titleScene/bg_003.gif');
-        this.load.image('bg_004', 'assets/titleScene/bg_004.gif');
+        // Load body shapes from JSON file generated using PhysicsEditor
+        this.load.json('shapes', '../../assets/fruit-shapes.json');
 
-        this.load.image('bg1', 'assets/levelBackgrounds/level_bg_001.png');
-        this.load.image('bg2', 'assets/levelBackgrounds/level_bg_002.gif');
-        this.load.image('bg3', 'assets/levelBackgrounds/level_bg_003.gif');
-        this.load.image('bg4', 'assets/levelBackgrounds/level_bg_004.gif');
-        this.load.image('bg5', 'assets/levelBackgrounds/level_bg_005.gif');
-        this.load.image('bg6', 'assets/levelBackgrounds/level_bg_006.gif');
-        this.load.image('bg7', 'assets/levelBackgrounds/level_bg_007.gif');
-        this.load.image('bg8', 'assets/levelBackgrounds/level_bg_008.gif');
+        this.load.image('bg_001', '../../assets/titleScene/bg_001.gif');
+        this.load.image('bg_002', '../../assets/titleScene/bg_002.gif');
+        this.load.image('bg_003', '../../assets/titleScene/bg_003.gif');
+        this.load.image('bg_004', '../../assets/titleScene/bg_004.gif');
 
-        //this.load.image('ground', 'assets/ground.png');
+        this.load.image('bg1', '../../assets/levelBackgrounds/level_bg_001.png');
+        this.load.image('bg2', '../../assets/levelBackgrounds/level_bg_002.gif');
+        this.load.image('bg3', '../../assets/levelBackgrounds/level_bg_003.gif');
+        this.load.image('bg4', '../../assets/levelBackgrounds/level_bg_004.gif');
+        this.load.image('bg5', '../../assets/levelBackgrounds/level_bg_005.gif');
+        this.load.image('bg6', '../../assets/levelBackgrounds/level_bg_006.gif');
+        this.load.image('bg7', '../../assets/levelBackgrounds/level_bg_007.gif');
+        this.load.image('bg8', '../../assets/levelBackgrounds/level_bg_008.gif');
+
+        this.load.image('ground', '../../assets/ground.png');
 
         
 
