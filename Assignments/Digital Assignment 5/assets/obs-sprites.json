@@ -4,8 +4,8 @@
 			"image": "obs-sprites.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 234,
-				"h": 238
+				"w": 229,
+				"h": 324
 			},
 			"scale": 1,
 			"frames": [
@@ -31,6 +31,27 @@
 					}
 				},
 				{
+					"filename": "box",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 90
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 90
+					},
+					"frame": {
+						"x": 135,
+						"y": 1,
+						"w": 93,
+						"h": 90
+					}
+				},
+				{
 					"filename": "ball",
 					"rotated": false,
 					"trimmed": false,
@@ -52,27 +73,6 @@
 					}
 				},
 				{
-					"filename": "box",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 93,
-						"h": 90
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 93,
-						"h": 90
-					},
-					"frame": {
-						"x": 102,
-						"y": 138,
-						"w": 93,
-						"h": 90
-					}
-				},
-				{
 					"filename": "spikyball",
 					"rotated": false,
 					"trimmed": false,
@@ -87,10 +87,52 @@
 						"h": 84
 					},
 					"frame": {
-						"x": 135,
-						"y": 1,
+						"x": 1,
+						"y": 239,
 						"w": 87,
 						"h": 84
+					}
+				},
+				{
+					"filename": "P1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 199,
+						"h": 156
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 49,
+						"w": 88,
+						"h": 103
+					},
+					"frame": {
+						"x": 135,
+						"y": 93,
+						"w": 88,
+						"h": 103
+					}
+				},
+				{
+					"filename": "P2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 199,
+						"h": 156
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 49,
+						"w": 88,
+						"h": 103
+					},
+					"frame": {
+						"x": 102,
+						"y": 198,
+						"w": 88,
+						"h": 103
 					}
 				},
 				{
@@ -108,8 +150,8 @@
 						"h": 122
 					},
 					"frame": {
-						"x": 197,
-						"y": 87,
+						"x": 192,
+						"y": 198,
 						"w": 36,
 						"h": 122
 					}
@@ -120,6 +162,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:fc22c265febdb5ee2c43971f47eb2ab1:3c6b4e5d50f19a44febcd068ef6168c9:43828df11fcbf33d3235082bb075a9f1$"
+		"smartupdate": "$TexturePacker:SmartUpdate:85334e926f686d290c0bed1b93349f56:b402594fb39fe35887b083a6b87a459c:43828df11fcbf33d3235082bb075a9f1$"
 	}
 }

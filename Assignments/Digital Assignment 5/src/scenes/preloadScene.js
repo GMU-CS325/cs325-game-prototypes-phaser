@@ -97,7 +97,7 @@ class PreloadScene extends Phaser.Scene {
 
         //this.load.image('ground', 'assets/ground.png');
 
-        
+        this.load.atlas('jack', 'assets/lumberjack/jack.png', 'assets/lumberjack/jack.json');
 
         //this.load.path = '../../assets/levelBackgrounds';
         //this.load.multiatlas('megaset', '/bg_anim.json');
