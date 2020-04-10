@@ -11,13 +11,22 @@
             font-weight: 400;
             font-weight: normal;
         }
+        body {
+            color: #777;
+            font-family: "Avenir", Verdana, sans-serif;
+        }
+        #readme {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser.js"></script>
     <script src="src/scenes/game.js" type="module"></script>
-    <div style="font-family:'cdragon'; position: absolute; left:-1000px; visibility:hidden;">.</div>
+    <div style="font-family: 'cdragon'; position: absolute; left: -1000px; visibility: hidden;">.</div>
     <div id="game"></div>
-
+    <div id="readme">
+        <h2>Your game title</h2>
+    </div>
 </body>
 </html>
