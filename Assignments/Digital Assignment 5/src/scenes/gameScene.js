@@ -9,8 +9,8 @@ var jackB;
 var WASD;
 var cat1;
 
-function logA() {
-	console.log('HitA');
+function end(name) {
+	console.log(name);
 }
 
 class GameScene extends Phaser.Scene {
@@ -132,22 +132,34 @@ class GameScene extends Phaser.Scene {
 
 		jackA.setOnCollide(function (MatterCollisionData) {
 			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject) ) {
-				if ((MatterCollisionData.bodyA.gameObject.name === "P2") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet"))
+				if ((MatterCollisionData.bodyA.gameObject.name === "P2") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
 					console.log("P2 hit");
-				else if ((MatterCollisionData.bodyB.gameObject.name === "P2") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet"))
+					end(MatterCollisionData.bodyA.gameObject.name);
+				}
+				else if ((MatterCollisionData.bodyB.gameObject.name === "P2") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet")) {
 					console.log("P2 hit");
+					end(MatterCollisionData.bodyB.gameObject.name);
+				}
 			}
 		})
 
 		jackB.setOnCollide(function (MatterCollisionData) {
 			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject)) {
-				if ((MatterCollisionData.bodyA.gameObject.name === "P1") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet"))
+				if ((MatterCollisionData.bodyA.gameObject.name === "P1") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
 					console.log("P1 hit");
-				else if ((MatterCollisionData.bodyB.gameObject.name === "P1") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet"))
+					end(MatterCollisionData.bodyA.gameObject.name);
+				}
+				else if ((MatterCollisionData.bodyB.gameObject.name === "P1") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet")) {
+					end(MatterCollisionData.bodyb.gameObject.name);
 					console.log("P1 hit");
+				}
 			}
 		})
 
+	}
+
+	end(name) {
+		console.log(name);
 	}
 
 	update() {
@@ -248,11 +260,6 @@ class GameScene extends Phaser.Scene {
 			}
 
 		}
-
-	}
-
-
-	end() {
 
 	}
 
