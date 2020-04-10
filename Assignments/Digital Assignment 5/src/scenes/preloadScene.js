@@ -1,20 +1,23 @@
-class PreloadScene extends Phaser.Scene {
+var PreloadScene = new Phaser.Class({
+    Extends: Phaser.Scene,
 
-	constructor() {
-		super({ key: 'preloadScene' });
-	}
+    initialize:
 
-    preload() {
+        function PreloadScene() {
+            Phaser.Scene.call(this, 'preloadScene');
+        },
+
+    preload: function () {
         var width = this.cameras.main.width;
         var height = this.cameras.main.height;
         var progressBar = this.add.graphics();
         var progressBox = this.add.graphics();
         progressBox.fillStyle(0x222222, 0.8);
-        progressBox.fillRect(width / 2 - 350, height/2 - 40, 640, 50);
+        progressBox.fillRect(width / 2 - 350, height / 2 - 40, 640, 50);
         //Upper left x coord, then upper left y coord, then width and height
         //See fill box below
 
-        
+
         var loadingText = this.make.text({
             x: width / 2,
             y: height / 2 - 80,
@@ -53,7 +56,7 @@ class PreloadScene extends Phaser.Scene {
             percentText.setText(parseInt(value * 100) + '%');
             progressBar.clear();
             progressBar.fillStyle(0xffffff, 1);
-            progressBar.fillRect(width / 2 - 340, height/2 - 30, 625 * value, 30);
+            progressBar.fillRect(width / 2 - 340, height / 2 - 30, 625 * value, 30);
             //First arg 10 more than first arg of fillRect above, second arg same
         });
 
@@ -101,8 +104,8 @@ class PreloadScene extends Phaser.Scene {
 
         //this.load.path = '../../assets/levelBackgrounds';
         //this.load.multiatlas('megaset', '/bg_anim.json');
-	}
+    }
 
-}
+});
 
 export default PreloadScene;

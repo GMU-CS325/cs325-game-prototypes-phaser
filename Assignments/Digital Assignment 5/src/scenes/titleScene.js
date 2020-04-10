@@ -25,25 +25,20 @@ function changeOption(change) {
     buttons[currentIndex].setStyle({ fontFamily: 'cdragon', fontSize: 64, color: '#800000' });
 }
 
-class TitleScene extends Phaser.Scene {
+var TitleScene = new Phaser.Class({
+    Extends: Phaser.Scene,
+    initialize:
 
-    constructor() {
-		super({ key: 'titleScene' });
-	}
+    function TitleScene() {
+        Phaser.Scene.call(this, { key: 'titleScene' });
+	},
 
-    change(event) {
-        console.log("D");
-    }
-
-    init() {
+    init: function() {
         currentIndex = 0;
         buttons = [];
-    }
+    },
 
-	preload() {
-	}
-
-    create() {
+    create: function() {
         // console.log(this); brings up TitleScene, which it should
         this.cursorKeys = this.input.keyboard.createCursorKeys();
         this.enter = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
@@ -95,9 +90,9 @@ class TitleScene extends Phaser.Scene {
         buttons.push(playButton);
         buttons.push(surviveButton);
         buttons.push(optionButton);
-    }
+    },
 
-    update() {
+    update: function() {
         if (Phaser.Input.Keyboard.JustDown(this.cursorKeys.up)) {
             changeOption(-1);
         }
@@ -106,9 +101,11 @@ class TitleScene extends Phaser.Scene {
         }
 
         if ((currentIndex == 1) && Phaser.Input.Keyboard.JustDown(this.enter)) {
-            this.scene.start('gameScene');
+            this.scene.manager.sleep('titleScene');
+            this.scene.manager.start('gameScene');
+            //this.scene.start('gameScene');
         }
     }
-}
+});
 
 export default TitleScene;

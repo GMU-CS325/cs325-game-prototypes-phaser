@@ -7,28 +7,21 @@ var cursors;
 var jackA;
 var jackB;
 var WASD;
-var cat1;
 
-function end(name) {
-	console.log(name);
-}
+var GameScene = new Phaser.Class({
 
-class GameScene extends Phaser.Scene {
+	Extends: Phaser.Scene,
+	initialize:
 
-	constructor() {
-		super({ key: 'gameScene' });
-	}
+		function GameScene() {
+			Phaser.Scene.call(this, { key: 'gameScene' });
+		},
 
-	init() {
+	init: function() {
 		frameCounter = 0;
-	};
+	},
 
-	
-
-	preload() {
-	}
-
-	create() {
+	create: function () {
 		//var timer = this.time.delayedCall(30000, callback, args, scope); for the countdown event
 		cursors = this.input.keyboard.createCursorKeys();
 		WASD = this.input.keyboard.addKeys('W,A,S,D,TAB');
@@ -84,7 +77,7 @@ class GameScene extends Phaser.Scene {
 				zeroPad: 2
 			})
 		});
-		
+
 		this.matter.world.setBounds(0, -100, 1200, 770, 64, true, true, false, true);
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
@@ -126,19 +119,23 @@ class GameScene extends Phaser.Scene {
 			}
 		}, this);
 
-		
+
 		this.matter.world.on('collisionstart', function (event) {
 		})
 
 		jackA.setOnCollide(function (MatterCollisionData) {
-			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject) ) {
+			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject)) {
 				if ((MatterCollisionData.bodyA.gameObject.name === "P2") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
 					console.log("P2 hit");
-					end(MatterCollisionData.bodyA.gameObject.name);
+					//end(MatterCollisionData.bodyA.gameObject.name);
+					this.gameObject.scene.scene.manager.remove('gameScene');
+					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 1' });
 				}
 				else if ((MatterCollisionData.bodyB.gameObject.name === "P2") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet")) {
 					console.log("P2 hit");
-					end(MatterCollisionData.bodyB.gameObject.name);
+					//end(MatterCollisionData.bodyB.gameObject.name);
+					this.gameObject.scene.scene.manager.remove('gameScene');
+					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 1' });
 				}
 			}
 		})
@@ -147,27 +144,27 @@ class GameScene extends Phaser.Scene {
 			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject)) {
 				if ((MatterCollisionData.bodyA.gameObject.name === "P1") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
 					console.log("P1 hit");
-					end(MatterCollisionData.bodyA.gameObject.name);
+					//end(MatterCollisionData.bodyA.gameObject.name);
+					this.gameObject.scene.scene.manager.remove('gameScene'); //Remove later, this might be messign things up
+					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 2' });
 				}
 				else if ((MatterCollisionData.bodyB.gameObject.name === "P1") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet")) {
-					end(MatterCollisionData.bodyb.gameObject.name);
+					//end(MatterCollisionData.bodyb.gameObject.name);
 					console.log("P1 hit");
+					this.gameObject.scene.scene.manager.remove('gameScene');
+					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 2' });
 				}
 			}
 		})
 
-	}
+	},
 
-	end(name) {
-		console.log(name);
-	}
-
-	update() {
+	update: function () {
 		frameCounter = frameCounter + 1;
 		/*obstacles.children.each(function (obstacle) {
 			console.log(obstacle);
 		}, this);*/
-		if ( (frameCounter % 125 == 0) && (obstacles.isFull() == false)) {
+		if ((frameCounter % 125 == 0) && (obstacles.isFull() == false)) {
 			var x = Math.floor(Math.random() * 5);
 			switch (x) {
 				case 0:
@@ -192,14 +189,14 @@ class GameScene extends Phaser.Scene {
 					obstacles.add(obstacle);
 					break;
 			}
-			
+
 		}
 
 		if (cursors.left.isDown) {
 			jackA.setVelocityX(-7);
 			jackA.setFlipX(true);
 			if (jackA.body.position.y > 610) {
-				
+
 				if (jackA.anims.getCurrentKey() != 'run') {
 					jackA.play('run');
 				}
@@ -209,7 +206,7 @@ class GameScene extends Phaser.Scene {
 			jackA.setVelocityX(7);
 			jackA.setFlipX(false);
 			if (jackA.body.position.y > 610) {
-				
+
 				if (jackA.anims.getCurrentKey() != 'run') {
 					jackA.play('run');
 				}
@@ -223,16 +220,16 @@ class GameScene extends Phaser.Scene {
 		if (Phaser.Input.Keyboard.JustDown(cursors.up)) {
 			if (jackA.body.position.y > 610) {
 				jackA.play('jump');
-				jackA.setVelocityY(-13);	
+				jackA.setVelocityY(-13);
 			}
-			
+
 		}
 
 		if (WASD.A.isDown) {
 			jackB.setVelocityX(-7);
 			jackB.setFlipX(true);
 			if (jackB.body.position.y > 610) {
-				
+
 				if (jackB.anims.getCurrentKey() != 'run') {
 					jackB.play('run');
 				}
@@ -242,7 +239,7 @@ class GameScene extends Phaser.Scene {
 			jackB.setVelocityX(7);
 			jackB.setFlipX(false);
 			if (jackB.body.position.y > 610) {
-				
+
 				if (jackB.anims.getCurrentKey() != 'run') {
 					jackB.play('run');
 				}
@@ -263,6 +260,6 @@ class GameScene extends Phaser.Scene {
 
 	}
 
-}
+});
 
 export default GameScene;
