@@ -1,0 +1,167 @@
+{
+	"textures": [
+		{
+			"image": "obs-sprites.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 229,
+				"h": 324
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "manyspike",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 132,
+						"h": 135
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 132,
+						"h": 135
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 132,
+						"h": 135
+					}
+				},
+				{
+					"filename": "box",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 90
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 90
+					},
+					"frame": {
+						"x": 135,
+						"y": 1,
+						"w": 93,
+						"h": 90
+					}
+				},
+				{
+					"filename": "ball",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 99,
+						"h": 99
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 99,
+						"h": 99
+					},
+					"frame": {
+						"x": 1,
+						"y": 138,
+						"w": 99,
+						"h": 99
+					}
+				},
+				{
+					"filename": "spikyball",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 87,
+						"h": 84
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 87,
+						"h": 84
+					},
+					"frame": {
+						"x": 1,
+						"y": 239,
+						"w": 87,
+						"h": 84
+					}
+				},
+				{
+					"filename": "P1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 199,
+						"h": 156
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 49,
+						"w": 88,
+						"h": 103
+					},
+					"frame": {
+						"x": 135,
+						"y": 93,
+						"w": 88,
+						"h": 103
+					}
+				},
+				{
+					"filename": "P2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 199,
+						"h": 156
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 49,
+						"w": 88,
+						"h": 103
+					},
+					"frame": {
+						"x": 102,
+						"y": 198,
+						"w": 88,
+						"h": 103
+					}
+				},
+				{
+					"filename": "spike",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 51,
+						"h": 134
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 36,
+						"h": 122
+					},
+					"frame": {
+						"x": 192,
+						"y": 198,
+						"w": 36,
+						"h": 122
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:85334e926f686d290c0bed1b93349f56:b402594fb39fe35887b083a6b87a459c:43828df11fcbf33d3235082bb075a9f1$"
+	}
+}

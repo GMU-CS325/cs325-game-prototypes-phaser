@@ -1,0 +1,62 @@
+{
+	"textures": [
+		{
+			"image": "Stick-sprites.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 180,
+				"h": 105
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "P1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 199,
+						"h": 156
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 49,
+						"w": 88,
+						"h": 103
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 88,
+						"h": 103
+					}
+				},
+				{
+					"filename": "P2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 199,
+						"h": 156
+					},
+					"spriteSourceSize": {
+						"x": 50,
+						"y": 49,
+						"w": 88,
+						"h": 103
+					},
+					"frame": {
+						"x": 91,
+						"y": 1,
+						"w": 88,
+						"h": 103
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:280b49b96537e6934cf58537da5fa193:8541df8c189412dfd97c02e363c1a652:9ab77981095c96fddd9fb7dd35b42b71$"
+	}
+}
