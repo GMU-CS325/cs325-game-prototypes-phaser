@@ -1,0 +1,221 @@
+{
+	"textures": [
+		{
+			"image": "bg_anim-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1202,
+				"h": 1444
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "level_bg_001.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1200,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1200,
+						"h": 720
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1200,
+						"h": 720
+					}
+				},
+				{
+					"filename": "level_bg_002.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1200,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1200,
+						"h": 720
+					},
+					"frame": {
+						"x": 1,
+						"y": 723,
+						"w": 1200,
+						"h": 720
+					}
+				}
+			]
+		},
+		{
+			"image": "bg_anim-1.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1202,
+				"h": 1444
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "level_bg_003.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1200,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1200,
+						"h": 720
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1200,
+						"h": 720
+					}
+				},
+				{
+					"filename": "level_bg_004.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1200,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1200,
+						"h": 720
+					},
+					"frame": {
+						"x": 1,
+						"y": 723,
+						"w": 1200,
+						"h": 720
+					}
+				}
+			]
+		},
+		{
+			"image": "bg_anim-2.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1202,
+				"h": 1444
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "level_bg_005.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1200,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1200,
+						"h": 720
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1200,
+						"h": 720
+					}
+				},
+				{
+					"filename": "level_bg_006.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1200,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1200,
+						"h": 720
+					},
+					"frame": {
+						"x": 1,
+						"y": 723,
+						"w": 1200,
+						"h": 720
+					}
+				}
+			]
+		},
+		{
+			"image": "bg_anim-3.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1202,
+				"h": 1444
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "level_bg_007.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1200,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1200,
+						"h": 720
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1200,
+						"h": 720
+					}
+				},
+				{
+					"filename": "level_bg_008.gif",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1200,
+						"h": 720
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1200,
+						"h": 720
+					},
+					"frame": {
+						"x": 1,
+						"y": 723,
+						"w": 1200,
+						"h": 720
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:4d6e04c5fb5b7d2a72d2d17af926ee47:1be02fcbc483147d448654e7d3be7973:f4d4309d55aa4f1aab6c030c3f40c0b2$"
+	}
+}
