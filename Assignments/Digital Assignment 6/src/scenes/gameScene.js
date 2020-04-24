@@ -202,7 +202,7 @@ var GameScene = new Phaser.Class({
 		}
 
 		if (cursors.left.isDown) {
-			jackA.setVelocityX(-7);
+			jackA.x += -7;
 			jackA.setFlipX(true);
 			if (jackA.body.position.y > 610) {
 
@@ -212,7 +212,7 @@ var GameScene = new Phaser.Class({
 			}
 		}
 		else if (cursors.right.isDown) {
-			jackA.setVelocityX(7);
+			jackA.x += 7;
 			jackA.setFlipX(false);
 			if (jackA.body.position.y > 610) {
 
@@ -235,7 +235,7 @@ var GameScene = new Phaser.Class({
 		}
 
 		if (WASD.A.isDown) {
-			jackB.setVelocityX(-7);
+			jackB.x += -7;
 			jackB.setFlipX(true);
 			if (jackB.body.position.y > 610) {
 
@@ -245,7 +245,7 @@ var GameScene = new Phaser.Class({
 			}
 		}
 		else if (WASD.D.isDown) {
-			jackB.setVelocityX(7);
+			jackB.x += 7;
 			jackB.setFlipX(false);
 			if (jackB.body.position.y > 610) {
 
