@@ -4,30 +4,30 @@
 			"image": "test.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 1509,
-				"h": 117
+				"w": 1506,
+				"h": 116
 			},
 			"scale": 1,
 			"frames": [
 				{
 					"filename": "bjack_22.png",
 					"rotated": false,
-					"trimmed": false,
+					"trimmed": true,
 					"sourceSize": {
 						"w": 72,
 						"h": 117
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 0,
+						"y": 1,
 						"w": 72,
-						"h": 117
+						"h": 116
 					},
 					"frame": {
 						"x": 0,
 						"y": 0,
 						"w": 72,
-						"h": 117
+						"h": 116
 					}
 				},
 				{
@@ -159,22 +159,22 @@
 				{
 					"filename": "bjack_26.png",
 					"rotated": false,
-					"trimmed": false,
+					"trimmed": true,
 					"sourceSize": {
 						"w": 93,
 						"h": 111
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 0,
+						"y": 1,
 						"w": 93,
-						"h": 111
+						"h": 110
 					},
 					"frame": {
 						"x": 624,
 						"y": 0,
 						"w": 93,
-						"h": 111
+						"h": 110
 					}
 				},
 				{
@@ -222,21 +222,21 @@
 				{
 					"filename": "bjack_02.png",
 					"rotated": false,
-					"trimmed": false,
+					"trimmed": true,
 					"sourceSize": {
 						"w": 108,
 						"h": 105
 					},
 					"spriteSourceSize": {
-						"x": 0,
+						"x": 1,
 						"y": 0,
-						"w": 108,
+						"w": 107,
 						"h": 105
 					},
 					"frame": {
 						"x": 909,
 						"y": 0,
-						"w": 108,
+						"w": 107,
 						"h": 105
 					}
 				},
@@ -255,7 +255,7 @@
 						"h": 102
 					},
 					"frame": {
-						"x": 1017,
+						"x": 1016,
 						"y": 0,
 						"w": 93,
 						"h": 102
@@ -276,7 +276,7 @@
 						"h": 102
 					},
 					"frame": {
-						"x": 1110,
+						"x": 1109,
 						"y": 0,
 						"w": 93,
 						"h": 102
@@ -297,7 +297,7 @@
 						"h": 102
 					},
 					"frame": {
-						"x": 1203,
+						"x": 1202,
 						"y": 0,
 						"w": 90,
 						"h": 102
@@ -306,7 +306,7 @@
 				{
 					"filename": "bjack_04.png",
 					"rotated": false,
-					"trimmed": false,
+					"trimmed": true,
 					"sourceSize": {
 						"w": 66,
 						"h": 102
@@ -314,13 +314,13 @@
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 66,
+						"w": 64,
 						"h": 102
 					},
 					"frame": {
-						"x": 1293,
+						"x": 1292,
 						"y": 0,
-						"w": 66,
+						"w": 64,
 						"h": 102
 					}
 				},
@@ -339,7 +339,7 @@
 						"h": 102
 					},
 					"frame": {
-						"x": 1359,
+						"x": 1356,
 						"y": 0,
 						"w": 60,
 						"h": 102
@@ -360,7 +360,7 @@
 						"h": 99
 					},
 					"frame": {
-						"x": 1419,
+						"x": 1416,
 						"y": 0,
 						"w": 90,
 						"h": 99
@@ -372,6 +372,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:7775b27f6e4c46b8fe25363d5e164640:5032c89deeaecd32e9d4f7e66d3dfa0a:02ab132358d6d8b512e80119463a8329$"
+		"smartupdate": "$TexturePacker:SmartUpdate:51d07aafc2e96b85a9e3c262ed77eb74:69bbe0062819f84d22d25b7e578136ab:02ab132358d6d8b512e80119463a8329$"
 	}
 }
