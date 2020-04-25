@@ -82,7 +82,6 @@ var GameScene = new Phaser.Class({
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
 		shapes = this.cache.json.get('ashapes');
-		stickshapes = this.cache.json.get('sshapes');
 
 		obstacles = this.add.group({
 			key: 'obstacles',
@@ -118,10 +117,6 @@ var GameScene = new Phaser.Class({
 				jackB.play('idle');
 			}
 		}, this);
-
-
-		this.matter.world.on('collisionstart', function (event) {
-		})
 
 		jackA.setOnCollide(function (MatterCollisionData) {
 			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject)) {
