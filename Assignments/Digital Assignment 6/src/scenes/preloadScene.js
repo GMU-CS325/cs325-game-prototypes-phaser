@@ -81,8 +81,8 @@ var PreloadScene = new Phaser.Class({
         // Load body shapes from JSON file generated using PhysicsEditor
         this.load.json('ashapes', 'assets/obs-shapes.json');
 
-        this.load.atlas('ssheet', 'assets/Stick-sprites.png', 'assets/Stick-sprites.json');
-        this.load.json('sshapes', 'assets/stick-shapes.json');
+        this.load.atlas('testsheet', 'assets/test.png ', 'assets/test.json');
+        this.load.json('testshapes', 'assets/testbody.json')
 
         this.load.image('bg_001', 'assets/titleScene/bg_001.gif');
         this.load.image('bg_002', 'assets/titleScene/bg_002.gif');
