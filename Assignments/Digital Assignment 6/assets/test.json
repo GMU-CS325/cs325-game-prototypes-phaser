@@ -1,0 +1,377 @@
+{
+	"textures": [
+		{
+			"image": "test.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1509,
+				"h": 117
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "bjack_22.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 72,
+						"h": 117
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 72,
+						"h": 117
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 72,
+						"h": 117
+					}
+				},
+				{
+					"filename": "bjack_05.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 114
+					},
+					"frame": {
+						"x": 72,
+						"y": 0,
+						"w": 93,
+						"h": 114
+					}
+				},
+				{
+					"filename": "bjack_08.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 114
+					},
+					"frame": {
+						"x": 165,
+						"y": 0,
+						"w": 93,
+						"h": 114
+					}
+				},
+				{
+					"filename": "bjack_29.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 114
+					},
+					"frame": {
+						"x": 258,
+						"y": 0,
+						"w": 93,
+						"h": 114
+					}
+				},
+				{
+					"filename": "bjack_06.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 90,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 90,
+						"h": 114
+					},
+					"frame": {
+						"x": 351,
+						"y": 0,
+						"w": 90,
+						"h": 114
+					}
+				},
+				{
+					"filename": "bjack_07.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 90,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 90,
+						"h": 114
+					},
+					"frame": {
+						"x": 441,
+						"y": 0,
+						"w": 90,
+						"h": 114
+					}
+				},
+				{
+					"filename": "bjack_21.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 111
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 111
+					},
+					"frame": {
+						"x": 531,
+						"y": 0,
+						"w": 93,
+						"h": 111
+					}
+				},
+				{
+					"filename": "bjack_26.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 111
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 111
+					},
+					"frame": {
+						"x": 624,
+						"y": 0,
+						"w": 93,
+						"h": 111
+					}
+				},
+				{
+					"filename": "bjack_03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 99,
+						"h": 108
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 99,
+						"h": 108
+					},
+					"frame": {
+						"x": 717,
+						"y": 0,
+						"w": 99,
+						"h": 108
+					}
+				},
+				{
+					"filename": "bjack_25.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 108
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 108
+					},
+					"frame": {
+						"x": 816,
+						"y": 0,
+						"w": 93,
+						"h": 108
+					}
+				},
+				{
+					"filename": "bjack_02.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 108,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 108,
+						"h": 105
+					},
+					"frame": {
+						"x": 909,
+						"y": 0,
+						"w": 108,
+						"h": 105
+					}
+				},
+				{
+					"filename": "bjack_24.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 102
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 102
+					},
+					"frame": {
+						"x": 1017,
+						"y": 0,
+						"w": 93,
+						"h": 102
+					}
+				},
+				{
+					"filename": "bjack_28.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 102
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 102
+					},
+					"frame": {
+						"x": 1110,
+						"y": 0,
+						"w": 93,
+						"h": 102
+					}
+				},
+				{
+					"filename": "bjack_27.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 90,
+						"h": 102
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 90,
+						"h": 102
+					},
+					"frame": {
+						"x": 1203,
+						"y": 0,
+						"w": 90,
+						"h": 102
+					}
+				},
+				{
+					"filename": "bjack_04.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 66,
+						"h": 102
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 66,
+						"h": 102
+					},
+					"frame": {
+						"x": 1293,
+						"y": 0,
+						"w": 66,
+						"h": 102
+					}
+				},
+				{
+					"filename": "bjack_01.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 60,
+						"h": 102
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 60,
+						"h": 102
+					},
+					"frame": {
+						"x": 1359,
+						"y": 0,
+						"w": 60,
+						"h": 102
+					}
+				},
+				{
+					"filename": "bjack_23.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 90,
+						"h": 99
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 90,
+						"h": 99
+					},
+					"frame": {
+						"x": 1419,
+						"y": 0,
+						"w": 90,
+						"h": 99
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:7775b27f6e4c46b8fe25363d5e164640:5032c89deeaecd32e9d4f7e66d3dfa0a:02ab132358d6d8b512e80119463a8329$"
+	}
+}
