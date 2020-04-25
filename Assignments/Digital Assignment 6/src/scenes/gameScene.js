@@ -1,5 +1,5 @@
 var shapes;
-var stickshapes;
+var testshapes;
 var background;
 var frameCounter;
 var obstacles;
@@ -45,7 +45,7 @@ var GameScene = new Phaser.Class({
 		this.anims.create({
 			key: 'jump',
 			frameRate: 10,
-			frames: this.anims.generateFrameNames('jack', {
+			frames: this.anims.generateFrameNames('testsheet', {
 				prefix: 'bjack_',
 				suffix: '.png',
 				start: 21,
@@ -57,7 +57,7 @@ var GameScene = new Phaser.Class({
 		this.anims.create({
 			key: 'run',
 			frameRate: 10,
-			frames: this.anims.generateFrameNames('jack', {
+			frames: this.anims.generateFrameNames('testsheet', {
 				prefix: 'bjack_',
 				suffix: '.png',
 				start: 1,
@@ -69,7 +69,7 @@ var GameScene = new Phaser.Class({
 		this.anims.create({
 			key: 'idle',
 			frameRate: 10,
-			frames: this.anims.generateFrameNames('jack', {
+			frames: this.anims.generateFrameNames('testsheet', {
 				prefix: 'bjack_',
 				suffix: '.png',
 				start: 5,
@@ -82,6 +82,7 @@ var GameScene = new Phaser.Class({
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
 		shapes = this.cache.json.get('ashapes');
+		testshapes = this.cache.json.get('testshapes');
 
 		obstacles = this.add.group({
 			key: 'obstacles',
@@ -94,10 +95,10 @@ var GameScene = new Phaser.Class({
 			}
 		});
 		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
-		jackB = this.matter.add.sprite(100, 620, 'jack', 'bjack_06.png').setScale(3);
+		jackB = this.matter.add.sprite(100, 620, 'testsheet', 'bjack_06.png');
 		jackB.body.gameObject.name = "P1";
 		console.log(jackB.body.gameObject.name);
-		jackA = this.matter.add.sprite(1100, 620, 'jack', 'bjack_06.png').setScale(3).setFlipX(true);
+		jackA = this.matter.add.sprite(1100, 620, 'testsheet', 'bjack_06.png').setFlipX(true);
 		jackA.body.gameObject.name = "P2";
 
 		jackA.on('animationcomplete', function (animation, frame) {
