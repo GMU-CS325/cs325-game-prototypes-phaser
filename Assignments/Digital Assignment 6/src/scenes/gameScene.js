@@ -7,6 +7,7 @@ var cursors;
 var jackA;
 var jackB;
 var WASD;
+var cat1;
 
 var GameScene = new Phaser.Class({
 
@@ -19,6 +20,7 @@ var GameScene = new Phaser.Class({
 
 	init: function() {
 		frameCounter = 0;
+		cat1 = this.matter.world.nextCategory();
 	},
 
 	create: function () {
@@ -86,7 +88,7 @@ var GameScene = new Phaser.Class({
 
 		obstacles = this.add.group({
 			key: 'obstacles',
-			maxSize: 8, //Only 7 spawned?
+			maxSize: 2, //Only 7 spawned?
 			//setXY: { x: Phaser.Math.Between(0, 1200), y: -50 }
 			//classType: Phaser.Physics.Matter.Image(this.world, 0, 0, null, null, {}),
 			createCallback: function (obstacle) {
@@ -94,12 +96,17 @@ var GameScene = new Phaser.Class({
 				console.log(obstacle.name);
 			}
 		});
+
+		
 		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
 		jackB = this.matter.add.sprite(100, 620, 'testsheet', 'bjack_06.png');
 		jackB.body.gameObject.name = "P1";
 		console.log(jackB.body.gameObject.name);
-		jackA = this.matter.add.sprite(1100, 620, 'testsheet', 'bjack_06.png').setFlipX(true);
+		jackA = this.matter.add.sprite(1100, 620, 'testsheet', 'bjack_06.png', { shape: testshapes.bjack_06 }).setFlipX(true);
+		console.log(jackA.body);
+		console.log(jackB.body);
 		jackA.body.gameObject.name = "P2";
+		jackA.setCollisionCategory(cat1);
 
 		jackA.on('animationcomplete', function (animation, frame) {
 			if (animation.key === 'jump') {
@@ -118,7 +125,14 @@ var GameScene = new Phaser.Class({
 				jackB.play('idle');
 			}
 		}, this);
+		console.log(background);
 
+		/*this.matter.world.on('collisionactive', function (bodyA, bodyB) {
+			if (bodyA.label != "Rectangle Body" || bodyB.label != "Rectangle Body")
+				console.log("Ground hit!");
+			else
+				console.log("Yamete!");
+        })*/
 		jackA.setOnCollide(function (MatterCollisionData) {
 			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject)) {
 				if ((MatterCollisionData.bodyA.gameObject.name === "P2") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
@@ -187,8 +201,10 @@ var GameScene = new Phaser.Class({
 					break;
 			}
 			obstacle.setBounce(1.25);
+			obstacle.setCollisionCategory(cat1);
+			
 			var timer = this.time.addEvent({
-				delay: 6000,
+				delay: 60000,
 				callback: function () {
 					obstacles.killAndHide(obstacle);
 					obstacle.destroy();
