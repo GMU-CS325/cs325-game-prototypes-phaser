@@ -132,7 +132,7 @@
             <key>json</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>assets/test.json</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -163,7 +163,7 @@
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
             <key>extrude</key>
-            <uint>1</uint>
+            <uint>0</uint>
             <key>trimThreshold</key>
             <uint>1</uint>
             <key>trimMargin</key>
@@ -181,7 +181,7 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">lumberjack/bjack_01.png</key>
+            <key type="filename">assets/jack/bjack_01.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -190,13 +190,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>5,9,10,17</rect>
+                <rect>15,26,30,51</rect>
                 <key>scale9Paddings</key>
-                <rect>5,9,10,17</rect>
+                <rect>15,26,30,51</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_02.png</key>
+            <key type="filename">assets/jack/bjack_02.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -205,13 +205,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>9,9,18,17</rect>
+                <rect>27,26,54,53</rect>
                 <key>scale9Paddings</key>
-                <rect>9,9,18,17</rect>
+                <rect>27,26,54,53</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_03.png</key>
+            <key type="filename">assets/jack/bjack_03.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -220,13 +220,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,9,17,18</rect>
+                <rect>25,27,49,54</rect>
                 <key>scale9Paddings</key>
-                <rect>8,9,17,18</rect>
+                <rect>25,27,49,54</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_04.png</key>
+            <key type="filename">assets/jack/bjack_04.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -235,17 +235,15 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>6,9,11,17</rect>
+                <rect>17,26,33,51</rect>
                 <key>scale9Paddings</key>
-                <rect>6,9,11,17</rect>
+                <rect>17,26,33,51</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_05.png</key>
-            <key type="filename">lumberjack/bjack_06.png</key>
-            <key type="filename">lumberjack/bjack_07.png</key>
-            <key type="filename">lumberjack/bjack_08.png</key>
-            <key type="filename">lumberjack/bjack_29.png</key>
+            <key type="filename">assets/jack/bjack_05.png</key>
+            <key type="filename">assets/jack/bjack_08.png</key>
+            <key type="filename">assets/jack/bjack_29.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -254,14 +252,14 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,10,15,19</rect>
+                <rect>23,29,47,57</rect>
                 <key>scale9Paddings</key>
-                <rect>8,10,15,19</rect>
+                <rect>23,29,47,57</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_21.png</key>
-            <key type="filename">lumberjack/bjack_26.png</key>
+            <key type="filename">assets/jack/bjack_06.png</key>
+            <key type="filename">assets/jack/bjack_07.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -270,13 +268,14 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,9,15,19</rect>
+                <rect>23,29,45,57</rect>
                 <key>scale9Paddings</key>
-                <rect>8,9,15,19</rect>
+                <rect>23,29,45,57</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_22.png</key>
+            <key type="filename">assets/jack/bjack_21.png</key>
+            <key type="filename">assets/jack/bjack_26.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -285,13 +284,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>6,10,12,19</rect>
+                <rect>23,28,47,55</rect>
                 <key>scale9Paddings</key>
-                <rect>6,10,12,19</rect>
+                <rect>23,28,47,55</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_23.png</key>
+            <key type="filename">assets/jack/bjack_22.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -300,15 +299,13 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,8,15,17</rect>
+                <rect>18,29,36,59</rect>
                 <key>scale9Paddings</key>
-                <rect>8,8,15,17</rect>
+                <rect>18,29,36,59</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_24.png</key>
-            <key type="filename">lumberjack/bjack_27.png</key>
-            <key type="filename">lumberjack/bjack_28.png</key>
+            <key type="filename">assets/jack/bjack_23.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -317,13 +314,14 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,9,15,17</rect>
+                <rect>23,25,45,49</rect>
                 <key>scale9Paddings</key>
-                <rect>8,9,15,17</rect>
+                <rect>23,25,45,49</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">lumberjack/bjack_25.png</key>
+            <key type="filename">assets/jack/bjack_24.png</key>
+            <key type="filename">assets/jack/bjack_28.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -332,32 +330,62 @@
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>8,9,15,18</rect>
+                <rect>23,26,47,51</rect>
                 <key>scale9Paddings</key>
-                <rect>8,9,15,18</rect>
+                <rect>23,26,47,51</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">assets/jack/bjack_25.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>23,27,47,54</rect>
+                <key>scale9Paddings</key>
+                <rect>23,27,47,54</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">assets/jack/bjack_27.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>23,26,45,51</rect>
+                <key>scale9Paddings</key>
+                <rect>23,26,45,51</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>lumberjack/bjack_21.png</filename>
-            <filename>lumberjack/bjack_22.png</filename>
-            <filename>lumberjack/bjack_23.png</filename>
-            <filename>lumberjack/bjack_24.png</filename>
-            <filename>lumberjack/bjack_25.png</filename>
-            <filename>lumberjack/bjack_26.png</filename>
-            <filename>lumberjack/bjack_27.png</filename>
-            <filename>lumberjack/bjack_28.png</filename>
-            <filename>lumberjack/bjack_29.png</filename>
-            <filename>lumberjack/bjack_01.png</filename>
-            <filename>lumberjack/bjack_02.png</filename>
-            <filename>lumberjack/bjack_03.png</filename>
-            <filename>lumberjack/bjack_04.png</filename>
-            <filename>lumberjack/bjack_05.png</filename>
-            <filename>lumberjack/bjack_06.png</filename>
-            <filename>lumberjack/bjack_07.png</filename>
-            <filename>lumberjack/bjack_08.png</filename>
+            <filename>assets/jack/bjack_01.png</filename>
+            <filename>assets/jack/bjack_02.png</filename>
+            <filename>assets/jack/bjack_03.png</filename>
+            <filename>assets/jack/bjack_04.png</filename>
+            <filename>assets/jack/bjack_05.png</filename>
+            <filename>assets/jack/bjack_06.png</filename>
+            <filename>assets/jack/bjack_07.png</filename>
+            <filename>assets/jack/bjack_08.png</filename>
+            <filename>assets/jack/bjack_21.png</filename>
+            <filename>assets/jack/bjack_22.png</filename>
+            <filename>assets/jack/bjack_23.png</filename>
+            <filename>assets/jack/bjack_24.png</filename>
+            <filename>assets/jack/bjack_25.png</filename>
+            <filename>assets/jack/bjack_26.png</filename>
+            <filename>assets/jack/bjack_27.png</filename>
+            <filename>assets/jack/bjack_28.png</filename>
+            <filename>assets/jack/bjack_29.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
