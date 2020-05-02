@@ -35,5 +35,13 @@ game.scene.add('titleScene', titleScene);
 game.scene.add("game", gameScene);
 game.scene.add("endScene", endScene);
 
+preloadScene.makeText = function() {
+    console.log("Yippee!");
+}
+
+function makeText () {
+    console.log("Yippee!");
+}
+
 // start title
 game.scene.start('preloadScene');

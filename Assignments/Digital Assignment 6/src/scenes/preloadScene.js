@@ -1,13 +1,14 @@
 var PreloadScene = new Phaser.Class({
     Extends: Phaser.Scene,
-
     initialize:
 
-        function PreloadScene() {
-            Phaser.Scene.call(this, 'preloadScene');
-        },
+    function PreloadScene() {
+        Phaser.Scene.call(this, 'preloadScene');
+    },
 
     preload: function () {
+        //width and height are used to center the position of text. Fiddle around with the x and y coordinates as you see fit
+        //This uses JS graphics
         var width = this.cameras.main.width;
         var height = this.cameras.main.height;
         var progressBar = this.add.graphics();
@@ -15,8 +16,7 @@ var PreloadScene = new Phaser.Class({
         progressBox.fillStyle(0x222222, 0.8);
         progressBox.fillRect(width / 2 - 350, height / 2 - 40, 640, 50);
         //Upper left x coord, then upper left y coord, then width and height
-        //See fill box below
-
+        //See fillRect in changePercentText
 
         var loadingText = this.make.text({
             x: width / 2,
@@ -51,22 +51,11 @@ var PreloadScene = new Phaser.Class({
         });
         assetText.setOrigin(0.5, 0.5);
 
-        this.load.on('progress', function (value) {
-            //console.log(value);
-            percentText.setText(parseInt(value * 100) + '%');
-            progressBar.clear();
-            progressBar.fillStyle(0xffffff, 1);
-            progressBar.fillRect(width / 2 - 340, height / 2 - 30, 625 * value, 30);
-            //First arg 10 more than first arg of fillRect above, second arg same
-        });
-
-        this.load.on('fileprogress', function (file) {
-            //console.log(file.src);
-            assetText.setText('Loading asset: ' + file.src);
-        });
+        changePercentText(this, percentText, progressBar, width, height);
+        changeAssetText(this, assetText);
 
         this.load.on('complete', function () {
-            //console.log('complete');
+            //destroy everything
             progressBar.destroy();
             progressBox.destroy();
             loadingText.destroy();
@@ -75,37 +64,60 @@ var PreloadScene = new Phaser.Class({
             this.scene.scene.start('titleScene');
         });
 
-        // Load sprite sheet generated with TexturePacker
-        this.load.atlas('asheet', 'assets/obs-sprites.png', 'assets/obs-sprites.json');
-
-        // Load body shapes from JSON file generated using PhysicsEditor
-        this.load.json('ashapes', 'assets/obs-shapes.json');
-
-        this.load.atlas('testsheet', 'assets/test.png ', 'assets/test.json');
-        this.load.json('testshapes', 'assets/testbody.json')
-
-        this.load.image('bg_001', 'assets/titleScene/bg_001.gif');
-        this.load.image('bg_002', 'assets/titleScene/bg_002.gif');
-        this.load.image('bg_003', 'assets/titleScene/bg_003.gif');
-        this.load.image('bg_004', 'assets/titleScene/bg_004.gif');
-
-        this.load.image('bg1', 'assets/levelBackgrounds/level_bg_001.png');
-        this.load.image('bg2', 'assets/levelBackgrounds/level_bg_002.gif');
-        this.load.image('bg3', 'assets/levelBackgrounds/level_bg_003.gif');
-        this.load.image('bg4', 'assets/levelBackgrounds/level_bg_004.gif');
-        this.load.image('bg5', 'assets/levelBackgrounds/level_bg_005.gif');
-        this.load.image('bg6', 'assets/levelBackgrounds/level_bg_006.gif');
-        this.load.image('bg7', 'assets/levelBackgrounds/level_bg_007.gif');
-        this.load.image('bg8', 'assets/levelBackgrounds/level_bg_008.gif');
-
-        //this.load.image('ground', 'assets/ground.png');
-
-        this.load.atlas('jack', 'assets/lumberjack/jack.png', 'assets/lumberjack/jack.json');
-
-        //this.load.path = '../../assets/levelBackgrounds';
-        //this.load.multiatlas('megaset', '/bg_anim.json');
-    }
+        loadFiles(this);
+    },
 
 });
+
+function changePercentText(scene, percentText, progressBar, width, height) {
+    //File has completed loading
+    scene.load.on('progress', function (value) {
+        var prevVal = parseInt((percentText._text.split("%"))[0]); //similar to strtok in C
+        console.log(prevVal);
+        while (prevVal < parseInt(value * 100)) {
+            percentText.setText(prevVal + '%');
+            progressBar.clear();
+            progressBar.fillStyle(0xffffff, 1);
+            progressBar.fillRect(width / 2 - 340, height / 2 - 30, 625 * value, 30);
+            prevVal = prevVal + 1;
+        }
+        //First arg 10 more than first arg of fillRect above, second arg same
+    });
+}
+
+function changeAssetText(scene, assetText) {
+    //changed from fileprogress
+    scene.load.on('filecomplete', function (file) {
+        console.log(file);
+        assetText.setText('Loading asset: ' + file);
+    });
+}
+
+function loadFiles(scene) {
+    // Load sprite sheet generated with TexturePacker
+    scene.load.atlas('asheet', 'assets/obs-sprites.png', 'assets/obs-sprites.json');
+
+    // Load body shapes from JSON file generated using PhysicsEditor
+    scene.load.json('ashapes', 'assets/obs-shapes.json');
+
+    scene.load.atlas('testsheet', 'assets/test.png ', 'assets/test.json');
+    scene.load.json('testshapes', 'assets/testbody.json');
+
+    scene.load.atlas('jack', 'assets/jack/jack.png', 'assets/jack/jack.json');
+
+    scene.load.image('bg_001', 'assets/titleScene/bg_001.gif');
+    scene.load.image('bg_002', 'assets/titleScene/bg_002.gif');
+    scene.load.image('bg_003', 'assets/titleScene/bg_003.gif');
+    scene.load.image('bg_004', 'assets/titleScene/bg_004.gif');
+
+    scene.load.image('bg1', 'assets/levelBackgrounds/level_bg_001.png');
+    scene.load.image('bg2', 'assets/levelBackgrounds/level_bg_002.gif');
+    scene.load.image('bg3', 'assets/levelBackgrounds/level_bg_003.gif');
+    scene.load.image('bg4', 'assets/levelBackgrounds/level_bg_004.gif');
+    scene.load.image('bg5', 'assets/levelBackgrounds/level_bg_005.gif');
+    scene.load.image('bg6', 'assets/levelBackgrounds/level_bg_006.gif');
+    scene.load.image('bg7', 'assets/levelBackgrounds/level_bg_007.gif');
+    scene.load.image('bg8', 'assets/levelBackgrounds/level_bg_008.gif');
+}
 
 export default PreloadScene;
