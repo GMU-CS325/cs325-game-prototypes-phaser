@@ -7,13 +7,8 @@ var currentIndex;
 
 var cursorKeys;
 
-function change(event) {
-    console.log("D");
-}
-
 function changeOption(change) {
-    console.log("In function");
-    buttons[currentIndex].setStyle({ fontFamily: 'cdragon', fontSize: 64, color: '#000000' });
+    buttons[currentIndex].setStyle({ fontFamily: 'dragon', fontSize: 64, color: '#000000' });
     //At top, loop back to bottom
     if (currentIndex + change == -1) {
         currentIndex = buttons.length - 1;
@@ -22,7 +17,7 @@ function changeOption(change) {
         currentIndex = (currentIndex + change) % buttons.length;
     }
 
-    buttons[currentIndex].setStyle({ fontFamily: 'cdragon', fontSize: 64, color: '#800000' });
+    buttons[currentIndex].setStyle({ fontFamily: 'dragon', fontSize: 64, color: '#800000' });
 }
 
 var TitleScene = new Phaser.Class({
@@ -42,6 +37,7 @@ var TitleScene = new Phaser.Class({
         // console.log(this); brings up TitleScene, which it should
         this.cursorKeys = this.input.keyboard.createCursorKeys();
         this.enter = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+
         this.anims.create(
         {
             key: 'background',
@@ -56,32 +52,30 @@ var TitleScene = new Phaser.Class({
         });
         this.add.sprite(0, 0, 'bg_001').setOrigin(0, 0).play('background');
 
-        var add = this.add;
-        var input = this.input;
         var width = this.cameras.main.width;
 
         this.add.text(width / 8, 32, 'Brutal Brawl', {
-            fontFamily: 'cdragon',
+            fontFamily: 'dragon',
             fontSize: 160,
             color: '#ff0000'
         }).setShadow(15, 15, "#111111", 2, false, true);
 
         playButton = this.add.text(width / 2 - 75, 300, 'Classic', {
-            fontFamily: 'cdragon',
+            fontFamily: 'dragon',
             fontSize: 60,
             color: '#800000'
         });
         playButton.setInteractive();
 
         surviveButton = this.add.text(width / 2 - 75, 375, 'Survive', {
-            fontFamily: 'cdragon',
+            fontFamily: 'dragon',
             fontSize: 60,
             color: '#000000'
         });
         surviveButton.setInteractive();
 
         optionButton = this.add.text(width / 2 - 75, 450, 'Options', {
-            fontFamily: 'cdragon',
+            fontFamily: 'dragon',
             fontSize: 60,
             color: '#000000'
         });
@@ -103,7 +97,6 @@ var TitleScene = new Phaser.Class({
         if ((currentIndex == 1) && Phaser.Input.Keyboard.JustDown(this.enter)) {
             this.scene.manager.sleep('titleScene');
             this.scene.manager.start('gameScene');
-            //this.scene.start('gameScene');
         }
     }
 });

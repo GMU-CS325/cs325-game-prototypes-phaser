@@ -83,11 +83,11 @@ var GameScene = new Phaser.Class({
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
 		shapes = this.cache.json.get('ashapes');
-		//testshapes = this.cache.json.get('testshapes');
+		testshapes = this.cache.json.get('testshapes');
 
 		obstacles = this.add.group({
 			key: 'obstacles',
-			maxSize: 2, //Only 7 spawned?
+			maxSize: 2, //Only 3 spawned?
 			//setXY: { x: Phaser.Math.Between(0, 1200), y: -50 }
 			//classType: Phaser.Physics.Matter.Image(this.world, 0, 0, null, null, {}),
 			createCallback: function (obstacle) {
@@ -100,12 +100,10 @@ var GameScene = new Phaser.Class({
 		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
 		jackB = this.matter.add.sprite(100, 620, 'testsheet', 'bjack_06.png');
 		jackB.body.gameObject.name = "P1";
-		console.log(jackB.body.gameObject.name);
 		jackA = this.matter.add.sprite(1100, 620, 'testsheet', 'bjack_06.png').setFlipX(true);
 		console.log(jackA.body);
 		console.log(jackB.body);
 		jackA.body.gameObject.name = "P2";
-		jackA.setCollisionCategory(cat1);
 
 		jackA.on('animationcomplete', function (animation, frame) {
 			if (animation.key === 'jump') {
@@ -132,6 +130,7 @@ var GameScene = new Phaser.Class({
 			else
 				console.log("Yamete!");
         })*/
+
 		jackA.setOnCollide(function (MatterCollisionData) {
 			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject)) {
 				if ((MatterCollisionData.bodyA.gameObject.name === "P2") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
