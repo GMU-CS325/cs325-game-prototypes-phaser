@@ -24,7 +24,6 @@ var GameScene = new Phaser.Class({
 	},
 
 	create: function () {
-		//var timer = this.time.delayedCall(30000, callback, args, scope); for the countdown event
 		cursors = this.input.keyboard.createCursorKeys();
 		WASD = this.input.keyboard.addKeys('W,A,S,D,TAB');
 		this.anims.create(
@@ -84,7 +83,7 @@ var GameScene = new Phaser.Class({
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
 		shapes = this.cache.json.get('ashapes');
-		testshapes = this.cache.json.get('testshapes');
+		//testshapes = this.cache.json.get('testshapes');
 
 		obstacles = this.add.group({
 			key: 'obstacles',
@@ -102,7 +101,7 @@ var GameScene = new Phaser.Class({
 		jackB = this.matter.add.sprite(100, 620, 'testsheet', 'bjack_06.png');
 		jackB.body.gameObject.name = "P1";
 		console.log(jackB.body.gameObject.name);
-		jackA = this.matter.add.sprite(1100, 620, 'testsheet', 'bjack_06.png', { shape: testshapes.bjack_06 }).setFlipX(true);
+		jackA = this.matter.add.sprite(1100, 620, 'testsheet', 'bjack_06.png').setFlipX(true);
 		console.log(jackA.body);
 		console.log(jackB.body);
 		jackA.body.gameObject.name = "P2";
@@ -204,7 +203,7 @@ var GameScene = new Phaser.Class({
 			obstacle.setCollisionCategory(cat1);
 			
 			var timer = this.time.addEvent({
-				delay: 60000,
+				delay: 6000,
 				callback: function () {
 					obstacles.killAndHide(obstacle);
 					obstacle.destroy();
