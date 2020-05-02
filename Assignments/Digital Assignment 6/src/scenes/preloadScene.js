@@ -73,7 +73,6 @@ function changePercentText(scene, percentText, progressBar, width, height) {
     //File has completed loading
     scene.load.on('progress', function (value) {
         var prevVal = parseInt((percentText._text.split("%"))[0]); //similar to strtok in C
-        console.log(prevVal);
         while (prevVal < parseInt(value * 100)) {
             percentText.setText(prevVal + '%');
             progressBar.clear();
@@ -88,20 +87,19 @@ function changePercentText(scene, percentText, progressBar, width, height) {
 function changeAssetText(scene, assetText) {
     //changed from fileprogress
     scene.load.on('filecomplete', function (file) {
-        console.log(file);
         assetText.setText('Loading asset: ' + file);
     });
 }
 
 function loadFiles(scene) {
     // Load sprite sheet generated with TexturePacker
-    scene.load.atlas('asheet', 'assets/obs-sprites.png', 'assets/obs-sprites.json');
+    scene.load.atlas('asheet', 'assets/atlas_json/obs-sprites.png', 'assets/atlas_json/obs-sprites.json');
 
     // Load body shapes from JSON file generated using PhysicsEditor
-    scene.load.json('ashapes', 'assets/obs-shapes.json');
+    scene.load.json('ashapes', 'assets/atlas_json/obs-shapes.json');
 
-    scene.load.atlas('testsheet', 'assets/test.png ', 'assets/test.json');
-    scene.load.json('testshapes', 'assets/testbody.json');
+    scene.load.atlas('testsheet', 'assets/atlas_json/test.png ', 'assets/atlas_json/test.json');
+    scene.load.json('testshapes', 'assets/atlas_json/testbody.json');
 
     scene.load.atlas('jack', 'assets/jack/jack.png', 'assets/jack/jack.json');
 
