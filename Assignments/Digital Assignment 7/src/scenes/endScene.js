@@ -5,7 +5,7 @@ var replayButton;
 var winner;
 
 function changeOption(change) {
-	buttons[currentIndex].setStyle({ fontFamily: 'dragon', fontSize: 64, color: '#800000' });
+	buttons[currentIndex].setStyle({ fontFamily: 'dragon', fontSize: 64, color: '#333333' });
 	//At top, loop back to bottom
 	if (currentIndex + change == -1) {
 		currentIndex = buttons.length - 1;
@@ -14,7 +14,7 @@ function changeOption(change) {
 		currentIndex = (currentIndex + change) % buttons.length;
 	}
 
-	buttons[currentIndex].setStyle({ fontFamily: 'dragon', fontSize: 64, color: '#333333' });
+	buttons[currentIndex].setStyle({ fontFamily: 'dragon', fontSize: 64, color: '#800000' });
 }
 
 var EndScene = new Phaser.Class({
@@ -30,6 +30,8 @@ var EndScene = new Phaser.Class({
 		currentIndex = 0;
 		buttons = [];
 		winner = data.winner;
+		this.scene.stop('gameScene');
+		this.scene.stop('titleScene');
 	},
 
 	create: function () {
@@ -76,15 +78,11 @@ var EndScene = new Phaser.Class({
 		}
 
 		if ((currentIndex == 0) && Phaser.Input.Keyboard.JustDown(this.enter)) {
-			this.scene.manager.sleep('endScene');
-			this.scene.manager.start('titleScene');
-			//this.scene.start('gameScene');
+			this.scene.transition({ target: 'titleScene', moveAbove: true });
 		}
 
 		if ((currentIndex == 1) && Phaser.Input.Keyboard.JustDown(this.enter)) {
-			this.scene.manager.sleep('endScene');
-			this.scene.restart('gameScene');
-			this.scene.run('gameScene');
+			this.scene.transition({ target: 'gameScene', moveAbove: true });
 		}
 	}
 });
