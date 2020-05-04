@@ -24,6 +24,8 @@ var GameScene = new Phaser.Class({
 	},
 
 	create: function () {
+		//var player1 = new Player(this, 300, 620, 'testsheet', 'bjack_06.png');
+
 		cursors = this.input.keyboard.createCursorKeys();
 		WASD = this.input.keyboard.addKeys('W,A,S,D,TAB');
 		this.anims.create(
@@ -136,13 +138,13 @@ var GameScene = new Phaser.Class({
 				if ((MatterCollisionData.bodyA.gameObject.name === "P2") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
 					console.log("P2 hit");
 					//end(MatterCollisionData.bodyA.gameObject.name);
-					this.gameObject.scene.scene.manager.remove('gameScene');
+					//this.gameObject.scene.scene.manager.remove('gameScene');
 					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 1' });
 				}
 				else if ((MatterCollisionData.bodyB.gameObject.name === "P2") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet")) {
 					console.log("P2 hit");
 					//end(MatterCollisionData.bodyB.gameObject.name);
-					this.gameObject.scene.scene.manager.remove('gameScene');
+					//this.gameObject.scene.scene.manager.remove('gameScene');
 					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 1' });
 				}
 			}
@@ -153,13 +155,13 @@ var GameScene = new Phaser.Class({
 				if ((MatterCollisionData.bodyA.gameObject.name === "P1") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
 					console.log("P1 hit");
 					//end(MatterCollisionData.bodyA.gameObject.name);
-					this.gameObject.scene.scene.manager.remove('gameScene'); //Remove later, this might be messign things up
+					//this.gameObject.scene.scene.manager.remove('gameScene'); //Remove later, this might be messing things up
 					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 2' });
 				}
 				else if ((MatterCollisionData.bodyB.gameObject.name === "P1") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet")) {
 					//end(MatterCollisionData.bodyb.gameObject.name);
 					console.log("P1 hit");
-					this.gameObject.scene.scene.manager.remove('gameScene');
+					//this.gameObject.scene.scene.manager.remove('gameScene');
 					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 2' });
 				}
 			}

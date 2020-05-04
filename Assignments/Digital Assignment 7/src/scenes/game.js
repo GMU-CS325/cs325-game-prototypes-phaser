@@ -1,6 +1,7 @@
 var scene = new Phaser.Scene("game");
 
 import TitleScene from './titleScene.js';
+//import Player from './player.js';
 import GameScene from './gameScene.js';
 import PreloadScene from './preloadScene.js';
 import endScene from './endScene.js';
@@ -9,6 +10,7 @@ import endScene from './endScene.js';
 var gameScene = new GameScene();
 var titleScene = new TitleScene();
 var preloadScene = new PreloadScene();
+//var player = new Player();
 
 var config = {
     type: Phaser.AUTO,
@@ -32,7 +34,7 @@ var game = new Phaser.Game(config);
 // load scenes
 game.scene.add('preloadScene', preloadScene);
 game.scene.add('titleScene', titleScene);
-game.scene.add("game", gameScene);
+game.scene.add("gameScene", gameScene);
 game.scene.add("endScene", endScene);
 
 preloadScene.makeText = function() {
