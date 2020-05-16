@@ -24,7 +24,7 @@ var GameScene = new Phaser.Class({
 	},
 
 	create: function () {
-		//var player1 = new Player(this, 300, 620, 'testsheet', 'bjack_06.png');
+		this.player1 = new Player(this, 400, 520, 'testsheet', 'bjack_06.png');
 
 		cursors = this.input.keyboard.createCursorKeys();
 		WASD = this.input.keyboard.addKeys('W,A,S,D,TAB');
@@ -103,7 +103,7 @@ var GameScene = new Phaser.Class({
 		jackB = this.matter.add.sprite(100, 620, 'testsheet', 'bjack_06.png');
 		jackB.body.gameObject.name = "P1";
 		jackA = this.matter.add.sprite(1100, 620, 'testsheet', 'bjack_06.png').setFlipX(true);
-		console.log(jackA.body);
+		console.log(jackA);
 		console.log(jackB.body);
 		jackA.body.gameObject.name = "P2";
 
@@ -171,6 +171,7 @@ var GameScene = new Phaser.Class({
 
 	update: function () {
 		frameCounter = frameCounter + 1;
+		this.player1.update();
 		/*obstacles.children.each(function (obstacle) {
 			console.log(obstacle);
 		}, this);*/
