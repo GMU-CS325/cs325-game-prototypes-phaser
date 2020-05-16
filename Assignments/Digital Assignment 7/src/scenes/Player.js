@@ -1,11 +1,27 @@
-class Player extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, texture, frame) {
-        super(scene, x, y, texture, frame);
-        this.setTexture(texture);
-        this.setPosition(x, y);
+class Player extends Phaser.Physics.Matter.Sprite {
+    constructor(scene, x, y, key, frame ) {
+        super(scene.matter.world, x, y, key, frame);
+        scene.add.existing(this);
         this.scene = scene;
-        this.scene.add.existing(this);
+        this.setPosition(x, y);
+        this.setTexture(key);
+        this.setFrame(frame);
+        
+        console.log(this);
+        //this.setBody("rectangle");
         this.setData("health", 100);
+
+        scene.anims.create({
+            key: 'idle',
+            frameRate: 10,
+            frames: scene.anims.generateFrameNames('testsheet', {
+                prefix: 'bjack_',
+                suffix: '.png',
+                start: 5,
+                end: 8,
+                zeroPad: 2
+            })
+        });
     }
 
     //In create function, do this.children.add(new EnemyRobot(this, 264, 250, name of texture));
@@ -46,6 +62,7 @@ class Player extends Phaser.GameObjects.Sprite {
     }
 
     update() {
-        this.setVelocityX(0);
+        console.log(this.body);
+        //this.setVelocityX(0);
     }
 }
