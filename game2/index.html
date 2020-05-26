@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>Door to Hell</title>
+            <script src="js/phaser.js"></script>
+            <script src="js/main.js"></script>
+            
+            <style>
+                body
+                {
+                    color: #777;
+                    font-family: "Avenir", Verdana, sans-serif;
+                }
+            #readme
+            {
+                margin-top: 10px;
+            }
+            </style>
+            
+    </head>
+    <body>
+        <div id="game"></div>
+        <div id="readme">
+            <h2>Door to Hell</h2>
+            
+            <ul>
+                <li><strong>Originality:</strong>
+                    This game is a multiplayer game with one player having point-and-click controls and another player with keyboard controls.
+                </li>
+                
+                <li><strong>Technical Merit:</strong>
+                    Had to use tween to move a sprite to the mouse-click location in combination with a check to see if there should be a walking animation or not.
+                    Also, I made a rudimentary system to keep track of game states of "play" and "end". I also had to figure out a way to trigger the sound of a footstep 
+                    depending on the current frame of the animation when the player is walking.
+                </li>
+                
+                <li><strong>Prototype Postmortem:</strong>
+                    The most challenging part was initially figuring out how to combine a point-and-click experience with multiplayer capability. In addition to that,
+                    I had to figure out a way to use tween to move the sprite in a way that it would maintain relatively constant speed depending on a variable duration of the tween.
+                    I also learned how to activate animations and face the sprite in the correct direction.
+                 
+                </li>
+                
+                <li><strong>Prototype Assets:</strong>
+                    Used sprites made by 'Alex' and background made by user, 'ansimuz' found on itch.io
+                    <ul>
+                        <li>Sprites: <a href="https://alexs-assets.itch.io/side-view-game-assets">Sprites page</a></li>
+                        <li>Background <a href="https://ansimuz.itch.io/grunge-horror-environment">Grunge Horror Environment</a></li>
+                        <li>Sounds are all from Phaser examples
+                    </ul>
+                    
+                    
+                </li>
+                
+                <li><strong>Prototype Closest Other Game:</strong>
+                    N/A
+                </li>
+                
+                <li><strong>High Concept:</strong>
+                    <i>Door to Hell</i> is a simple multiplayer mind game where player assumes the role of a human and another is Death itself.
+                </li>
+                
+                <li><strong>Theme:</strong>
+                    The theme is semi-horror and death.
+                </li>
+                
+                <li><strong>Mandated Variety:</strong>
+                    <ul>
+                        <li>Input: mouse to move and select options for player 1, arrow keys for player 2</li>
+                    </ul>
+                    
+                </li>
+                
+                <li><strong>Prototype Goal:</strong>
+                    This game was designed to prototype how to implement point-and-click movement and animation as well as multiplayer capability in a game.
+                </li>
+                
+                <li><strong>Player Experience Goals:</strong>
+                    I want players to have fun playing a simple mind game.
+                </li>
+                
+                <li><strong>Gameplay:</strong>
+                    Player 1: Use mouse to point-and-click for movement as well as selecting which door they want to go through.
+                    <br>Player 2: Use the left and right arrow keys to secretly select a door to hide behind.
+                    <br>The main mechanic of the game is just a guessing game where one player has control to commit which is the winning door and which is the losing door. 
+                    The first player must then choose which door. There may also be social interactions between the two players, since they will
+                    be next to each other and can ask player 2 which door they chose to hide behind.
+             
+                </li>
+                
+                <li><strong>Strategies:</strong>
+                    There aren't any strategies to this game if there are no scial interactions between the players. The strategy may
+                    be limited to just tricking or reading the other player's intentions.
+                </li>
+                
+                <li><strong>Story/Setting/Premise:</strong>
+                   There is no story or background and the setting is just a dark alleyway with two doors. Basically, a 
+                    human must choose the correct door to live, or the wrong door to die.
+                </li>
+                
+                <li><strong>Target Audience:</strong>
+                    This game is designed for all audiences.
+                </li>
+                
+                <li><strong>Play Time:</strong>
+                    Play time for one round is less than one minute. 
+                </li>
+                
+            </ul>
+            
+        </div>
+    </body>
+</html>

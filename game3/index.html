@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Digital Assignment #3</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/End.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Detention Escape</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+While the game is loosely based on the children's game of "red light, green light", this game is different by 
+	having four directions of "checking" by the detector and there are obstacles (students) to hinder your success.
+</li>
+
+<li><strong>Technical Merit:</strong>
+This game features a new level on every playthrough because of the randomly generated obstacles (students), and the random
+	behavior of the detector (teacher). Also, it features game states to give the game possibility for replay without having
+	to restart the webpage.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+From this prototype, I learned more about the P2 physics system as well as how to handle collisions between character and groups.
+	It was difficult to get used to the style of coding when game states are involves due to the numerous "this.xxx" statements 
+	that are needed. Also, it was difficult to create sprites/graphics at a level of satisfaction that I wanted. Eventually
+	had to compromise for a more realistic finish time.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+<ul>
+<li>Loading screen/bar: self-made</li>
+<li>Main menu screen: self-made</li>
+<li>Character sprites: self-made</li>
+<li>Music: "School" by Komiku  <a href="http://freemusicarchive.org/music/Komiku/Captain_Glouglous_Incredible_Week_Soundtrack/school">Link to song</a></li>
+<li>Tile set: <a href="https://ccrgeek.wordpress.com/2016/01/01/mv-school-tile-set/">Candy Coded Response</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+N/A
+</li>
+
+<li><strong>High Concept:</strong>
+A twist on the classic 'Red Light, Green Light' game placed in a school setting.
+</li>
+
+<li><strong>Theme:</strong>
+"LAST DAY OF SCHOOL"
+</li>
+
+<li><strong>Mandated Variety:</strong>
+<ul>
+<li>Input: keyboard (spacebar to start game, arrow keys to move around</li>
+<li>Randomness: generation of obstacles (students) and the direction teacher is facing</li>
+<li>Genre: top-down escape game</li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+This game is testing obstacle creation, as well as incorporating detection events to create a semi-stealth escape game.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+I want players to experience an upgraded version of a common childhood game that they may have played on the playground.
+</li>
+
+<li><strong>Gameplay:</strong>
+The player controls the character with arrow keys (up, down, left, right) in order to navigate through a series of immovable 
+	desks and students to get to the exit. The game is lost if the teacher spots you not behind a desk. The game is won
+	by simply reaching the exit door. 
+</li>
+
+<li><strong>Strategies:</strong>
+Strategies may include waiting for the teacher to turn around and trying to figure out just how much time it takes for the teacher
+	to change directions. This will give the player a general idea of how long they have to actually move.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+The main character is placed into detention on the last day of school for not wearing the proper school uniform. 
+	This can be evident in the actual sprite models, as the player character is the only one not wearing the same
+	clothing as the other students. The teacher is a typical, angry detention supervisor who will chase after you
+	if you are caught trying to leave.
+</li>
+
+<li><strong>Target Audience:</strong>
+The target demographic is for anyone of all ages.
+</li>
+
+<li><strong>Play Time:</strong>
+The game can take around one minute or less to play.
+</li>
+
+</ul>
+</div>
+</body>
+</html>
