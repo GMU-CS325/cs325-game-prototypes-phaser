@@ -1,10 +1,13 @@
 class Player extends Phaser.Physics.Matter.Sprite {
-    constructor(scene, x, y, key, frame ) {
-        super(scene.matter.world, x, y, key, frame);
+    constructor(scene, x, y, texture, frame ) {
+        super(scene.matter.world, x, y, texture, frame);
         scene.add.existing(this);
+        scene.sys.updateList.add(this);
+        scene.sys.displayList.add(this);
+        this.sprite = this;
         this.scene = scene;
         this.setPosition(x, y);
-        this.setTexture(key);
+        this.setTexture(texture);
         this.setFrame(frame);
         
         console.log(this);

@@ -8,6 +8,7 @@ var jackA;
 var jackB;
 var WASD;
 var cat1;
+var player2;
 
 var GameScene = new Phaser.Class({
 
@@ -24,7 +25,7 @@ var GameScene = new Phaser.Class({
 	},
 
 	create: function () {
-		this.player1 = new Player(this, 400, 520, 'testsheet', 'bjack_06.png');
+		
 
 		cursors = this.input.keyboard.createCursorKeys();
 		WASD = this.input.keyboard.addKeys('W,A,S,D,TAB');
@@ -84,6 +85,9 @@ var GameScene = new Phaser.Class({
 		this.matter.world.setBounds(0, -100, 1200, 770, 64, true, true, false, true);
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
+		this.player1 = new Player(this, 400, 520, 'testsheet', 'bjack_06.png');
+		player2 = new Player(this, 600, 520, 'testsheet', 'bjack_06.png');
+
 		shapes = this.cache.json.get('ashapes');
 		testshapes = this.cache.json.get('testshapes');
 
@@ -94,7 +98,7 @@ var GameScene = new Phaser.Class({
 			//classType: Phaser.Physics.Matter.Image(this.world, 0, 0, null, null, {}),
 			createCallback: function (obstacle) {
 				obstacle.setName('Obstacle ' + this.getLength());
-				console.log(obstacle.name);
+				//console.log(obstacle.name);
 			}
 		});
 
@@ -103,13 +107,13 @@ var GameScene = new Phaser.Class({
 		jackB = this.matter.add.sprite(100, 620, 'testsheet', 'bjack_06.png');
 		jackB.body.gameObject.name = "P1";
 		jackA = this.matter.add.sprite(1100, 620, 'testsheet', 'bjack_06.png').setFlipX(true);
-		console.log(jackA);
-		console.log(jackB.body);
+		//console.log(jackA);
+		//console.log(jackB.body);
 		jackA.body.gameObject.name = "P2";
 
 		jackA.on('animationcomplete', function (animation, frame) {
 			if (animation.key === 'jump') {
-				console.log("He jumpth");
+				//console.log("He jumpth");
 			}
 			else if (animation.key === 'run') {
 				jackA.play('idle');
@@ -136,13 +140,13 @@ var GameScene = new Phaser.Class({
 		jackA.setOnCollide(function (MatterCollisionData) {
 			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject)) {
 				if ((MatterCollisionData.bodyA.gameObject.name === "P2") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
-					console.log("P2 hit");
+					//console.log("P2 hit");
 					//end(MatterCollisionData.bodyA.gameObject.name);
 					//this.gameObject.scene.scene.manager.remove('gameScene');
 					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 1' });
 				}
 				else if ((MatterCollisionData.bodyB.gameObject.name === "P2") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet")) {
-					console.log("P2 hit");
+					//console.log("P2 hit");
 					//end(MatterCollisionData.bodyB.gameObject.name);
 					//this.gameObject.scene.scene.manager.remove('gameScene');
 					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 1' });
@@ -153,14 +157,14 @@ var GameScene = new Phaser.Class({
 		jackB.setOnCollide(function (MatterCollisionData) {
 			if ((MatterCollisionData.bodyA.gameObject) && (MatterCollisionData.bodyB.gameObject)) {
 				if ((MatterCollisionData.bodyA.gameObject.name === "P1") && (MatterCollisionData.bodyB.gameObject.texture.key === "asheet")) {
-					console.log("P1 hit");
+					//console.log("P1 hit");
 					//end(MatterCollisionData.bodyA.gameObject.name);
 					//this.gameObject.scene.scene.manager.remove('gameScene'); //Remove later, this might be messing things up
 					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 2' });
 				}
 				else if ((MatterCollisionData.bodyB.gameObject.name === "P1") && (MatterCollisionData.bodyA.gameObject.texture.key === "asheet")) {
 					//end(MatterCollisionData.bodyb.gameObject.name);
-					console.log("P1 hit");
+					//console.log("P1 hit");
 					//this.gameObject.scene.scene.manager.remove('gameScene');
 					this.gameObject.scene.scene.manager.start('endScene', { winner: 'Player 2' });
 				}
@@ -171,7 +175,7 @@ var GameScene = new Phaser.Class({
 
 	update: function () {
 		frameCounter = frameCounter + 1;
-		this.player1.update();
+		//this.player1.update();
 		/*obstacles.children.each(function (obstacle) {
 			console.log(obstacle);
 		}, this);*/
@@ -216,6 +220,9 @@ var GameScene = new Phaser.Class({
 
 		if (cursors.left.isDown) {
 			jackA.x += -7;
+			this.player1 += -7;
+			console.log(this.player1);
+			console.log(player2);
 			jackA.setFlipX(true);
 			if (jackA.body.position.y > 610) {
 
