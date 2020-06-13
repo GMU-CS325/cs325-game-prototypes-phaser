@@ -7,7 +7,6 @@ var cursors;
 var jackA;
 var jackB;
 var WASD;
-var cat1;
 var player2;
 
 var GameScene = new Phaser.Class({
@@ -21,7 +20,6 @@ var GameScene = new Phaser.Class({
 
 	init: function() {
 		frameCounter = 0;
-		cat1 = this.matter.world.nextCategory();
 	},
 
 	create: function () {
@@ -85,7 +83,6 @@ var GameScene = new Phaser.Class({
 		this.matter.world.setBounds(0, -100, 1200, 770, 64, true, true, false, true);
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
-		this.player1 = new Player(this, 400, 520, 'testsheet', 'bjack_06.png');
 		player2 = new Player(this, 600, 520, 'testsheet', 'bjack_06.png');
 
 		shapes = this.cache.json.get('ashapes');
@@ -113,9 +110,10 @@ var GameScene = new Phaser.Class({
 
 		jackA.on('animationcomplete', function (animation, frame) {
 			if (animation.key === 'jump') {
-				//console.log("He jumpth");
+				console.log("He jumpth");
 			}
 			else if (animation.key === 'run') {
+				console.log("Run anim compelte");
 				jackA.play('idle');
 			}
 		}, this);
@@ -173,12 +171,10 @@ var GameScene = new Phaser.Class({
 
 	},
 
-	update: function () {
+	update: function (time, delta) {
+		player2.update(time, delta);
+		//console.log(jackA.anims.getCurrentKey());
 		frameCounter = frameCounter + 1;
-		//this.player1.update();
-		/*obstacles.children.each(function (obstacle) {
-			console.log(obstacle);
-		}, this);*/
 		if ((frameCounter % 125 == 0) && (obstacles.isFull() == false)) {
 			var x = Math.floor(Math.random() * 5);
 			var obstacle;
@@ -206,7 +202,6 @@ var GameScene = new Phaser.Class({
 					break;
 			}
 			obstacle.setBounce(1.25);
-			obstacle.setCollisionCategory(cat1);
 			
 			var timer = this.time.addEvent({
 				delay: 6000,
@@ -220,9 +215,6 @@ var GameScene = new Phaser.Class({
 
 		if (cursors.left.isDown) {
 			jackA.x += -7;
-			this.player1 += -7;
-			console.log(this.player1);
-			console.log(player2);
 			jackA.setFlipX(true);
 			if (jackA.body.position.y > 610) {
 
@@ -243,7 +235,6 @@ var GameScene = new Phaser.Class({
 		}
 		else {
 			jackA.setVelocityX(0);
-			//jackA.play('idle');
 		}
 
 		if (Phaser.Input.Keyboard.JustDown(cursors.up)) {
