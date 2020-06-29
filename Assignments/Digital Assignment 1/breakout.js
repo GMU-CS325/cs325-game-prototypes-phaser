@@ -1,7 +1,7 @@
 // JavaScript source code
 let player, ball, greenBricks, blueBricks, redBricks, cursors;
 let gameStarted = false;
-let openingText, gameOverText, playerWonText;
+let openingText, gameOverText, playerWonText, scoreText, highScoreText;
 let frameCounter = 0;
 
 function isGameOver(world) {
