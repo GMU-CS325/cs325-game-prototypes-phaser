@@ -1,200 +1,115 @@
-﻿<!doctype html> 
+﻿<!DOCTYPE html>
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8" />
-    <title>HW0-Breakout</title>
-    <script src="//cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser.js"></script>
-    <script src="breakout.js"></script>
+    <title>Breakout Breakdown</title>
     <style type="text/css">
         body {
-            margin: 0;
+            color: #777;
+            font-family: "Avenir", Verdana, sans-serif;
+        }
+
+        #readme {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.22.0/dist/phaser.js"></script>
+    <script src="breakout.js"></script>
+    <script src= "game.js" type="module"></script>
+    <div id="game"></div>
+    <div id="readme">
+        <h2>Breakout Breakdown</h2>
 
-<script type="text/javascript">
+        <ul>
+            <li>
+                <strong>Originality:</strong>
+                What is original about your game?
+                The game keeps going faster and faster, until the player inevitably makes a mistake. I say inevitably, because it is unlikely he'll break all the bricks first.
+            </li>
 
-    var config = {
-        type: Phaser.AUTO,
-        width: 800,
-        height: 600,
-        physics: {
-            default: 'arcade',
-            arcade: {
-                gravity:false,
-            },
-        },
-        scene: {
-            preload: preload,
-            create: create,
-            update: update
-        },
+            <li>
+                <strong>Technical Merit:</strong>
+                What is interesting about your game technology?
+                That it loads and plays background music on loop.
+            </li>
 
-        audio: {
-        disableWebAudio: true
-        }
-    };
+            <li>
+                <strong>Prototype Postmortem:</strong>
+                What did you learn from this prototype?
+                What was the easiest or hardest part of making it?
+                The hardest part was actually trying to copy the code. After that everything else was easy.
+            </li>
 
-    var game = new Phaser.Game(config);
+            <li>
+                <strong>Prototype Assets:</strong>
+                Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+                <ul>
+                    <li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
+                    <li>Audio Code: <a href="https://github.com/photonstorm/phaser3-examples/blob/master/public/src/audio/HTML5%20Audio/play%20audio%20file.js">Audio code</a> </li>
+                    <li>Images: <a href="https://github.com/photonstorm/phaser3-examples/tree/master/public/assets">Audio code</a> </li>
+                    <li>Breakout code: <a href="https://stackabuse.com/introduction-to-phaser-3-building-breakout/">Breakout code</a> </li>
+                    <li>Mii music: <a href="https://www.youtube.com/watch?v=-YWg-H_Dt04">Audio source</a> </li>
+                </ul>
+            </li>
 
-    function preload ()
-    {
-        this.load.image('background', 'assets/sky.png');
-        this.load.image('ball', 'assets/ball1.png');
-        this.load.image('paddle', 'assets/paddle1.png');
-        this.load.image('greenBrick', 'assets/green1.png');
-        this.load.image('blueBrick', 'assets/blue1.png');
-        this.load.image('redBrick', 'assets/red1.png');
+            <li>
+                <strong>Prototype Closest Other Game:</strong>
+                It mostly resembles Breakout. The breakout code was gotten from this URL: <a href="https://stackabuse.com/introduction-to-phaser-3-building-breakout/">Breakout code</a>
+            </li>
 
-        this.load.audio('theme', [
-        'assets/Mii.ogg',
-        'assets/Mii.mp3'
-        ]);
-    }
+            <li>
+                <strong>High Concept:</strong>
+                The goal is to break all the bricks on the screen or die trying.
+            </li>
 
-    function create ()
-    {
-        this.add.image(400, 300, 'background');
+            <li>
+                <strong>Theme:</strong>
+                State which of the Storymatic themes you used.
+            </li>
 
-        //Enable world bounds, disable the floor
-        this.physics.world.setBoundsCollision(true, true, true, false);
-   
-        ball = this.physics.add.sprite(400,545,'ball');
-        player = this.physics.add.sprite(400, 570, 'paddle');
+            <li>
+                <strong>Mandated Variety:</strong>
+                The keyboard was used as input. The randomness includes the speed that the ball will increase in and the size of the paddle.
+            </li>
 
-        greenBricks = this.physics.add.group({
-            key: 'greenBrick',
-            repeat: 9,
-            immovable: true, //To make ball keep moving
-            setXY: {
-                x: 80,
-                y: 190,
-                stepX: 70
-            }
-        });
+            <li>
+                <strong>Prototype Goal:</strong>
+                What game mechanic is this prototype evaluating?
+            </li>
 
-        blueBricks = this.physics.add.group({
-            key: 'blueBrick',
-            repeat: 9,
-            immovable: true,
-            setXY: {
-                x: 80,
-                y: 140,
-                stepX: 70
-            }
-        });
+            <li>
+                <strong>Player Experience Goals:</strong>
+                Tense frustration as the ball keeps getting faster and faster.
+            </li>
 
-        redBricks = this.physics.add.group({
-            key: 'redBrick',
-            repeat: 9,
-            immovable: true,
-            setXY: {
-                x: 80,
-                y: 90,
-                stepX: 70
-            }
-        });
+            <li>
+                <strong>Gameplay:</strong>
+                The core mechanic of the game is moving the paddle with the left and right arrows and hitting the ball with the paddle. The ball is used to destroy the bricks, which will happen upon contact.
+            </li>
 
-        openingText = this.add.text(
-        this.physics.world.bounds.width / 2,
-        this.physics.world.bounds.height / 2,
-        'Press SPACE to Start',
-        {
-            fontFamily: 'Monaco, Courier, monospace',
-            fontSize: '50px',
-            fill: '#fff'
-        }
-        );
-        openingText.setOrigin(0.5);
+            <li>
+                <strong>Strategies:</strong>
+                Keeping watch of the paddle, to make sure it doesn't randomnly change size when they don't expect it.
+            </li>
 
-        // Create game over text
-        gameOverText = this.add.text(
-        this.physics.world.bounds.width / 2,
-        this.physics.world.bounds.height / 2,
-        'Game Over',
-        {
-            fontFamily: 'Monaco, Courier, monospace',
-            fontSize: '50px',
-            fill: 'black'
-        }
-        );
-        gameOverText.setOrigin(0.5);
-        // Make it invisible until the player loses
-        gameOverText.setVisible(false);
+            <li>
+                <strong>Story/Setting/Premise:</strong>
+                Not much story in this game. Just a simple paddle trying to break simple bricks.
+            </li>
 
-        // Create the game won text
-        playerWonText = this.add.text(
-        this.physics.world.bounds.width / 2,
-        this.physics.world.bounds.height / 2,
-        'You won!',
-        {
-            fontFamily: 'Monaco, Courier, monospace',
-            fontSize: '50px',
-            fill: '#fff'
-        }
-        );
-        playerWonText.setOrigin(0.5);
-        // Make it invisible until the player wins
-        playerWonText.setVisible(false);
+            <li>
+                <strong>Target Audience:</strong>
+                People who are fond of clones of games and who like Breakout.
+            </li>
 
-        cursors = this.input.keyboard.createCursorKeys();
-        player.setCollideWorldBounds(true);
-        ball.setCollideWorldBounds(true);
+            <li>
+                <strong>Play Time:</strong>
+                About one minute.
+            </li>
 
-        ball.setBounce(1, 1);
-
-        this.physics.add.collider(ball, greenBricks, hitBrick, null, this);
-        this.physics.add.collider(ball, redBricks, hitBrick, null, this);
-        this.physics.add.collider(ball, blueBricks, hitBrick, null, this);
-        player.setImmovable(true);
-        this.physics.add.collider(ball, player, hitPlayer, null, this);
-
-        var music = this.sound.add('theme');
-        music.setLoop(true);
-        music.play();
-    }
-
-    function update ()
-    {
-        // Check if the ball left the scene i.e. game over
-        frameCounter++;
-        if (isGameOver(this.physics.world)) {
-            gameOverText.setVisible(true);
-            ball.disableBody(true, true);
-        }
-        else if (isWon()) {
-            playerWonText.setVisible(true);
-            ball.disableBody(true, true);
-        }
-        else {
-            // Put this in so that the player stays still if no key is being pressed
-            player.body.setVelocityX(0);
-            let chance = Math.random();
-            let newSize = Math.random();
-            if( (chance < 0.5) && (frameCounter % 25 == 0))
-                player.setDisplaySize((newSize * 250), 24);
-
-            //Be right above cursor
-            if (!gameStarted) {
-                ball.setX(player.x);
-            }
-
-            if (cursors.space.isDown) {
-                gameStarted = true;
-                ball.setVelocityY(-200);
-                openingText.setVisible(false);
-            }
-
-            if (cursors.left.isDown) {
-                player.body.setVelocityX(-500);
-            } else if (cursors.right.isDown) {
-                player.body.setVelocityX(500);
-            }
-        }
-    }
-
-</script>
-
+        </ul>
+    </div>
 </body>
 </html>

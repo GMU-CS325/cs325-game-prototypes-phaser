@@ -10,7 +10,6 @@ import endScene from './endScene.js';
 var gameScene = new GameScene();
 var titleScene = new TitleScene();
 var preloadScene = new PreloadScene();
-//var player = new Player();
 
 var config = {
     type: Phaser.AUTO,
