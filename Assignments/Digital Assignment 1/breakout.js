@@ -1,11 +1,11 @@
 // JavaScript source code
 let player, ball, greenBricks, blueBricks, redBricks, cursors;
 let gameStarted = false;
-let openingText, gameOverText, playerWonText, scoreText, highScoreText;
+let openingText, gameOverText, playerWonText, scoreText, highScoreText, replayText;
 let frameCounter = 0;
 
 function isGameOver(world) {
-    console.log(Boolean(ball.body.y > world.bounds.height));
+    //console.log(Boolean(ball.body.y > world.bounds.height));
     return ball.body.y > world.bounds.height;
 }
 
@@ -13,6 +13,12 @@ function isWon() {
     return greenBricks.countActive()
         + blueBricks.countActive()
         + redBricks.countActive() === 0;
+}
+
+function bricksHit() {
+    return (greenBricks.getLength() - greenBricks.countActive())
+        + (redBricks.getLength() - redBricks.countActive())
+        + (blueBricks.getLength() - blueBricks.countActive());
 }
 
 function hitBrick(ball, brick) {
