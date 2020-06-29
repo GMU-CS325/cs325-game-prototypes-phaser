@@ -91,6 +91,30 @@ var GameScene = new Phaser.Class({
         // Make it invisible until the player wins
         playerWonText.setVisible(false);
 
+        scoreText = this.add.text(
+            this.physics.world.bounds.width - 95,
+            15,
+            'Score: ',
+            {
+                fontFamily: 'Monaco, Courier, monospace',
+                fontSize: '25px',
+                fill: '#fff'
+            }
+        );
+        scoreText.setOrigin(0.5);
+
+        highScoreText = this.add.text(
+            this.physics.world.bounds.width - 135,
+            45,
+            'High Score: ',
+            {
+                fontFamily: 'Monaco, Courier, monospace',
+                fontSize: '25px',
+                fill: '#fff'
+            }
+        );
+        highScoreText.setOrigin(0.5);
+
         cursors = this.input.keyboard.createCursorKeys();
         player.setCollideWorldBounds(true);
         ball.setCollideWorldBounds(true);
@@ -105,44 +129,46 @@ var GameScene = new Phaser.Class({
 
         var music = this.sound.add('theme');
         music.setLoop(true);
-        music.play();
+
+        this.input.keyboard.once('keydown-SPACE', () => {
+            gameStarted = true;
+            ball.setVelocityY(-200);
+            openingText.setVisible(false);
+            if(music.isPlaying == false)
+                music.play();
+        })
 	},
 
 	update: function () {
         // Check if the ball left the scene i.e. game over
         frameCounter++;
-        if (isGameOver(this.physics.world)) {
-            gameOverText.setVisible(true);
-            ball.disableBody(true, true);
-        }
-        else if (isWon()) {
-            playerWonText.setVisible(true);
-            ball.disableBody(true, true);
+        if (!gameStarted) {
+            //Be right above cursor
+            ball.setX(player.x);
         }
         else {
-            // Put this in so that the player stays still if no key is being pressed
-            player.body.setVelocityX(0);
-            let chance = Math.random();
-            let newSize = Math.random();
-            if ((chance < 0.5) && (frameCounter % 25 == 0))
-                player.setDisplaySize((newSize * 250), 24);
-
-            //Be right above cursor
-            if (!gameStarted) {
-                ball.setX(player.x);
+            if (isGameOver(this.physics.world)) {
+                gameOverText.setVisible(true);
+                ball.disableBody(true, true);
             }
-
-            if (cursors.space.isDown) {
-                gameStarted = true;
-                ball.setVelocityY(-200);
-                openingText.setVisible(false);
+            else if (isWon()) {
+                playerWonText.setVisible(true);
+                ball.disableBody(true, true);
             }
+            else {
+                // Put this in so that the player stays still if no key is being pressed
+                player.body.setVelocityX(0);
+                let chance = Math.random();
+                let newSize = Phaser.Math.Between(50, 250);
+                if ((chance < 0.5) && (frameCounter % 75 == 0))
+                    player.setDisplaySize((newSize), 24);
 
-            if (cursors.left.isDown) {
-                player.body.setVelocityX(-500);
-            }
-            else if (cursors.right.isDown) {
-                player.body.setVelocityX(500);
+                if (cursors.left.isDown) {
+                    player.body.setVelocityX(-500);
+                }
+                else if (cursors.right.isDown) {
+                    player.body.setVelocityX(500);
+                }
             }
         }
 	}
