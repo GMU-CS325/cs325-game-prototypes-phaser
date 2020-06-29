@@ -7,6 +7,10 @@ var GameScene = new Phaser.Class({
 			Phaser.Scene.call(this, { key: 'gameScene' });
         },
 
+    init: function () {
+        this.data.set('score', 0);
+    },
+
 	create: function () {
         this.add.image(400, 300, 'background');
 
@@ -91,6 +95,21 @@ var GameScene = new Phaser.Class({
         // Make it invisible until the player wins
         playerWonText.setVisible(false);
 
+        // Create game over text
+        replayText = this.add.text(
+            this.physics.world.bounds.width / 2 + 5,
+            this.physics.world.bounds.height / 2 + 50,
+            'Replay',
+            {
+                fontFamily: 'Monaco, Courier, monospace',
+                fontSize: '50px',
+                fill: 'black'
+            }
+        );
+        replayText.setOrigin(0.5);
+        // Make it invisible until the player loses
+        replayText.setVisible(false);
+
         scoreText = this.add.text(
             this.physics.world.bounds.width - 95,
             15,
@@ -114,6 +133,9 @@ var GameScene = new Phaser.Class({
             }
         );
         highScoreText.setOrigin(0.5);
+        highScoreText.setText([
+            'High Score: ' + (parseInt(localStorage.getItem('highScore')) || 0)
+        ]);
 
         cursors = this.input.keyboard.createCursorKeys();
         player.setCollideWorldBounds(true);
@@ -142,6 +164,12 @@ var GameScene = new Phaser.Class({
 	update: function () {
         // Check if the ball left the scene i.e. game over
         frameCounter++;
+        this.data.set('score', bricksHit());
+        //console.log(this.data.get('score'));
+        //console.log(scoreText);
+        scoreText.setText([
+            'Score: ' + this.data.get('score')
+        ]);
         if (!gameStarted) {
             //Be right above cursor
             ball.setX(player.x);
@@ -149,10 +177,24 @@ var GameScene = new Phaser.Class({
         else {
             if (isGameOver(this.physics.world)) {
                 gameOverText.setVisible(true);
+                replayText.setVisible(true);
+                replayText.setInteractive({ useHandCursor: true });
+                replayText.on('pointerdown', () => this.scene.restart());
                 ball.disableBody(true, true);
+
+                var highScore = parseInt(localStorage.getItem('highScore')) || 0;
+                if (highScore == 0) { //No high score available
+                    localStorage.setItem('highScore', this.data.get('score'));
+                }
+                else if (this.data.get('score') > highScore) {
+                    localStorage.setItem('highScore', this.data.get('score'));
+                }
             }
             else if (isWon()) {
                 playerWonText.setVisible(true);
+                replayText.setVisible(true);
+                replayText.setInteractive({ useHandCursor: true });
+                replayText.on('pointerdown', () => this.scene.restart());
                 ball.disableBody(true, true);
             }
             else {
