@@ -116,6 +116,9 @@ function loadFiles(scene) {
     scene.load.image('bg6', 'assets/levelBackgrounds/level_bg_006.gif');
     scene.load.image('bg7', 'assets/levelBackgrounds/level_bg_007.gif');
     scene.load.image('bg8', 'assets/levelBackgrounds/level_bg_008.gif');
+
+    scene.load.atlas('yoshi_shapes', 'assets/yoshi/yoshi_shapes.png', 'assets/yoshi/yoshi_shapes.json');
+    scene.load.json('yoshi_bodies', 'assets/yoshi/yoshi_bodies.json');
 }
 
 export default PreloadScene;

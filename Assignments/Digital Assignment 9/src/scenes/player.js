@@ -17,51 +17,53 @@ class Player extends Phaser.Physics.Matter.Sprite {
         cursors = scene.input.keyboard.createCursorKeys();
         this.setData("health", 100);
 
-        scene.anims.create({
-            key: 'jack-jump',
+        /*scene.anims.create({
+            key: 'jump',
             frameRate: 10,
-            frames: scene.anims.generateFrameNames('testsheet', {
+            frames: scene.anims.generateFrameNames('yoshi_shapes', {
                 prefix: 'bjack_',
                 suffix: '.png',
                 start: 21,
                 end: 29,
                 zeroPad: 2
             })
+        });*/
+
+        scene.anims.create({
+            key: 'run',
+            frameRate: 7,
+            //repeat: -1,
+            frames: scene.anims.generateFrameNames('yoshi_shapes', {
+                prefix: 'yoshi_',
+                suffix: '.png',
+                start: 285,
+                end: 292,
+                zeroPad: 3
+            })
         });
 
         scene.anims.create({
-            key: 'jack-run',
-            frameRate: 5,
-            //repeat: -1,
-            frames: scene.anims.generateFrameNames('testsheet', {
-                prefix: 'bjack_',
+            key: 'idle',
+            frameRate: 3,
+            repeat: -1,
+            frames: scene.anims.generateFrameNames('yoshi_shapes', {
+                prefix: 'yoshi_',
                 suffix: '.png',
                 start: 1,
-                end: 5,
+                end: 6,
                 zeroPad: 2
             })
         });
 
-        scene.anims.create({
-            key: 'jack-idle',
-            frameRate: 60,
-            frames: scene.anims.generateFrameNames('testsheet', {
-                prefix: 'bjack_',
-                suffix: '.png',
-                start: 5,
-                end: 5,
-                zeroPad: 2
-            })
-        });
+        this.play("idle");
 
-        this.play("jack-idle");
         this.on('animationcomplete', function (animation, frame) {
-            if (animation.key === 'jack-jump') {
-                console.log("He jumpth");
-            }
-            else if (animation.key === 'jack-run') {
+            //if (animation.key === 'jack-jump') {
+            //    console.log("He jumpth");
+           // }
+            if (animation.key === 'run') {
                 console.log("He runth");
-                player.play("jack-idle");
+                player.play("idle");
             }
         }, scene);
     }
@@ -69,7 +71,7 @@ class Player extends Phaser.Physics.Matter.Sprite {
     jump() {
         if (this.body.position.y > 610) {
             //this.setTexture("jump");
-            this.play('jack-jump');
+            //this.play('jack-jump');
             this.setVelocityY(-13);
         }
         
@@ -79,7 +81,7 @@ class Player extends Phaser.Physics.Matter.Sprite {
         this.x += -7;
         this.setFlipX(true);
         if (this.body.position.y > 610) {
-            this.play('jack-run', true);
+            this.play('run', true);
         }
     }
 
@@ -87,7 +89,7 @@ class Player extends Phaser.Physics.Matter.Sprite {
         this.x += 7;
         this.setFlipX(false);
         if (this.body.position.y > 610) {
-            this.play('jack-run', true);
+                this.play('run', true);
         }
     }
 

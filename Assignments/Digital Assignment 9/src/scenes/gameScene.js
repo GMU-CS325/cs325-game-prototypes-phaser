@@ -1,4 +1,5 @@
 var shapes;
+var yoshi_bodies;
 var WASD;
 var testshapes;
 var background;
@@ -45,12 +46,13 @@ var GameScene = new Phaser.Class({
 		this.matter.world.setBounds(0, -100, 1200, 770, 64, true, true, false, true);
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
-		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
-		player1 = new Player(this, 100, 520, 'testsheet', 'bjack_06.png');
-		player2 = new Player(this, 1100, 520, 'testsheet', 'bjack_06.png').setFlipX(true);
-
 		shapes = this.cache.json.get('ashapes');
 		testshapes = this.cache.json.get('testshapes');
+		yoshi_bodies = this.cache.json.get('testshapes');
+
+		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
+		player1 = new Player(this, 100, 520, 'yoshi_shapes', 'yoshi_285.png');
+		player2 = new Player(this, 1100, 520, 'yoshi_shapes', 'yoshi_285.png').setFlipX(true);
 
 		obstacles = this.add.group({
 			key: 'obstacles',
@@ -68,6 +70,7 @@ var GameScene = new Phaser.Class({
 
 	update: function (time, delta) {
 		player2.update(time, delta);
+		//console.log(player2.anims.currentAnim);
 		frameCounter = frameCounter + 1;
 		if ((frameCounter % 125 == 0) && (obstacles.isFull() == false)) {
 			var x = Math.floor(Math.random() * 5);
