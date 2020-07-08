@@ -53,7 +53,7 @@ var PreloadScene = new Phaser.Class({
 
         changePercentText(this, percentText, progressBar, width, height);
         changeAssetText(this, assetText);
-
+        
         this.load.on('complete', function () {
             //destroy everything
             progressBar.destroy();
@@ -93,12 +93,10 @@ function changeAssetText(scene, assetText) {
 
 function loadFiles(scene) {
     // Load sprite sheet generated with TexturePacker
-    scene.load.atlas('asheet', 'assets/atlas_json/obs-sprites.png', 'assets/atlas_json/obs-sprites.json');
+    scene.load.atlas('obstacle_shapes', 'assets/obstacles/obstacle_shapes.png', 'assets/obstacles/obstacle_shapes.json');
 
     // Load body shapes from JSON file generated using PhysicsEditor
-    scene.load.json('ashapes', 'assets/atlas_json/obs-shapes.json');
-
-    
+    scene.load.json('obstacle_bodies', 'assets/obstacles/obstacle_bodies.json');
 
     scene.load.image('bg_001', 'assets/titleScene/bg_001.gif');
     scene.load.image('bg_002', 'assets/titleScene/bg_002.gif');

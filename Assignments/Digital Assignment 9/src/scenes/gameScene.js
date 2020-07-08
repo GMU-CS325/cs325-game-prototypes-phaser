@@ -1,4 +1,4 @@
-var shapes;
+var obstacle_bodies;
 var yoshi_bodies;
 var WASD;
 var background;
@@ -45,7 +45,7 @@ var GameScene = new Phaser.Class({
 		this.matter.world.setBounds(0, -100, 1200, 770, 64, true, true, false, true);
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
-		shapes = this.cache.json.get('ashapes');
+		obstacle_bodies = this.cache.json.get('obstacle_bodies');
 		yoshi_bodies = this.cache.json.get('yoshi_bodies');
 
 		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
@@ -75,23 +75,23 @@ var GameScene = new Phaser.Class({
 			var obstacle;
 			switch (x) {
 				case 0:
-					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -20, 'asheet', 'ball', { shape: shapes.ball }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
+					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -20, 'obstacle_shapes', 'ball.png', { shape: obstacle_bodies.ball }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
 					obstacles.add(obstacle);
 					break;
 				case 1:
-					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -50, 'asheet', 'box', { shape: shapes.box }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
+					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -50, 'obstacle_shapes', 'box.png', { shape: obstacle_bodies.box }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
 					obstacles.add(obstacle);
 					break;
 				case 2:
-					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -50, 'asheet', 'manyspike', { shape: shapes.manyspike }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
+					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -50, 'obstacle_shapes', 'manyspike.png', { shape: obstacle_bodies.manyspike }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
 					obstacles.add(obstacle);
 					break;
 				case 3:
-					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -50, 'asheet', 'spike', { shape: shapes.spike }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
+					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -50, 'obstacle_shapes', 'spike.png', { shape: obstacle_bodies.spike }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
 					obstacles.add(obstacle);
 					break;
 				case 4:
-					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -50, 'asheet', 'spikyball', { shape: shapes.spikyball }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
+					obstacle = this.matter.add.sprite(Phaser.Math.Between(300, 900), -50, 'obstacle_shapes', 'spikyball.png', { shape: obstacle_bodies.spikyball }).setVelocity(Phaser.Math.Between(-5, 5), Phaser.Math.Between(-30, 30));
 					obstacles.add(obstacle);
 					break;
 			}

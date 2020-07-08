@@ -1,0 +1,125 @@
+{
+	"textures": [
+		{
+			"image": "obstacle_shapes.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 234,
+				"h": 238
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "manyspike.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 132,
+						"h": 135
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 132,
+						"h": 135
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 132,
+						"h": 135
+					}
+				},
+				{
+					"filename": "ball.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 99,
+						"h": 99
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 99,
+						"h": 99
+					},
+					"frame": {
+						"x": 1,
+						"y": 138,
+						"w": 99,
+						"h": 99
+					}
+				},
+				{
+					"filename": "box.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 90
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 90
+					},
+					"frame": {
+						"x": 102,
+						"y": 138,
+						"w": 93,
+						"h": 90
+					}
+				},
+				{
+					"filename": "spikyball.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 87,
+						"h": 84
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 87,
+						"h": 84
+					},
+					"frame": {
+						"x": 135,
+						"y": 1,
+						"w": 87,
+						"h": 84
+					}
+				},
+				{
+					"filename": "spike.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 51,
+						"h": 134
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 36,
+						"h": 122
+					},
+					"frame": {
+						"x": 197,
+						"y": 87,
+						"w": 36,
+						"h": 122
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:aea0576b1fdf9d728136a8b31e5d10d3:3c6b4e5d50f19a44febcd068ef6168c9:c3f7279694bcb52a876a6fd8d601a8e2$"
+	}
+}
