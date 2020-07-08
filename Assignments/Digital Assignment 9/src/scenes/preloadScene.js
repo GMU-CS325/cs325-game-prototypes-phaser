@@ -98,10 +98,7 @@ function loadFiles(scene) {
     // Load body shapes from JSON file generated using PhysicsEditor
     scene.load.json('ashapes', 'assets/atlas_json/obs-shapes.json');
 
-    scene.load.atlas('testsheet', 'assets/atlas_json/test.png ', 'assets/atlas_json/test.json');
-    scene.load.json('testshapes', 'assets/atlas_json/testbody.json');
-
-    scene.load.atlas('jack', 'assets/jack/jack.png', 'assets/jack/jack.json');
+    
 
     scene.load.image('bg_001', 'assets/titleScene/bg_001.gif');
     scene.load.image('bg_002', 'assets/titleScene/bg_002.gif');
