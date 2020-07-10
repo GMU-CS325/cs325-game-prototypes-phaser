@@ -17,8 +17,8 @@ function isWon() {
 
 function bricksHit() {
     return (greenBricks.getLength() - greenBricks.countActive())
-        + (redBricks.getLength() - redBricks.countActive())
-        + (blueBricks.getLength() - blueBricks.countActive());
+        + ( (redBricks.getLength() - redBricks.countActive()) * 3)
+        + ( (blueBricks.getLength() - blueBricks.countActive()) * 2);
 }
 
 function hitBrick(ball, brick) {

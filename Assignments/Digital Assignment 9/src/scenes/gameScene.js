@@ -1,10 +1,10 @@
 var obstacle_bodies;
 var yoshi_bodies;
-var WASD;
+var P1Controls;
+var P2Controls;
 var background;
 var frameCounter;
 var obstacles;
-var cursors;
 var player1;
 var player2;
 
@@ -22,9 +22,20 @@ var GameScene = new Phaser.Class({
 	},
 
 	create: function () {
+		P1Controls = this.input.keyboard.addKeys({
+			up: 'W',
+			down: 'S',
+			left: 'A',
+			right: 'D'
+		});
 
-		cursors = this.input.keyboard.createCursorKeys();
-		WASD = this.input.keyboard.addKeys('W,A,S,D,TAB');
+		P2Controls = this.input.keyboard.addKeys({
+			up: 'up',
+			down: 'down',
+			left: 'left',
+			right: 'right'
+		});
+
 		this.anims.create(
 			{
 				key: 'level_background',
@@ -51,11 +62,13 @@ var GameScene = new Phaser.Class({
 		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
 		player1 = new Player(this, 100, 520, 'yoshi_shapes', 'yoshi_285.png');
 		player2 = new Player(this, 1100, 520, 'yoshi_shapes', 'yoshi_01.png', { shape: yoshi_bodies.yoshi_01 }).setFlipX(true);
+		//player1.setData({ 'up': P1Controls.A, 'down': P1Controls.S, 'left': P1Controls.A, 'right': P1Controls.D });
 
 		obstacles = this.add.group({
-			key: 'obstacles',
-			maxSize: 2, //Only 3 spawned?
-			//classType: Phaser.Physics.Matter.Image(this.world, 0, 0, null, null, {}),
+			maxSize: 2,
+			removeCallback: () => {
+				console.log("Removed");
+			}
 		});
 
 		/*this.matter.world.on('collisionactive', function (bodyA, bodyB) {
@@ -66,9 +79,9 @@ var GameScene = new Phaser.Class({
         })*/
 	},
 
-	update: function (time, delta) {
-		player2.update(time, delta);
-		//console.log(player2.anims.currentAnim);
+	update: function () {
+		player1.update(P1Controls);
+		player2.update(P2Controls);
 		frameCounter = frameCounter + 1;
 		if ((frameCounter % 125 == 0) && (obstacles.isFull() == false)) {
 			var x = Math.floor(Math.random() * 5);

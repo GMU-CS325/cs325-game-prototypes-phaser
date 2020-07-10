@@ -94,7 +94,6 @@ function changeAssetText(scene, assetText) {
 function loadFiles(scene) {
     // Load sprite sheet generated with TexturePacker
     scene.load.atlas('obstacle_shapes', 'assets/obstacles/obstacle_shapes.png', 'assets/obstacles/obstacle_shapes.json');
-
     // Load body shapes from JSON file generated using PhysicsEditor
     scene.load.json('obstacle_bodies', 'assets/obstacles/obstacle_bodies.json');
 
