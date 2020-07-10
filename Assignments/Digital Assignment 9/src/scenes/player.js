@@ -1,5 +1,6 @@
 var cursors;
 var player;
+
 class Player extends Phaser.Physics.Matter.Sprite {
     constructor(scene, x, y, texture, frame ) {
         super(scene.matter.world, x, y, texture, frame);
@@ -14,7 +15,7 @@ class Player extends Phaser.Physics.Matter.Sprite {
         this.setTexture(texture);
         this.setFrame(frame);
 
-        cursors = scene.input.keyboard.createCursorKeys();
+        //cursors = scene.input.keyboard.createCursorKeys();
         this.setData("health", 100);
 
         /*scene.anims.create({
@@ -93,11 +94,10 @@ class Player extends Phaser.Physics.Matter.Sprite {
         }
     }
 
-    update(time, delta) {
-        //console.log(this.anims.getCurrentKey());
-        if (cursors.left.isDown)
+    update(controls) {
+        if (controls.left.isDown)
             this.moveLeft();
-        else if (cursors.right.isDown)
+        else if (controls.right.isDown)
             this.moveRight();
         else {
             this.setVelocityX(0);
