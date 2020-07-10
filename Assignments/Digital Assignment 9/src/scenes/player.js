@@ -64,6 +64,7 @@ class Player extends Phaser.Physics.Matter.Sprite {
            // }
             if (animation.key === 'run') {
                 console.log("He runth");
+                //console.log(this.sprite);
                 player.play("idle");
             }
         }, scene);
