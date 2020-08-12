@@ -4,7 +4,7 @@ var optionButton;
 var buttons;
 
 var currentIndex;
-
+//s
 var cursorKeys;
 
 function changeOption(change) {

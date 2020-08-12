@@ -7,7 +7,7 @@ var frameCounter;
 var obstacles;
 var player1;
 var player2;
-
+//s
 var GameScene = new Phaser.Class({
 
 	Extends: Phaser.Scene,
@@ -17,7 +17,7 @@ var GameScene = new Phaser.Class({
 			Phaser.Scene.call(this, { key: 'gameScene' });
 		},
 
-	init: function() {
+	init: function () {
 		frameCounter = 0;
 	},
 
@@ -58,11 +58,15 @@ var GameScene = new Phaser.Class({
 
 		obstacle_bodies = this.cache.json.get('obstacle_bodies');
 		yoshi_bodies = this.cache.json.get('yoshi_bodies');
+		
 
 		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
-		player1 = new Player(this, 100, 520, 'yoshi_shapes', 'yoshi_285.png');
-		player2 = new Player(this, 1100, 520, 'yoshi_shapes', 'yoshi_01.png', { shape: yoshi_bodies.yoshi_01 }).setFlipX(true);
-		//player1.setData({ 'up': P1Controls.A, 'down': P1Controls.S, 'left': P1Controls.A, 'right': P1Controls.D });
+		player1 = new Player(this, 100, 520, 'yoshi_shapes', 'yoshi_01.png');
+		player2 = new Player(this, 1100, 520, 'yoshi_shapes', 'yoshi_01.png').setFlipX(true);
+		//this.matter.add.sprite(600, 600, 'yoshi_01');
+		player1.name = "Player 1";
+		player2.name = "Player 2";
+		console.log(player2.body);
 
 		obstacles = this.add.group({
 			maxSize: 2,
@@ -70,7 +74,7 @@ var GameScene = new Phaser.Class({
 				console.log("Removed");
 			}
 		});
-
+		console.log(yoshi_bodies);
 		/*this.matter.world.on('collisionactive', function (bodyA, bodyB) {
 			if (bodyA.label != "Rectangle Body" || bodyB.label != "Rectangle Body")
 				console.log("Ground hit!");
