@@ -102,7 +102,7 @@
         <key>algorithmSettings</key>
         <struct type="AlgorithmSettings">
             <key>algorithm</key>
-            <enum type="AlgorithmSettings::AlgorithmId">MaxRects</enum>
+            <enum type="AlgorithmSettings::AlgorithmId">Basic</enum>
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
@@ -117,7 +117,7 @@
             <key>basic</key>
             <struct type="AlgorithmBasicSettings">
                 <key>sortBy</key>
-                <enum type="AlgorithmBasicSettings::SortBy">Best</enum>
+                <enum type="AlgorithmBasicSettings::SortBy">Name</enum>
                 <key>order</key>
                 <enum type="AlgorithmBasicSettings::Order">Ascending</enum>
             </struct>
@@ -149,7 +149,7 @@
             <string></string>
         </struct>
         <key>autoAliasEnabled</key>
-        <true/>
+        <false/>
         <key>trimSpriteNames</key>
         <false/>
         <key>prependSmartFolderName</key>
@@ -163,7 +163,7 @@
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
             <key>extrude</key>
-            <uint>1</uint>
+            <uint>0</uint>
             <key>trimThreshold</key>
             <uint>1</uint>
             <key>trimMargin</key>
@@ -199,6 +199,7 @@
                 <false/>
             </struct>
             <key type="filename">yoshi_02.png</key>
+            <key type="filename">yoshi_14.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -226,6 +227,66 @@
                 <rect>6,9,11,19</rect>
                 <key>scale9Paddings</key>
                 <rect>6,9,11,19</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">yoshi_10.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,8,13,16</rect>
+                <key>scale9Paddings</key>
+                <rect>7,8,13,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">yoshi_11.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,8,13,15</rect>
+                <key>scale9Paddings</key>
+                <rect>7,8,13,15</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">yoshi_12.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,10,15,19</rect>
+                <key>scale9Paddings</key>
+                <rect>7,10,15,19</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">yoshi_13.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>7,10,13,19</rect>
+                <key>scale9Paddings</key>
+                <rect>7,10,13,19</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -338,6 +399,17 @@
         </map>
         <key>fileList</key>
         <array>
+            <filename>yoshi_01.png</filename>
+            <filename>yoshi_02.png</filename>
+            <filename>yoshi_03.png</filename>
+            <filename>yoshi_04.png</filename>
+            <filename>yoshi_05.png</filename>
+            <filename>yoshi_06.png</filename>
+            <filename>yoshi_10.png</filename>
+            <filename>yoshi_11.png</filename>
+            <filename>yoshi_12.png</filename>
+            <filename>yoshi_13.png</filename>
+            <filename>yoshi_14.png</filename>
             <filename>yoshi_285.png</filename>
             <filename>yoshi_286.png</filename>
             <filename>yoshi_287.png</filename>
@@ -346,19 +418,15 @@
             <filename>yoshi_290.png</filename>
             <filename>yoshi_291.png</filename>
             <filename>yoshi_292.png</filename>
-            <filename>yoshi_01.png</filename>
-            <filename>yoshi_02.png</filename>
-            <filename>yoshi_03.png</filename>
-            <filename>yoshi_04.png</filename>
-            <filename>yoshi_05.png</filename>
-            <filename>yoshi_06.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
         <key>replaceList</key>
         <array/>
         <key>ignoredWarnings</key>
-        <array/>
+        <array>
+            <string>phaser3-exporter-beta</string>
+        </array>
         <key>commonDivisorX</key>
         <uint>1</uint>
         <key>commonDivisorY</key>

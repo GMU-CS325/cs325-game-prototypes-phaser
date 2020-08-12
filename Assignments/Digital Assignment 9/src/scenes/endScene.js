@@ -3,7 +3,7 @@ var buttons;
 var titleButton;
 var replayButton;
 var winner;
-
+//s
 function changeOption(change) {
 	buttons[currentIndex].setStyle({ fontFamily: 'dragon', fontSize: 64, color: '#333333' });
 	//At top, loop back to bottom
