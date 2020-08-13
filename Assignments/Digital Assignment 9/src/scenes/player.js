@@ -29,18 +29,19 @@ class Player extends Phaser.Physics.Matter.Sprite {
         this.jumpCooldownTimer = null;
 
         // Before matter's update, reset the player's count of what surfaces it is touching.
-        //scene.matter.world.on("beforeupdate", this.resetTouching, this);
+        scene.matter.world.on("beforeupdate", this.resetTouching, this);
 
         scene.matterCollision.addOnCollideStart({
-            objectA: player,
+            objectA: [player.body.parts[1], player.body.parts[2], player.body.parts[3]],
             callback: this.onSensorCollide,
             context: this
         });
-        /*scene.matterCollision.addOnCollideActive({
-            objectA: this.body.parts,
+
+        scene.matterCollision.addOnCollideActive({
+            objectA: [player.body.parts[1], player.body.parts[2], player.body.parts[3]],
             callback: this.onSensorCollide,
             context: this
-        });*/
+        });
 
         scene.anims.create({
             key: 'jump',
@@ -85,29 +86,23 @@ class Player extends Phaser.Physics.Matter.Sprite {
 
         this.on('animationcomplete', function (animation, frame, gameObject) {
             if (animation.key === 'jump') {
-                console.log("He jumpth");
                 gameObject.play("idle");
             }
             else if (animation.key === 'run') {
-                console.log("He runth");
                 gameObject.play("idle");
             }
         }, scene);
     }
 
     jump() {
-        if (this.body.position.y > 610) {
-            //this.setTexture("jump");
             this.play('jump');
             this.setVelocityY(-13);
-        }
-        
     }
 
     moveLeft() {
         this.x += -7;
         this.setFlipX(true);
-        if (this.body.position.y > 610) {
+        if (this.isTouching.ground) {
             this.play('run', true);
         }
     }
@@ -115,13 +110,21 @@ class Player extends Phaser.Physics.Matter.Sprite {
     moveRight() {
         this.x += 7;
         this.setFlipX(false);
-        if (this.body.position.y > 610) {
-                this.play('run', true);
+        if (this.isTouching.ground) {
+            this.play('run', true);
         }
     }
 
-    onSensorCollide() {
-        console.log("Collision");
+    onSensorCollide(eventData) {
+        //The following must be player is hitting ground
+        if (eventData.gameObjectB !== undefined && eventData.gameObjectB instanceof Phaser.Physics.Matter.Image)
+            eventData.gameObjectA.isTouching.ground = true;
+    }
+
+    resetTouching() {
+        this.isTouching.left = false;
+        this.isTouching.right = false;
+        this.isTouching.ground = false;
     }
 
     update(controls) {
@@ -129,17 +132,10 @@ class Player extends Phaser.Physics.Matter.Sprite {
             this.moveLeft();
         else if (controls.right.isDown)
             this.moveRight();
-        else {
+        else
             this.setVelocityX(0);
-            //this.play("idlea");
-        }
 
-        if (Phaser.Input.Keyboard.JustDown(controls.up)) {
-            if (this.body.position.y > 610) {
-                this.play('jump');
-                this.setVelocityY(-13);
-            }
-
-        }
+        if (controls.up.isDown && this.isTouching.ground)
+            this.jump();
     }
 }

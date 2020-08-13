@@ -111,6 +111,7 @@ function loadFiles(scene) {
     scene.load.image('bg7', 'assets/levelBackgrounds/level_bg_007.gif');
     scene.load.image('bg8', 'assets/levelBackgrounds/level_bg_008.gif');
     scene.load.image('yoshi_01', 'assets/yoshi/yoshi_01.png');
+    scene.load.image('ground', 'assets/ground.png');
 
     scene.load.atlas('yoshi_shapes', 'assets/yoshi/yoshi_shapes.png', 'assets/yoshi/yoshi_shapes.json');
     scene.load.json('yoshi_bodies', 'assets/yoshi/yoshi_bodies.json');

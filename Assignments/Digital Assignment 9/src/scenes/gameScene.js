@@ -1,13 +1,18 @@
 var obstacle_bodies;
 var yoshi_bodies;
+
 var P1Controls;
 var P2Controls;
+
 var background;
+var ground;
+
 var frameCounter;
 var obstacles;
+
 var player1;
 var player2;
-//s
+
 var GameScene = new Phaser.Class({
 
 	Extends: Phaser.Scene,
@@ -53,7 +58,10 @@ var GameScene = new Phaser.Class({
 				repeat: -1
 			});
 
-		this.matter.world.setBounds(0, -100, 1200, 770, 64, true, true, false, true);
+		ground = this.matter.add.image(600, 720, 'ground').setOrigin(0).setVisible(false).setDepth(2);
+		ground.setName("ground");
+
+		this.matter.world.setBounds(0, 0, 1200, 720, 64, true, true, false, true);
 		background = this.add.sprite(600, 360, 'bg1').play('level_background');
 
 		obstacle_bodies = this.cache.json.get('obstacle_bodies');
@@ -61,26 +69,21 @@ var GameScene = new Phaser.Class({
 		
 
 		//this.matter.add.sprite(300, -20, 'asheet', 'ball', { shape: shapes.ball })
-		player1 = new Player(this, 100, 520, 'yoshi_shapes', 'yoshi_01.png');
-		player2 = new Player(this, 1100, 520, 'yoshi_shapes', 'yoshi_01.png').setFlipX(true);
+		player1 = new Player(this, 300, 520, 'yoshi_shapes', 'yoshi_01.png');
+		player2 = new Player(this, 800, 520, 'yoshi_shapes', 'yoshi_01.png').setFlipX(true);
+		
 		//this.matter.add.sprite(600, 600, 'yoshi_01');
 		player1.name = "Player 1";
 		player2.name = "Player 2";
 		console.log(player2.body);
+		console.log(player2);
 
 		obstacles = this.add.group({
 			maxSize: 2,
 			removeCallback: () => {
-				console.log("Removed");
+				//console.log("Removed");
 			}
 		});
-		console.log(yoshi_bodies);
-		/*this.matter.world.on('collisionactive', function (bodyA, bodyB) {
-			if (bodyA.label != "Rectangle Body" || bodyB.label != "Rectangle Body")
-				console.log("Ground hit!");
-			else
-				console.log("Yamete!");
-        })*/
 	},
 
 	update: function () {
