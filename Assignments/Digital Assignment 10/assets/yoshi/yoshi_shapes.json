@@ -1,0 +1,419 @@
+{
+	"textures": [
+		{
+			"image": "yoshi_shapes.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1602,
+				"h": 114
+			},
+			"scale": 3,
+			"frames": [
+				{
+					"filename": "yoshi_01.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 66,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 66,
+						"h": 105
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 66,
+						"h": 105
+					}
+				},
+				{
+					"filename": "yoshi_02.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 66,
+						"h": 108
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 66,
+						"h": 108
+					},
+					"frame": {
+						"x": 66,
+						"y": 0,
+						"w": 66,
+						"h": 108
+					}
+				},
+				{
+					"filename": "yoshi_03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 66,
+						"h": 111
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 66,
+						"h": 111
+					},
+					"frame": {
+						"x": 132,
+						"y": 0,
+						"w": 66,
+						"h": 111
+					}
+				},
+				{
+					"filename": "yoshi_04.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 66,
+						"h": 111
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 66,
+						"h": 111
+					},
+					"frame": {
+						"x": 198,
+						"y": 0,
+						"w": 66,
+						"h": 111
+					}
+				},
+				{
+					"filename": "yoshi_05.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 66,
+						"h": 105
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 66,
+						"h": 105
+					},
+					"frame": {
+						"x": 264,
+						"y": 0,
+						"w": 66,
+						"h": 105
+					}
+				},
+				{
+					"filename": "yoshi_06.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 66,
+						"h": 102
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 66,
+						"h": 102
+					},
+					"frame": {
+						"x": 330,
+						"y": 0,
+						"w": 66,
+						"h": 102
+					}
+				},
+				{
+					"filename": "yoshi_10.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 78,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 78,
+						"h": 96
+					},
+					"frame": {
+						"x": 396,
+						"y": 0,
+						"w": 78,
+						"h": 96
+					}
+				},
+				{
+					"filename": "yoshi_11.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 78,
+						"h": 93
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 78,
+						"h": 93
+					},
+					"frame": {
+						"x": 474,
+						"y": 0,
+						"w": 78,
+						"h": 93
+					}
+				},
+				{
+					"filename": "yoshi_12.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 87,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 87,
+						"h": 114
+					},
+					"frame": {
+						"x": 552,
+						"y": 0,
+						"w": 87,
+						"h": 114
+					}
+				},
+				{
+					"filename": "yoshi_13.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 81,
+						"h": 114
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 81,
+						"h": 114
+					},
+					"frame": {
+						"x": 639,
+						"y": 0,
+						"w": 81,
+						"h": 114
+					}
+				},
+				{
+					"filename": "yoshi_14.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 69,
+						"h": 108
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 69,
+						"h": 108
+					},
+					"frame": {
+						"x": 720,
+						"y": 0,
+						"w": 69,
+						"h": 108
+					}
+				},
+				{
+					"filename": "yoshi_285.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 87
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 87
+					},
+					"frame": {
+						"x": 789,
+						"y": 0,
+						"w": 96,
+						"h": 87
+					}
+				},
+				{
+					"filename": "yoshi_286.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 90
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 90
+					},
+					"frame": {
+						"x": 885,
+						"y": 0,
+						"w": 96,
+						"h": 90
+					}
+				},
+				{
+					"filename": "yoshi_287.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 102,
+						"h": 87
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 102,
+						"h": 87
+					},
+					"frame": {
+						"x": 981,
+						"y": 0,
+						"w": 102,
+						"h": 87
+					}
+				},
+				{
+					"filename": "yoshi_288.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 108,
+						"h": 90
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 108,
+						"h": 90
+					},
+					"frame": {
+						"x": 1083,
+						"y": 0,
+						"w": 108,
+						"h": 90
+					}
+				},
+				{
+					"filename": "yoshi_289.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 90
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 90
+					},
+					"frame": {
+						"x": 1191,
+						"y": 0,
+						"w": 93,
+						"h": 90
+					}
+				},
+				{
+					"filename": "yoshi_290.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 93,
+						"h": 93
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 93,
+						"h": 93
+					},
+					"frame": {
+						"x": 1284,
+						"y": 0,
+						"w": 93,
+						"h": 93
+					}
+				},
+				{
+					"filename": "yoshi_291.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 108,
+						"h": 87
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 108,
+						"h": 87
+					},
+					"frame": {
+						"x": 1377,
+						"y": 0,
+						"w": 108,
+						"h": 87
+					}
+				},
+				{
+					"filename": "yoshi_292.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 117,
+						"h": 90
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 117,
+						"h": 90
+					},
+					"frame": {
+						"x": 1485,
+						"y": 0,
+						"w": 117,
+						"h": 90
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:59c654cc367a73604f114652da89f595:d93e7c89b37dc0f4baea621e277fa313:e3e8448a579dcad6776d35b3e88577ad$"
+	}
+}
