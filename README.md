@@ -1,3 +1,4 @@
+# Exciting Projects
 # GMU CS325 Introduction to Game Design
 
 This repository contains all of your games as well as a few simple "hello, world!"
