@@ -23,6 +23,12 @@ function create() {
     // Make it bounce off of the world bounds.
     bouncy.body.collideWorldBounds = true;
     
+    // Make the camera shake when clicking/tapping on it.
+    bouncy.setInteractive();
+    bouncy.on( 'pointerdown', function( pointer ) {
+        this.scene.cameras.main.shake(500);
+        });
+    
     // Add some text using a CSS style.
     // Center it in X, and position its top 15 pixels from the top of the world.
     var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
