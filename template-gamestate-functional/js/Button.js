@@ -4,28 +4,49 @@
 export class Button extends Phaser.GameObjects.Sprite {
   onInputOver = () => {}
   onInputOut = () => {}
+  onInputDown = () => {}
   onInputUp = () => {}
-
+  
   constructor(scene, x, y, texture, actionOnClick = () => {}, context, overFrame, outFrame, downFrame) {
     super(scene, x, y, texture)
     scene.add.existing(this)
+    this.inclick = false;
 
     this.setFrame(outFrame)
       .setInteractive()
 
       .on('pointerover', () => {
         this.onInputOver()
-        this.setFrame(overFrame)
+        if( this.inclick ) {
+            this.setFrame(downFrame)
+        } else {
+            this.setFrame(overFrame)
+        }
       })
       .on('pointerdown', () => {
-        actionOnClick.call( context )
+        this.inclick = true;
+        this.onInputDown()
         this.setFrame(downFrame)
       })
       .on('pointerup', () => {
+        if( this.inclick ) { actionOnClick.call( context ); }
+        this.inclick = false;
         this.onInputUp()
         this.setFrame(overFrame)
       })
       .on('pointerout', () => {
+        // Ideally pointer out wouldn't set inclick = false
+        // so that the user could press, moves the pointer off the button,
+        // move it back over, release, and still fire the button.
+        // For that to work, we also need to know if the user presses down,
+        // moves the pointer off the button, and releases so we can reset the
+        // button state. However, our pointerup event only fires when the pointer
+        // is released over the button.
+        // We could set a callback on `scene.input.on('pointerup')`.
+        // We could also track the pointer id to make sure it's the same button/finger.
+        // In the meantime, just set `inclick` to false. The user will still
+        // be able to cancel the press by moving the pointer outside the button.
+        this.inclick = false;
         this.onInputOut()
         this.setFrame(outFrame)
       })

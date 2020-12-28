@@ -21,14 +21,14 @@ export class Game extends Phaser.Scene {
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
         
         // Create a sprite at the center of the screen using the 'logo' image.
-        bouncy = this.physics.add.sprite( this.cameras.main.centerX, this.cameras.main.centerX, 'logo' );
+        this.bouncy = this.physics.add.sprite( this.cameras.main.centerX, this.cameras.main.centerX, 'logo' );
         
         // Make it bounce off of the world bounds.
-        bouncy.body.collideWorldBounds = true;
+        this.bouncy.body.collideWorldBounds = true;
         
         // Make the camera shake when clicking/tapping on it.
-        bouncy.setInteractive();
-        bouncy.on( 'pointerdown', function( pointer ) {
+        this.bouncy.setInteractive();
+        this.bouncy.on( 'pointerdown', function( pointer ) {
             // In the callback, `this` is `bouncy`. Access the scene with `this.scene`
             // or pass a `this` parameter to `.on()`.
             this.scene.quitGame();
@@ -39,8 +39,8 @@ export class Game extends Phaser.Scene {
         
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = this.add.text( this.cameras.main.centerX, 15, "Build something amazing.", style );
+        let style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
+        let text = this.add.text( this.cameras.main.centerX, 15, "Build something amazing.", style );
         text.setOrigin( 0.5, 0.0 );
     }
 
@@ -52,6 +52,6 @@ export class Game extends Phaser.Scene {
         // in X or Y.
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
-        bouncy.rotation = this.physics.accelerateToObject( bouncy, this.input.activePointer, 500, 500, 500 );
+        this.bouncy.rotation = this.physics.accelerateToObject( this.bouncy, this.input.activePointer, 500, 500, 500 );
     }
 }
