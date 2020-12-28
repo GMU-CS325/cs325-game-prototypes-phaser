@@ -85,7 +85,7 @@ class MainScene extends Phaser.Scene {
   }
 }
 
-var config = {
+const config = {
     type: Phaser.AUTO,
     scale: {
       mode: Phaser.Scale.FIT,
@@ -98,5 +98,5 @@ var config = {
     scene: [MainScene]
 };
 
-var game = new Phaser.Game(config);
+const game = new Phaser.Game(config);
 */

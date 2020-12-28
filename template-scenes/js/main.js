@@ -6,7 +6,7 @@ import {Preloader} from "./Preloader.js";
 
 // An object for shared (global) variables, so that them main menu can show
 // the high score if you want.
-var shared = {};
+let shared = {};
 
 // For a simpler example with multiple scenes:
 // https://phaser.io/examples/v3/view/scenes/changing-scene-es6

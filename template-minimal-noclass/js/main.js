@@ -31,8 +31,8 @@ function create() {
     
     // Add some text using a CSS style.
     // Center it in X, and position its top 15 pixels from the top of the world.
-    var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-    var text = this.add.text( this.cameras.main.centerX, 15, "Build something amazing.", style );
+    let style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
+    let text = this.add.text( this.cameras.main.centerX, 15, "Build something amazing.", style );
     text.setOrigin( 0.5, 0.0 );
 }
 
