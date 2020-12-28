@@ -1,18 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<title>Phaser Basic Project Template</title>
-	<script src="js/phaser.min.js"></script>
-	<!-- Boot.js must come first since it creates the BasicGame object
-	that stores all the states. -->
-	<script src="js/Boot.js"></script>
-	<script src="js/Preloader.js"></script>
-	<script src="js/MainMenu.js"></script>
-	<script src="js/Game.js"></script>
-	<!-- main.js must come last since it references the other ones. -->
-	<script src="js/main.js"></script>
-
+<meta charset="UTF-8" />
+<title>Phaser Basic Project Template</title>
 <style>
 body
 {
@@ -24,8 +14,8 @@ body
     margin-top: 10px;
 }
 </style>
-
 </head>
+
 <body>
 <div id="game"></div>
 <div id="readme">
@@ -106,5 +96,8 @@ How long does your game take to play?
 
 </ul>
 </div>
+
+<!-- main.js must come at the end since it expects the HTML to have been created. -->
+<script src="js/main.js" type="module"></script>
 </body>
 </html>

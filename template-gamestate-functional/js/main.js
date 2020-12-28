@@ -1,24 +1,29 @@
-"use strict";
+import "./phaser.js";
+import {Boot} from "./Boot.js";
+import {Game} from "./Game.js";
+import {MainMenu} from "./MainMenu.js";
+import {Preloader} from "./Preloader.js";
 
-window.onload = function() {
+// An object for shared (global) variables, so that them main menu can show
+// the high score if you want.
+var shared = {};
 
-	//	Create your Phaser game and inject it into the 'game' div.
-	//	We did it in a window.onload event, but you can do it anywhere (requireJS load, anonymous function, jQuery dom ready, - whatever floats your boat)
-	var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game' );
+// For a simpler example with multiple scenes:
+// https://phaser.io/examples/v3/view/scenes/changing-scene-es6
 
-	//	Add the States your game has.
-	//	You don't have to do this in the html, it could be done in your Boot state too, but for simplicity I'll keep it here.
-	
-	// An object for shared variables, so that them main menu can show
-	// the high score if you want.
-	var shared = {};
-	
-	game.state.add( 'Boot', GameStates.makeBoot( game ) );
-	game.state.add( 'Preloader', GameStates.makePreloader( game ) );
-	game.state.add( 'MainMenu', GameStates.makeMainMenu( game, shared ) );
-	game.state.add( 'Game', GameStates.makeGame( game, shared ) );
+// For a way to pass data between scenes without global variables:
+// https://phaser.io/examples/v3/view/scenes/passing-data-to-a-scene
 
-	//	Now start the Boot state.
-	game.state.start('Boot');
+// You can have two scenes active at once, which can help separate a UI layer
+// from other things on the screen:
+// https://phaser.io/examples/v3/view/scenes/ui-scene-es6
 
-};
+const game = new Phaser.Game({
+    type: Phaser.AUTO,
+    parent: 'game',
+    width: 800,
+    height: 600,
+    // The game starts the first scene in the scene array.
+    scene: [ Boot, Preloader, MainMenu, Game ],
+    physics: { default: 'arcade' },
+    });
