@@ -1,0 +1,32 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="background_small_000.png" x="302" y="1068" width="300" height="176"/>
+	<SubTexture name="background_small_001.png" x="906" y="712" width="300" height="176"/>
+	<SubTexture name="background_small_002.png" x="906" y="534" width="300" height="176"/>
+	<SubTexture name="background_small_003.png" x="906" y="356" width="300" height="176"/>
+	<SubTexture name="background_small_004.png" x="906" y="178" width="300" height="176"/>
+	<SubTexture name="background_small_005.png" x="906" y="0" width="300" height="176"/>
+	<SubTexture name="background_small_006.png" x="604" y="1246" width="300" height="176"/>
+	<SubTexture name="background_small_007.png" x="604" y="1068" width="300" height="176"/>
+	<SubTexture name="background_small_008.png" x="604" y="890" width="300" height="176"/>
+	<SubTexture name="background_small_009.png" x="604" y="712" width="300" height="176"/>
+	<SubTexture name="background_small_010.png" x="604" y="534" width="300" height="176"/>
+	<SubTexture name="background_small_011.png" x="604" y="356" width="300" height="176"/>
+	<SubTexture name="background_small_012.png" x="604" y="178" width="300" height="176"/>
+	<SubTexture name="background_small_013.png" x="604" y="0" width="300" height="176"/>
+	<SubTexture name="background_small_014.png" x="302" y="1246" width="300" height="176"/>
+	<SubTexture name="background_small_015.png" x="906" y="890" width="300" height="176"/>
+	<SubTexture name="background_small_016.png" x="302" y="890" width="300" height="176"/>
+	<SubTexture name="background_small_017.png" x="302" y="712" width="300" height="176"/>
+	<SubTexture name="background_small_018.png" x="302" y="534" width="300" height="176"/>
+	<SubTexture name="background_small_019.png" x="302" y="356" width="300" height="176"/>
+	<SubTexture name="background_small_020.png" x="302" y="178" width="300" height="176"/>
+	<SubTexture name="background_small_021.png" x="302" y="0" width="300" height="176"/>
+	<SubTexture name="background_small_022.png" x="0" y="1246" width="300" height="176"/>
+	<SubTexture name="background_small_023.png" x="0" y="1068" width="300" height="176"/>
+	<SubTexture name="background_small_024.png" x="0" y="890" width="300" height="176"/>
+	<SubTexture name="background_small_025.png" x="0" y="712" width="300" height="176"/>
+	<SubTexture name="background_small_026.png" x="0" y="534" width="300" height="176"/>
+	<SubTexture name="background_small_027.png" x="0" y="356" width="300" height="176"/>
+	<SubTexture name="background_small_028.png" x="0" y="178" width="300" height="176"/>
+	<SubTexture name="background_small_029.png" x="0" y="0" width="300" height="176"/>
+</TextureAtlas>
