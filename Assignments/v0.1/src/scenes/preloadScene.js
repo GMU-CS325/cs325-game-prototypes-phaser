@@ -92,10 +92,28 @@ function changeAssetText(scene, assetText) {
 }
 
 function loadFiles(scene) {
+    //scene.load.plugin('AnimatedTiles', 'src/AnimatedTiles.min.js');
+    console.log(scene.sys);
+
     scene.load.image('bg_001', 'assets/titleScene/bg_001.gif');
     scene.load.image('bg_002', 'assets/titleScene/bg_002.gif');
     scene.load.image('bg_003', 'assets/titleScene/bg_003.gif');
     scene.load.image('bg_004', 'assets/titleScene/bg_004.gif');
+
+    //First load background image
+    scene.load.image('background', 'assets/levelBackground/background.png');
+
+    //Load object stuff
+    scene.load.image('door_bottom', 'assets/levelBackground/door_bottom');
+    scene.load.image('door_top', 'assets/levelBackground/door_top');
+
+    //Load player texture atlas
+    scene.load.image('player', 'assets/levelBackground/kenney_player.png','assets/levelBackground/kenney_player_atlas.json');
+
+    //Load other level assets
+    scene.load.image('platformer_tiles', 'assets/levelBackground/platformPack_tilesheet.png');
+    scene.load.tilemapTiledJSON('map', 'assets/levelBackground/levelBackground3.json');
+    scene.load.image('background_sprites', 'assets/levelBackground/sprites.png')
 }
 
 export default PreloadScene;

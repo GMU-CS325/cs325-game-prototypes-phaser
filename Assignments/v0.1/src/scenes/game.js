@@ -4,7 +4,7 @@ import TitleScene from './titleScene.js';
 import GameScene from './gameScene.js';
 import PreloadScene from './preloadScene.js';
 import endScene from './endScene.js';
-//s
+
 var gameScene = new GameScene();
 var titleScene = new TitleScene();
 var preloadScene = new PreloadScene();
@@ -36,6 +36,11 @@ var config = {
                 key: "matterCollision", //Where to store in Scene.systems, such as scene.sys.matterCollision
                 mapping: "matterCollision" // Where to store in the Scene, e.g. scene.matterCollision
             }
+            // {
+            //     plugin: AnimatedTiles, //The plugin class
+            //     key: "AnimatedTiles", //Where to store in Scene.systems, such as scene.sys.matterCollision
+            //     mapping: "AnimatedTiles" // Where to store in the Scene, e.g. scene.matterCollision
+            // }
         ]
     }
 };

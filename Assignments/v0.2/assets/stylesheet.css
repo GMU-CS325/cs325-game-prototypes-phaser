@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Chinese Dragon';
+    src: url('ChineseDragon-Regular.woff2') format('woff2'),
+        url('ChineseDragon-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
