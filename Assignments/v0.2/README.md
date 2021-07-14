@@ -1,113 +1,49 @@
-# Phaser + ES6 + Webpack.
-#### A bootstrap project to create games with Phaser + ES6 + Webpack.
+# Phaser 3 Webpack Project Template
 
-![Phaser+ES6+Webpack](https://raw.githubusercontent.com/lean/phaser-es6-webpack/master/assets/images/phaser-es6-webpack.jpg)
+A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/) that includes hot-reloading for development and production-ready builds.
 
+This has been updated for Phaser 3.50.0 version and above.
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+Loading images via JavaScript module `import` is also supported, although not recommended.
 
-## Phaser 3 supported in this branch: https://github.com/lean/phaser-es6-webpack/tree/phaser3
-## Typescript supported in this branch: https://github.com/lean/phaser-es6-webpack/tree/typescript
+## Requirements
 
-## Features
-- ESLINT with JavaScript Standard Style configuration
-- Next generation of Javascript
-- Browsers are automatically updated as you change project files
-- Webpack ready
-- WebFont Loader
-- Multilanguage support
-- PWA Support
+[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
 
-## Typescript 
-If you need typescript support checkout the ```typescript``` branch. Thanks to @MatsMaker
+## Available Commands
 
-# Setup
-You'll need to install a few things before you have a working copy of the project.
+| Command | Description |
+|---------|-------------|
+| `npm install` | Install project dependencies |
+| `npm start` | Build project and open web server running project |
+| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
 
-## 1. Clone this repo:
+## Writing Code
 
-Navigate into your workspace directory.
+After cloning the repo, run `npm install` from your project directory. Then, you can start the local development server by running `npm start`.
 
-Run:
+After starting the development server with `npm start`, you can edit any files in the `src` folder and webpack will automatically recompile and reload your server (available at `http://localhost:8080` by default).
 
-```git clone https://github.com/lean/phaser-es6-webpack.git```
+## Customizing the Template
 
-## 2. Install node.js and npm:
+### Babel
 
-https://nodejs.org/en/
+You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
 
+ ```
+"browsers": [
+  ">0.25%",
+  "not ie 11",
+  "not op_mini all"
+]
+ ```
 
-## 3. Install dependencies (optionally you can install [yarn](https://yarnpkg.com/)):
+### Webpack
 
-Navigate to the cloned repo's directory.
+If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create new configuration files and target them in specific npm tasks inside of `package.json'.
 
-Run:
+## Deploying Code
 
-```npm install``` 
+After you run the `npm run build` command, your code will be built into a single bundle located at `dist/bundle.min.js` along with any other assets you project depended. 
 
-or if you chose yarn, just run ```yarn```
-
-## 4. Run the development server:
-
-Run:
-
-```npm run dev```
-
-This will run a server so you can run the game in a browser. It will also start a watch process, so you can change the source and the process will recompile and refresh the browser automatically.
-
-To run the game, open your browser and enter http://localhost:3000 into the address bar.
-
-
-## Build for deployment:
-
-Run:
-
-```npm run deploy```
-
-This will optimize and minimize the compiled bundle.
-
-## Deploy for cordova:
-Make sure to uncomment the cordova.js file in the src/index.html and to update config.xml with your informations. (name/description...)
-
-More informations about the cordova configuration:
-https://cordova.apache.org/docs/en/latest/config_ref/
-
-There is 3 platforms actually tested and supported : 
-- browser
-- ios
-- android
-
-First run (ios example):
-
-```
-npm run cordova
-cordova platform add ios
-cordova run ios
-```
-
-Update (ios example):
-
-```
-npm run cordova
-cordova platform update ios
-cordova run ios
-```
-
-This will optimize and minimize the compiled bundle.
-
-## Config:
-before you get to work you will surely want to check the config file. You could setup dimensions, webfonts, etc
-
-## Webfonts:
-In the config file you can specify which webfonts you want to include. In case you do not want to use webfonts simply leave the array empty
-
-## Credits
-Big thanks to these great repos:
-
-https://github.com/belohlavek/phaser-es6-boilerplate
-
-https://github.com/cstuncsik/phaser-es6-demo
-
-## Contributors
-
-https://github.com/RenaudROHLINGER
+If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), you should be able to open `http://mycoolserver.com/index.html` and play your game.
