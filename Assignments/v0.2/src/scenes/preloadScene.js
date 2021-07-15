@@ -93,7 +93,7 @@ function changeAssetText(scene, assetText) {
 
 function loadFiles(scene) {
     console.log(scene.sys);
-
+    
     scene.load.image('bg_001', 'src/assets/titleScene/bg_001.gif');
     scene.load.image('bg_002', 'src/assets/titleScene/bg_002.gif');
     scene.load.image('bg_003', 'src/assets/titleScene/bg_003.gif');
