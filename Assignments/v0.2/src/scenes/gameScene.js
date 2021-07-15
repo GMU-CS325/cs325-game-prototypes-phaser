@@ -27,7 +27,7 @@ var GameScene = new Phaser.Class({
         this.Fkey.on('down', function () {
             this.scale.isFullscreen ? this.scale.stopFullscreen() : this.scale.startFullscreen();
         }, this);
-		
+
 		P1Controls = this.input.keyboard.addKeys({
 			up: 'W',
 			down: 'S',
@@ -52,7 +52,7 @@ var GameScene = new Phaser.Class({
 		console.log(background_tileset)
 
 		//720 of canvas height - (64 for tile size * 11 tiles in height) = 16
-		const platforms = map.createLayer('Ground', tileset, 0, 16);
+		const platforms = map.createStaticLayer('Ground', tileset, 0, 16);
 		console.log(platforms)
 		platforms.setCollisionByExclusion(-1, true);
 
