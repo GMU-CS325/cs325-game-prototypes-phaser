@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-//import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
+import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
 
 import TitleScene from './scenes/titleScene';
 import GameScene from './scenes/gameScene';
@@ -49,20 +49,15 @@ const config = {
             y: 30
         }
     },
-    // plugins: {
-    //     scene: [
-    //         {
-    //             plugin: PhaserMatterCollisionPlugin, //The plugin class
-    //             key: "matterCollision", //Where to store in Scene.systems, such as scene.sys.matterCollision
-    //             mapping: "matterCollision" // Where to store in the Scene, e.g. scene.matterCollision
-    //         }
-    //         // {
-    //         //     plugin: AnimatedTiles, //The plugin class
-    //         //     key: "AnimatedTiles", //Where to store in Scene.systems, such as scene.sys.matterCollision
-    //         //     mapping: "AnimatedTiles" // Where to store in the Scene, e.g. scene.matterCollision
-    //         // }
-    //     ]
-    // }
+    plugins: {
+        scene: [
+            {
+                plugin: PhaserMatterCollisionPlugin, //The plugin class
+                key: "matterCollision", //Where to store in Scene.systems, such as scene.sys.matterCollision
+                mapping: "matterCollision" // Where to store in the Scene, e.g. scene.matterCollision
+            }
+        ]
+    }
 };
 
 const game = new Phaser.Game(config);
