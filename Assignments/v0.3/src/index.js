@@ -30,9 +30,10 @@ class MyGame extends Phaser.Scene
 
 const config = {
     type: Phaser.AUTO,
-    parent: 'phaser-example',
+    parent: 'game',
     width: 1200,
     height: 720,
+    tileBias: 64,
     scene: MyGame,
     scale: {
         mode: Phaser.Scale.FIT,

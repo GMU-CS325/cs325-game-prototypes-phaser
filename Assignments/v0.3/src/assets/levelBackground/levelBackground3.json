@@ -4,7 +4,7 @@
      "export":
         {
          "format":"json",
-         "target":"levelBackground3.json"
+         "target":"..\/..\/..\/..\/v0.1\/assets\/levelBackground\/levelBackground3.json"
         }
     },
  "height":11,
@@ -174,7 +174,7 @@
         {
          "columns":14,
          "firstgid":1,
-         "image":"..\/..\/..\/..\/..\/..\/Downloads\/phaser-3-and-tiled-building-a-platformer-assets\/stackabuse-platformer\/assets\/tilesets\/platformPack_tilesheet.png",
+         "image":"..\/..\/..\/..\/..\/..\/..\/Downloads\/phaser-3-and-tiled-building-a-platformer-assets\/stackabuse-platformer\/assets\/tilesets\/platformPack_tilesheet.png",
          "imageheight":448,
          "imagewidth":896,
          "margin":0,
@@ -1093,7 +1093,7 @@
         {
          "columns":4,
          "firstgid":99,
-         "image":"sprites.png",
+         "image":"..\/..\/..\/..\/v0.1\/assets\/levelBackground\/sprites.png",
          "imageheight":1424,
          "imagewidth":1208,
          "margin":0,
