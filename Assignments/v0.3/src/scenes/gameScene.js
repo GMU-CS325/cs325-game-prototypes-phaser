@@ -1,3 +1,7 @@
+import PlayerDBZ from "../player/PlayerDBZ";
+
+var player;
+
 var P1Controls;
 var P2Controls;
 
@@ -53,28 +57,29 @@ var GameScene = new Phaser.Class({
 
 		const map = this.make.tilemap({ key: 'map'});
 		const tileset = map.addTilesetImage('platformer','platformer_tiles');
-		const background_tileset = map.addTilesetImage('sprites', 'background_sprites');
 
 		//720 of canvas height - (64 for tile size * 11 tiles in height) = 16
-		const platforms = map.createStaticLayer('Ground', tileset, 0, 16);
-		//console.log(platforms)
-		platforms.setCollisionByExclusion(-1, true);
-
-		console.log(this);
-		const doors = this.add.group({
-			allowGravity: false,
-			immovable: true
-		});
+		const platforms = map.createLayer('Ground', tileset, 0, 16);
+		platforms.setCollisionByProperty({collides: true});
+		//platforms.setCollisionBetween(0,6);
+		this.matter.world.convertTilemapLayer(platforms);
+		var debugGraphics = this.add.graphics();
+		map.renderDebug(debugGraphics, {
+			tileColor: null,
+			collidingTileColor: new Phaser.Display.Color(243, 134, 48, 200),
+			faceColor: new Phaser.Display.Color(40, 39, 37, 255),
+		}, platforms);
 
 		const doorObjects = map.getObjectLayer('Doors')['objects'];
 
-		//console.log(doorObjects)
 		// Now we create spikes in our sprite group for each object in our map
 		doorObjects.forEach(doorObject => {
-			var door;
 			if(typeof(doorObject.properties[0].value) == "string")
-				door = this.add.sprite(doorObject.x, doorObject.y + 150 - doorObject.height, doorObject.properties[0].value).setOrigin(0, 0);
+				doorObject = this.add.sprite(doorObject.x, doorObject.y + 150 - doorObject.height, doorObject.properties[0].value).setOrigin(0, 0);
   		});
+
+		player = new PlayerDBZ(this, 200, 500);
+		this.matter.world.createDebugGraphic();
 
 	},
 
@@ -82,7 +87,9 @@ var GameScene = new Phaser.Class({
 		frameCounter += delta;
 		frameCounter %= 2250;
 		const animationFrameIndex = Math.floor(frameCounter / 75);
-		backgroundImage.setTexture('background_images', frames[animationFrameIndex])
+		backgroundImage.setTexture('background_images', frames[animationFrameIndex]);
+
+		player.update();
 	}
 
 });

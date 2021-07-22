@@ -91,29 +91,24 @@ function changeAssetText(scene, assetText) {
     });
 }
 
-function loadFiles(scene) {
-    console.log(scene.sys);
-    
+function loadFiles(scene) {    
     scene.load.image('bg_001', 'src/assets/titleScene/bg_001.gif');
     scene.load.image('bg_002', 'src/assets/titleScene/bg_002.gif');
     scene.load.image('bg_003', 'src/assets/titleScene/bg_003.gif');
     scene.load.image('bg_004', 'src/assets/titleScene/bg_004.gif');
 
-    //First load background image
-    scene.load.image('background', 'src/assets/levelBackground/background.png');
-
     //Load object stuff
     scene.load.image('door_bottom', 'src/assets/levelBackground/door_bottom.png');
     scene.load.image('door_top', 'src/assets/levelBackground/door_top.png');
 
-    //Load player texture atlas
-    scene.load.image('player', 'src/assets/levelBackground/kenney_player.png','src/assets/levelBackground/kenney_player_atlas.json');
-
     //Load other level assets
     scene.load.image('platformer_tiles', 'src/assets/levelBackground/platformPack_tilesheet.png');
     scene.load.tilemapTiledJSON('map', 'src/assets/levelBackground/levelBackground3.json');
-    scene.load.image('background_sprites', 'src/assets/levelBackground/sprites.png')
     scene.load.atlasXML('background_images', 'src/assets/levelBackground/sprites.png', 'src/assets/levelBackground/sprites.xml');
+
+    //Player assets
+    scene.load.spritesheet("player", "src/player/player.png",  {frameWidth: 64, frameHeight: 64 } );
+    //scene.load.image('player', 'src/assets/levelBackground/kenney_player.png','src/assets/levelBackground/kenney_player_atlas.json');
 }
 
 export default PreloadScene;
