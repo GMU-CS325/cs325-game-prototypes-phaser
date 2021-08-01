@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import PhaserMatterCollisionPlugin from "phaser-matter-collision-plugin";
-import phaserControls from "./plugins/phaserControlsPlugin.min.js";
+import phaserControls from "./plugins/phaserControlsPlugin.js";
 
 import TitleScene from './scenes/titleScene';
 import GameScene from './scenes/gameScene';
@@ -26,6 +26,7 @@ class MyGame extends Phaser.Scene
     create ()
     {
         console.log(this)
+        console.log(this.controls)
     }
 }
 
