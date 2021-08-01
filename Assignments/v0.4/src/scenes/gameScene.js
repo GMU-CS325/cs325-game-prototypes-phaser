@@ -61,14 +61,8 @@ var GameScene = new Phaser.Class({
 		//720 of canvas height - (64 for tile size * 11 tiles in height) = 16
 		const platforms = map.createLayer('Ground', tileset, 0, 16);
 		platforms.setCollisionByProperty({collides: true});
-		//platforms.setCollisionBetween(0,6);
 		this.matter.world.convertTilemapLayer(platforms);
-		var debugGraphics = this.add.graphics();
-		map.renderDebug(debugGraphics, {
-			tileColor: null,
-			collidingTileColor: new Phaser.Display.Color(243, 134, 48, 200),
-			faceColor: new Phaser.Display.Color(40, 39, 37, 255),
-		}, platforms);
+		createDebugGraphic(this, map, platforms);
 
 		const doorObjects = map.getObjectLayer('Doors')['objects'];
 
@@ -93,5 +87,14 @@ var GameScene = new Phaser.Class({
 	}
 
 });
+
+function createDebugGraphic(scene, map, platforms) {
+	var debugGraphics = scene.add.graphics();
+		map.renderDebug(debugGraphics, {
+			tileColor: null,
+			collidingTileColor: new Phaser.Display.Color(243, 134, 48, 200),
+			faceColor: new Phaser.Display.Color(40, 39, 37, 255),
+		}, platforms);
+}
 
 export default GameScene;
