@@ -2,9 +2,6 @@ import PlayerDBZ from "../player/PlayerDBZ";
 
 var player;
 
-var P1Controls;
-var P2Controls;
-
 var frameCounter;
 
 var backgroundImage;
@@ -34,20 +31,6 @@ var GameScene = new Phaser.Class({
             this.scale.isFullscreen ? this.scale.stopFullscreen() : this.scale.startFullscreen();
         }, this);
 
-		P1Controls = this.input.keyboard.addKeys({
-			up: 'W',
-			down: 'S',
-			left: 'A',
-			right: 'D'
-		});
-
-		P2Controls = this.input.keyboard.addKeys({
-			up: 'up',
-			down: 'down',
-			left: 'left',
-			right: 'right'
-		});
-
 		atlasTexture = this.textures.get('background_images');
 		frames = atlasTexture.getFrameNames();
 
@@ -72,8 +55,7 @@ var GameScene = new Phaser.Class({
 				doorObject = this.add.sprite(doorObject.x, doorObject.y + 150 - doorObject.height, doorObject.properties[0].value).setOrigin(0, 0);
   		});
 
-		player = new PlayerDBZ(this, 200, 500);
-		this.matter.world.createDebugGraphic();
+		player = new PlayerDBZ(this, 200, 600);
 
 	},
 
