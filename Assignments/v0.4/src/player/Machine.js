@@ -60,6 +60,8 @@ class IdleState extends State {
             this.stateMachine.transition('punch')
         else if(controls.keys.space.isDown)
             this.stateMachine.transition('kick')
+        else if(controls.keys.down.isDown)
+            this.stateMachine.transition('guard')
     }
 }
 
@@ -79,10 +81,35 @@ class MoveState extends State {
             player.x += 2;
             player.play('move', true)
         }
+        else if(controls.keys.shift.isDown)
+            this.stateMachine.transition('punch')
+        else if(controls.keys.space.isDown)
+            this.stateMachine.transition('kick')
+        else if(controls.keys.down.isDown)
+            this.stateMachine.transition('guard')
         else {
             this.stateMachine.transition('idle')
         }
 
+    }
+}
+
+class GuardState extends State {
+    enter(scene, player, controls) {
+        console.log('Guard')
+    }
+
+    execute(scene, player, controls) {
+        if(controls.keys.down.isDown)
+            player.play('guard', true);
+        else if(controls.keys.left.isDown || controls.keys.right.isDown)
+            this.stateMachine.transition('move')
+        else if(controls.keys.shift.isDown)
+            this.stateMachine.transition('punch')
+        else if(controls.keys.space.isDown)
+            this.stateMachine.transition('kick')
+        else
+            this.stateMachine.transition('idle')
     }
 }
 
@@ -139,7 +166,8 @@ class KickState extends State {
     }
 
     execute(scene, player, controls) {
-
+        var a = 10
+        console.log(a++)
     }
 }
 
@@ -148,6 +176,7 @@ module.exports = {
     State: State,
     IdleState: IdleState,
     MoveState: MoveState,
+    GuardState: GuardState,
     DashState: DashState,
     PunchState: PunchState,
     KickState: KickState

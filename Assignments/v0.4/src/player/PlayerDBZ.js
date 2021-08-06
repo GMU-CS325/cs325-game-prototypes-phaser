@@ -17,6 +17,7 @@ export default class PlayerDBZ {
         this.StateMachine = new Machine.StateMachine('idle', {
             idle: new Machine.IdleState(),
             move: new Machine.MoveState(),
+            guard: new Machine.GuardState(),
             dash: new Machine.DashState(),
             punch: new Machine.PunchState(),
             kick: new Machine.KickState(),
@@ -33,6 +34,13 @@ export default class PlayerDBZ {
         anims.create({
             key: "idle",
             frames: anims.generateFrameNumbers("player", { frames: [0] } ), //0,4,3,1
+            frameRate: 10,
+            repeat: 0
+        });
+
+        anims.create({
+            key: "guard",
+            frames: anims.generateFrameNumbers("player", { frames: [54] } ),
             frameRate: 10,
             repeat: 0
         });
