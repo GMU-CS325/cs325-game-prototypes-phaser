@@ -23,6 +23,8 @@ export default class PlayerDBZ {
             kick: new Machine.KickState(),
         }, [scene, this.sprite, scene.controls])
         this.sprite.StateMachine = this.StateMachine;
+        this.sprite.punchCounter = 0;
+        this.sprite.punchCooldown = 0;
 
         anims.create({
             key: "move",
@@ -47,10 +49,40 @@ export default class PlayerDBZ {
 
         anims.create({
             key: "punch",
-            frames: anims.generateFrameNumbers("player", { frames: [37,36,36,37,42,42,42,,37,37,38,38,38,37,39,39,43,43,43,43] } ),
+            //frames: anims.generateFrameNumbers("player", { frames: [37,36,36,37, 42,42,42,37,37, 38,38,38,37, 39,39,43,43,43,43] } ),
+            frames: anims.generateFrameNumbers("player", { frames: [37,36,36,36,36,37,   37,42,42,42,42,42,42,37,   37,38,38,38,38,37,  37,39,39,43,43,43,43,43] } ),
             frameRate: 10,
             repeat: 0
         });
+
+        anims.create({
+            key: "punch-0",
+            frames: anims.generateFrameNumbers("player", { frames: [37,36,36,36,36,37] } ),
+            frameRate: 10,
+            repeat: 0
+        });
+
+        anims.create({
+            key: "punch-1",
+            frames: anims.generateFrameNumbers("player", { frames: [37,42,42,42,42,42,42,37] } ),
+            frameRate: 10,
+            repeat: 0
+        });
+
+        anims.create({
+            key: "punch-2",
+            frames: anims.generateFrameNumbers("player", { frames: [37,38,38,38,38,37] } ),
+            frameRate: 10,
+            repeat: 0
+        });
+
+        anims.create({
+            key: "punch-3",
+            frames: anims.generateFrameNumbers("player", { frames: [37,39,39,43,43,43,43,43] } ),
+            frameRate: 10,
+            repeat: 0
+        });
+
 
         anims.create({
             key: "kick",
@@ -73,7 +105,7 @@ export default class PlayerDBZ {
             onMatch: function(scene, event) {
                 player.StateMachine.transition('dash')
             }
-        });
+        });//
 
         let dashRight = scene.controls.createCombo({
             combo: 'dd',
@@ -94,8 +126,14 @@ export default class PlayerDBZ {
         // });
     }
 
-    update() {
-        //console.log(this.scene.controls.recordKeys());
-        this.StateMachine.step();
+    update(time,delta) {
+        //console.log(this.scene.controls.inputArray)
+        this.scene.controls.recordKeys();
+        this.sprite.time = time;
+        this.sprite.delta = delta;
+        // if(this.scene.controls.inputArray.length > 50)
+        //     this.scene.controls.inputArray.length = 0;
+        
+        //this.StateMachine.step();
     }
 }

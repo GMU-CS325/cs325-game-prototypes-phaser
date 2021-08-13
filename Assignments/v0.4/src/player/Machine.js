@@ -1,13 +1,14 @@
+//TODO: Make sure that each state except idle (done) and punch (duh) have punchCounter set to 0
 class StateMachine {
     constructor(initialState, possibleStates, stateArgs=[]) {
         this.initialState = initialState;
         this.possibleStates = possibleStates;
         this.stateArgs = stateArgs;
         this.state = null;
-      
+        this.lastState = null;
     }
 
-    step() {
+    step(time,delta) {
         // On the first step, the state is null and we need to initialize the first state.
         //Spread operator, will grab the state in possible states, so punch.enter(args), where args's elements are expanded
         if (this.state === null) {
@@ -15,6 +16,7 @@ class StateMachine {
             for (const state of Object.values(this.possibleStates)) {
                 state.stateMachine = this;
             }
+            this.lastState = this.initialState;
             this.state = this.initialState;
             this.possibleStates[this.state].enter(...this.stateArgs);
         }
@@ -25,6 +27,7 @@ class StateMachine {
 
     //Rest parameter, used to gather any number of arguments into an array
     transition(newState, ...enterArgs) {
+        this.lastState = this.state;
         this.state = newState;
         this.possibleStates[this.state].enter(...this.stateArgs, ...enterArgs);
     }
@@ -46,6 +49,7 @@ class State {
 
 class IdleState extends State {
     enter(scene, player, controls) {
+        player.punchCounter = 0;
         player.setVelocityX(0);
         player.anims.stop();
         console.log("Idle")
@@ -56,6 +60,7 @@ class IdleState extends State {
         // /console.log(controls)
         if(controls.keys.left.isDown || controls.keys.right.isDown)
             this.stateMachine.transition('move')
+        //else if(Phaser.Input.Keyboard.JustDown(controls.keys.shift))
         else if(controls.keys.shift.isDown)
             this.stateMachine.transition('punch')
         else if(controls.keys.space.isDown)
@@ -144,15 +149,30 @@ class DashState extends State {
 
 class PunchState extends State {
     enter(scene, player, controls) {
-        console.log('Punch')
-        player.play('punch', true);
+        player.punchCooldown = 0;
+        player.play(`punch-${player.punchCounter}`, true);
+        player.punchCounter = (player.punchCounter + 1) % 4 
+        //console.log(`punch-${player.punchCounter}`)
         player.once('animationcomplete', () => {
-            this.stateMachine.transition('idle')
+            console.log('Animation complete')
         })
     }
 
     execute(scene, player, controls) {
-
+        player.punchCooldown += player.delta;
+        //console.log(player.punchCooldown)
+        if(player.punchCooldown > 2000)
+            this.stateMachine.transition('idle')
+        else if(controls.keys.down.isDown)
+            this.stateMachine.transition('guard')
+        else if(controls.keys.left.isDown || controls.keys.right.isDown)
+            this.stateMachine.transition('move')
+        //else if(Phaser.Input.Keyboard.JustDown(controls.keys.shift)) {
+        else if(controls.keys.shift.isDown && player.punchCooldown > 700) {
+            this.stateMachine.transition('punch')
+        }
+        else if(controls.keys.space.isDown)
+            this.stateMachine.transition('kick')
     }
 }
 
@@ -166,8 +186,7 @@ class KickState extends State {
     }
 
     execute(scene, player, controls) {
-        var a = 10
-        console.log(a++)
+        
     }
 }
 
