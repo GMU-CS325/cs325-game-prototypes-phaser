@@ -65,7 +65,8 @@ var GameScene = new Phaser.Class({
 		const animationFrameIndex = Math.floor(frameCounter / 75);
 		backgroundImage.setTexture('background_images', frames[animationFrameIndex]);
 
-		player.update();
+		player.update(time,delta);
+		player.StateMachine.step(time,delta)
 	}
 
 });
