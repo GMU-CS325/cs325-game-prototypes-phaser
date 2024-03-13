@@ -1,0 +1,190 @@
+{
+	"generator_info": "Shape definitions generated with PhysicsEditor. Visit https://www.codeandweb.com/physicseditor",
+	"ball": {
+		"type": "fromPhysicsEditor",
+		"label": "ball",
+		"isStatic": false,
+		"density": 0.10000000149011612,
+		"restitution": 0,
+		"friction": 0.10000000149011612,
+		"frictionAir": 0.009999999776482582,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"circle": {
+					"x": 49.57446808510638,
+					"y": 49.638297872340424,
+					"radius": 49.574924662311695
+				}
+			}
+		]
+	},
+	"box": {
+		"type": "fromPhysicsEditor",
+		"label": "box",
+		"isStatic": false,
+		"density": 0.10000000149011612,
+		"restitution": 0,
+		"friction": 0.10000000149011612,
+		"frictionAir": 0.009999999776482582,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":0, "y":0 }, { "x":0, "y":91 }, { "x":94, "y":91 }, { "x":94, "y":0 } ]
+				]
+			}
+		]
+	},
+	"spike": {
+		"type": "fromPhysicsEditor",
+		"label": "spike",
+		"isStatic": false,
+		"density": 0.10000000149011612,
+		"restitution": 0,
+		"friction": 0.10000000149011612,
+		"frictionAir": 0.009999999776482582,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":16, "y":3 }, { "x":1, "y":42 }, { "x":0, "y":123 }, { "x":33, "y":123 }, { "x":33, "y":42 } ]
+				]
+			}
+		]
+	},
+	"spikyball": {
+		"type": "fromPhysicsEditor",
+		"label": "spikyball",
+		"isStatic": false,
+		"density": 0.1,
+		"restitution": 0,
+		"friction": 0.1,
+		"frictionAir": 0.01,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"circle": {
+					"x": 44.25531914893618,
+					"y": 38.46808510638297,
+					"radius": 37.021276595744695
+				}
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":21, "y":10 }, { "x":4, "y":9 }, { "x":6, "y":33 } ]
+				]
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":7, "y":31 }, { "x":0, "y":40 }, { "x":8, "y":47 } ]
+				]
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":37, "y":75 }, { "x":13, "y":58 }, { "x":9, "y":74 } ]
+				]
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":57, "y":75 }, { "x":29, "y":75 }, { "x":45, "y":84 } ]
+				]
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":78, "y":75 }, { "x":74, "y":61 }, { "x":55, "y":74 } ]
+				]
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":88, "y":45 }, { "x":81, "y":39 }, { "x":74, "y":61 } ]
+				]
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":81, "y":27 }, { "x":78, "y":3 }, { "x":62, "y":6 } ]
+				]
+			}
+		]
+	},
+	"manyspike": {
+		"type": "fromPhysicsEditor",
+		"label": "manyspike",
+		"isStatic": false,
+		"density": 0.10000000149011612,
+		"restitution": 0,
+		"friction": 0.10000000149011612,
+		"frictionAir": 0.009999999776482582,
+		"frictionStatic": 0.5,
+		"collisionFilter": {
+			"group": 0,
+			"category": 1,
+			"mask": 255
+		},
+		"fixtures": [
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":4, "y":15 }, { "x":4, "y":57 }, { "x":37, "y":135 }, { "x":38, "y":48 } ]
+				]
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":65, "y":0 }, { "x":38, "y":49 }, { "x":37, "y":135 }, { "x":99, "y":135 }, { "x":98, "y":52 } ]
+				]
+			},
+			{
+				"label": "",
+				"isSensor": false,
+				"vertices": [
+					[ { "x":132, "y":20 }, { "x":99, "y":52 }, { "x":99, "y":119 }, { "x":129, "y":66 } ]
+				]
+			}
+		]
+	}
+}

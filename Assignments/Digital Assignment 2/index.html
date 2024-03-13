@@ -1,0 +1,228 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Digital Assignment 2-Planes</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <script src="planes.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            fps: 60,
+            gravity: { y: 0 }
+        },
+    },
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
+    },
+
+};
+
+var game = new Phaser.Game(config);
+
+function preload() {
+    this.load.image('background', 'Assets/sea.png')
+    this.load.image('playerOne', 'Assets/ship.png');
+    this.load.image('playerTwo', 'Assets/ship.png');
+    this.load.image('bulletOne', 'Assets/BulletOne.png');
+    this.load.image('bulletTwo', 'Assets/BulletTwo.png');
+}
+
+function create() {
+    this.add.image(400, 300, 'background');
+
+    //Enable world bounds
+    this.physics.world.setBoundsCollision(true, true, true, true);
+
+    playerOne = this.physics.add.sprite(100, 300, 'playerOne');
+    playerOne.setDamping(true);
+    playerOne.setDrag(0.99);
+    playerOne.setMaxVelocity(200);
+
+    playerTwo = this.physics.add.sprite(700, 300, 'playerTwo');
+    playerTwo.setAngle(180);
+
+    bulletsOne = this.add.group({
+        defaultKey: 'bulletOne',
+        maxSize: 100,
+        createCallback: function (bulletOne) {
+            //bulletOne.setName('Bullet One' + this.getLength());
+            //console.log('Created', bulletOne.name);
+        },
+        removeCallback: function (bulletOne) {
+            //console.log('Removed', alien.name);
+        }
+    })
+
+    bulletsOne.enableBody = true;
+    bulletsOne.physicsBodyType = Phaser.Physics.ARCADE;
+
+    bulletsTwo = this.add.group({
+        defaultKey: 'bulletTwo',
+        maxSize: 100,
+        createCallback: function (bulletTwo) {     
+        },
+        removeCallback: function (bulletTwo) {
+        }
+    })
+
+    bulletsTwo.enableBody = true;
+    bulletsTwo.physicsBodyType = Phaser.Physics.ARCADE;
+
+    keyENTER = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+
+    openingText = this.add.text(
+        this.physics.world.bounds.width / 2,
+        this.physics.world.bounds.height / 2,
+        'Press ENTER to Start',
+        {
+            fontFamily: 'Monaco, Courier, monospace',
+            fontSize: '30px',
+            fill: '#fff'
+        }
+    );
+    openingText.setOrigin(0.5);
+
+    // Create the game won text
+    playerOneWinsText = this.add.text(
+        this.physics.world.bounds.width / 2,
+        this.physics.world.bounds.height / 2,
+        'Player One won!',
+        {
+            fontFamily: 'Monaco, Courier, monospace',
+            fontSize: '30px',
+            fill: '#fff'
+        }
+    );
+    playerOneWinsText.setOrigin(0.5);
+    playerOneWinsText.setVisible(false);
+
+    playerTwoWinsText = this.add.text(
+        this.physics.world.bounds.width / 2,
+        this.physics.world.bounds.height / 2,
+        'Player Two won!',
+        {
+            fontFamily: 'Monaco, Courier, monospace',
+            fontSize: '30px',
+            fill: '#fff'
+        }
+    );
+    playerTwoWinsText.setOrigin(0.5);
+    playerTwoWinsText.setVisible(false);
+
+    cursors = this.input.keyboard.createCursorKeys();
+    playerTwoKeys = this.input.keyboard.addKeys('W,A,S,D,TAB');
+
+    //Neither plane should go out of the world
+    playerOne.setCollideWorldBounds(true);
+    playerTwo.setCollideWorldBounds(true);
+
+    this.physics.add.collider(bulletsOne, playerTwo, playerTwoLost, null, this);
+    this.physics.add.collider(bulletsTwo, playerOne, playerOneLost, null, this);
+}
+
+function update() {
+    frameCounter++;
+    if (ifSomeoneWon()) {
+        openingText.setVisible(false);
+    }
+    else {
+        // Put this in so that the player stays still if no key is being pressed
+        //playerOne.body.setVelocityX(0);
+        if (!gameStarted) {
+
+            if (keyENTER.isDown) {
+                gameStarted = true;
+                openingText.setVisible(false);
+            }
+            return;
+        }
+
+        bulletsOne.children.iterate(function (bulletOne) {
+        if (bulletOne.y > 600 || bulletOne.y < 0 || bulletOne.x > 800 || bulletOne.x < 0) {
+            bulletsOne.killAndHide(bulletOne);
+        }
+        });
+
+        bulletsTwo.children.iterate(function (bulletTwo) {
+        if (bulletTwo.y > 600 || bulletTwo.y < 0 || bulletTwo.x > 800 || bulletTwo.x < 0) {
+            bulletsTwo.killAndHide(bulletTwo);
+        }
+        });
+
+        if (cursors.up.isDown)
+        {
+            this.physics.velocityFromRotation(playerOne.rotation, 200, playerOne.body.acceleration);
+        }
+        else
+        {
+            playerOne.setAcceleration(0);
+        }
+
+        if (playerTwoKeys.W.isDown)
+        {
+            this.physics.velocityFromRotation(playerTwo.rotation, 200, playerTwo.body.acceleration);
+        }
+        else
+        {
+            playerTwo.setAcceleration(0);
+        }
+
+        if (cursors.left.isDown)
+        {
+            playerOne.setAngularVelocity(-300);
+        }
+        else if (cursors.right.isDown)
+        {
+            playerOne.setAngularVelocity(300);
+        }
+        else
+        {
+            playerOne.setAngularVelocity(0);
+        }
+
+        if (playerTwoKeys.A.isDown)
+        {
+            playerTwo.setAngularVelocity(-300);
+        }
+        else if (playerTwoKeys.D.isDown)
+        {
+            playerTwo.setAngularVelocity(300);
+        }
+        else
+        {
+            playerTwo.setAngularVelocity(0);
+        }
+
+        if (cursors.space.isDown)
+        {
+            addBulletOne(this.physics, this.game);
+        }
+
+        if (playerTwoKeys.TAB.isDown)
+        {
+            addBulletTwo(this.physics, this.game);
+        }
+    }
+}
+
+    </script>
+
+</body>
+</html>

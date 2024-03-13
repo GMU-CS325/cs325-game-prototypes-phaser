@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Brutal Brawl</title>
+    <style>
+        @font-face {
+            font-family: "dragon";
+            src: 
+                 url('src/assets/fonts/dragon.woff2') format("woff2");
+            font-weight: 400;
+            font-weight: normal;
+        }
+        #readme {
+            margin-top: 10px;
+        }
+        html,
+		body,
+		#game-container {
+			margin: 0;
+			padding: 0;
+		}
+
+		#game-container {
+			min-width: 100vw;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#game-container>canvas {
+			border-radius: 5px;
+		}
+    </style>
+</head>
+<body>
+  <div style="font-family: 'dragon'; position: absolute; left: -1000px; visibility: hidden;">.</div>
+  <div id="game"></div>
+</body>
+</html>

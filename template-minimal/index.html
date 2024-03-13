@@ -1,14 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Hello! Amaze!</title>
 <style>
-body
-{
-    color: #777;
-    font-family: "Avenir", Verdana, sans-serif;
-}
 #readme
 {
     margin-top: 10px;
@@ -22,70 +17,108 @@ body
 <h2>Your game title</h2>
 
 <ul>
-<li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
-</li>
+    <li>
+        <strong>Originality:</strong>
+        The movement is very wacky, similar to QWERTY and Slime ball
+    </li>
 
-<li><strong>Originality:</strong>
-What is original about your game?
-</li>
+    <li>
+        <strong>Technical Merit:</strong>
+        Several things, including using Matterjs, using Matter physics, using ES6 Scene classes, using inheritance, scene transitions
+        Also used are custom collision boxes through using ShoeBox, PhysicsEditor, and TexturePacker and JSON files and detecting these collisions.
+        Arrays and animated backgrounds and a custom font were used for cool title screens and end screen
+        In addition, input from the keyboard was used.
+    </li>
 
-<li><strong>Technical Merit:</strong>
-What is interesting about your game technology?
-</li>
+    <li>
+        <strong>Prototype Postmortem:</strong>
+        I learned how to use Matterjs and add collisions, which was definitely the hardest part of the project. It was hard to figure out
+        how to load the shapes and collision boxes, and then detect if a collision occured.
+        The easiest part was adding animations, as that was done before.
+    </li>
 
-<li><strong>Prototype Postmortem:</strong>
-What did you learn from this prototype?
-What was the easiest or hardest part of making it?
-</li>
+    <li>
+        <strong>Prototype Assets:</strong>
+        Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+        <ul>
+            <li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
+            <li>Chinese Dragon Font: <a href="https://www.dafont.com/theme.php?cat=201">From dafont</a></li>
+            <li>Level background: <a href="https://theultralinx.com/2013/05/stunning-animated-gifs-backgrounds-fighting-games/">Animated GIFs of Backgrounds From Old Fighting Games</a></li>
+            <li>Title background: <a href="https://media.giphy.com/media/Cm9ZFs8crAc7e/source.gif">GIPHY</a></li>
+            
+        </ul>
+    </li>
 
-<li><strong>Prototype Assets:</strong>
-Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
-<ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
-</ul>
-</li>
+    <li>
+        <strong>Prototype Closest Other Game:</strong>
+        Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+        I'd say my game is mostly unique, though there was a game made by someone else earlier in the semester that resembles mine.
+        The code for title screen and end screen was given inspiration from Daniel Fuerdinger's Who Killed Doctor Bob?
+        Other sources are from the following links and from my other games:
+        <ul>
+            <li>Digital Assignment 3: <a href="https://github.com/Fuerdinger/cs325-game-prototypes/tree/master/DA3">Who Killed Doctor Bob?</a></li>
+            <li>How to use font face: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">MDN Web Docs</a></li>
+            <li>Passing Data to a scene: <a href="https://phaser.io/examples/v3/view/scenes/passing-data-to-a-scene">Phaser 3 Examples</a></li>
+            <li>Using a custom web font: <a href="http://labs.phaser.io/edit.html?src=src\game%20objects\text\static\custom%20webfont.js">labs.phaser.io</a></li>
+            <li>Phaser 3 and custom fonts: <a href="https://learn.yorkcs.com/2019/09/28/phaser-3-basics-custom-fonts/">York CS</a></li>
+            <li>Using PhysicsEditor: <a href="https://www.codeandweb.com/physicseditor/tutorials/how-to-create-physics-shapes-for-phaser-3-and-matterjs">Code and Web</a></li>
+            <li>Apply a method to all members of a group: <a href="https://www.html5gamedevs.com/topic/36580-best-way-to-apply-a-method-to-all-elements-in-a-group/">HTML5 Game Devs</a></li>
+            <li>Using collisions: <a href="https://jsfiddle.net/espace3d/e7xdtv4m/21/">JSFiddle</a></li>
+        </ul>
+    </li>
 
-<li><strong>Prototype Closest Other Game:</strong>
-Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
-</li>
+    <li>
+        <strong>High Concept:</strong>
+        A two-player game where each person is on a platform and has to avoid getting hit by various obstacles falling from the sky.
+    </li>
 
-<li><strong>High Concept:</strong>
-A one-sentence summary of your game.
-</li>
+    <li>
+        <strong>Theme:</strong>
+        Not applicable for this assignment. I did incorporate the prototype goals/ storyboard into this.
+    </li>
 
-<li><strong>Theme:</strong>
-State which of the themes or challenges you used.
-</li>
+    <li>
+        <strong>Mandated Variety:</strong>
+        Input: Keyboard
+        Randomness: From the objects falling from the sky. It can come from anywhere up top
+        Play Style: Competitive, as you have to beat the other player.
+    </li>
 
-<li><strong>Mandated Variety:</strong>
-State which input, randomness, genre, and play style you used in this prototype.
-</li>
+    <li>
+        <strong>Prototype Goal:</strong>
+        It is evaluating the movement from the player sprites as well as the collision detection. Also the backgrounds and the platform/fighting stage.
+    </li>
 
-<li><strong>Prototype Goal:</strong>
-What game mechanic is this prototype evaluating?
-</li>
+    <li>
+        <strong>Player Experience Goals:</strong>
+        A feeling of tense uncertainty as they don't know where the obstacles will come from.
+    </li>
 
-<li><strong>Player Experience Goals:</strong>
-What experience do you want players to have when playing your game?
-</li>
+    <li>
+        <strong>Gameplay:</strong>
+            The core mechanic is using the keyboard to move around. The objective is to avoid getting hit by the obstacles and be the last man standing.
+    </li>
 
-<li><strong>Strategies:</strong>
-What player strategies do you expect will be effective at playing this game?
-</li>
+    <li>
+        <strong>Strategies:</strong>
+        Not moving as much as possible, as the controls are wacky.
+    </li>
 
-<li><strong>Story/Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
-How will the dramatic tension interact with the gameplay tension?
-</li>
+    <li>
+        <strong>Story/Setting/Premise:</strong>
+        Funny Valentine's D4C has pulled an unwitting lumberjack from alternate realities to play one of the mysterious master's games.
+        The lumberjacks do not know why they are there, only what they must do. Nor does Funny Valentine know the master's ultimate intentions.
+    </li>
 
-<li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
-</li>
+    <li>
+        <strong>Target Audience:</strong>
+        The demographic I'm trying to reach are people who like to waste their time on quick games.
+    </li>
 
-<li><strong>Play Time:</strong>
-How long does your game take to play?
-</li>
+    <li>
+        <strong>Play Time:</strong>
+        About 20 seconds before somebody loses.
+    </li>
 
 </ul>
 </div>
